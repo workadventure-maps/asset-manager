@@ -38,7 +38,7 @@
         {
             "name": "Big Table",
             "tags": [
-                "Big Table"
+                "Table"
             ],
             "imagePath": "dist/big_table-brown-right.png",
             "direction": "right",
@@ -115,7 +115,7 @@
         {
             "name": "Couche",
             "tags": [
-                "Big Table"
+                "Sofa"
             ],
             "imagePath": "dist/big_table-light_blue-right.png",
             "direction": "right",
@@ -131,7 +131,7 @@
             "color": "#c2a9a0"
         },
         {
-            "name": "Big Table",
+            "name": "Corner table",
             "tags": [
                 "Big Table"
             ],
@@ -230,7 +230,7 @@
             "color": "#808080"
         },
         {
-            "name": "Big Table",
+            "name": "Table",
             "tags": [
                 "Big Table"
             ],
@@ -257,12 +257,12 @@
             "color": "#af6e6f"
         },
         {
-            "name": "Big Table",
+            "name": "Table",
             "tags": [
                 "Big Table"
             ],
             "imagePath": "dist/big_table-brown-right-2.png",
-            "direction": "right",
+            "direction": "left",
             "color": "#e5b27d"
         },
         {
@@ -418,12 +418,12 @@
             "color": "#A9A9A9"
         },
         {
-            "name": "Big Table",
+            "name": "Table",
             "tags": [
                 "Big Table"
             ],
             "imagePath": "dist/big_table-brown-right-3.png",
-            "direction": "right",
+            "direction": "front",
             "color": "#c07755"
         },
         {
@@ -562,12 +562,12 @@
             "color": "#af6a4e"
         },
         {
-            "name": "Big Table",
+            "name": "Table",
             "tags": [
                 "Big Table"
             ],
             "imagePath": "dist/big_table-brown-right-4.png",
-            "direction": "right",
+            "direction": "front",
             "color": "#e7caa9"
         },
         {
@@ -627,7 +627,7 @@
             "color": "#b36e4b"
         },
         {
-            "name": "Big Table",
+            "name": "Table",
             "tags": [
                 "Big Table"
             ],
@@ -656,7 +656,7 @@
             "color": "#8eacb3"
         },
         {
-            "name": "Big Table",
+            "name": "Table",
             "tags": [
                 "Big Table"
             ],
@@ -792,7 +792,7 @@
             "color": "#994b44"
         },
         {
-            "name": "Big Table",
+            "name": "Corner table",
             "tags": [
                 "Big Table"
             ],
@@ -814,7 +814,7 @@
         {
             "name": "Trash",
             "tags": [
-                "Chairs"
+                "Office"
             ],
             "imagePath": "dist/chairs-pink-right-3.png",
             "direction": "right",
@@ -897,7 +897,7 @@
             "color": "#808080"
         },
         {
-            "name": "Big Table",
+            "name": "Corner table",
             "tags": [
                 "Big Table"
             ],
@@ -962,12 +962,12 @@
             "color": "#f4c035"
         },
         {
-            "name": "Big Table",
+            "name": "Table",
             "tags": [
                 "Big Table"
             ],
             "imagePath": "dist/big_table-brown-right-8.png",
-            "direction": "right",
+            "direction": "front",
             "color": "#e1af79"
         },
         {
@@ -1081,12 +1081,12 @@
             "color": "#c7915d"
         },
         {
-            "name": "Big Table",
+            "name": "Table",
             "tags": [
                 "Big Table"
             ],
             "imagePath": "dist/big_table-brown-right-9.png",
-            "direction": "right",
+            "direction": "left",
             "color": "#dbcabf"
         },
         {
@@ -1099,12 +1099,12 @@
             "color": "#c27757"
         },
         {
-            "name": "Big Table",
+            "name": "Table",
             "tags": [
                 "Big Table"
             ],
             "imagePath": "dist/big_table-brown-right-10.png",
-            "direction": "right",
+            "direction": "left",
             "color": "#e1d4cb"
         },
         {
@@ -1193,12 +1193,12 @@
             "color": "#857061"
         },
         {
-            "name": "Big Table",
+            "name": "Table",
             "tags": [
                 "Big Table"
             ],
             "imagePath": "dist/big_table-brown-right-11.png",
-            "direction": "right",
+            "direction": "front",
             "color": "#e1af7a"
         },
         {
@@ -1325,7 +1325,7 @@
         {
             "name": "Big Table",
             "tags": [
-                "Big Table"
+                "Sofa"
             ],
             "imagePath": "dist/big_table-brown-right-12.png",
             "direction": "right",
@@ -1519,7 +1519,7 @@
             "color": "#c4873d"
         },
         {
-            "name": "Big Table",
+            "name": "Table",
             "tags": [
                 "Big Table"
             ],
@@ -1557,7 +1557,7 @@
             "color": "#3b735b"
         },
         {
-            "name": "Table",
+            "name": "Table Artist",
             "tags": [
                 "Table"
             ],
@@ -1598,16 +1598,16 @@
                 "Big Table"
             ],
             "imagePath": "dist/big_table-brown-front.png",
-            "direction": "front",
+            "direction": "left",
             "color": "#c0714e"
         },
         {
-            "name": "Big Table",
+            "name": "Table",
             "tags": [
                 "Big Table"
             ],
             "imagePath": "dist/big_table-brown-right-14.png",
-            "direction": "right",
+            "direction": "front",
             "color": "#e9ceae"
         },
         {
@@ -1698,7 +1698,7 @@
             "color": "#ae76af"
         },
         {
-            "name": "Big Table",
+            "name": "Table",
             "tags": [
                 "Big Table"
             ],
@@ -1725,7 +1725,7 @@
             "color": "#9aa77f"
         },
         {
-            "name": "Big Table",
+            "name": "Table",
             "tags": [
                 "Big Table"
             ],
@@ -1915,7 +1915,7 @@
             "color": "#808080"
         },
         {
-            "name": "Big Table",
+            "name": "Table",
             "tags": [
                 "Big Table"
             ],
@@ -2011,12 +2011,12 @@
             "color": "#855561"
         },
         {
-            "name": "Big Table",
+            "name": "Table",
             "tags": [
                 "Big Table"
             ],
             "imagePath": "dist/big_table-brown-right-16.png",
-            "direction": "right",
+            "direction": "front",
             "color": "#dba974"
         },
         {
@@ -2038,12 +2038,12 @@
             "color": "#A9A9A9"
         },
         {
-            "name": "Big Table",
+            "name": "Table",
             "tags": [
                 "Big Table"
             ],
             "imagePath": "dist/big_table-brown-right-17.png",
-            "direction": "right",
+            "direction": "front",
             "color": "#e1ae78"
         },
         {
@@ -2196,12 +2196,12 @@
             "color": "#808080"
         },
         {
-            "name": "Big Table",
+            "name": "Table",
             "tags": [
                 "Big Table"
             ],
             "imagePath": "dist/big_table-light_blue-front.png",
-            "direction": "front",
+            "direction": "left",
             "color": "#F5F5DC"
         },
         {
@@ -2288,7 +2288,7 @@
             "color": "#3e92c4"
         },
         {
-            "name": "Big Table",
+            "name": "Table",
             "tags": [
                 "Big Table"
             ],
@@ -2344,12 +2344,12 @@
             "color": "#c29563"
         },
         {
-            "name": "Big Table",
+            "name": "Corner table",
             "tags": [
                 "Big Table"
             ],
             "imagePath": "dist/big_table-pink-right-3.png",
-            "direction": "right",
+            "direction": "back",
             "color": "#d1a272"
         },
         {
@@ -2434,21 +2434,21 @@
             "color": "#a66e4e"
         },
         {
-            "name": "Big Table",
+            "name": "Table",
             "tags": [
                 "Big Table"
             ],
             "imagePath": "dist/big_table-brown-right-18.png",
-            "direction": "right",
+            "direction": "left",
             "color": "#eed8bc"
         },
         {
-            "name": "Big Table",
+            "name": "Table",
             "tags": [
                 "Big Table"
             ],
             "imagePath": "dist/big_table-brown-right-19.png",
-            "direction": "right",
+            "direction": "front",
             "color": "#c67c59"
         },
         {
@@ -2472,7 +2472,7 @@
         {
             "name": "Big Table",
             "tags": [
-                "Big Table"
+                "Sofa"
             ],
             "imagePath": "dist/big_table-teal-right.png",
             "direction": "right",
@@ -2544,12 +2544,12 @@
             "color": "#D3D3D3"
         },
         {
-            "name": "Big Table",
+            "name": "Table",
             "tags": [
                 "Big Table"
             ],
             "imagePath": "dist/big_table-brown-right-20.png",
-            "direction": "right",
+            "direction": "left",
             "color": "#F5F5DC"
         },
         {
@@ -2609,7 +2609,7 @@
             "color": "#808080"
         },
         {
-            "name": "Big Table",
+            "name": "Table",
             "tags": [
                 "Big Table"
             ],
@@ -2627,7 +2627,7 @@
             "color": "#87844d"
         },
         {
-            "name": "Big Table",
+            "name": "Table",
             "tags": [
                 "Big Table"
             ],
@@ -2636,12 +2636,12 @@
             "color": "#c47451"
         },
         {
-            "name": "Big Table",
+            "name": "Table",
             "tags": [
                 "Big Table"
             ],
             "imagePath": "dist/big_table-pink-right-4.png",
-            "direction": "right",
+            "direction": "left",
             "color": "#e5b27c"
         },
         {
@@ -2782,12 +2782,12 @@
             "color": "#808080"
         },
         {
-            "name": "Big Table",
+            "name": "Table",
             "tags": [
                 "Big Table"
             ],
             "imagePath": "dist/big_table-brown-right-21.png",
-            "direction": "right",
+            "direction": "left",
             "color": "#edd4b6"
         },
         {
@@ -2818,12 +2818,12 @@
             "color": "#808080"
         },
         {
-            "name": "Big Table",
+            "name": "Table",
             "tags": [
                 "Big Table"
             ],
             "imagePath": "dist/big_table-light_blue-right-1.png",
-            "direction": "right",
+            "direction": "left",
             "color": "#F5F5DC"
         },
         {
@@ -2874,12 +2874,12 @@
             "color": "#d9c68f"
         },
         {
-            "name": "Big Table",
+            "name": "Table",
             "tags": [
                 "Big Table"
             ],
             "imagePath": "dist/big_table-brown-right-22.png",
-            "direction": "right",
+            "direction": "left",
             "color": "#d79268"
         },
         {
@@ -2952,12 +2952,12 @@
             "color": "#D3D3D3"
         },
         {
-            "name": "Big Table",
+            "name": "Table",
             "tags": [
                 "Big Table"
             ],
             "imagePath": "dist/big_table-brown-right-23.png",
-            "direction": "right",
+            "direction": "left",
             "color": "#d99167"
         },
         {
@@ -2972,7 +2972,7 @@
         {
             "name": "Big Table",
             "tags": [
-                "Big Table"
+                "Decoration"
             ],
             "imagePath": "dist/big_table-pink-right-5.png",
             "direction": "right",
@@ -2997,21 +2997,21 @@
             "color": "#F5F5DC"
         },
         {
-            "name": "Big Table",
+            "name": "Corner table",
             "tags": [
                 "Big Table"
             ],
             "imagePath": "dist/big_table-pink-right-6.png",
-            "direction": "right",
+            "direction": "front",
             "color": "#c9805e"
         },
         {
-            "name": "Big Table",
+            "name": "Table",
             "tags": [
                 "Big Table"
             ],
             "imagePath": "dist/big_table-brown-right-24.png",
-            "direction": "right",
+            "direction": "front",
             "color": "#ebd2b3"
         },
         {
@@ -3024,12 +3024,12 @@
             "color": "#A9A9A9"
         },
         {
-            "name": "Big Table",
+            "name": "Table",
             "tags": [
                 "Big Table"
             ],
             "imagePath": "dist/big_table-brown-right-25.png",
-            "direction": "right",
+            "direction": "front",
             "color": "#e7ccad"
         },
         {
@@ -3181,7 +3181,7 @@
             "color": "#52a15d"
         },
         {
-            "name": "Big Table",
+            "name": "Table",
             "tags": [
                 "Big Table"
             ],
@@ -3192,7 +3192,7 @@
         {
             "name": "Big Table",
             "tags": [
-                "Big Table"
+                "Office"
             ],
             "imagePath": "dist/big_table-light_blue-right-2.png",
             "direction": "right",
@@ -3244,12 +3244,12 @@
             "color": "#808080"
         },
         {
-            "name": "Big Table",
+            "name": "Table",
             "tags": [
                 "Big Table"
             ],
             "imagePath": "dist/big_table-light_blue-front-2.png",
-            "direction": "front",
+            "direction": "left",
             "color": "#F5F5DC"
         },
         {
@@ -3273,12 +3273,12 @@
             "color": "#dfb871"
         },
         {
-            "name": "Big Table",
+            "name": "Table",
             "tags": [
                 "Big Table"
             ],
             "imagePath": "dist/big_table-brown-right-27.png",
-            "direction": "right",
+            "direction": "front",
             "color": "#F5F5DC"
         },
         {
@@ -3543,21 +3543,21 @@
             "color": "#D3D3D3"
         },
         {
-            "name": "Big Table",
+            "name": "Table",
             "tags": [
                 "Big Table"
             ],
             "imagePath": "dist/big_table-brown-right-28.png",
-            "direction": "right",
+            "direction": "front",
             "color": "#c27957"
         },
         {
-            "name": "Big Table",
+            "name": "Table",
             "tags": [
                 "Big Table"
             ],
             "imagePath": "dist/big_table-brown-right-29.png",
-            "direction": "right",
+            "direction": "front",
             "color": "#dfac77"
         },
         {
@@ -3606,7 +3606,7 @@
                 "Big Table"
             ],
             "imagePath": "dist/big_table-brown-right-30.png",
-            "direction": "right",
+            "direction": "left",
             "color": "#d99167"
         },
         {
@@ -3775,12 +3775,12 @@
             "color": "#98968f"
         },
         {
-            "name": "Big Table",
+            "name": "Table",
             "tags": [
                 "Big Table"
             ],
             "imagePath": "dist/big_table-brown-right-31.png",
-            "direction": "right",
+            "direction": "front",
             "color": "#e3b07a"
         },
         {
@@ -3793,12 +3793,12 @@
             "color": "#808080"
         },
         {
-            "name": "Big Table",
+            "name": "Table",
             "tags": [
                 "Big Table"
             ],
             "imagePath": "dist/big_table-brown-right-32.png",
-            "direction": "right",
+            "direction": "left",
             "color": "#dfac77"
         },
         {
@@ -3874,12 +3874,12 @@
             "color": "#D3D3D3"
         },
         {
-            "name": "Big Table",
+            "name": "Corner table",
             "tags": [
                 "Big Table"
             ],
             "imagePath": "dist/big_table-pink-right-7.png",
-            "direction": "right",
+            "direction": "back",
             "color": "#d3a473"
         },
         {
@@ -4127,7 +4127,7 @@
         {
             "name": "Big Table",
             "tags": [
-                "Big Table"
+                "Office"
             ],
             "imagePath": "dist/big_table-dark_green-right.png",
             "direction": "right",
@@ -4174,12 +4174,12 @@
             "color": "#edbe39"
         },
         {
-            "name": "Big Table",
+            "name": "Table",
             "tags": [
                 "Big Table"
             ],
             "imagePath": "dist/big_table-light_blue-right-3.png",
-            "direction": "right",
+            "direction": "left",
             "color": "#F5F5DC"
         },
         {
@@ -4197,7 +4197,7 @@
                 "Big Table"
             ],
             "imagePath": "dist/big_table-pink-right-8.png",
-            "direction": "right",
+            "direction": "front",
             "color": "#c9805e"
         },
         {
@@ -4390,12 +4390,12 @@
             "color": "#94aea1"
         },
         {
-            "name": "Big Table",
+            "name": "Table",
             "tags": [
                 "Big Table"
             ],
             "imagePath": "dist/big_table-brown-right-33.png",
-            "direction": "right",
+            "direction": "left",
             "color": "#c77e5a"
         },
         {
@@ -4408,12 +4408,12 @@
             "color": "#A9A9A9"
         },
         {
-            "name": "Big Table",
+            "name": "Table",
             "tags": [
                 "Big Table"
             ],
             "imagePath": "dist/big_table-pink-right-9.png",
-            "direction": "right",
+            "direction": "left",
             "color": "#e3af79"
         },
         {
@@ -4426,12 +4426,12 @@
             "color": "#6e9652"
         },
         {
-            "name": "Big Table",
+            "name": "Table",
             "tags": [
                 "Big Table"
             ],
             "imagePath": "dist/big_table-brown-right-34.png",
-            "direction": "right",
+            "direction": "front",
             "color": "#c37a57"
         },
         {
@@ -4494,7 +4494,7 @@
                 "Big Table"
             ],
             "imagePath": "dist/big_table-pink-right-10.png",
-            "direction": "right",
+            "direction": "front",
             "color": "#b07c5d"
         },
         {
@@ -4641,12 +4641,12 @@
             "color": "#727161"
         },
         {
-            "name": "Big Table",
+            "name": "Corner table",
             "tags": [
                 "Big Table"
             ],
             "imagePath": "dist/big_table-brown-right-35.png",
-            "direction": "right",
+            "direction": "back",
             "color": "#c9815f"
         },
         {
@@ -4659,21 +4659,21 @@
             "color": "#D3D3D3"
         },
         {
-            "name": "Big Table",
+            "name": "Table",
             "tags": [
                 "Big Table"
             ],
             "imagePath": "dist/big_table-brown-right-36.png",
-            "direction": "right",
+            "direction": "front",
             "color": "#bc7552"
         },
         {
-            "name": "Big Table",
+            "name": "Table",
             "tags": [
                 "Big Table"
             ],
             "imagePath": "dist/big_table-brown-right-37.png",
-            "direction": "right",
+            "direction": "front",
             "color": "#c17956"
         },
         {
@@ -4731,12 +4731,12 @@
             "color": "#d39d6b"
         },
         {
-            "name": "Big Table",
+            "name": "Table",
             "tags": [
                 "Big Table"
             ],
             "imagePath": "dist/big_table-brown-right-38.png",
-            "direction": "right",
+            "direction": "front",
             "color": "#dccbc0"
         },
         {
@@ -4841,12 +4841,12 @@
             "color": "#808080"
         },
         {
-            "name": "Big Table",
+            "name": "Table",
             "tags": [
                 "Big Table"
             ],
             "imagePath": "dist/big_table-pink-right-11.png",
-            "direction": "right",
+            "direction": "left",
             "color": "#f0d6b6"
         },
         {
@@ -4948,7 +4948,7 @@
         {
             "name": "Big Table",
             "tags": [
-                "Big Table"
+                "Office"
             ],
             "imagePath": "dist/big_table-light_blue-right-4.png",
             "direction": "right",
@@ -5006,12 +5006,12 @@
             "color": "#33abb0"
         },
         {
-            "name": "Big Table",
+            "name": "Table",
             "tags": [
                 "Big Table"
             ],
             "imagePath": "dist/big_table-brown-right-39.png",
-            "direction": "right",
+            "direction": "left",
             "color": "#e9ceae"
         },
         {
@@ -5098,7 +5098,7 @@
             "color": "#D3D3D3"
         },
         {
-            "name": "Big Table",
+            "name": "Corner table",
             "tags": [
                 "Big Table"
             ],
@@ -5107,12 +5107,12 @@
             "color": "#d2a373"
         },
         {
-            "name": "Big Table",
+            "name": "Table",
             "tags": [
                 "Big Table"
             ],
             "imagePath": "dist/big_table-brown-right-41.png",
-            "direction": "right",
+            "direction": "front",
             "color": "#dbc8bc"
         },
         {
@@ -5161,12 +5161,12 @@
             "color": "#637060"
         },
         {
-            "name": "Big Table",
+            "name": "Table",
             "tags": [
                 "Big Table"
             ],
             "imagePath": "dist/big_table-brown-right-42.png",
-            "direction": "right",
+            "direction": "left",
             "color": "#eed3b3"
         },
         {
@@ -5351,12 +5351,12 @@
             "color": "#cb815f"
         },
         {
-            "name": "Big Table",
+            "name": "Table",
             "tags": [
                 "Big Table"
             ],
             "imagePath": "dist/big_table-brown-right-43.png",
-            "direction": "right",
+            "direction": "front",
             "color": "#e9ccab"
         },
         {
@@ -5443,12 +5443,12 @@
             "color": "#99513f"
         },
         {
-            "name": "Big Table",
+            "name": "Table",
             "tags": [
                 "Big Table"
             ],
             "imagePath": "dist/big_table-brown-right-44.png",
-            "direction": "right",
+            "direction": "front",
             "color": "#dfcfc4"
         },
         {
@@ -5497,12 +5497,12 @@
             "color": "#6baba6"
         },
         {
-            "name": "Big Table",
+            "name": "Table",
             "tags": [
                 "Big Table"
             ],
             "imagePath": "dist/big_table-brown-right-45.png",
-            "direction": "right",
+            "direction": "front",
             "color": "#e4b27d"
         },
         {
@@ -5515,12 +5515,12 @@
             "color": "#e5b780"
         },
         {
-            "name": "Big Table",
+            "name": "Table",
             "tags": [
                 "Big Table"
             ],
             "imagePath": "dist/big_table-light_blue-right-5.png",
-            "direction": "right",
+            "direction": "front",
             "color": "#F5F5DC"
         },
         {
@@ -5582,7 +5582,7 @@
             "color": "#d9966b"
         },
         {
-            "name": "Big Table",
+            "name": "Table",
             "tags": [
                 "Big Table"
             ],
@@ -5653,7 +5653,7 @@
             "color": "#75aed0"
         },
         {
-            "name": "Big Table",
+            "name": "Table",
             "tags": [
                 "Big Table"
             ],
@@ -5733,7 +5733,7 @@
         {
             "name": "Big Table",
             "tags": [
-                "Big Table"
+                "Sofa"
             ],
             "imagePath": "dist/big_table-teal-right-1.png",
             "direction": "right",
@@ -5776,12 +5776,12 @@
             "color": "#A9A9A9"
         },
         {
-            "name": "Big Table",
+            "name": "Table",
             "tags": [
                 "Big Table"
             ],
             "imagePath": "dist/big_table-brown-right-48.png",
-            "direction": "right",
+            "direction": "front",
             "color": "#dead78"
         },
         {
@@ -5830,12 +5830,12 @@
             "color": "#cabcb4"
         },
         {
-            "name": "Big Table",
+            "name": "Corner table",
             "tags": [
                 "Big Table"
             ],
             "imagePath": "dist/big_table-pink-right-12.png",
-            "direction": "right",
+            "direction": "front",
             "color": "#d4a575"
         },
         {
@@ -5859,7 +5859,7 @@
         {
             "name": "Big Table",
             "tags": [
-                "Big Table"
+                "Sofa"
             ],
             "imagePath": "dist/big_table-orange-right.png",
             "direction": "right",
@@ -6003,12 +6003,12 @@
             "color": "#9b7a71"
         },
         {
-            "name": "Big Table",
+            "name": "Table",
             "tags": [
                 "Big Table"
             ],
             "imagePath": "dist/big_table-brown-front-1.png",
-            "direction": "front",
+            "direction": "left",
             "color": "#D3D3D3"
         },
         {

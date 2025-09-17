@@ -1,4 +1,3 @@
-
 (() => {
   const API_URL = 'http://localhost:8000';
   const ASSETS_FILE = 'assets_list.json';
@@ -22,7 +21,10 @@
     counts: { tags:{}, direction:{}, color:{} },
     cardsByPath: new Map(),
     filter: { name:'', tags:[], direction:'', colorHex:'' },
-    debounceTimers: {}
+    debounceTimers: {},
+    // Infinite scroll
+    pagination: { batchSize: 50, page: 0, loading: false, renderedCount: 0 },
+    renderList: [] // liste d'assets filtrés
   };
 
   const $ = sel => document.querySelector(sel);
@@ -56,7 +58,53 @@
   function patchText(el, text){ if(el && el.textContent !== text) el.textContent = text; }
   function setHidden(el, hidden){ if(!el) return; el.style.display = hidden ? 'none' : ''; }
 
-    /* Dropdown infra */
+  /* ========= Utils for Validate ========= */
+  function slugify(s){
+    return String(s||'')
+      .trim()
+      .toLowerCase()
+      .replace(/\s+/g, '-')        // spaces -> dashes
+      .replace(/[^a-z0-9\-_]+/g, '') // remove unsafe
+      .replace(/-+/g, '-')          // dedupe -
+      .replace(/^[-_]+|[-_]+$/g,''); // trim - _
+  }
+  function buildFilename(asset){
+    const name = slugify(asset.name || asset.imagePath.split('/').pop().replace(/\.[^.]+$/, ''));
+    const dir  = slugify(asset.direction || '');
+    const col  = slugify(closestColorFamily(asset.color || '') || '');
+    return `${name}_${dir}_${col}.png`;
+  }
+  function downloadJSON(filename, data){
+    const blob = new Blob([JSON.stringify(data, null, 2)], {type:'application/json'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+  }
+
+  /* ========= Notifications (toasts) ========= */
+  function showNotification(type, message){
+    const container = $('#notifications');
+    if (!container) return;
+    const toast = document.createElement('div');
+    toast.className = `toast ${type==='error'?'warn':type==='info'?'info':'success'}`;
+    toast.innerHTML = `<div class="title">${type==='error'?'Error':'Updated'}</div><div class="meta">${escapeHtml(message||'')}</div>`;
+    const dismiss = () => {
+      toast.style.animation = 'toast-out .15s ease-in forwards';
+      setTimeout(()=> toast.remove(), 160);
+    };
+    toast.addEventListener('click', dismiss);
+    container.appendChild(toast);
+    setTimeout(dismiss, 3000);
+  }
+  function escapeHtml(str){
+    return String(str).replace(/[&<>"']/g, m=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[m]));
+  }
+
+  /* ========= Dropdown infra ========= */
   function setupGlobalDropdownCloser(){
     document.addEventListener('click', (e) => {
       $$('.color-options-list[aria-hidden="false"], .tags-list-container[aria-hidden="false"]').forEach(p=>{
@@ -80,6 +128,7 @@
     panel.addEventListener('pointerdown', (e)=> e.stopPropagation());
   }
 
+  /* ========= Counts & Filters metadata ========= */
   function recalcCountsAndTags(){
     const tagsCount = {};
     const dirCount  = {};
@@ -113,6 +162,7 @@
     patchText($('#color-count'), String(Object.keys(COLOR_FAMILIES).length));
   }
 
+  /* ========= Tags inputs ========= */
   function createTagsInput({container, initial=[], onChange}){
     const list = container.querySelector('.tags-list-container');
     const input = container.querySelector('input');
@@ -196,6 +246,7 @@
     return { add, current };
   }
 
+  /* ========= Color select (init silencieuse pour éviter la boucle) ========= */
   function createColorSelect(root, { initialHex='', allowAll=false, onChange, showCounts=true }){
     const display = root.querySelector('.selected-color-display');
     const panel = root.querySelector('.color-options-list');
@@ -204,12 +255,12 @@
     const hexEl  = root.querySelector('.color-hex');
     makePanelInteractive(panel);
 
-    function setValue(hex, label){
+    function setValue(hex, label, { silent=false } = {}){
       swatch.style.backgroundColor = hex || 'transparent';
       nameEl.textContent = label || (hex ? closestColorFamily(hex) : (allowAll ? 'All Colors' : 'Leave unchanged'));
       hexEl.textContent = hex || '';
       root.dataset.hex = hex || '';
-      onChange?.(root.dataset.hex);
+      if (!silent && typeof onChange === 'function') onChange(root.dataset.hex);
     }
     function buildOptions(){
       panel.innerHTML = '';
@@ -252,13 +303,16 @@
     }
 
     buildOptions();
-    setValue(initialHex, initialHex ? closestColorFamily(initialHex) : (allowAll ? 'All Colors' : 'Leave unchanged'));
+    // init silencieuse — ne déclenche pas onChange/updateAsset
+    setValue(initialHex, initialHex ? closestColorFamily(initialHex) : (allowAll ? 'All Colors' : 'Leave unchanged'), { silent:true });
+
     display.addEventListener('click', (e)=>{ e.stopPropagation(); togglePanel(panel, root); });
     display.addEventListener('keydown', (e)=>{ if (e.key==='Enter' || e.key===' ') { e.preventDefault(); togglePanel(panel, root); } });
 
     return { setValue, refreshCounts };
   }
 
+  /* ========= Cards ========= */
   function buildAssetCard(asset){
     const card = document.createElement('div');
     card.className='asset-card';
@@ -393,29 +447,82 @@
     return card;
   }
 
-  function renderAllAssets(initial=false){
-    const container = $('#container');
-    if (initial){
-      container.innerHTML = '';
-      for (const asset of state.data.collection){
-        container.appendChild(buildAssetCard(asset));
-      }
-    }
-    const visible = $$('.asset-card:not(.hidden)').length || state.data.collection.length;
-    patchText($('#assets-count-title'), `${visible} items`);
+  /* ========= Render with infinite scroll ========= */
+  function resetPagination(){
+    state.pagination.page = 0;
+    state.pagination.renderedCount = 0;
+    state.pagination.loading = false;
   }
 
+  function renderPage({ reset=false } = {}){
+    const container = $('#container');
+    if (reset){
+      container.innerHTML = '';
+      state.cardsByPath.clear();
+      resetPagination();
+    }
+    const { batchSize, page } = state.pagination;
+    const end = Math.min((page+1)*batchSize, state.renderList.length);
+    for (let i = state.pagination.renderedCount; i < end; i++){
+      const asset = state.renderList[i];
+      container.appendChild(buildAssetCard(asset));
+    }
+    state.pagination.renderedCount = end;
+    patchText($('#assets-count-title'), `${state.renderList.length} items`);
+  }
+
+  function handleScroll(){
+    if (state.pagination.loading) return;
+    const nearBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 400;
+    if (!nearBottom) return;
+    if (state.pagination.renderedCount >= state.renderList.length) return;
+    state.pagination.loading = true;
+    state.pagination.page += 1;
+    requestAnimationFrame(()=>{
+      renderPage({ reset:false });
+      state.pagination.loading = false;
+    });
+  }
+
+  /* ========= Filtering ========= */
+  function readFilterTags(){
+    const pills = $('#filter-tags-container').querySelectorAll('.tag-pill');
+    return Array.from(pills).map(p=>p.firstChild.textContent.trim());
+  }
+
+  function computeFilteredList(){
+    const nameQ = state.filter.name.toLowerCase();
+    const tags = readFilterTags();
+    const direction = state.filter.direction;
+    const colorHex = state.filter.colorHex;
+    const colorFamily = colorHex ? closestColorFamily(colorHex) : '';
+
+    const out = [];
+    for (const asset of state.data.collection){
+      const nameOk = !nameQ || (asset.name||'').toLowerCase().includes(nameQ);
+      const tagsOk = tags.length===0 || tags.every(t => (asset.tags||[]).includes(t));
+      const dirOk = !direction || asset.direction === direction;
+      const colOk = !colorFamily || closestColorFamily(asset.color) === colorFamily;
+      if (nameOk && tagsOk && dirOk && colOk) out.push(asset);
+    }
+    return out;
+  }
+
+  function filterAssets(){
+    state.renderList = computeFilteredList();
+    renderPage({ reset:true });
+  }
+
+  /* ========= Data updates ========= */
   function updateAsset(imagePath, field, value){
     const asset = state.data.collection.find(a => a.imagePath === imagePath);
     if (!asset) return;
     asset[field] = value;
-    const entry = state.cardsByPath.get(imagePath);
-    if (entry){
-      if (field === 'tags'){ entry.el.dataset.tags = JSON.stringify(asset.tags||[]); }
-      else if (field === 'direction'){ entry.el.dataset.direction = asset.direction || ''; }
-      else if (field === 'color'){ entry.el.dataset.color = asset.color || ''; }
-      else if (field === 'name'){ entry.el.dataset.name = (asset.name||'').toLowerCase(); }
-    }
+
+    const fileLabel = asset.name || (asset.imagePath.split('/').pop() || 'item');
+    const fieldLabel = (field.charAt(0).toUpperCase() + field.slice(1));
+    showNotification('info', `${fieldLabel} updated on "${fileLabel}"`);
+
     recalcCountsAndTags();
     populateFilters();
     pushJSON();
@@ -429,52 +536,7 @@
     }).catch(err=> console.error('Error updating JSON:', err));
   }
 
-  function readFilterTags(){
-    const pills = $('#filter-tags-container').querySelectorAll('.tag-pill');
-    return Array.from(pills).map(p=>p.firstChild.textContent.trim());
-  }
-
-  function filterAssets(){
-    const nameQ = state.filter.name.toLowerCase();
-    const tags = readFilterTags();
-    const direction = state.filter.direction;
-    const colorHex = state.filter.colorHex;
-    const colorFamily = colorHex ? closestColorFamily(colorHex) : '';
-
-    let visible = 0;
-    const cards = $$('.asset-card');
-    for (const card of cards){
-      const path = card.dataset.imagePath;
-      const asset = state.data.collection.find(a=>a.imagePath===path);
-      if (!asset) continue;
-
-      const nameOk = !nameQ || (asset.name||'').toLowerCase().includes(nameQ);
-      const tagsOk = tags.length===0 || tags.every(t => (asset.tags||[]).includes(t));
-      const dirOk = !direction || asset.direction === direction;
-      const colOk = !colorFamily || closestColorFamily(asset.color) === colorFamily;
-
-      const show = nameOk && tagsOk && dirOk && colOk;
-      if (show){ card.classList.remove('hidden'); visible++; }
-      else card.classList.add('hidden');
-    }
-    patchText($('#assets-count-title'), `${visible} items`);
-  }
-
-  function setupGlobalMetadata(){
-    const nameInput = $('#collection-name');
-    nameInput.value = state.data.collectionName || '';
-    nameInput.addEventListener('change', (e)=>{
-      state.data.collectionName = e.target.value;
-      document.title = state.data.collectionName || 'Assets Collection';
-      patchText($('#main-title'), document.title);
-      pushJSON();
-    });
-
-    createSimpleTagsInput($('#global-tags-simple'), state.data.tags||[], (tags)=>{
-      state.data.tags = tags; pushJSON();
-    });
-  }
-
+  /* ========= Modal (bulk) ========= */
   function setupModal(){
     const modal = $('#bulkEditModal');
     const closeBtn = modal.querySelector('.close-btn');
@@ -518,6 +580,7 @@
       const newColor = $('#modal-color-select').dataset.hex || '';
       if (!selected.length) return close();
       if (!confirm(`Are you sure you want to edit ${selected.length} assets?`)) return;
+
       for (const card of selected){
         const path = card.dataset.imagePath;
         const updates = {};
@@ -525,7 +588,10 @@
         if (newTags.length) updates.tags = newTags;
         if (newDir)   updates.direction = newDir;
         if (newColor) updates.color = newColor;
-        for (const [k,v] of Object.entries(updates)){ updateAsset(path, k, v); }
+
+        for (const [k,v] of Object.entries(updates)){
+          updateAsset(path, k, v); // déclenche aussi les toasts
+        }
       }
       close();
     });
@@ -533,6 +599,7 @@
     return { open, close };
   }
 
+  /* ========= Toolbar ========= */
   function updateSelectionUI(){
     const n = $$('.asset-card.selected').length;
     setHidden($('#select-all-btn'), n>0);
@@ -545,7 +612,7 @@
 
   function setupToolbar(modalCtl){
     $('#select-all-btn').addEventListener('click', ()=>{
-      $$('.asset-card:not(.hidden)').forEach(c=>c.classList.add('selected'));
+      $$('.asset-card').forEach(c=>c.classList.add('selected'));
       updateSelectionUI();
     });
     $('#deselect-btn').addEventListener('click', ()=>{
@@ -553,13 +620,60 @@
       updateSelectionUI();
     });
     $('#bulk-edit-btn').addEventListener('click', ()=> modalCtl.open());
-    $('#validate-btn').addEventListener('click', ()=>{
-      const paths = $$('.asset-card.selected').map(c=>c.dataset.imagePath);
-      if (paths.length && confirm(`Are you sure you want to validate the selection of ${paths.length} assets?`)){
-        console.log('Selected:', paths);
-        alert(`Functionality coming soon: ${paths.length} cards selected.`);
+
+    // Validate Selection: copy/rename on server + client JSON export
+    $('#validate-btn').addEventListener('click', async ()=>{
+      const selectedPaths = $$('.asset-card.selected').map(c=>c.dataset.imagePath);
+      if (!selectedPaths.length){
+        alert('Select at least 1 asset.');
+        return;
+      }
+      if (!confirm(`Validate ${selectedPaths.length} assets? Files will be copied/renamed and a JSON will be created.`)) return;
+
+      const selectedAssets = state.data.collection.filter(a => selectedPaths.includes(a.imagePath));
+      const items = selectedAssets.map(a => ({
+        imagePath: a.imagePath,
+        name: a.name || '',
+        tags: a.tags || [],
+        direction: a.direction || '',
+        color: a.color || '',
+        newFilename: buildFilename(a)
+      }));
+
+      // Envoi serveur
+      let serverOk = false;
+      try{
+        const res = await fetch(`${API_URL}/validate_selection`, {
+          method: 'POST',
+          headers: { 'Content-Type':'application/json' },
+          body: JSON.stringify({ targetDir: 'validate elements', items })
+        });
+        if (!res.ok){
+          const txt = await res.text().catch(()=> '');
+          throw new Error(txt || `Server error ${res.status}`);
+        }
+        const out = await res.json().catch(()=> ({}));
+        serverOk = true;
+        showNotification('success', `Validated ${items.length} item(s) on server`);
+        console.log('Validate server response:', out);
+      }catch(err){
+        console.error(err);
+        showNotification('error', `Server validate failed: ${err.message}`);
+      }
+
+      // Export JSON client (toujours, pour traçabilité)
+      const subset = {
+        collectionName: (state.data.collectionName || '') + ' — validated',
+        tags: state.data.tags || [],
+        collection: selectedAssets
+      };
+      downloadJSON('validated-selection.json', subset);
+
+      if (!serverOk){
+        alert('Server validate failed. A local JSON export has been downloaded.');
       }
     });
+
     $('#update-colors-btn').addEventListener('click', ()=>{
       if (!confirm("Are you sure you want to update the colors of all assets? This action is irreversible.")) return;
       fetch(`${API_URL}/update_colors`, { method:'POST', headers:{'Content-Type':'application/json'} })
@@ -569,6 +683,7 @@
     });
   }
 
+  /* ========= Filters wiring ========= */
   function setupFilters(){
     $('#filter-name').addEventListener('input', ()=>{
       debounce('filter-name', ()=>{
@@ -595,6 +710,7 @@
     });
   }
 
+  /* ========= Refresh option counts in cards ========= */
   function refreshDirectionOptionCounts(){
     state.cardsByPath.forEach(({refs})=>{
       const sel = refs?.dirSelect;
@@ -628,6 +744,7 @@
     }
   }
 
+  /* ========= Load & Bootstrap (+ loader) ========= */
   async function loadAssets(){
     try{
       const r = await fetch(`${ASSETS_FILE}?t=${Date.now()}`);
@@ -646,19 +763,13 @@
 
       recalcCountsAndTags();
       populateFilters();
-      renderAllAssets(true);
 
-      for (const a of state.data.collection){
-        const entry = state.cardsByPath.get(a.imagePath);
-        if (entry){
-          entry.el.dataset.name = (a.name||'').toLowerCase();
-          entry.el.dataset.direction = a.direction||'';
-          entry.el.dataset.color = a.color||'';
-          entry.el.dataset.tags = JSON.stringify(a.tags||[]);
-        }
-      }
+      // initial list visible
+      state.renderList = state.data.collection.slice();
+      renderPage({ reset:true });
+
       updateSelectionUI();
-      filterAssets();
+      window.addEventListener('scroll', handleScroll, { passive:true });
     }catch(err){
       console.error(err);
       $('#container').innerHTML = `<p>Error: Could not load data. Ensure "assets_list.json" is present.</p>`;
@@ -674,6 +785,21 @@
     setupToolbar(modalCtl);
     setupGlobalMetadata();
     loadAssets();
+  }
+
+  function setupGlobalMetadata(){
+    const nameInput = $('#collection-name');
+    nameInput.value = state.data.collectionName || '';
+    nameInput.addEventListener('change', (e)=>{
+      state.data.collectionName = e.target.value;
+      document.title = state.data.collectionName || 'Assets Collection';
+      patchText($('#main-title'), document.title);
+      pushJSON();
+    });
+
+    createSimpleTagsInput($('#global-tags-simple'), state.data.tags||[], (tags)=>{
+      state.data.tags = tags; pushJSON();
+    });
   }
 
   document.addEventListener('DOMContentLoaded', init);
