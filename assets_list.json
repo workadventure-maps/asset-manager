@@ -1,0 +1,6035 @@
+{
+    "collectionName": "100 Roads",
+    "tags": [
+        "Flat",
+        "Semi realistic",
+        "100 roads"
+    ],
+    "collection": [
+        {
+            "name": "Corner sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/couche-light_blue-right.png",
+            "direction": "right",
+            "color": "#eaca68"
+        },
+        {
+            "name": "Round Table",
+            "tags": [
+                "Round Table"
+            ],
+            "imagePath": "dist/round_table-brown-right.png",
+            "direction": "front",
+            "color": "#c57a59"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-brown-right.png",
+            "direction": "left",
+            "color": "#af6c4d"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-brown-right.png",
+            "direction": "right",
+            "color": "#FF0000"
+        },
+        {
+            "name": "Tree",
+            "tags": [
+                "Treex",
+                "Outdoorx"
+            ],
+            "imagePath": "dist/tree-dark_blue-left.png",
+            "direction": "front",
+            "color": "#547351"
+        },
+        {
+            "name": "Table",
+            "tags": [
+                "Table"
+            ],
+            "imagePath": "dist/table-brown-right.png",
+            "direction": "left",
+            "color": "#d9bd9f"
+        },
+        {
+            "name": "Two-seater sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/small_couche-red-right.png",
+            "direction": "front",
+            "color": "#FF0000"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-brown-right.png",
+            "direction": "front",
+            "color": "#97705d"
+        },
+        {
+            "name": "Two-seater sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/small_couche-brown-right.png",
+            "direction": "back",
+            "color": "#FF7F50"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-brown-right-1.png",
+            "direction": "front",
+            "color": "#b0728b"
+        },
+        {
+            "name": "Solo Puff",
+            "tags": [
+                "Solo Puff"
+            ],
+            "imagePath": "dist/solo_puff-red-right.png",
+            "direction": "front",
+            "color": "#FF0000"
+        },
+        {
+            "name": "Couche",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-light_blue-right.png",
+            "direction": "right",
+            "color": "#bab9bd"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-brown-right-2.png",
+            "direction": "left",
+            "color": "#c2a9a0"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-pink-right.png",
+            "direction": "front",
+            "color": "#d1a272"
+        },
+        {
+            "name": "Solo Puff",
+            "tags": [
+                "Solo Puff"
+            ],
+            "imagePath": "dist/solo_puff-pink-right.png",
+            "direction": "front",
+            "color": "#eba9cb"
+        },
+        {
+            "name": "Round Table",
+            "tags": [
+                "Round Table"
+            ],
+            "imagePath": "dist/round_table-pink-front.png",
+            "direction": "front",
+            "color": "#D2B48C"
+        },
+        {
+            "name": "Small Table",
+            "tags": [
+                "Small Table"
+            ],
+            "imagePath": "dist/small_table-brown-right.png",
+            "direction": "front",
+            "color": "#d9c3b6"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-brown-front.png",
+            "direction": "front",
+            "color": "#a3736e"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-pink-right.png",
+            "direction": "back",
+            "color": "#d7b69c"
+        },
+        {
+            "name": "Tree",
+            "tags": [
+                "Tree"
+            ],
+            "imagePath": "dist/tree-dark_blue-left-1.png",
+            "direction": "front",
+            "color": "#435050"
+        },
+        {
+            "name": "Small Table",
+            "tags": [
+                "Small Table"
+            ],
+            "imagePath": "dist/small_table-light_blue-front.png",
+            "direction": "back",
+            "color": "#A9A9A9"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-light_blue-right.png",
+            "direction": "right",
+            "color": "#ceb9a9"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-light_blue-right.png",
+            "direction": "right",
+            "color": "#c8c7c8"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-teal-right.png",
+            "direction": "left",
+            "color": "#808080"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-brown-right-1.png",
+            "direction": "front",
+            "color": "#be7654"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-brown-right-1.png",
+            "direction": "left",
+            "color": "#d9bba2"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-brown-right-3.png",
+            "direction": "right",
+            "color": "#af6e6f"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-brown-right-2.png",
+            "direction": "right",
+            "color": "#e5b27d"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-brown-right-2.png",
+            "direction": "right",
+            "color": "#FF0000"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-pink-right-1.png",
+            "direction": "right",
+            "color": "#c2815e"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-light_blue-front.png",
+            "direction": "front",
+            "color": "#86a2a4"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-brown-right-4.png",
+            "direction": "right",
+            "color": "#c2a99f"
+        },
+        {
+            "name": "Corner sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/couche-light_blue-right-1.png",
+            "direction": "right",
+            "color": "#84c182"
+        },
+        {
+            "name": "Tree",
+            "tags": [
+                "Tree"
+            ],
+            "imagePath": "dist/tree-dark_green-down.png",
+            "direction": "front",
+            "color": "#52944a"
+        },
+        {
+            "name": "Corner sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/couche-orange-back.png",
+            "direction": "back",
+            "color": "#e5905d"
+        },
+        {
+            "name": "Corner sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/couche-light_blue-right-2.png",
+            "direction": "left",
+            "color": "#e4bca3"
+        },
+        {
+            "name": "Lamp",
+            "tags": [
+                "Lamp"
+            ],
+            "imagePath": "dist/lamp-orange-right.png",
+            "direction": "right",
+            "color": "#d08240"
+        },
+        {
+            "name": "Tree",
+            "tags": [
+                "Tree"
+            ],
+            "imagePath": "dist/tree-dark_blue-right.png",
+            "direction": "right",
+            "color": "#5c7c63"
+        },
+        {
+            "name": "Round Table",
+            "tags": [
+                "Round Table"
+            ],
+            "imagePath": "dist/round_table-pink-right.png",
+            "direction": "right",
+            "color": "#d18462"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-pink-right-2.png",
+            "direction": "back",
+            "color": "#d9b199"
+        },
+        {
+            "name": "Small Table",
+            "tags": [
+                "Small Table"
+            ],
+            "imagePath": "dist/small_table-brown-front.png",
+            "direction": "front",
+            "color": "#808080"
+        },
+        {
+            "name": "Two-seater sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/small_couche-brown-right-1.png",
+            "direction": "right",
+            "color": "#545453"
+        },
+        {
+            "name": "Bookshelves",
+            "tags": [
+                "Bookshelves"
+            ],
+            "imagePath": "dist/bookshelves-light_blue-right.png",
+            "direction": "right",
+            "color": "#a49f93"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-pink-right.png",
+            "direction": "right",
+            "color": "#A9A9A9"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-brown-right-3.png",
+            "direction": "right",
+            "color": "#c07755"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-dark_green-right.png",
+            "direction": "right",
+            "color": "#1e5340"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-light_blue-right-1.png",
+            "direction": "left",
+            "color": "#cdb8a8"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-light_blue-right-1.png",
+            "direction": "left",
+            "color": "#c8c7c8"
+        },
+        {
+            "name": "Tree",
+            "tags": [
+                "Tree"
+            ],
+            "imagePath": "dist/tree-dark_blue-right-1.png",
+            "direction": "right",
+            "color": "#574a4a"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-brown-right-5.png",
+            "direction": "right",
+            "color": "#c89b81"
+        },
+        {
+            "name": "Round Table",
+            "tags": [
+                "Round Table"
+            ],
+            "imagePath": "dist/round_table-pink-right-1.png",
+            "direction": "right",
+            "color": "#dfad7a"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-brown-right-6.png",
+            "direction": "front",
+            "color": "#71584b"
+        },
+        {
+            "name": "Solo Puff",
+            "tags": [
+                "Solo Puff"
+            ],
+            "imagePath": "dist/solo_puff-brown-right.png",
+            "direction": "right",
+            "color": "#808080"
+        },
+        {
+            "name": "Round Table",
+            "tags": [
+                "Round Table"
+            ],
+            "imagePath": "dist/round_table-pink-back.png",
+            "direction": "back",
+            "color": "#D2B48C"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-brown-right-7.png",
+            "direction": "left",
+            "color": "#c89b81"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-brown-right-8.png",
+            "direction": "left",
+            "color": "#a05941"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-light_blue-right-2.png",
+            "direction": "left",
+            "color": "#b48974"
+        },
+        {
+            "name": "Puff",
+            "tags": [
+                "Puff"
+            ],
+            "imagePath": "dist/puff-teal-right.png",
+            "direction": "right",
+            "color": "#37a8b0"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-brown-right-9.png",
+            "direction": "left",
+            "color": "#c79ca3"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-brown-right-10.png",
+            "direction": "back",
+            "color": "#af6a4e"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-brown-right-4.png",
+            "direction": "right",
+            "color": "#e7caa9"
+        },
+        {
+            "name": "Bookshelves",
+            "tags": [
+                "Bookshelves"
+            ],
+            "imagePath": "dist/bookshelves-light_blue-right-1.png",
+            "direction": "right",
+            "color": "#808080"
+        },
+        {
+            "name": "Two-seater sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/small_couche-teal-right.png",
+            "direction": "right",
+            "color": "#53a25d"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-orange-right.png",
+            "direction": "right",
+            "color": "#73685a"
+        },
+        {
+            "name": "Round Table",
+            "tags": [
+                "Round Table"
+            ],
+            "imagePath": "dist/round_table-brown-right-1.png",
+            "direction": "right",
+            "color": "#d1bda9"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-red-right.png",
+            "direction": "left",
+            "color": "#d6726a"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-brown-right-11.png",
+            "direction": "back",
+            "color": "#b36e4b"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-brown-right-5.png",
+            "direction": "left",
+            "color": "#dfd2c8"
+        },
+        {
+            "name": "Corner sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/couche-teal-right.png",
+            "direction": "left",
+            "color": "#63b9bf"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-light_blue-right-2.png",
+            "direction": "right",
+            "color": "#8eacb3"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-brown-right-6.png",
+            "direction": "left",
+            "color": "#D3D3D3"
+        },
+        {
+            "name": "Corner sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/couche-light_blue-front.png",
+            "direction": "front",
+            "color": "#70b9c0"
+        },
+        {
+            "name": "Tree",
+            "tags": [
+                "Tree"
+            ],
+            "imagePath": "dist/tree-green-up.png",
+            "direction": "front",
+            "color": "#228B22"
+        },
+        {
+            "name": "Lamp",
+            "tags": [
+                "Lamp"
+            ],
+            "imagePath": "dist/lamp-pink-right.png",
+            "direction": "right",
+            "color": "#ebd792"
+        },
+        {
+            "name": "Corner sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/couche-light_blue-front-1.png",
+            "direction": "front",
+            "color": "#7eafce"
+        },
+        {
+            "name": "Corner sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/couche-light_blue-front-2.png",
+            "direction": "front",
+            "color": "#ab7d7b"
+        },
+        {
+            "name": "Corner sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/couche-light_blue-front-3.png",
+            "direction": "front",
+            "color": "#da5667"
+        },
+        {
+            "name": "Round Table",
+            "tags": [
+                "Round Table"
+            ],
+            "imagePath": "dist/round_table-pink-right-2.png",
+            "direction": "right",
+            "color": "#d08361"
+        },
+        {
+            "name": "Solo Puff",
+            "tags": [
+                "Solo Puff"
+            ],
+            "imagePath": "dist/solo_puff-red-front.png",
+            "direction": "front",
+            "color": "#FF0000"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-red-right-1.png",
+            "direction": "right",
+            "color": "#d6726a"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-pink-front.png",
+            "direction": "right",
+            "color": "#d5bfb1"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-orange-right-1.png",
+            "direction": "right",
+            "color": "#7e7361"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-brown-right-3.png",
+            "direction": "right",
+            "color": "#9b6356"
+        },
+        {
+            "name": "Two-seater sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/small_couche-brown-front.png",
+            "direction": "front",
+            "color": "#994b44"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-brown-right-7.png",
+            "direction": "right",
+            "color": "#c8815f"
+        },
+        {
+            "name": "Two-seater sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/small_couche-red-right-1.png",
+            "direction": "right",
+            "color": "#c20a2b"
+        },
+        {
+            "name": "Trash",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-pink-right-3.png",
+            "direction": "right",
+            "color": "#c38c81"
+        },
+        {
+            "name": "Regular Table",
+            "tags": [
+                "Regular Table"
+            ],
+            "imagePath": "dist/regular_table-orange-right.png",
+            "direction": "right",
+            "color": "#e5b67e"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-brown-right-4.png",
+            "direction": "right",
+            "color": "#dabba3"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-brown-right-12.png",
+            "direction": "right",
+            "color": "#a86c48"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-light_blue-right-3.png",
+            "direction": "right",
+            "color": "#b48a75"
+        },
+        {
+            "name": "Single sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/solo_couche-light_blue-right.png",
+            "direction": "right",
+            "color": "#A9A9A9"
+        },
+        {
+            "name": "Single sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/solo_couche-pink-right.png",
+            "direction": "right",
+            "color": "#d69cbe"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-pink-right-4.png",
+            "direction": "back",
+            "color": "#d8baa2"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-brown-right-13.png",
+            "direction": "front",
+            "color": "#808080"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-pink-right-1.png",
+            "direction": "right",
+            "color": "#d4a574"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-brown-right-14.png",
+            "direction": "right",
+            "color": "#b39694"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-brown-front-1.png",
+            "direction": "back",
+            "color": "#af6a48"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-brown-right-15.png",
+            "direction": "right",
+            "color": "#a05a41"
+        },
+        {
+            "name": "Puff",
+            "tags": [
+                "Puff"
+            ],
+            "imagePath": "dist/puff-purple-right.png",
+            "direction": "right",
+            "color": "#b67cb5"
+        },
+        {
+            "name": "Single sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/solo_couche-pink-right-1.png",
+            "direction": "right",
+            "color": "#eba7cb"
+        },
+        {
+            "name": "Puff",
+            "tags": [
+                "Puff"
+            ],
+            "imagePath": "dist/puff-orange-right.png",
+            "direction": "right",
+            "color": "#f4c035"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-brown-right-8.png",
+            "direction": "right",
+            "color": "#e1af79"
+        },
+        {
+            "name": "Regular Table",
+            "tags": [
+                "Regular Table"
+            ],
+            "imagePath": "dist/regular_table-orange-right-1.png",
+            "direction": "right",
+            "color": "#e5b881"
+        },
+        {
+            "name": "Bookshelves",
+            "tags": [
+                "Bookshelves"
+            ],
+            "imagePath": "dist/bookshelves-light_blue-right-2.png",
+            "direction": "right",
+            "color": "#979483"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-teal-right.png",
+            "direction": "right",
+            "color": "#676c4e"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-pink-right-5.png",
+            "direction": "left",
+            "color": "#c1805d"
+        },
+        {
+            "name": "Tree",
+            "tags": [
+                "Tree"
+            ],
+            "imagePath": "dist/tree-dark_blue-up.png",
+            "direction": "front",
+            "color": "#808080"
+        },
+        {
+            "name": "Solo Puff",
+            "tags": [
+                "Solo Puff"
+            ],
+            "imagePath": "dist/solo_puff-red-right-1.png",
+            "direction": "left",
+            "color": "#d08089"
+        },
+        {
+            "name": "Tree",
+            "tags": [
+                "Tree"
+            ],
+            "imagePath": "dist/tree-dark_green-right.png",
+            "direction": "right",
+            "color": "#228B22"
+        },
+        {
+            "name": "Small Table",
+            "tags": [
+                "Small Table"
+            ],
+            "imagePath": "dist/small_table-brown-right-1.png",
+            "direction": "right",
+            "color": "#F5F5DC"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-light_blue-right-3.png",
+            "direction": "right",
+            "color": "#F5F5DC"
+        },
+        {
+            "name": "Corner sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/couche-light_blue-front-4.png",
+            "direction": "front",
+            "color": "#de966c"
+        },
+        {
+            "name": "Lamp",
+            "tags": [
+                "Lamp"
+            ],
+            "imagePath": "dist/lamp-light_blue-right.png",
+            "direction": "right",
+            "color": "#91b5a9"
+        },
+        {
+            "name": "Lamp",
+            "tags": [
+                "Lamp"
+            ],
+            "imagePath": "dist/lamp-orange-front.png",
+            "direction": "front",
+            "color": "#c7915d"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-brown-right-9.png",
+            "direction": "right",
+            "color": "#dbcabf"
+        },
+        {
+            "name": "Round Table",
+            "tags": [
+                "Round Table"
+            ],
+            "imagePath": "dist/round_table-brown-right-2.png",
+            "direction": "right",
+            "color": "#c27757"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-brown-right-10.png",
+            "direction": "right",
+            "color": "#e1d4cb"
+        },
+        {
+            "name": "Corner sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/couche-light_blue-front-5.png",
+            "direction": "front",
+            "color": "#c19ec4"
+        },
+        {
+            "name": "Corner sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/couche-light_blue-right-3.png",
+            "direction": "right",
+            "color": "#D3D3D3"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-red-right.png",
+            "direction": "right",
+            "color": "#d1c5c6"
+        },
+        {
+            "name": "Tree",
+            "tags": [
+                "Tree"
+            ],
+            "imagePath": "dist/tree-dark_blue-right-2.png",
+            "direction": "right",
+            "color": "#6a705a"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-teal-right-1.png",
+            "direction": "right",
+            "color": "#826860"
+        },
+        {
+            "name": "Poster",
+            "tags": [
+                "Poster"
+            ],
+            "imagePath": "dist/poster-cyan-front.png",
+            "direction": "front",
+            "color": "#00FFFF"
+        },
+        {
+            "name": "Bookshelves",
+            "tags": [
+                "Bookshelves"
+            ],
+            "imagePath": "dist/bookshelves-light_blue-right-3.png",
+            "direction": "right",
+            "color": "#A9A9A9"
+        },
+        {
+            "name": "Bookshelves",
+            "tags": [
+                "Bookshelves"
+            ],
+            "imagePath": "dist/bookshelves-light_blue-right-4.png",
+            "direction": "right",
+            "color": "#989589"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-brown-right-5.png",
+            "direction": "right",
+            "color": "#857061"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-brown-right-11.png",
+            "direction": "right",
+            "color": "#e1af7a"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-pink-right-6.png",
+            "direction": "left",
+            "color": "#c2abc2"
+        },
+        {
+            "name": "Single sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/solo_couche-pink-right-2.png",
+            "direction": "right",
+            "color": "#e2a0c3"
+        },
+        {
+            "name": "Puff",
+            "tags": [
+                "Puff"
+            ],
+            "imagePath": "dist/puff-light_blue-right.png",
+            "direction": "right",
+            "color": "#4a99c8"
+        },
+        {
+            "name": "Round Table",
+            "tags": [
+                "Round Table"
+            ],
+            "imagePath": "dist/round_table-pink-front-1.png",
+            "direction": "front",
+            "color": "#d7a476"
+        },
+        {
+            "name": "Small Table",
+            "tags": [
+                "Small Table"
+            ],
+            "imagePath": "dist/small_table-brown-right-2.png",
+            "direction": "right",
+            "color": "#D3D3D3"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-brown-right-16.png",
+            "direction": "front",
+            "color": "#a86d5f"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-brown-front-2.png",
+            "direction": "front",
+            "color": "#b27053"
+        },
+        {
+            "name": "Single sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/solo_couche-light_blue-right-1.png",
+            "direction": "right",
+            "color": "#c7c6c8"
+        },
+        {
+            "name": "Tree",
+            "tags": [
+                "Tree"
+            ],
+            "imagePath": "dist/tree-dark_blue-right-3.png",
+            "direction": "right",
+            "color": "#574a4a"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-light_blue-front-1.png",
+            "direction": "front",
+            "color": "#D3D3D3"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-brown-front.png",
+            "direction": "front",
+            "color": "#ddc0aa"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-pink-right-7.png",
+            "direction": "back",
+            "color": "#cfb9a1"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-pink-left.png",
+            "direction": "front",
+            "color": "#d0bca9"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-brown-right-12.png",
+            "direction": "right",
+            "color": "#a46b5c"
+        },
+        {
+            "name": "Table",
+            "tags": [
+                "Table"
+            ],
+            "imagePath": "dist/table-pink-right.png",
+            "direction": "right",
+            "color": "#ca815f"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-orange-right-2.png",
+            "direction": "right",
+            "color": "#808080"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-teal-right-2.png",
+            "direction": "right",
+            "color": "#79685b"
+        },
+        {
+            "name": "Tree",
+            "tags": [
+                "Tree"
+            ],
+            "imagePath": "dist/tree-dark_blue-right-4.png",
+            "direction": "right",
+            "color": "#67794b"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-brown-right-17.png",
+            "direction": "back",
+            "color": "#b16444"
+        },
+        {
+            "name": "Small Table",
+            "tags": [
+                "Small Table"
+            ],
+            "imagePath": "dist/small_table-brown-right-3.png",
+            "direction": "right",
+            "color": "#b07b5c"
+        },
+        {
+            "name": "Lamp",
+            "tags": [
+                "Lamp"
+            ],
+            "imagePath": "dist/lamp-brown-front.png",
+            "direction": "front",
+            "color": "#000000"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-brown-right-6.png",
+            "direction": "right",
+            "color": "#FF0000"
+        },
+        {
+            "name": "Corner Sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/couche-brown-right.png",
+            "direction": "right",
+            "color": "#535352"
+        },
+        {
+            "name": "Corner sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/couche-light_blue-front-6.png",
+            "direction": "front",
+            "color": "#8bc08c"
+        },
+        {
+            "name": "Tree",
+            "tags": [
+                "Tree"
+            ],
+            "imagePath": "dist/tree-teal-up.png",
+            "direction": "front",
+            "color": "#187b52"
+        },
+        {
+            "name": "Lamp",
+            "tags": [
+                "Lamp"
+            ],
+            "imagePath": "dist/lamp-pink-front.png",
+            "direction": "front",
+            "color": "#D2B48C"
+        },
+        {
+            "name": "Corner sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/couche-brown-back.png",
+            "direction": "back",
+            "color": "#a9736e"
+        },
+        {
+            "name": "Single sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/chairs-pink-right-8.png",
+            "direction": "right",
+            "color": "#b1745e"
+        },
+        {
+            "name": "Corner sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/couche-light_blue-front-7.png",
+            "direction": "front",
+            "color": "#d95667"
+        },
+        {
+            "name": "Two-seater sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/small_couche-red-front.png",
+            "direction": "front",
+            "color": "#FF0000"
+        },
+        {
+            "name": "Two-seater sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/small_couche-light_blue-right.png",
+            "direction": "left",
+            "color": "#4799c6"
+        },
+        {
+            "name": "Two-seater sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/small_couche-pink-right.png",
+            "direction": "right",
+            "color": "#eaa5ca"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-orange-right.png",
+            "direction": "left",
+            "color": "#c4873d"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-brown-right-13.png",
+            "direction": "left",
+            "color": "#F5F5DC"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-orange-right-3.png",
+            "direction": "left",
+            "color": "#D2B48C"
+        },
+        {
+            "name": "Two-seater sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/small_couche-teal-right-1.png",
+            "direction": "right",
+            "color": "#5db35f"
+        },
+        {
+            "name": "Poster",
+            "tags": [
+                "Poster"
+            ],
+            "imagePath": "dist/poster-pink-right.png",
+            "direction": "right",
+            "color": "#3b735b"
+        },
+        {
+            "name": "Table",
+            "tags": [
+                "Table"
+            ],
+            "imagePath": "dist/table-pink-left.png",
+            "direction": "front",
+            "color": "#ad9487"
+        },
+        {
+            "name": "Bookshelves",
+            "tags": [
+                "Bookshelves"
+            ],
+            "imagePath": "dist/bookshelves-brown-right.png",
+            "direction": "right",
+            "color": "#97958e"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-brown-right-18.png",
+            "direction": "right",
+            "color": "#9fb280"
+        },
+        {
+            "name": "Solo Puff",
+            "tags": [
+                "Solo Puff"
+            ],
+            "imagePath": "dist/solo_puff-light_blue-right.png",
+            "direction": "right",
+            "color": "#73a9c9"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-brown-front.png",
+            "direction": "front",
+            "color": "#c0714e"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-brown-right-14.png",
+            "direction": "right",
+            "color": "#e9ceae"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-pink-right-9.png",
+            "direction": "right",
+            "color": "#d8b9c9"
+        },
+        {
+            "name": "Single sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/small_couche-brown-front-1.png",
+            "direction": "front",
+            "color": "#575756"
+        },
+        {
+            "name": "Single sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/solo_couche-pink-right-3.png",
+            "direction": "right",
+            "color": "#edc040"
+        },
+        {
+            "name": "Round Table",
+            "tags": [
+                "Round Table"
+            ],
+            "imagePath": "dist/round_table-brown-right-3.png",
+            "direction": "right",
+            "color": "#e4c4a7"
+        },
+        {
+            "name": "Round Table",
+            "tags": [
+                "Round Table"
+            ],
+            "imagePath": "dist/round_table-pink-right-3.png",
+            "direction": "right",
+            "color": "#e4ac8c"
+        },
+        {
+            "name": "Single sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/solo_couche-light_blue-right-2.png",
+            "direction": "right",
+            "color": "#4c9bc7"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-pink-right-10.png",
+            "direction": "right",
+            "color": "#c2abc2"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-pink-front-1.png",
+            "direction": "back",
+            "color": "#c29563"
+        },
+        {
+            "name": "Solo Puff",
+            "tags": [
+                "Solo Puff"
+            ],
+            "imagePath": "dist/solo_puff-purple-right.png",
+            "direction": "right",
+            "color": "#ae76af"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-brown-right-15.png",
+            "direction": "left",
+            "color": "#f1dabe"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-brown-right-19.png",
+            "direction": "back",
+            "color": "#a76d51"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-brown-right-7.png",
+            "direction": "right",
+            "color": "#9aa77f"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-pink-right-2.png",
+            "direction": "left",
+            "color": "#e7b47d"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-teal-right-3.png",
+            "direction": "left",
+            "color": "#99c09e"
+        },
+        {
+            "name": "Bookshelves",
+            "tags": [
+                "Bookshelves"
+            ],
+            "imagePath": "dist/bookshelves-brown-right-1.png",
+            "direction": "right",
+            "color": "#98968f"
+        },
+        {
+            "name": "Table",
+            "tags": [
+                "Table"
+            ],
+            "imagePath": "dist/table-brown-right-1.png",
+            "direction": "right",
+            "color": "#ca825e"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-brown-right-20.png",
+            "direction": "right",
+            "color": "#d9966b"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-orange-left.png",
+            "direction": "front",
+            "color": "#977062"
+        },
+        {
+            "name": "Table",
+            "tags": [
+                "Table"
+            ],
+            "imagePath": "dist/table-pink-right-1.png",
+            "direction": "right",
+            "color": "#d9bb9c"
+        },
+        {
+            "name": "Lamp",
+            "tags": [
+                "Lamp"
+            ],
+            "imagePath": "dist/lamp-light_blue-front.png",
+            "direction": "front",
+            "color": "#D3D3D3"
+        },
+        {
+            "name": "Corner sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/couche-brown-front.png",
+            "direction": "front",
+            "color": "#535353"
+        },
+        {
+            "name": "Single sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/solo_couche-red-right.png",
+            "direction": "left",
+            "color": "#FF0000"
+        },
+        {
+            "name": "Corner sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/couche-teal-right-1.png",
+            "direction": "right",
+            "color": "#63b9bf"
+        },
+        {
+            "name": "Corner sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/couche-light_blue-right-4.png",
+            "direction": "right",
+            "color": "#c89a86"
+        },
+        {
+            "name": "Single sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/chairs-pink-right-11.png",
+            "direction": "right",
+            "color": "#a46a5c"
+        },
+        {
+            "name": "Poster",
+            "tags": [
+                "Poster"
+            ],
+            "imagePath": "dist/poster-teal-right.png",
+            "direction": "left",
+            "color": "#2da0a7"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-brown-front-1.png",
+            "direction": "front",
+            "color": "#9c9292"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-orange-right-1.png",
+            "direction": "right",
+            "color": "#c5883d"
+        },
+        {
+            "name": "Solo Puff",
+            "tags": [
+                "Solo Puff"
+            ],
+            "imagePath": "dist/solo_puff-orange-right.png",
+            "direction": "right",
+            "color": "#e2c267"
+        },
+        {
+            "name": "Table",
+            "tags": [
+                "Table"
+            ],
+            "imagePath": "dist/table-brown-right-2.png",
+            "direction": "right",
+            "color": "#d9bd9f"
+        },
+        {
+            "name": "Table",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-pink-right-12.png",
+            "direction": "right",
+            "color": "#9f8779"
+        },
+        {
+            "name": "Poster",
+            "tags": [
+                "Poster"
+            ],
+            "imagePath": "dist/poster-brown-right.png",
+            "direction": "right",
+            "color": "#808080"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-brown-down.png",
+            "direction": "left",
+            "color": "#c2724f"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-brown-right-8.png",
+            "direction": "right",
+            "color": "#D2691E"
+        },
+        {
+            "name": "Single sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/solo_couche-light_blue-right-3.png",
+            "direction": "right",
+            "color": "#3f86b5"
+        },
+        {
+            "name": "Round Table",
+            "tags": [
+                "Round Table"
+            ],
+            "imagePath": "dist/round_table-brown-right-4.png",
+            "direction": "right",
+            "color": "#e7c9ac"
+        },
+        {
+            "name": "Single sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/solo_couche-orange-right.png",
+            "direction": "right",
+            "color": "#d9aa3d"
+        },
+        {
+            "name": "Small Table",
+            "tags": [
+                "Small Table"
+            ],
+            "imagePath": "dist/small_table-brown-right-4.png",
+            "direction": "right",
+            "color": "#4d453f"
+        },
+        {
+            "name": "Puff",
+            "tags": [
+                "Puff"
+            ],
+            "imagePath": "dist/puff-pink-right.png",
+            "direction": "right",
+            "color": "#f2a8cc"
+        },
+        {
+            "name": "Corner sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/couche-red-right.png",
+            "direction": "right",
+            "color": "#FF0000"
+        },
+        {
+            "name": "Small Table",
+            "tags": [
+                "Small Table"
+            ],
+            "imagePath": "dist/small_table-brown-front-1.png",
+            "direction": "front",
+            "color": "#4f4f4f"
+        },
+        {
+            "name": "Bookshelves",
+            "tags": [
+                "Bookshelves"
+            ],
+            "imagePath": "dist/bookshelves-brown-right-2.png",
+            "direction": "right",
+            "color": "#855561"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-brown-right-16.png",
+            "direction": "right",
+            "color": "#dba974"
+        },
+        {
+            "name": "Solo Puff",
+            "tags": [
+                "Solo Puff"
+            ],
+            "imagePath": "dist/solo_puff-light_blue-right-1.png",
+            "direction": "right",
+            "color": "#6a8699"
+        },
+        {
+            "name": "Bookshelves",
+            "tags": [
+                "Bookshelves"
+            ],
+            "imagePath": "dist/bookshelves-brown-right-3.png",
+            "direction": "right",
+            "color": "#A9A9A9"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-brown-right-17.png",
+            "direction": "right",
+            "color": "#e1ae78"
+        },
+        {
+            "name": "Bookshelves",
+            "tags": [
+                "Bookshelves"
+            ],
+            "imagePath": "dist/bookshelves-light_blue-right-5.png",
+            "direction": "right",
+            "color": "#979386"
+        },
+        {
+            "name": "Bookshelves",
+            "tags": [
+                "Bookshelves"
+            ],
+            "imagePath": "dist/bookshelves-brown-right-4.png",
+            "direction": "right",
+            "color": "#808080"
+        },
+        {
+            "name": "Two-seater sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/small_couche-brown-front-2.png",
+            "direction": "front",
+            "color": "#4f4f4e"
+        },
+        {
+            "name": "Two-seater sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/small_couche-teal-right-2.png",
+            "direction": "right",
+            "color": "#5db35f"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-dark_green-front.png",
+            "direction": "front",
+            "color": "#3f4e4f"
+        },
+        {
+            "name": "Two-seater sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/small_couche-light_blue-right-1.png",
+            "direction": "right",
+            "color": "#c5c4c6"
+        },
+        {
+            "name": "Lamp",
+            "tags": [
+                "Lamp"
+            ],
+            "imagePath": "dist/lamp-teal-front.png",
+            "direction": "front",
+            "color": "#93ab96"
+        },
+        {
+            "name": "Corner sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/couche-pink-right.png",
+            "direction": "right",
+            "color": "#e5bda3"
+        },
+        {
+            "name": "Corner sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/couche-light_blue-right-5.png",
+            "direction": "right",
+            "color": "#de966c"
+        },
+        {
+            "name": "Single sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/solo_couche-brown-right.png",
+            "direction": "right",
+            "color": "#994b43"
+        },
+        {
+            "name": "Lamp",
+            "tags": [
+                "Lamp"
+            ],
+            "imagePath": "dist/lamp-light_blue-front-1.png",
+            "direction": "front",
+            "color": "#c4c0a1"
+        },
+        {
+            "name": "Corner sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/couche-light_blue-front-8.png",
+            "direction": "front",
+            "color": "#D3D3D3"
+        },
+        {
+            "name": "Computer",
+            "tags": [
+                "Computer"
+            ],
+            "imagePath": "dist/computer-dark_blue-right.png",
+            "direction": "right",
+            "color": "#5b7380"
+        },
+        {
+            "name": "Table",
+            "tags": [
+                "Table"
+            ],
+            "imagePath": "dist/table-brown-right-3.png",
+            "direction": "right",
+            "color": "#dbbfa1"
+        },
+        {
+            "name": "Bookshelves",
+            "tags": [
+                "Bookshelves"
+            ],
+            "imagePath": "dist/bookshelves-brown-right-5.png",
+            "direction": "right",
+            "color": "#808080"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-light_blue-front.png",
+            "direction": "front",
+            "color": "#F5F5DC"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-pink-left-1.png",
+            "direction": "front",
+            "color": "#979691"
+        },
+        {
+            "name": "Poster",
+            "tags": [
+                "Poster"
+            ],
+            "imagePath": "dist/poster-pink-right-1.png",
+            "direction": "right",
+            "color": "#dccda0"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-teal-right-4.png",
+            "direction": "left",
+            "color": "#8ebcbf"
+        },
+        {
+            "name": "Lamp",
+            "tags": [
+                "Lamp"
+            ],
+            "imagePath": "dist/lamp-brown-right.png",
+            "direction": "right",
+            "color": "#e4c8a7"
+        },
+        {
+            "name": "Bookshelves",
+            "tags": [
+                "Bookshelves"
+            ],
+            "imagePath": "dist/bookshelves-brown-right-6.png",
+            "direction": "right",
+            "color": "#a2ad94"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-brown-right-21.png",
+            "direction": "left",
+            "color": "#A9A9A9"
+        },
+        {
+            "name": "Single sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/solo_couche-brown-front.png",
+            "direction": "front",
+            "color": "#494848"
+        },
+        {
+            "name": "Solo Puff",
+            "tags": [
+                "Solo Puff"
+            ],
+            "imagePath": "dist/solo_puff-teal-right.png",
+            "direction": "right",
+            "color": "#4caf5b"
+        },
+        {
+            "name": "Solo Puff",
+            "tags": [
+                "Solo Puff"
+            ],
+            "imagePath": "dist/solo_puff-teal-right-1.png",
+            "direction": "right",
+            "color": "#3e92c4"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-pink-up.png",
+            "direction": "left",
+            "color": "#c3bbb4"
+        },
+        {
+            "name": "Single sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/solo_couche-red-front.png",
+            "direction": "front",
+            "color": "#FF0000"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-pink-right-1.png",
+            "direction": "left",
+            "color": "#e5b943"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-brown-right-22.png",
+            "direction": "left",
+            "color": "#ae6e6f"
+        },
+        {
+            "name": "Round Table",
+            "tags": [
+                "Round Table"
+            ],
+            "imagePath": "dist/round_table-pink-front-2.png",
+            "direction": "front",
+            "color": "#e7caac"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-pink-front-2.png",
+            "direction": "back",
+            "color": "#c29563"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-pink-right-3.png",
+            "direction": "right",
+            "color": "#d1a272"
+        },
+        {
+            "name": "Small Table",
+            "tags": [
+                "Small Table"
+            ],
+            "imagePath": "dist/small_table-dark_blue-right.png",
+            "direction": "right",
+            "color": "#A9A9A9"
+        },
+        {
+            "name": "Solo Puff",
+            "tags": [
+                "Solo Puff"
+            ],
+            "imagePath": "dist/solo_puff-light_blue-front.png",
+            "direction": "front",
+            "color": "#bfbec0"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-pink-right-13.png",
+            "direction": "right",
+            "color": "#ddabaa"
+        },
+        {
+            "name": "Solo Puff",
+            "tags": [
+                "Solo Puff"
+            ],
+            "imagePath": "dist/solo_puff-teal-right-2.png",
+            "direction": "right",
+            "color": "#59b15d"
+        },
+        {
+            "name": "Small Table",
+            "tags": [
+                "Small Table"
+            ],
+            "imagePath": "dist/small_table-brown-right-5.png",
+            "direction": "right",
+            "color": "#4f4f4f"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-teal-right-5.png",
+            "direction": "right",
+            "color": "#6d7158"
+        },
+        {
+            "name": "Solo Puff",
+            "tags": [
+                "Solo Puff"
+            ],
+            "imagePath": "dist/solo_puff-teal-right-3.png",
+            "direction": "right",
+            "color": "#95b7ca"
+        },
+        {
+            "name": "Solo Puff",
+            "tags": [
+                "Solo Puff"
+            ],
+            "imagePath": "dist/solo_puff-light_blue-front-1.png",
+            "direction": "front",
+            "color": "#79a2b8"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-brown-right-23.png",
+            "direction": "back",
+            "color": "#a66e4e"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-brown-right-18.png",
+            "direction": "right",
+            "color": "#eed8bc"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-brown-right-19.png",
+            "direction": "right",
+            "color": "#c67c59"
+        },
+        {
+            "name": "Bookshelves",
+            "tags": [
+                "Bookshelves"
+            ],
+            "imagePath": "dist/bookshelves-orange-right.png",
+            "direction": "right",
+            "color": "#808080"
+        },
+        {
+            "name": "Poster",
+            "tags": [
+                "Poster"
+            ],
+            "imagePath": "dist/poster-light_blue-right.png",
+            "direction": "right",
+            "color": "#A9A9A9"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-teal-right.png",
+            "direction": "right",
+            "color": "#2fa7ae"
+        },
+        {
+            "name": "Solo Puff",
+            "tags": [
+                "Solo Puff"
+            ],
+            "imagePath": "dist/solo_puff-orange-right-1.png",
+            "direction": "right",
+            "color": "#d69e39"
+        },
+        {
+            "name": "Table",
+            "tags": [
+                "Table"
+            ],
+            "imagePath": "dist/table-brown-right-4.png",
+            "direction": "right",
+            "color": "#d7bb9d"
+        },
+        {
+            "name": "Lamp",
+            "tags": [
+                "Lamp"
+            ],
+            "imagePath": "dist/lamp-light_blue-right-1.png",
+            "direction": "right",
+            "color": "#8c97a6"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-brown-right-9.png",
+            "direction": "right",
+            "color": "#c6926d"
+        },
+        {
+            "name": "Computer",
+            "tags": [
+                "Computer"
+            ],
+            "imagePath": "dist/computer-teal-right.png",
+            "direction": "right",
+            "color": "#3c8dbc"
+        },
+        {
+            "name": "Small Table",
+            "tags": [
+                "Small Table"
+            ],
+            "imagePath": "dist/small_table-pink-right.png",
+            "direction": "right",
+            "color": "#A9A9A9"
+        },
+        {
+            "name": "Corner sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/couche-light_blue-front-9.png",
+            "direction": "front",
+            "color": "#D3D3D3"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-brown-right-20.png",
+            "direction": "right",
+            "color": "#F5F5DC"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-orange-right-2.png",
+            "direction": "right",
+            "color": "#D2691E"
+        },
+        {
+            "name": "Table",
+            "tags": [
+                "Table"
+            ],
+            "imagePath": "dist/table-brown-right-5.png",
+            "direction": "right",
+            "color": "#d9bb9c"
+        },
+        {
+            "name": "Computer",
+            "tags": [
+                "Computer"
+            ],
+            "imagePath": "dist/computer-dark_blue-left.png",
+            "direction": "front",
+            "color": "#597280"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-pink-right-14.png",
+            "direction": "back",
+            "color": "#d0ba9d"
+        },
+        {
+            "name": "Two-seater sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/small_couche-pink-right-1.png",
+            "direction": "right",
+            "color": "#eaa5ca"
+        },
+        {
+            "name": "Bookshelves",
+            "tags": [
+                "Bookshelves"
+            ],
+            "imagePath": "dist/bookshelves-brown-right-7.png",
+            "direction": "right",
+            "color": "#808080"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-light_blue-front-1.png",
+            "direction": "front",
+            "color": "#F5F5DC"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-brown-right-24.png",
+            "direction": "right",
+            "color": "#87844d"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-brown-down-1.png",
+            "direction": "left",
+            "color": "#c47451"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-pink-right-4.png",
+            "direction": "right",
+            "color": "#e5b27c"
+        },
+        {
+            "name": "Bookshelves",
+            "tags": [
+                "Bookshelves"
+            ],
+            "imagePath": "dist/bookshelves-red-right.png",
+            "direction": "right",
+            "color": "#A9A9A9"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-brown-right-25.png",
+            "direction": "left",
+            "color": "#808080"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-brown-right-26.png",
+            "direction": "right",
+            "color": "#A9A9A9"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-pink-right-15.png",
+            "direction": "left",
+            "color": "#ddaaa9"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-pink-right-16.png",
+            "direction": "front",
+            "color": "#e3a5b5"
+        },
+        {
+            "name": "Solo Puff",
+            "tags": [
+                "Solo Puff"
+            ],
+            "imagePath": "dist/solo_puff-light_blue-right-2.png",
+            "direction": "right",
+            "color": "#bcbcbf"
+        },
+        {
+            "name": "Poster",
+            "tags": [
+                "Poster"
+            ],
+            "imagePath": "dist/poster-teal-right-1.png",
+            "direction": "right",
+            "color": "#2da0a7"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-pink-right-17.png",
+            "direction": "back",
+            "color": "#d7b6a1"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-pink-right-18.png",
+            "direction": "front",
+            "color": "#c08eaa"
+        },
+        {
+            "name": "Single sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/solo_couche-brown-right-1.png",
+            "direction": "right",
+            "color": "#FF0000"
+        },
+        {
+            "name": "Solo Puff",
+            "tags": [
+                "Solo Puff"
+            ],
+            "imagePath": "dist/solo_puff-brown-front.png",
+            "direction": "front",
+            "color": "#4d4d4c"
+        },
+        {
+            "name": "Solo Puff",
+            "tags": [
+                "Solo Puff"
+            ],
+            "imagePath": "dist/solo_puff-light_blue-right-3.png",
+            "direction": "right",
+            "color": "#4695c3"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-pink-right-19.png",
+            "direction": "right",
+            "color": "#c47c75"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-teal-right-6.png",
+            "direction": "right",
+            "color": "#7d6255"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-brown-right-27.png",
+            "direction": "right",
+            "color": "#808080"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-brown-right-21.png",
+            "direction": "right",
+            "color": "#edd4b6"
+        },
+        {
+            "name": "Bookshelves",
+            "tags": [
+                "Bookshelves"
+            ],
+            "imagePath": "dist/bookshelves-teal-right.png",
+            "direction": "right",
+            "color": "#808080"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-brown-right-28.png",
+            "direction": "back",
+            "color": "#a76f49"
+        },
+        {
+            "name": "Poster",
+            "tags": [
+                "Poster"
+            ],
+            "imagePath": "dist/poster-pink-right-2.png",
+            "direction": "right",
+            "color": "#808080"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-light_blue-right-1.png",
+            "direction": "right",
+            "color": "#F5F5DC"
+        },
+        {
+            "name": "Bookshelves",
+            "tags": [
+                "Bookshelves"
+            ],
+            "imagePath": "dist/bookshelves-brown-right-8.png",
+            "direction": "right",
+            "color": "#9b9b8d"
+        },
+        {
+            "name": "Round Table",
+            "tags": [
+                "Round Table"
+            ],
+            "imagePath": "dist/round_table-pink-right-4.png",
+            "direction": "right",
+            "color": "#c2905e"
+        },
+        {
+            "name": "Lamp",
+            "tags": [
+                "Lamp"
+            ],
+            "imagePath": "dist/lamp-teal-right.png",
+            "direction": "right",
+            "color": "#c6cec9"
+        },
+        {
+            "name": "Two-seater sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/small_couche-brown-front-3.png",
+            "direction": "front",
+            "color": "#4f4f4e"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-orange-right-4.png",
+            "direction": "right",
+            "color": "#d9c68f"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-brown-right-22.png",
+            "direction": "right",
+            "color": "#d79268"
+        },
+        {
+            "name": "Christmas",
+            "tags": [],
+            "imagePath": "dist/book-red-right-1.png",
+            "direction": "right",
+            "color": "#FF0000"
+        },
+        {
+            "name": "Single sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/small_couche-brown-right-2.png",
+            "direction": "right",
+            "color": "#8e4540"
+        },
+        {
+            "name": "Corner sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/couche-light_blue-right-6.png",
+            "direction": "right",
+            "color": "#7faecd"
+        },
+        {
+            "name": "Two-seater sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/small_couche-pink-right-2.png",
+            "direction": "right",
+            "color": "#b57cba"
+        },
+        {
+            "name": "Single sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/chairs-pink-right-20.png",
+            "direction": "right",
+            "color": "#b1745d"
+        },
+        {
+            "name": "Solo Puff",
+            "tags": [
+                "Solo Puff"
+            ],
+            "imagePath": "dist/solo_puff-orange-front.png",
+            "direction": "front",
+            "color": "#df854f"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-light_blue-right-4.png",
+            "direction": "right",
+            "color": "#D3D3D3"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-brown-right-23.png",
+            "direction": "right",
+            "color": "#d99167"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-orange-right-3.png",
+            "direction": "left",
+            "color": "#ddb771"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-pink-right-5.png",
+            "direction": "right",
+            "color": "#808080"
+        },
+        {
+            "name": "Poster",
+            "tags": [
+                "Poster"
+            ],
+            "imagePath": "dist/poster-pink-right-3.png",
+            "direction": "right",
+            "color": "#24c6b9"
+        },
+        {
+            "name": "Small Table",
+            "tags": [
+                "Small Table"
+            ],
+            "imagePath": "dist/small_table-light_blue-right.png",
+            "direction": "right",
+            "color": "#F5F5DC"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-pink-right-6.png",
+            "direction": "right",
+            "color": "#c9805e"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-brown-right-24.png",
+            "direction": "right",
+            "color": "#ebd2b3"
+        },
+        {
+            "name": "Lamp",
+            "tags": [
+                "Lamp"
+            ],
+            "imagePath": "dist/lamp-pink-right-1.png",
+            "direction": "right",
+            "color": "#A9A9A9"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-brown-right-25.png",
+            "direction": "right",
+            "color": "#e7ccad"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-light_blue-right-5.png",
+            "direction": "right",
+            "color": "#D3D3D3"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-light_blue-front-2.png",
+            "direction": "front",
+            "color": "#D3D3D3"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-red-right-2.png",
+            "direction": "right",
+            "color": "#d96874"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-teal-right-7.png",
+            "direction": "right",
+            "color": "#5aae5e"
+        },
+        {
+            "name": "Solo Puff",
+            "tags": [
+                "Solo Puff"
+            ],
+            "imagePath": "dist/solo_puff-pink-right-1.png",
+            "direction": "right",
+            "color": "#d48996"
+        },
+        {
+            "name": "Puff",
+            "tags": [
+                "Puff"
+            ],
+            "imagePath": "dist/puff-pink-right-1.png",
+            "direction": "right",
+            "color": "#e7ac87"
+        },
+        {
+            "name": "Table",
+            "tags": [
+                "Table"
+            ],
+            "imagePath": "dist/table-pink-right-2.png",
+            "direction": "right",
+            "color": "#d4a474"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-pink-right-21.png",
+            "direction": "back",
+            "color": "#d1b39b"
+        },
+        {
+            "name": "Round Table",
+            "tags": [
+                "Round Table"
+            ],
+            "imagePath": "dist/round_table-pink-right-5.png",
+            "direction": "right",
+            "color": "#eacdad"
+        },
+        {
+            "name": "Single sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/solo_couche-red-right-1.png",
+            "direction": "right",
+            "color": "#bd0423"
+        },
+        {
+            "name": "Solo Puff",
+            "tags": [
+                "Solo Puff"
+            ],
+            "imagePath": "dist/solo_puff-brown-right-1.png",
+            "direction": "right",
+            "color": "#4e4e4d"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-brown-front-2.png",
+            "direction": "front",
+            "color": "#c8c7c8"
+        },
+        {
+            "name": "Lamp",
+            "tags": [
+                "Lamp"
+            ],
+            "imagePath": "dist/lamp-pink-front-1.png",
+            "direction": "front",
+            "color": "#D3D3D3"
+        },
+        {
+            "name": "Solo Puff",
+            "tags": [
+                "Solo Puff"
+            ],
+            "imagePath": "dist/solo_puff-light_blue-right-4.png",
+            "direction": "right",
+            "color": "#D3D3D3"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-pink-right-22.png",
+            "direction": "left",
+            "color": "#d8bac9"
+        },
+        {
+            "name": "Single sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/solo_couche-teal-right.png",
+            "direction": "right",
+            "color": "#52a15d"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-brown-right-26.png",
+            "direction": "left",
+            "color": "#ebd1b2"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-light_blue-right-2.png",
+            "direction": "right",
+            "color": "#808080"
+        },
+        {
+            "name": "Solo Puff",
+            "tags": [
+                "Solo Puff"
+            ],
+            "imagePath": "dist/solo_puff-teal-front.png",
+            "direction": "front",
+            "color": "#7eb271"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-brown-right-29.png",
+            "direction": "left",
+            "color": "#86834c"
+        },
+        {
+            "name": "Bookshelves",
+            "tags": [
+                "Bookshelves"
+            ],
+            "imagePath": "dist/bookshelves-brown-right-9.png",
+            "direction": "right",
+            "color": "#989789"
+        },
+        {
+            "name": "Small Table",
+            "tags": [
+                "Small Table"
+            ],
+            "imagePath": "dist/small_table-light_blue-right-1.png",
+            "direction": "right",
+            "color": "#F5F5DC"
+        },
+        {
+            "name": "Bookshelves",
+            "tags": [
+                "Bookshelves"
+            ],
+            "imagePath": "dist/bookshelves-orange-right-1.png",
+            "direction": "right",
+            "color": "#808080"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-light_blue-front-2.png",
+            "direction": "front",
+            "color": "#F5F5DC"
+        },
+        {
+            "name": "Two-seater sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/small_couche-red-front-1.png",
+            "direction": "front",
+            "color": "#FF0000"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-orange-right-4.png",
+            "direction": "right",
+            "color": "#dfb871"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-brown-right-27.png",
+            "direction": "right",
+            "color": "#F5F5DC"
+        },
+        {
+            "name": "Corner sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/couche-light_blue-front-10.png",
+            "direction": "front",
+            "color": "#c19ec4"
+        },
+        {
+            "name": "Lamp",
+            "tags": [
+                "Lamp"
+            ],
+            "imagePath": "dist/lamp-light_blue-front-2.png",
+            "direction": "front",
+            "color": "#A9A9A9"
+        },
+        {
+            "name": "Computer",
+            "tags": [
+                "Computer"
+            ],
+            "imagePath": "dist/computer-light_blue-right.png",
+            "direction": "left",
+            "color": "#4391be"
+        },
+        {
+            "name": "Two-seater sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/small_couche-brown-right-3.png",
+            "direction": "left",
+            "color": "#FFA500"
+        },
+        {
+            "name": "Single sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/solo_couche-brown-right-2.png",
+            "direction": "right",
+            "color": "#844042"
+        },
+        {
+            "name": "Corner sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/couche-light_blue-front-11.png",
+            "direction": "front",
+            "color": "#ab7c7a"
+        },
+        {
+            "name": "Single sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/solo_couche-pink-right-4.png",
+            "direction": "right",
+            "color": "#a16da7"
+        },
+        {
+            "name": "Two-seater sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/small_couche-teal-right-3.png",
+            "direction": "right",
+            "color": "#2fa7ae"
+        },
+        {
+            "name": "Poster",
+            "tags": [
+                "Poster"
+            ],
+            "imagePath": "dist/poster-orange-right.png",
+            "direction": "right",
+            "color": "#695b41"
+        },
+        {
+            "name": "Small Table",
+            "tags": [
+                "Small Table"
+            ],
+            "imagePath": "dist/small_table-light_blue-right-2.png",
+            "direction": "right",
+            "color": "#F5F5DC"
+        },
+        {
+            "name": "Solo Puff",
+            "tags": [
+                "Solo Puff"
+            ],
+            "imagePath": "dist/solo_puff-teal-right-4.png",
+            "direction": "right",
+            "color": "#77b980"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-light_blue-right-6.png",
+            "direction": "right",
+            "color": "#b3b0ba"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-teal-left.png",
+            "direction": "left",
+            "color": "#96b7ca"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-brown-right-30.png",
+            "direction": "back",
+            "color": "#b46c4f"
+        },
+        {
+            "name": "Solo Puff",
+            "tags": [
+                "Solo Puff"
+            ],
+            "imagePath": "dist/solo_puff-orange-right-2.png",
+            "direction": "right",
+            "color": "#edba31"
+        },
+        {
+            "name": "Single sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/solo_couche-teal-right-1.png",
+            "direction": "right",
+            "color": "#62b661"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-pink-right-23.png",
+            "direction": "right",
+            "color": "#c49463"
+        },
+        {
+            "name": "Single sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/solo_couche-pink-right-5.png",
+            "direction": "right",
+            "color": "#e2a0c4"
+        },
+        {
+            "name": "Round Table",
+            "tags": [
+                "Round Table"
+            ],
+            "imagePath": "dist/round_table-pink-right-6.png",
+            "direction": "right",
+            "color": "#c89563"
+        },
+        {
+            "name": "Round Table",
+            "tags": [
+                "Round Table"
+            ],
+            "imagePath": "dist/round_table-pink-front-3.png",
+            "direction": "front",
+            "color": "#e0c3a5"
+        },
+        {
+            "name": "Round Table",
+            "tags": [
+                "Round Table"
+            ],
+            "imagePath": "dist/round_table-pink-right-7.png",
+            "direction": "right",
+            "color": "#ebd0b2"
+        },
+        {
+            "name": "Solo Puff",
+            "tags": [
+                "Solo Puff"
+            ],
+            "imagePath": "dist/solo_puff-light_blue-front-2.png",
+            "direction": "front",
+            "color": "#D3D3D3"
+        },
+        {
+            "name": "Single sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/solo_couche-orange-right-1.png",
+            "direction": "right",
+            "color": "#FFA500"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-pink-right-24.png",
+            "direction": "left",
+            "color": "#c37b75"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-pink-right-25.png",
+            "direction": "back",
+            "color": "#cfb8a3"
+        },
+        {
+            "name": "Lamp",
+            "tags": [
+                "Lamp"
+            ],
+            "imagePath": "dist/lamp-brown-right-1.png",
+            "direction": "right",
+            "color": "#c47a58"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-light_blue-right-7.png",
+            "direction": "left",
+            "color": "#D3D3D3"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-brown-right-28.png",
+            "direction": "right",
+            "color": "#c27957"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-brown-right-29.png",
+            "direction": "right",
+            "color": "#dfac77"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-teal-right-8.png",
+            "direction": "right",
+            "color": "#98c09e"
+        },
+        {
+            "name": "Small Table",
+            "tags": [
+                "Small Table"
+            ],
+            "imagePath": "dist/small_table-light_blue-right-3.png",
+            "direction": "right",
+            "color": "#F5F5DC"
+        },
+        {
+            "name": "Corner sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/couche-red-right-1.png",
+            "direction": "left",
+            "color": "#FF0000"
+        },
+        {
+            "name": "Two-seater sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/chairs-brown-right-31.png",
+            "direction": "left",
+            "color": "#b8785f"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-brown-right-30.png",
+            "direction": "right",
+            "color": "#d99167"
+        },
+        {
+            "name": "Two-seater sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/small_couche-light_blue-front.png",
+            "direction": "front",
+            "color": "#c5c4c6"
+        },
+        {
+            "name": "Computer",
+            "tags": [
+                "Computer"
+            ],
+            "imagePath": "dist/computer-light_blue-left.png",
+            "direction": "front",
+            "color": "#808080"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-orange-right-5.png",
+            "direction": "right",
+            "color": "#D2B48C"
+        },
+        {
+            "name": "Single sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/solo_couche-pink-right-6.png",
+            "direction": "right",
+            "color": "#ad76b2"
+        },
+        {
+            "name": "Corner sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/couche-light_blue-right-7.png",
+            "direction": "right",
+            "color": "#70b9c0"
+        },
+        {
+            "name": "Single sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/small_couche-brown-right-4.png",
+            "direction": "right",
+            "color": "#8d4440"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-light_blue-right-8.png",
+            "direction": "right",
+            "color": "#cadadf"
+        },
+        {
+            "name": "Two-seater sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/solo_couche-orange-right-2.png",
+            "direction": "right",
+            "color": "#edbe39"
+        },
+        {
+            "name": "Single sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/solo_couche-teal-right-2.png",
+            "direction": "right",
+            "color": "#30a8ad"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-orange-right-6.png",
+            "direction": "right",
+            "color": "#d3cfc6"
+        },
+        {
+            "name": "Solo Puff",
+            "tags": [
+                "Solo Puff"
+            ],
+            "imagePath": "dist/solo_puff-orange-right-3.png",
+            "direction": "right",
+            "color": "#D2691E"
+        },
+        {
+            "name": "Small Table",
+            "tags": [
+                "Small Table"
+            ],
+            "imagePath": "dist/small_table-light_blue-right-4.png",
+            "direction": "right",
+            "color": "#F5F5DC"
+        },
+        {
+            "name": "Poster",
+            "tags": [
+                "Poster"
+            ],
+            "imagePath": "dist/poster-pink-right-4.png",
+            "direction": "right",
+            "color": "#e5a89d"
+        },
+        {
+            "name": "Poster",
+            "tags": [
+                "Poster"
+            ],
+            "imagePath": "dist/poster-pink-right-5.png",
+            "direction": "right",
+            "color": "#22c3b7"
+        },
+        {
+            "name": "Small Table",
+            "tags": [
+                "Small Table"
+            ],
+            "imagePath": "dist/small_table-light_blue-right-5.png",
+            "direction": "right",
+            "color": "#D3D3D3"
+        },
+        {
+            "name": "Regular Table",
+            "tags": [
+                "Regular Table"
+            ],
+            "imagePath": "dist/regular_table-light_blue-right.png",
+            "direction": "right",
+            "color": "#e7e6e7"
+        },
+        {
+            "name": "Bookshelves",
+            "tags": [
+                "Bookshelves"
+            ],
+            "imagePath": "dist/bookshelves-brown-right-10.png",
+            "direction": "right",
+            "color": "#98968f"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-brown-right-31.png",
+            "direction": "right",
+            "color": "#e3b07a"
+        },
+        {
+            "name": "Bookshelves",
+            "tags": [
+                "Bookshelves"
+            ],
+            "imagePath": "dist/bookshelves-teal-right-1.png",
+            "direction": "right",
+            "color": "#808080"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-brown-right-32.png",
+            "direction": "right",
+            "color": "#dfac77"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-teal-front.png",
+            "direction": "front",
+            "color": "#c5cdce"
+        },
+        {
+            "name": "Solo Puff",
+            "tags": [
+                "Solo Puff"
+            ],
+            "imagePath": "dist/solo_puff-teal-right-5.png",
+            "direction": "right",
+            "color": "#5c8f86"
+        },
+        {
+            "name": "Solo Puff",
+            "tags": [
+                "Solo Puff"
+            ],
+            "imagePath": "dist/solo_puff-purple-front.png",
+            "direction": "front",
+            "color": "#b176b1"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-dark_blue-right.png",
+            "direction": "right",
+            "color": "#A9A9A9"
+        },
+        {
+            "name": "Puff",
+            "tags": [
+                "Puff"
+            ],
+            "imagePath": "dist/puff-brown-right.png",
+            "direction": "right",
+            "color": "#934841"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-orange-right-7.png",
+            "direction": "right",
+            "color": "#e6b639"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-pink-front-3.png",
+            "direction": "back",
+            "color": "#bc8f5f"
+        },
+        {
+            "name": "Small Table",
+            "tags": [
+                "Small Table"
+            ],
+            "imagePath": "dist/small_table-brown-right-6.png",
+            "direction": "right",
+            "color": "#D3D3D3"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-pink-right-7.png",
+            "direction": "right",
+            "color": "#d3a473"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-brown-right-10.png",
+            "direction": "left",
+            "color": "#A9A9A9"
+        },
+        {
+            "name": "Solo Puff",
+            "tags": [
+                "Solo Puff"
+            ],
+            "imagePath": "dist/solo_puff-brown-right-2.png",
+            "direction": "right",
+            "color": "#89413d"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-brown-right-32.png",
+            "direction": "back",
+            "color": "#a86747"
+        },
+        {
+            "name": "Table",
+            "tags": [
+                "Table"
+            ],
+            "imagePath": "dist/table-brown-right-6.png",
+            "direction": "right",
+            "color": "#d2a373"
+        },
+        {
+            "name": "Puff",
+            "tags": [
+                "Puff"
+            ],
+            "imagePath": "dist/puff-brown-right-1.png",
+            "direction": "right",
+            "color": "#bc7b60"
+        },
+        {
+            "name": "Single sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/solo_couche-red-right-2.png",
+            "direction": "right",
+            "color": "#FF0000"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-pink-front.png",
+            "direction": "front",
+            "color": "#cc9b68"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-light_blue-right-9.png",
+            "direction": "right",
+            "color": "#D3D3D3"
+        },
+        {
+            "name": "Solo Puff",
+            "tags": [
+                "Solo Puff"
+            ],
+            "imagePath": "dist/solo_puff-pink-right-2.png",
+            "direction": "right",
+            "color": "#e89cc3"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-teal-right-1.png",
+            "direction": "left",
+            "color": "#94ada0"
+        },
+        {
+            "name": "Bookshelves",
+            "tags": [
+                "Bookshelves"
+            ],
+            "imagePath": "dist/bookshelves-yellow-right.png",
+            "direction": "right",
+            "color": "#98aa88"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-teal-front-1.png",
+            "direction": "front",
+            "color": "#c6ccd1"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-brown-right-33.png",
+            "direction": "left",
+            "color": "#9fb17f"
+        },
+        {
+            "name": "Lamp",
+            "tags": [
+                "Lamp"
+            ],
+            "imagePath": "dist/lamp-light_blue-right-2.png",
+            "direction": "right",
+            "color": "#b2afb9"
+        },
+        {
+            "name": "Poster",
+            "tags": [
+                "Poster"
+            ],
+            "imagePath": "dist/poster-light_blue-right-1.png",
+            "direction": "right",
+            "color": "#4799c6"
+        },
+        {
+            "name": "Two-seater sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/small_couche-brown-right-5.png",
+            "direction": "right",
+            "color": "#FFA500"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-orange-right-8.png",
+            "direction": "left",
+            "color": "#d9c690"
+        },
+        {
+            "name": "Computer",
+            "tags": [
+                "Computer"
+            ],
+            "imagePath": "dist/computer-light_blue-front.png",
+            "direction": "front",
+            "color": "#D3D3D3"
+        },
+        {
+            "name": "Table",
+            "tags": [
+                "Table"
+            ],
+            "imagePath": "dist/table-brown-right-7.png",
+            "direction": "right",
+            "color": "#d8bb9c"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-pink-right-2.png",
+            "direction": "left",
+            "color": "#ad76b2"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-red-front.png",
+            "direction": "front",
+            "color": "#e49e88"
+        },
+        {
+            "name": "Corner sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/couche-light_blue-front-12.png",
+            "direction": "front",
+            "color": "#8abf8c"
+        },
+        {
+            "name": "Single sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/solo_couche-pink-right-7.png",
+            "direction": "right",
+            "color": "#b77ebe"
+        },
+        {
+            "name": "Corner sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/couche-light_blue-right-8.png",
+            "direction": "right",
+            "color": "#dfbca8"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-pink-back.png",
+            "direction": "back",
+            "color": "#e7a88f"
+        },
+        {
+            "name": "Book",
+            "tags": [],
+            "imagePath": "dist/book-brown-right-11.png",
+            "direction": "right",
+            "color": "#FF0000"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-dark_green-right.png",
+            "direction": "right",
+            "color": "#808080"
+        },
+        {
+            "name": "Solo Puff",
+            "tags": [
+                "Solo Puff"
+            ],
+            "imagePath": "dist/solo_puff-orange-front-1.png",
+            "direction": "front",
+            "color": "#db8c5e"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-pink-back.png",
+            "direction": "back",
+            "color": "#dcbb99"
+        },
+        {
+            "name": "Two-seater sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/small_couche-pink-right-3.png",
+            "direction": "right",
+            "color": "#b57cba"
+        },
+        {
+            "name": "Two-seater sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/solo_couche-orange-right-3.png",
+            "direction": "right",
+            "color": "#edbe39"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-light_blue-right-3.png",
+            "direction": "right",
+            "color": "#F5F5DC"
+        },
+        {
+            "name": "Bookshelves",
+            "tags": [
+                "Bookshelves"
+            ],
+            "imagePath": "dist/bookshelves-brown-right-11.png",
+            "direction": "right",
+            "color": "#A9A9A9"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-pink-right-8.png",
+            "direction": "right",
+            "color": "#c9805e"
+        },
+        {
+            "name": "Lamp",
+            "tags": [
+                "Lamp"
+            ],
+            "imagePath": "dist/lamp-pink-front-2.png",
+            "direction": "front",
+            "color": "#c6beb2"
+        },
+        {
+            "name": "Lamp",
+            "tags": [
+                "Lamp"
+            ],
+            "imagePath": "dist/lamp-brown-right-2.png",
+            "direction": "right",
+            "color": "#bf7655"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-light_blue-right-10.png",
+            "direction": "right",
+            "color": "#D3D3D3"
+        },
+        {
+            "name": "Solo Puff",
+            "tags": [
+                "Solo Puff"
+            ],
+            "imagePath": "dist/solo_puff-brown-front-1.png",
+            "direction": "front",
+            "color": "#8d433c"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-pink-right-26.png",
+            "direction": "back",
+            "color": "#dbb8a3"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-brown-right-12.png",
+            "direction": "left",
+            "color": "#D2691E"
+        },
+        {
+            "name": "Puff",
+            "tags": [
+                "Puff"
+            ],
+            "imagePath": "dist/puff-brown-right-2.png",
+            "direction": "right",
+            "color": "#545152"
+        },
+        {
+            "name": "Small Table",
+            "tags": [
+                "Small Table"
+            ],
+            "imagePath": "dist/small_table-brown-right-7.png",
+            "direction": "right",
+            "color": "#cbc9c5"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-teal-right-9.png",
+            "direction": "left",
+            "color": "#59ad5e"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-brown-right-34.png",
+            "direction": "right",
+            "color": "#a28d7d"
+        },
+        {
+            "name": "Solo Puff",
+            "tags": [
+                "Solo Puff"
+            ],
+            "imagePath": "dist/solo_puff-teal-right-6.png",
+            "direction": "right",
+            "color": "#2fa2a9"
+        },
+        {
+            "name": "Solo Puff",
+            "tags": [
+                "Solo Puff"
+            ],
+            "imagePath": "dist/solo_puff-teal-right-7.png",
+            "direction": "right",
+            "color": "#2da2ac"
+        },
+        {
+            "name": "Solo Puff",
+            "tags": [
+                "Solo Puff"
+            ],
+            "imagePath": "dist/solo_puff-brown-right-3.png",
+            "direction": "right",
+            "color": "#af715b"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-brown-right-35.png",
+            "direction": "left",
+            "color": "#a28c7c"
+        },
+        {
+            "name": "Puff",
+            "tags": [
+                "Puff"
+            ],
+            "imagePath": "dist/puff-light_blue-right-1.png",
+            "direction": "right",
+            "color": "#c6c4c5"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-pink-right-27.png",
+            "direction": "left",
+            "color": "#c59563"
+        },
+        {
+            "name": "Solo Puff",
+            "tags": [
+                "Solo Puff"
+            ],
+            "imagePath": "dist/solo_puff-orange-right-4.png",
+            "direction": "right",
+            "color": "#ebb934"
+        },
+        {
+            "name": "Round Table",
+            "tags": [
+                "Round Table"
+            ],
+            "imagePath": "dist/round_table-pink-right-8.png",
+            "direction": "right",
+            "color": "#c2905e"
+        },
+        {
+            "name": "Solo Puff",
+            "tags": [
+                "Solo Puff"
+            ],
+            "imagePath": "dist/solo_puff-pink-right-3.png",
+            "direction": "right",
+            "color": "#e0acc6"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-light_blue-right-11.png",
+            "direction": "right",
+            "color": "#D3D3D3"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-teal-right-2.png",
+            "direction": "right",
+            "color": "#94aea1"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-brown-right-33.png",
+            "direction": "right",
+            "color": "#c77e5a"
+        },
+        {
+            "name": "Lamp",
+            "tags": [
+                "Lamp"
+            ],
+            "imagePath": "dist/lamp-pink-right-2.png",
+            "direction": "right",
+            "color": "#A9A9A9"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-pink-right-9.png",
+            "direction": "right",
+            "color": "#e3af79"
+        },
+        {
+            "name": "Solo Puff",
+            "tags": [
+                "Solo Puff"
+            ],
+            "imagePath": "dist/solo_puff-teal-front-1.png",
+            "direction": "front",
+            "color": "#6e9652"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-brown-right-34.png",
+            "direction": "right",
+            "color": "#c37a57"
+        },
+        {
+            "name": "Poster",
+            "tags": [
+                "Poster"
+            ],
+            "imagePath": "dist/poster-yellow-right.png",
+            "direction": "right",
+            "color": "#D2B48C"
+        },
+        {
+            "name": "Bookshelves",
+            "tags": [
+                "Bookshelves"
+            ],
+            "imagePath": "dist/bookshelves-brown-right-12.png",
+            "direction": "right",
+            "color": "#A9A9A9"
+        },
+        {
+            "name": "Table",
+            "tags": [
+                "Table"
+            ],
+            "imagePath": "dist/table-pink-left-1.png",
+            "direction": "front",
+            "color": "#a18b79"
+        },
+        {
+            "name": "Poster",
+            "tags": [
+                "Poster"
+            ],
+            "imagePath": "dist/poster-pink-right-6.png",
+            "direction": "right",
+            "color": "#656356"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-brown-right-36.png",
+            "direction": "back",
+            "color": "#b46f44"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-brown-right-37.png",
+            "direction": "left",
+            "color": "#D2691E"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-pink-right-10.png",
+            "direction": "right",
+            "color": "#b07c5d"
+        },
+        {
+            "name": "Solo Puff",
+            "tags": [
+                "Solo Puff"
+            ],
+            "imagePath": "dist/solo_puff-orange-front-2.png",
+            "direction": "front",
+            "color": "#e5ba58"
+        },
+        {
+            "name": "Single sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/solo_couche-teal-right-3.png",
+            "direction": "right",
+            "color": "#2d94a0"
+        },
+        {
+            "name": "Corner sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/couche-light_blue-right-9.png",
+            "direction": "right",
+            "color": "#c69e8f"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-pink-front-1.png",
+            "direction": "front",
+            "color": "#dfb99b"
+        },
+        {
+            "name": "Corner sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/couche-light_blue-front-13.png",
+            "direction": "front",
+            "color": "#e3c774"
+        },
+        {
+            "name": "Lamp",
+            "tags": [
+                "Lamp"
+            ],
+            "imagePath": "dist/lamp-light_blue-right-3.png",
+            "direction": "right",
+            "color": "#D3D3D3"
+        },
+        {
+            "name": "Corner sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/couche-orange-right.png",
+            "direction": "left",
+            "color": "#e5905d"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-pink-right-28.png",
+            "direction": "left",
+            "color": "#d5beb1"
+        },
+        {
+            "name": "Solo Puff",
+            "tags": [
+                "Solo Puff"
+            ],
+            "imagePath": "dist/solo_puff-teal-right-8.png",
+            "direction": "right",
+            "color": "#6f9890"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-red-right-2.png",
+            "direction": "right",
+            "color": "#bd4336"
+        },
+        {
+            "name": "Tree",
+            "tags": [
+                "Tree"
+            ],
+            "imagePath": "dist/tree-dark_blue-left-2.png",
+            "direction": "front",
+            "color": "#486b62"
+        },
+        {
+            "name": "Table",
+            "tags": [
+                "Table"
+            ],
+            "imagePath": "dist/table-brown-right-8.png",
+            "direction": "right",
+            "color": "#d7bb9d"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-brown-right-13.png",
+            "direction": "right",
+            "color": "#483e3c"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-brown-right-14.png",
+            "direction": "right",
+            "color": "#808080"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-brown-right-15.png",
+            "direction": "right",
+            "color": "#727161"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-brown-right-35.png",
+            "direction": "right",
+            "color": "#c9815f"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-light_blue-right-12.png",
+            "direction": "right",
+            "color": "#D3D3D3"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-brown-right-36.png",
+            "direction": "right",
+            "color": "#bc7552"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-brown-right-37.png",
+            "direction": "right",
+            "color": "#c17956"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-brown-front-3.png",
+            "direction": "front",
+            "color": "#a76c4a"
+        },
+        {
+            "name": "Solo Puff",
+            "tags": [
+                "Solo Puff"
+            ],
+            "imagePath": "dist/solo_puff-brown-right-4.png",
+            "direction": "right",
+            "color": "#b3735b"
+        },
+        {
+            "name": "Puff",
+            "tags": [
+                "Puff"
+            ],
+            "imagePath": "dist/puff-teal-right-1.png",
+            "direction": "right",
+            "color": "#5eb55f"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-brown-right-38.png",
+            "direction": "right",
+            "color": "#895e48"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-brown-right-16.png",
+            "direction": "right",
+            "color": "#A9A9A9"
+        },
+        {
+            "name": "Round Table",
+            "tags": [
+                "Round Table"
+            ],
+            "imagePath": "dist/round_table-pink-right-9.png",
+            "direction": "right",
+            "color": "#d39d6b"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-brown-right-38.png",
+            "direction": "right",
+            "color": "#dccbc0"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-brown-right-17.png",
+            "direction": "right",
+            "color": "#D3D3D3"
+        },
+        {
+            "name": "Tree",
+            "tags": [
+                "Tree"
+            ],
+            "imagePath": "dist/tree-dark_blue-left-3.png",
+            "direction": "front",
+            "color": "#4e3a44"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-brown-front-4.png",
+            "direction": "left",
+            "color": "#a76b47"
+        },
+        {
+            "name": "Two-seater sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/small_couche-teal-right-4.png",
+            "direction": "right",
+            "color": "#2e95a2"
+        },
+        {
+            "name": "Puff",
+            "tags": [
+                "Puff"
+            ],
+            "imagePath": "dist/puff-red-right.png",
+            "direction": "right",
+            "color": "#FF0000"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-light_blue-right-13.png",
+            "direction": "right",
+            "color": "#8c96a6"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-pink-right-29.png",
+            "direction": "back",
+            "color": "#dabaa0"
+        },
+        {
+            "name": "Bookshelves",
+            "tags": [
+                "Bookshelves"
+            ],
+            "imagePath": "dist/bookshelves-orange-right-2.png",
+            "direction": "right",
+            "color": "#a4aa94"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-teal-right-10.png",
+            "direction": "right",
+            "color": "#8dbcbf"
+        },
+        {
+            "name": "Poster",
+            "tags": [
+                "Poster"
+            ],
+            "imagePath": "dist/poster-red-right.png",
+            "direction": "right",
+            "color": "#fe7080"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-teal-right-11.png",
+            "direction": "right",
+            "color": "#808080"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-pink-right-11.png",
+            "direction": "right",
+            "color": "#f0d6b6"
+        },
+        {
+            "name": "Two-seater sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/small_couche-teal-right-5.png",
+            "direction": "right",
+            "color": "#64b861"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-light_blue-right-14.png",
+            "direction": "right",
+            "color": "#F5F5DC"
+        },
+        {
+            "name": "Solo Puff",
+            "tags": [
+                "Solo Puff"
+            ],
+            "imagePath": "dist/solo_puff-red-right-2.png",
+            "direction": "right",
+            "color": "#d07f88"
+        },
+        {
+            "name": "Tree",
+            "tags": [
+                "Tree"
+            ],
+            "imagePath": "dist/tree-dark_blue-right-5.png",
+            "direction": "right",
+            "color": "#508c66"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-pink-right-3.png",
+            "direction": "right",
+            "color": "#ac7a60"
+        },
+        {
+            "name": "Corner sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/couche-light_blue-right-10.png",
+            "direction": "right",
+            "color": "#e3c876"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-pink-right-4.png",
+            "direction": "right",
+            "color": "#D3D3D3"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-brown-right-39.png",
+            "direction": "right",
+            "color": "#b06d4e"
+        },
+        {
+            "name": "Corner sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/couche-light_blue-right-11.png",
+            "direction": "right",
+            "color": "#dfbca8"
+        },
+        {
+            "name": "Lamp",
+            "tags": [
+                "Lamp"
+            ],
+            "imagePath": "dist/lamp-pink-right-3.png",
+            "direction": "right",
+            "color": "#4b5465"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-light_blue-right-4.png",
+            "direction": "right",
+            "color": "#808080"
+        },
+        {
+            "name": "Solo Puff",
+            "tags": [
+                "Solo Puff"
+            ],
+            "imagePath": "dist/solo_puff-red-front-1.png",
+            "direction": "front",
+            "color": "#FF0000"
+        },
+        {
+            "name": "Tree",
+            "tags": [
+                "Tree"
+            ],
+            "imagePath": "dist/tree-dark_blue-right-6.png",
+            "direction": "right",
+            "color": "#587757"
+        },
+        {
+            "name": "Two-seater sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/small_couche-light_blue-right-2.png",
+            "direction": "right",
+            "color": "#D3D3D3"
+        },
+        {
+            "name": "Two-seater sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/small_couche-orange-right.png",
+            "direction": "right",
+            "color": "#f0c33f"
+        },
+        {
+            "name": "Two-seater sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/small_couche-teal-right-6.png",
+            "direction": "right",
+            "color": "#33abb0"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-brown-right-39.png",
+            "direction": "right",
+            "color": "#e9ceae"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-brown-right-18.png",
+            "direction": "right",
+            "color": "#808080"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-teal-left-1.png",
+            "direction": "front",
+            "color": "#6e7354"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-dark_green-right-1.png",
+            "direction": "right",
+            "color": "#1e5340"
+        },
+        {
+            "name": "Puff",
+            "tags": [
+                "Puff"
+            ],
+            "imagePath": "dist/puff-orange-right-1.png",
+            "direction": "right",
+            "color": "#FFA500"
+        },
+        {
+            "name": "Two-seater sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/small_couche-brown-front-4.png",
+            "direction": "front",
+            "color": "#834042"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-brown-right-40.png",
+            "direction": "back",
+            "color": "#ac6f4b"
+        },
+        {
+            "name": "Tree",
+            "tags": [
+                "Tree"
+            ],
+            "imagePath": "dist/tree-dark_blue-left-4.png",
+            "direction": "front",
+            "color": "#2b4f54"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-pink-right-30.png",
+            "direction": "back",
+            "color": "#d5b49b"
+        },
+        {
+            "name": "Small Table",
+            "tags": [
+                "Small Table"
+            ],
+            "imagePath": "dist/small_table-brown-right-8.png",
+            "direction": "right",
+            "color": "#D3D3D3"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-brown-right-40.png",
+            "direction": "right",
+            "color": "#d2a373"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-brown-right-41.png",
+            "direction": "right",
+            "color": "#dbc8bc"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-brown-front-5.png",
+            "direction": "back",
+            "color": "#ad6746"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-light_blue-front-3.png",
+            "direction": "front",
+            "color": "#D3D3D3"
+        },
+        {
+            "name": "Table",
+            "tags": [
+                "Table"
+            ],
+            "imagePath": "dist/table-brown-right-9.png",
+            "direction": "right",
+            "color": "#eaceae"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-orange-right-9.png",
+            "direction": "right",
+            "color": "#808080"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-teal-right-12.png",
+            "direction": "right",
+            "color": "#637060"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-brown-right-42.png",
+            "direction": "right",
+            "color": "#eed3b3"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-teal-right-13.png",
+            "direction": "right",
+            "color": "#716e5a"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-green-right.png",
+            "direction": "right",
+            "color": "#74ab6c"
+        },
+        {
+            "name": "Tree",
+            "tags": [
+                "Tree"
+            ],
+            "imagePath": "dist/tree-dark_blue-right-7.png",
+            "direction": "right",
+            "color": "#677358"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-pink-right-5.png",
+            "direction": "right",
+            "color": "#b89e61"
+        },
+        {
+            "name": "Round Table",
+            "tags": [
+                "Round Table"
+            ],
+            "imagePath": "dist/round_table-pink-right-10.png",
+            "direction": "right",
+            "color": "#c87f60"
+        },
+        {
+            "name": "Corner sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/couche-light_blue-right-12.png",
+            "direction": "right",
+            "color": "#c79f90"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-pink-right-31.png",
+            "direction": "back",
+            "color": "#dbb99f"
+        },
+        {
+            "name": "Tree",
+            "tags": [
+                "Tree"
+            ],
+            "imagePath": "dist/tree-dark_green-right-1.png",
+            "direction": "right",
+            "color": "#3e8e4e"
+        },
+        {
+            "name": "Lamp",
+            "tags": [
+                "Lamp"
+            ],
+            "imagePath": "dist/lamp-orange-right-1.png",
+            "direction": "right",
+            "color": "#d59c65"
+        },
+        {
+            "name": "Corner sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/couche-light_blue-right-13.png",
+            "direction": "right",
+            "color": "#c299c4"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-pink-right-32.png",
+            "direction": "left",
+            "color": "#D2B48C"
+        },
+        {
+            "name": "Corner sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/couche-light_blue-right-14.png",
+            "direction": "left",
+            "color": "#a9726d"
+        },
+        {
+            "name": "Tree",
+            "tags": [
+                "Tree"
+            ],
+            "imagePath": "dist/tree-teal-right.png",
+            "direction": "right",
+            "color": "#2f8f4f"
+        },
+        {
+            "name": "Corner sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/couche-light_blue-right-15.png",
+            "direction": "left",
+            "color": "#83c182"
+        },
+        {
+            "name": "Round Table",
+            "tags": [
+                "Round Table"
+            ],
+            "imagePath": "dist/round_table-dark_green-up.png",
+            "direction": "front",
+            "color": "#c5c4be"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-brown-right-41.png",
+            "direction": "back",
+            "color": "#b36944"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-red-right-3.png",
+            "direction": "left",
+            "color": "#bc4336"
+        },
+        {
+            "name": "Two-seater sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/small_couche-pink-right-4.png",
+            "direction": "right",
+            "color": "#be7d62"
+        },
+        {
+            "name": "Table",
+            "tags": [
+                "Table"
+            ],
+            "imagePath": "dist/table-pink-right-3.png",
+            "direction": "right",
+            "color": "#cb815f"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-brown-right-43.png",
+            "direction": "right",
+            "color": "#e9ccab"
+        },
+        {
+            "name": "Bookshelves",
+            "tags": [
+                "Bookshelves"
+            ],
+            "imagePath": "dist/bookshelves-light_blue-right-6.png",
+            "direction": "right",
+            "color": "#A9A9A9"
+        },
+        {
+            "name": "Solo Puff",
+            "tags": [
+                "Solo Puff"
+            ],
+            "imagePath": "dist/solo_puff-teal-right-9.png",
+            "direction": "right",
+            "color": "#64b2b7"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-light_blue-right-15.png",
+            "direction": "right",
+            "color": "#c5c4c5"
+        },
+        {
+            "name": "Two-seater sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/small_couche-pink-right-5.png",
+            "direction": "right",
+            "color": "#d79dbf"
+        },
+        {
+            "name": "Solo Puff",
+            "tags": [
+                "Solo Puff"
+            ],
+            "imagePath": "dist/solo_puff-red-front-2.png",
+            "direction": "front",
+            "color": "#FF0000"
+        },
+        {
+            "name": "Solo Puff",
+            "tags": [
+                "Solo Puff"
+            ],
+            "imagePath": "dist/solo_puff-orange-right-5.png",
+            "direction": "right",
+            "color": "#FFA500"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-brown-right-42.png",
+            "direction": "left",
+            "color": "#885e48"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-brown-right-43.png",
+            "direction": "left",
+            "color": "#b98875"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-brown-front-6.png",
+            "direction": "front",
+            "color": "#99513f"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-brown-right-44.png",
+            "direction": "right",
+            "color": "#dfcfc4"
+        },
+        {
+            "name": "Round Table",
+            "tags": [
+                "Round Table"
+            ],
+            "imagePath": "dist/round_table-pink-right-11.png",
+            "direction": "right",
+            "color": "#d6a16e"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-brown-front-3.png",
+            "direction": "front",
+            "color": "#D3D3D3"
+        },
+        {
+            "name": "Solo Puff",
+            "tags": [
+                "Solo Puff"
+            ],
+            "imagePath": "dist/solo_puff-brown-right-5.png",
+            "direction": "right",
+            "color": "#FFA500"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-light_blue-front-4.png",
+            "direction": "front",
+            "color": "#baa095"
+        },
+        {
+            "name": "Solo Puff",
+            "tags": [
+                "Solo Puff"
+            ],
+            "imagePath": "dist/solo_puff-teal-front-2.png",
+            "direction": "front",
+            "color": "#6baba6"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-brown-right-45.png",
+            "direction": "right",
+            "color": "#e4b27d"
+        },
+        {
+            "name": "Regular Table",
+            "tags": [
+                "Regular Table"
+            ],
+            "imagePath": "dist/regular_table-orange-right-2.png",
+            "direction": "right",
+            "color": "#e5b780"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-light_blue-right-5.png",
+            "direction": "right",
+            "color": "#F5F5DC"
+        },
+        {
+            "name": "Poster",
+            "tags": [
+                "Poster"
+            ],
+            "imagePath": "dist/poster-orange-right-1.png",
+            "direction": "right",
+            "color": "#6e6642"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-orange-left-1.png",
+            "direction": "front",
+            "color": "#836b5a"
+        },
+        {
+            "name": "Two-seater sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/small_couche-light_blue-right-3.png",
+            "direction": "right",
+            "color": "#4d9cc9"
+        },
+        {
+            "name": "Two-seater sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/small_couche-orange-right-1.png",
+            "direction": "right",
+            "color": "#FFA500"
+        },
+        {
+            "name": "Round Table",
+            "tags": [
+                "Round Table"
+            ],
+            "imagePath": "dist/round_table-brown-right-5.png",
+            "direction": "right",
+            "color": "#d7c4b1"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-orange-right-5.png",
+            "direction": "right",
+            "color": "#d9966b"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-brown-right-46.png",
+            "direction": "left",
+            "color": "#dccabf"
+        },
+        {
+            "name": "Round Table",
+            "tags": [
+                "Round Table"
+            ],
+            "imagePath": "dist/round_table-dark_green-up-1.png",
+            "direction": "front",
+            "color": "#c9c7c2"
+        },
+        {
+            "name": "Corner sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/couche-light_blue-right-16.png",
+            "direction": "left",
+            "color": "#eaca67"
+        },
+        {
+            "name": "Corner sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/couche-light_blue-right-17.png",
+            "direction": "left",
+            "color": "#c99a86"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-pink-right-33.png",
+            "direction": "right",
+            "color": "#D2B48C"
+        },
+        {
+            "name": "Corner sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/couche-light_blue-right-18.png",
+            "direction": "right",
+            "color": "#75adcf"
+        },
+        {
+            "name": "Corner sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/couche-light_blue-right-19.png",
+            "direction": "left",
+            "color": "#75aed0"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-brown-right-47.png",
+            "direction": "left",
+            "color": "#c8c7c3"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-pink-front-4.png",
+            "direction": "front",
+            "color": "#d0916e"
+        },
+        {
+            "name": "Corner sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/couche-light_blue-front-14.png",
+            "direction": "front",
+            "color": "#D3D3D3"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-light_blue-right-16.png",
+            "direction": "right",
+            "color": "#D3D3D3"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-pink-right-34.png",
+            "direction": "back",
+            "color": "#dab598"
+        },
+        {
+            "name": "Two-seater sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/small_couche-pink-right-6.png",
+            "direction": "right",
+            "color": "#b97fbf"
+        },
+        {
+            "name": "Two-seater sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/small_couche-pink-right-7.png",
+            "direction": "right",
+            "color": "#eeaacd"
+        },
+        {
+            "name": "Poster",
+            "tags": [
+                "Poster"
+            ],
+            "imagePath": "dist/poster-pink-right-7.png",
+            "direction": "right",
+            "color": "#9e968e"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-teal-right-1.png",
+            "direction": "right",
+            "color": "#3f86b5"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-orange-right-10.png",
+            "direction": "right",
+            "color": "#808080"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-brown-right-19.png",
+            "direction": "right",
+            "color": "#808080"
+        },
+        {
+            "name": "Poster",
+            "tags": [
+                "Poster"
+            ],
+            "imagePath": "dist/poster-orange-right-2.png",
+            "direction": "right",
+            "color": "#997c65"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-brown-right-20.png",
+            "direction": "right",
+            "color": "#A9A9A9"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-brown-right-48.png",
+            "direction": "right",
+            "color": "#dead78"
+        },
+        {
+            "name": "Regular Table",
+            "tags": [
+                "Regular Table"
+            ],
+            "imagePath": "dist/regular_table-orange-right-3.png",
+            "direction": "right",
+            "color": "#e4b57e"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-brown-right-44.png",
+            "direction": "right",
+            "color": "#c89da3"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-brown-right-45.png",
+            "direction": "back",
+            "color": "#af6e4e"
+        },
+        {
+            "name": "Small Table",
+            "tags": [
+                "Small Table"
+            ],
+            "imagePath": "dist/small_table-brown-front-2.png",
+            "direction": "front",
+            "color": "#444444"
+        },
+        {
+            "name": "Solo Puff",
+            "tags": [
+                "Solo Puff"
+            ],
+            "imagePath": "dist/solo_puff-light_blue-front-3.png",
+            "direction": "front",
+            "color": "#cabcb4"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-pink-right-12.png",
+            "direction": "right",
+            "color": "#d4a575"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-brown-right-46.png",
+            "direction": "right",
+            "color": "#b98875"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-brown-right-47.png",
+            "direction": "left",
+            "color": "#b39794"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-orange-right.png",
+            "direction": "right",
+            "color": "#daab3c"
+        },
+        {
+            "name": "Solo Puff",
+            "tags": [
+                "Solo Puff"
+            ],
+            "imagePath": "dist/solo_puff-pink-right-4.png",
+            "direction": "right",
+            "color": "#e1a685"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-light_blue-right-17.png",
+            "direction": "left",
+            "color": "#bbbabd"
+        },
+        {
+            "name": "Tree",
+            "tags": [
+                "Tree"
+            ],
+            "imagePath": "dist/tree-dark_blue-left-5.png",
+            "direction": "front",
+            "color": "#3f5853"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-teal-right-3.png",
+            "direction": "right",
+            "color": "#808080"
+        },
+        {
+            "name": "Solo Puff",
+            "tags": [
+                "Solo Puff"
+            ],
+            "imagePath": "dist/solo_puff-pink-right-5.png",
+            "direction": "right",
+            "color": "#bb95bb"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-light_blue-right-18.png",
+            "direction": "right",
+            "color": "#808080"
+        },
+        {
+            "name": "Bookshelves",
+            "tags": [
+                "Bookshelves"
+            ],
+            "imagePath": "dist/bookshelves-light_blue-right-7.png",
+            "direction": "right",
+            "color": "#808080"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-teal-right-14.png",
+            "direction": "right",
+            "color": "#808080"
+        },
+        {
+            "name": "Poster",
+            "tags": [
+                "Poster"
+            ],
+            "imagePath": "dist/poster-orange-right-3.png",
+            "direction": "right",
+            "color": "#a5866e"
+        },
+        {
+            "name": "Two-seater sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/small_couche-pink-right-8.png",
+            "direction": "right",
+            "color": "#a26ea8"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-orange-front.png",
+            "direction": "front",
+            "color": "#d2c9c4"
+        },
+        {
+            "name": "Solo Puff",
+            "tags": [
+                "Solo Puff"
+            ],
+            "imagePath": "dist/solo_puff-red-front-3.png",
+            "direction": "front",
+            "color": "#c72a2d"
+        },
+        {
+            "name": "Book",
+            "tags": [
+                "Book"
+            ],
+            "imagePath": "dist/book-pink-right-6.png",
+            "direction": "right",
+            "color": "#b16b67"
+        },
+        {
+            "name": "Round Table",
+            "tags": [
+                "Round Table"
+            ],
+            "imagePath": "dist/round_table-pink-right-12.png",
+            "direction": "right",
+            "color": "#ca8061"
+        },
+        {
+            "name": "Lamp",
+            "tags": [
+                "Lamp"
+            ],
+            "imagePath": "dist/lamp-teal-right-1.png",
+            "direction": "right",
+            "color": "#9b7a71"
+        },
+        {
+            "name": "Big Table",
+            "tags": [
+                "Big Table"
+            ],
+            "imagePath": "dist/big_table-brown-front-1.png",
+            "direction": "front",
+            "color": "#D3D3D3"
+        },
+        {
+            "name": "Chairs",
+            "tags": [
+                "Chairs"
+            ],
+            "imagePath": "dist/chairs-brown-right-48.png",
+            "direction": "right",
+            "color": "#c18c72"
+        },
+        {
+            "name": "Corner sofa",
+            "tags": [
+                "Meeting & School",
+                "Furniture",
+                "Sofa"
+            ],
+            "imagePath": "dist/couche-light_blue-right-20.png",
+            "direction": "left",
+            "color": "#c39ac5"
+        }
+    ]
+}

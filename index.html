@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Assets Collection</title>
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <!-- Loader -->
+  <div id="loader" role="status" aria-live="polite">
+    <div id="loader-text">Loading…</div>
+    <div class="progress"><div class="progress-bar"></div></div>
+  </div>
+
+  <h1 id="main-title">Assets Collection</h1>
+
+  <div class="section-header"><h2>Collection Metadata</h2></div>
+  <form id="metadata-form">
+    <div class="form-group">
+      <label for="collection-name">Collection Name</label>
+      <input type="text" id="collection-name" />
+    </div>
+
+    <!-- Global Tags : version simple SANS autocomplete -->
+    <div class="form-group tags-container">
+      <label for="global-tags-input">Global Tags</label>
+      <div class="simple-tags" id="global-tags-simple">
+        <input type="text" id="global-tags-input" placeholder="Type a tag and press Enter, or use commas" aria-label="Add global tag"/>
+      </div>
+    </div>
+  </form>
+
+  <div class="section-header"><h2>Filters</h2></div>
+  <div id="filters">
+    <div class="form-group">
+      <label for="filter-name">Name</label>
+      <input type="text" id="filter-name" placeholder="Search by name…"/>
+    </div>
+    <div class="form-group">
+      <label for="filter-tags">Tags <span id="tags-count" class="badge"></span></label>
+      <div class="custom-tags-select" id="filter-tags-select">
+        <div class="tags-input-container" id="filter-tags-container" data-component="tags-input" data-role="filter">
+          <input type="text" id="filter-tags-input" placeholder="All Tags…" aria-label="Filter by tags"/>
+          <div class="tags-list-container" id="filter-tags-list" role="listbox" aria-hidden="true"></div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="filter-direction">Direction <span id="direction-count" class="badge"></span></label>
+      <select id="filter-direction" aria-label="Filter by direction"></select>
+    </div>
+    <div class="form-group">
+      <label for="filter-color">Color <span id="color-count" class="badge"></span></label>
+      <div class="custom-color-select" id="filter-color-select" data-component="color-select" aria-haspopup="listbox" aria-expanded="false">
+        <div class="selected-color-display" tabindex="0" aria-label="Filter by color, toggle list">
+          <div class="color-swatch" id="filter-color-swatch"></div>
+          <span class="color-name" id="filter-color-name">All Colors</span>
+          <span class="color-hex" id="filter-color-hex"></span>
+          <div class="dropdown-arrow"></div>
+        </div>
+        <div class="color-options-list" id="filter-color-options" role="listbox" aria-hidden="true"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-header"><h2>Assets <span id="assets-count-title"></span></h2></div>
+  <div id="container" aria-live="polite"></div>
+
+  <div id="fixed-buttons-container" role="toolbar" aria-label="Selection actions">
+    <button id="select-all-btn" aria-label="Select all visible assets">Select All</button>
+    <button id="deselect-btn" style="display:none" aria-label="Deselect all selected assets">Deselect All</button>
+    <button id="validate-btn" style="display:none" aria-label="Validate selected assets">Validate Selection (<span id="selected-count">0</span>)</button>
+    <button id="update-colors-btn" aria-label="Update colors server-side" style="display:none">Update Colors</button>
+    <button id="bulk-edit-btn" style="display:none" aria-label="Bulk edit selected assets">Bulk Edit</button>
+  </div>
+
+  <div id="bulkEditModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="bulkEditTitle">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="bulkEditTitle">Edit 0 Assets</h2>
+        <span class="close-btn" role="button" aria-label="Close modal" tabindex="0">&times;</span>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="modal-name">Name</label>
+          <input type="text" id="modal-name" placeholder="Leave unchanged"/>
+        </div>
+        <div class="form-group tags-container">
+          <label for="modal-tags-input">Tags</label>
+          <div class="tags-input-container" id="modal-tags-container" data-component="tags-input" data-role="modal">
+            <input type="text" id="modal-tags-input" placeholder="Add tags…" aria-label="Bulk tags"/>
+            <div class="tags-list-container" id="modal-tags-list" role="listbox" aria-hidden="true"></div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="modal-direction">Direction</label>
+          <select id="modal-direction">
+            <option value="">Leave unchanged</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="modal-color-select">Color</label>
+          <div class="custom-color-select" id="modal-color-select" data-component="color-select" aria-haspopup="listbox" aria-expanded="false">
+            <div class="selected-color-display" tabindex="0" aria-label="Bulk color, toggle list">
+              <div class="color-swatch" id="modal-color-swatch" style="background:transparent"></div>
+              <span class="color-name" id="modal-color-name">Leave unchanged</span>
+              <span class="color-hex" id="modal-color-hex"></span>
+              <div class="dropdown-arrow"></div>
+            </div>
+            <div class="color-options-list" id="modal-color-options" role="listbox" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="close-modal-btn">Cancel</button>
+        <button id="save-bulk-btn">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
