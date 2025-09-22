@@ -4,148 +4,201 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Assets Collection</title>
-  <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="app.css">
-  <style>
-    /* Mini styles spécifiques aux toasts de notif */
-    #notifications{
-      position:fixed; top:16px; right:16px; z-index:9999;
-      display:flex; flex-direction:column; gap:10px; pointer-events:none;
-    }
-    .toast{
-      min-width:240px; max-width:360px; background:#111; color:#fff;
-      border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,.3);
-      padding:10px 12px; font-size:.9rem; line-height:1.3;
-      display:flex; align-items:flex-start; gap:10px; opacity:0; transform:translateY(-6px);
-      animation:toast-in .18s ease-out forwards;
-      pointer-events:auto; cursor:pointer;
-    }
-    .toast .title{ font-weight:700; margin-right:6px; }
-    .toast .meta{ opacity:.85 }
-    .toast.success{ background:#1b5e20; }
-    .toast.info{ background:#0d47a1; }
-    .toast.warn{ background:#8d6e00; }
-    @keyframes toast-in { to { opacity:1; transform:translateY(0) } }
-    @keyframes toast-out { to { opacity:0; transform:translateY(-6px) } }
-  </style>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { container: { center: true, padding: '1rem' } } } };
+  </script>
 </head>
-<body>
-  <!-- Loader -->
-  <div id="loader" role="status" aria-live="polite">
-    <div id="loader-text">Loading…</div>
-    <div class="progress"><div class="progress-bar"></div></div>
-  </div>
+<body class="min-h-dvh bg-gray-50 text-gray-900">
+<!-- Notifications -->
+<div id="notifications" aria-live="polite" class="fixed top-4 right-4 z-50 space-y-2"></div>
 
-  <!-- Notifications (toasts) -->
-  <div id="notifications" aria-live="polite" aria-atomic="false"></div>
-
-  <h1 id="main-title">Assets Collection</h1>
-
-  <div class="section-header"><h2>Collection Metadata</h2></div>
-  <form id="metadata-form">
-    <div class="form-group">
-      <label for="collection-name">Collection Name</label>
-      <input type="text" id="collection-name" />
+<header class="container mx-auto py-6">
+  <h1 id="main-title" class="text-2xl font-semibold mb-4">Assets Collection</h1>
+  <div class="grid gap-4 md:grid-cols-2">
+    <div class="flex flex-col gap-1">
+      <label for="collection-name" class="text-sm text-gray-600">Collection Name</label>
+      <input id="collection-name" type="text" placeholder="Collection name"
+             class="h-10 rounded-lg border border-gray-300 bg-white px-3 outline-none focus:border-gray-400"/>
     </div>
 
-    <!-- Global Tags : version simple SANS autocomplete -->
-    <div class="form-group tags-container">
-      <label for="global-tags-input">Global Tags</label>
-      <div class="simple-tags" id="global-tags-simple">
-        <input type="text" id="global-tags-input" placeholder="Type a tag and press Enter, or use commas" aria-label="Add global tag"/>
-      </div>
-    </div>
-  </form>
-
-  <div class="section-header"><h2>Filters</h2></div>
-  <div id="filters">
-    <div class="form-group">
-      <label for="filter-name">Name</label>
-      <input type="text" id="filter-name" placeholder="Search by name…"/>
-    </div>
-    <div class="form-group">
-      <label for="filter-tags">Tags <span id="tags-count" class="badge"></span></label>
-      <div class="custom-tags-select" id="filter-tags-select">
-        <div class="tags-input-container" id="filter-tags-container" data-component="tags-input" data-role="filter">
-          <input type="text" id="filter-tags-input" placeholder="All Tags…" aria-label="Filter by tags"/>
-          <div class="tags-list-container" id="filter-tags-list" role="listbox" aria-hidden="true"></div>
-        </div>
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="filter-direction">Direction <span id="direction-count" class="badge"></span></label>
-      <select id="filter-direction" aria-label="Filter by direction"></select>
-    </div>
-    <div class="form-group">
-      <label for="filter-color">Color <span id="color-count" class="badge"></span></label>
-      <div class="custom-color-select" id="filter-color-select" data-component="color-select" aria-haspopup="listbox" aria-expanded="false">
-        <div class="selected-color-display" tabindex="0" aria-label="Filter by color, toggle list">
-          <div class="color-swatch" id="filter-color-swatch"></div>
-          <span class="color-name" id="filter-color-name">All Colors</span>
-          <span class="color-hex" id="filter-color-hex"></span>
-          <div class="dropdown-arrow"></div>
-        </div>
-        <div class="color-options-list" id="filter-color-options" role="listbox" aria-hidden="true"></div>
+    <!-- Global Tags (tags de collection uniquement) -->
+    <div class="flex flex-col gap-1">
+      <label for="global-tags-input" class="text-sm text-gray-600">Global Tags</label>
+      <div id="global-tags-simple"
+           class="simple-tags flex flex-wrap gap-2 rounded-lg border border-gray-300 bg-white p-2">
+        <input type="text" id="global-tags-input"
+               placeholder="Type a tag and press Enter, or use commas"
+               class="h-9 min-w-[12rem] flex-1 outline-none"/>
       </div>
     </div>
   </div>
+</header>
 
-  <div class="section-header"><h2>Assets <span id="assets-count-title"></span></h2></div>
-  <div id="container" aria-live="polite"></div>
+<!-- Filters (colonnes plein largeur, dropdowns en absolute) -->
+<section class="container mx-auto pb-4">
+  <h2 class="text-lg font-medium mb-3">Filters</h2>
 
-  <div id="fixed-buttons-container" role="toolbar" aria-label="Selection actions">
-    <button id="select-all-btn" aria-label="Select all visible assets">Select All</button>
-    <button id="deselect-btn" style="display:none" aria-label="Deselect all selected assets">Deselect All</button>
-    <button id="validate-btn" style="display:none" aria-label="Validate selected assets">Validate Selection (<span id="selected-count">0</span>)</button>
-    <button id="update-colors-btn" aria-label="Update colors server-side" style="display:none">Update Colors</button>
-    <button id="bulk-edit-btn" style="display:none" aria-label="Bulk edit selected assets">Bulk Edit</button>
-  </div>
+  <div class="grid gap-4 grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
 
-  <!-- Bulk Edit Modal -->
-  <div id="bulkEditModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="bulkEditTitle">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2 id="bulkEditTitle">Edit 0 Assets</h2>
-        <span class="close-btn" role="button" aria-label="Close modal" tabindex="0">&times;</span>
+    <!-- Name -->
+    <div class="w-full">
+      <label for="filter-name" class="block text-sm text-gray-600 mb-1">Name</label>
+      <div class="relative">
+          <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                 viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1110.5 3a7.5 7.5 0 016.15 13.65z"/>
+            </svg>
+          </span>
+        <input id="filter-name" type="text" placeholder="Search by name…"
+               class="h-12 w-full rounded-full border border-gray-300 bg-white pl-10 pr-4 outline-none focus:border-gray-400"/>
       </div>
-      <div class="modal-body">
-        <div class="form-group">
-          <label for="modal-name">Name</label>
-          <input type="text" id="modal-name" placeholder="Leave unchanged"/>
+    </div>
+
+    <!-- Tags (FILTER) -->
+    <div class="w-full">
+      <label for="filter-tags-select" class="block text-sm text-gray-600 mb-1">Tags</label>
+      <div id="filter-tags-select"
+           class="custom-tags-select relative w-full rounded-lg border border-gray-300 bg-white h-12 flex items-center">
+        <div class="tags-input-container flex flex-wrap items-center gap-2 px-2 w-full" data-component="tags-input">
+          <input type="text" id="filter-tags" placeholder="Pick tags…"
+                 class="flex-1 outline-none"/>
         </div>
-        <div class="form-group tags-container">
-          <label for="modal-tags-input">Tags</label>
-          <div class="tags-input-container" id="modal-tags-container" data-component="tags-input" data-role="modal">
-            <input type="text" id="modal-tags-input" placeholder="Add tags…" aria-label="Bulk tags"/>
-            <div class="tags-list-container" id="modal-tags-list" role="listbox" aria-hidden="true"></div>
+        <!-- ABSOLUTE dropdown -->
+        <div class="tags-list-container absolute left-0 right-0 top-full mt-1 max-h-80 overflow-auto rounded-lg border border-gray-200 bg-white shadow-lg z-50 hidden"
+             aria-hidden="true"></div>
+      </div>
+    </div>
+
+    <!-- Direction -->
+    <div class="w-full">
+      <label for="filter-direction" class="block text-sm text-gray-600 mb-1">Direction</label>
+      <select id="filter-direction"
+              class="h-12 w-full rounded-lg border border-gray-300 bg-white px-3 outline-none focus:border-gray-400"></select>
+    </div>
+
+    <!-- Color (FILTER) -->
+    <div class="w-full">
+      <label for="filter-color-select" class="block text-sm text-gray-600 mb-1">Color</label>
+      <div id="filter-color-select"
+           class="custom-color-select relative w-full rounded-lg border border-gray-300 bg-white h-12 flex items-center"
+           data-component="color-select" aria-haspopup="listbox" aria-expanded="false">
+        <div class="selected-color-display flex h-full w-full cursor-pointer items-center gap-2 px-3" tabindex="0">
+          <div class="color-swatch h-5 w-5 rounded border border-gray-300"></div>
+          <span class="color-name text-sm">All Colors</span>
+          <span class="color-hex text-xs text-gray-500"></span>
+          <div class="dropdown-arrow ml-auto">▾</div>
+        </div>
+        <!-- ABSOLUTE dropdown -->
+        <div class="color-options-list absolute left-0 right-0 top-full mt-1 max-h-80 overflow-auto rounded-lg border border-gray-200 bg-white shadow-lg z-50 hidden"
+             role="listbox" aria-hidden="true"></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Assets -->
+<section class="container mx-auto pb-20">
+  <div class="mb-3 flex items-center gap-2">
+    <h2 class="text-lg font-medium">Assets</h2>
+    <span id="assets-count-title" class="text-sm text-gray-600"></span>
+  </div>
+  <div id="container" aria-live="polite"
+       class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"></div>
+</section>
+
+<!-- Toolbar (centrée + couleurs boutons) -->
+<div id="fixed-buttons-container" role="toolbar"
+     class="fixed inset-x-0 bottom-0 z-40 border-t border-gray-200 bg-white/90 backdrop-blur">
+  <div class="container mx-auto flex flex-wrap justify-center gap-3 p-3">
+    <button id="select-all-btn"
+            class="rounded-lg border border-gray-300 px-4 h-10 bg-white hover:bg-gray-50">
+      Select All
+    </button>
+    <button id="deselect-btn"
+            class="hidden rounded-lg border border-gray-300 px-4 h-10 bg-white hover:bg-gray-50">
+      Deselect All
+    </button>
+    <button id="validate-btn"
+            class="hidden rounded-lg bg-green-600 text-white px-4 h-10 hover:bg-green-700">
+      Validate Selection (<span id="selected-count">0</span>)
+    </button>
+    <button id="update-colors-btn"
+            class="hidden rounded-lg border border-gray-300 px-4 h-10 bg-white hover:bg-gray-50">
+      Update Colors
+    </button>
+    <button id="bulk-edit-btn"
+            class="hidden rounded-lg bg-blue-600 text-white px-4 h-10 hover:bg-blue-700">
+      Bulk Edit
+    </button>
+  </div>
+</div>
+
+<!-- Bulk Edit Modal (avec dropdowns en absolute) -->
+<div id="bulkEditModal" class="modal fixed inset-0 z-50 hidden items-center justify-center bg-black/30"
+     role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="bulkEditTitle">
+  <div class="modal-content w-[min(900px,92vw)] rounded-xl bg-white shadow-xl">
+    <div class="modal-header border-b border-gray-200 p-4">
+      <h2 id="bulkEditTitle" class="text-lg font-medium">Edit 0 Assets</h2>
+    </div>
+    <div class="modal-body grid grid-cols-1 gap-4 p-4 md:grid-cols-2">
+      <div class="flex flex-col gap-1">
+        <label for="modal-name" class="text-sm text-gray-600">Name</label>
+        <input type="text" id="modal-name" placeholder="Leave unchanged"
+               class="h-10 rounded-lg border border-gray-300 bg-white px-3 outline-none focus:border-gray-400"/>
+      </div>
+      <div class="flex flex-col gap-1">
+        <label for="modal-direction" class="text-sm text-gray-600">Direction</label>
+        <select id="modal-direction"
+                class="h-10 rounded-lg border border-gray-300 bg-white px-3 outline-none focus:border-gray-400">
+          <option value="">Leave unchanged</option>
+          <option value="front">front</option>
+          <option value="back">back</option>
+          <option value="left">left</option>
+          <option value="right">right</option>
+        </select>
+      </div>
+      <div class="md:col-span-2 flex flex-col gap-1">
+        <label for="modal-tags" class="text-sm text-gray-600">Tags</label>
+        <div class="custom-tags-select relative rounded-lg border border-gray-300 bg-white" id="modal-tags-select">
+          <div class="tags-input-container flex flex-wrap items-center gap-2 p-2" data-component="tags-input">
+            <input type="text" id="modal-tags" placeholder="Pick tags…"
+                   class="h-9 min-w-[10rem] flex-1 outline-none"/>
           </div>
-        </div>
-        <div class="form-group">
-          <label for="modal-direction">Direction</label>
-          <select id="modal-direction">
-            <option value="">Leave unchanged</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="modal-color-select">Color</label>
-          <div class="custom-color-select" id="modal-color-select" data-component="color-select" aria-haspopup="listbox" aria-expanded="false">
-            <div class="selected-color-display" tabindex="0" aria-label="Bulk color, toggle list">
-              <div class="color-swatch" id="modal-color-swatch" style="background:transparent"></div>
-              <span class="color-name" id="modal-color-name">Leave unchanged</span>
-              <span class="color-hex" id="modal-color-hex"></span>
-              <div class="dropdown-arrow"></div>
-            </div>
-            <div class="color-options-list" id="modal-color-options" role="listbox" aria-hidden="true"></div>
-          </div>
+          <!-- ABSOLUTE dropdown -->
+          <div class="tags-list-container absolute left-0 right-0 top-full mt-1 max-h-80 overflow-auto rounded-lg border border-gray-200 bg-white shadow-lg z-50 hidden"
+               aria-hidden="true"></div>
         </div>
       </div>
-      <div class="modal-footer">
-        <button id="close-modal-btn">Cancel</button>
-        <button id="save-bulk-btn">Save</button>
+      <div class="md:col-span-2 flex flex-col gap-1">
+        <label for="modal-color-select" class="text-sm text-gray-600">Color</label>
+        <div class="custom-color-select relative rounded-lg border border-gray-300 bg-white"
+             id="modal-color-select" data-component="color-select" aria-haspopup="listbox" aria-expanded="false">
+          <div class="selected-color-display flex h-10 cursor-pointer items-center gap-2 px-3" tabindex="0">
+            <div class="color-swatch h-5 w-5 rounded border border-gray-300"></div>
+            <span class="color-name text-sm">Leave unchanged</span>
+            <span class="color-hex text-xs text-gray-500"></span>
+            <div class="dropdown-arrow ml-auto">▾</div>
+          </div>
+          <!-- ABSOLUTE dropdown -->
+          <div class="color-options-list absolute left-0 right-0 top-full mt-1 max-h-80 overflow-auto rounded-lg border border-gray-200 bg-white shadow-lg z-50 hidden"
+               role="listbox" aria-hidden="true"></div>
+        </div>
       </div>
     </div>
+    <div class="modal-footer flex items-center justify-end gap-2 border-t border-gray-200 p-4">
+      <button id="close-modal-btn" class="rounded-lg border border-gray-300 px-3 h-9">Cancel</button>
+      <button id="save-bulk-btn" class="rounded-lg bg-gray-900 text-white px-3 h-9">Save</button>
+    </div>
   </div>
+</div>
 
-  <script src="app.js"></script>
+<!-- Entrée modules -->
+<script type="module" src="./js/app.js"></script>
 </body>
 </html>

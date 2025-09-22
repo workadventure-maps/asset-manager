@@ -11,11 +11,17 @@
             "tags": [
                 "Meeting & School",
                 "Furniture",
-                "Sofa"
+                "Sofa",
+                "Lamp"
             ],
             "imagePath": "dist/couche-light_blue-right.png",
             "direction": "right",
-            "color": "#eaca68"
+            "color": "#eaca68",
+            "category": [
+                "Équipements & Objets",
+                "Personnages & Avatars"
+            ],
+            "secondaryColor": "coral"
         },
         {
             "name": "Round Table",
@@ -47,8 +53,7 @@
         {
             "name": "Tree",
             "tags": [
-                "Treex",
-                "Outdoorx"
+                "Tree"
             ],
             "imagePath": "dist/tree-dark_blue-left.png",
             "direction": "front",
