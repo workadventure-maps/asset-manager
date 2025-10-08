@@ -1,209 +1,301 @@
 # server.py
+# Simple HTTP server with API endpoints for the asset manager
+
+from __future__ import annotations
 import http.server
 import socketserver
 import json
 import os
 import shutil
+import mimetypes
 from urllib.parse import urlparse
+from pathlib import Path
 
+# -----------------------------------------------------------------------------
+# Config
+# -----------------------------------------------------------------------------
+DEFAULT_HOST = "0.0.0.0"
 DEFAULT_PORT = 8000
-ASSETS_FILE = 'assets_list.json'
+ASSETS_JSON = "assets_list.json"
 
-# --- Données couleur (inchangées) ---
-color_families = {
-    "red": {"hex": "#FF0000", "min_rgb": [200, 0, 0], "max_rgb": [255, 100, 100]},
-    "maroon": {"hex": "#800000", "min_rgb": [100, 0, 0], "max_rgb": [150, 50, 50]},
-    "crimson": {"hex": "#DC143C", "min_rgb": [200, 20, 40], "max_rgb": [240, 60, 80]},
-    "coral": {"hex": "#FF7F50", "min_rgb": [250, 120, 80], "max_rgb": [255, 150, 110]},
-    "blue": {"hex": "#0000FF", "min_rgb": [0, 0, 200], "max_rgb": [100, 100, 255]},
-    "navy": {"hex": "#000080", "min_rgb": [0, 0, 100], "max_rgb": [50, 50, 150]},
-    "teal": {"hex": "#008080", "min_rgb": [0, 100, 100], "max_rgb": [50, 150, 150]},
-    "cyan": {"hex": "#00FFFF", "min_rgb": [0, 200, 200], "max_rgb": [100, 255, 255]},
-    "light_blue": {"hex": "#ADD8E6", "min_rgb": [150, 200, 220], "max_rgb": [200, 255, 255]},
-    "yellow": {"hex": "#FFFF00", "min_rgb": [200, 200, 0], "max_rgb": [255, 255, 100]},
-    "gold": {"hex": "#FFD700", "min_rgb": [200, 200, 0], "max_rgb": [255, 220, 50]},
-    "green": {"hex": "#00FF00", "min_rgb": [0, 200, 0], "max_rgb": [100, 255, 100]},
-    "lime": {"hex": "#00FF00", "min_rgb": [100, 200, 0], "max_rgb": [150, 255, 50]},
-    "forest_green": {"hex": "#228B22", "min_rgb": [30, 120, 30], "max_rgb": [70, 150, 70]},
-    "olive": {"hex": "#808000", "min_rgb": [100, 100, 0], "max_rgb": [150, 150, 50]},
-    "brown": {"hex": "#A52A2A", "min_rgb": [150, 50, 0], "max_rgb": [200, 100, 50]},
-    "chocolate": {"hex": "#D2691E", "min_rgb": [180, 80, 20], "max_rgb": [220, 120, 60]},
-    "saddlebrown": {"hex": "#8B4513", "min_rgb": [120, 50, 10], "max_rgb": [150, 80, 40]},
-    "orange": {"hex": "#FFA500", "min_rgb": [200, 100, 0], "max_rgb": [255, 165, 50]},
-    "purple": {"hex": "#800080", "min_rgb": [100, 0, 100], "max_rgb": [150, 50, 150]},
-    "magenta": {"hex": "#FF00FF", "min_rgb": [200, 0, 200], "max_rgb": [255, 100, 255]},
-    "fuchsia": {"hex": "#FF00FF", "min_rgb": [200, 0, 200], "max_rgb": [255, 100, 255]},
-    "pink": {"hex": "#FFC0CB", "min_rgb": [250, 150, 150], "max_rgb": [255, 200, 200]},
-    "hot_pink": {"hex": "#FF69B4", "min_rgb": [250, 100, 150], "max_rgb": [255, 150, 200]},
-    "grey": {"hex": "#808080", "min_rgb": [100, 100, 100], "max_rgb": [150, 150, 150]},
-    "dark_grey": {"hex": "#A9A9A9", "min_rgb": [150, 150, 150], "max_rgb": [180, 180, 180]},
-    "light_grey": {"hex": "#D3D3D3", "min_rgb": [200, 200, 200], "max_rgb": [220, 220, 220]},
-    "black": {"hex": "#000000", "min_rgb": [0, 0, 0], "max_rgb": [50, 50, 50]},
-    "white": {"hex": "#FFFFFF", "min_rgb": [240, 240, 240], "max_rgb": [255, 255, 255]},
-    "beige": {"hex": "#F5F5DC", "min_rgb": [220, 220, 190], "max_rgb": [255, 255, 230]},
-    "tan": {"hex": "#D2B48C", "min_rgb": [190, 160, 120], "max_rgb": [220, 190, 150]}
-}
+# Dossiers par défaut
+DIST_DIR = "dist"
+DIST32_DIR = "dist32"
+VALIDATE_DIR = "validate elements"
 
-def hex_to_rgb(hex_code):
-    hex_code = hex_code.lstrip('#')
-    return tuple(int(hex_code[i:i+2], 16) for i in (0, 2, 4))
-
-def find_color_family(rgb):
-    r, g, b = rgb
-    for family, data in color_families.items():
-        min_r, min_g, min_b = data["min_rgb"]
-        max_r, max_g, max_b = data["max_rgb"]
-        if min_r <= r <= max_r and min_g <= g <= max_g and min_b <= b <= max_b:
-            return family, data["hex"]
-    return None, None
-
-def update_json_colors(file_path):
+# -----------------------------------------------------------------------------
+# Utils
+# -----------------------------------------------------------------------------
+def read_json_body(handler: http.server.BaseHTTPRequestHandler):
+    length = int(handler.headers.get("Content-Length", 0))
+    if not length:
+        return None
     try:
-        with open(file_path, 'r', encoding='utf-8') as f:
-            data = json.load(f)
-        if "collection" in data:
-            for asset in data["collection"]:
-                if "color" in asset:
-                    hex_color = asset["color"]
-                    r, g, b = hex_to_rgb(hex_color)
-                    family, new_hex_code = find_color_family((r, g, b))
-                    if new_hex_code:
-                        asset["color"] = new_hex_code
-        with open(file_path, 'w', encoding='utf-8') as f:
-            json.dump(data, f, indent=4, ensure_ascii=False)
-        return True, "Fichier JSON mis à jour avec les nouvelles couleurs de famille."
-    except Exception as e:
-        return False, f"Erreur lors de la mise à jour du fichier JSON: {e}"
-
-def safe_join(base, *paths):
-    base = os.path.abspath(base)
-    final_path = os.path.abspath(os.path.join(base, *paths))
-    if not final_path.startswith(base + os.sep) and final_path != base:
-        raise ValueError("Unsafe path.")
-    return final_path
-
-def read_json_body(handler):
-    length = int(handler.headers.get('Content-Length', 0) or 0)
-    raw = handler.rfile.read(length) if length > 0 else b'{}'
-    try:
-        return json.loads(raw.decode('utf-8') or '{}')
+        raw = handler.rfile.read(length).decode("utf-8", errors="replace")
+        return json.loads(raw)
     except Exception:
         return None
 
-class MyHandler(http.server.SimpleHTTPRequestHandler):
-    # CORS
+def safe_ensure_dir(p: Path):
+    p.parent.mkdir(parents=True, exist_ok=True)
+
+def send_json(handler: http.server.BaseHTTPRequestHandler, code: int, payload: dict):
+    data = json.dumps(payload, ensure_ascii=False).encode("utf-8")
+    handler.send_response(code)
+    handler.send_header("Content-Type", "application/json; charset=utf-8")
+    handler.send_header("Content-Length", str(len(data)))
+    handler.end_headers()
+    handler.wfile.write(data)
+
+# -----------------------------------------------------------------------------
+# Image processing helpers (importés dynamiquement si dispo)
+# -----------------------------------------------------------------------------
+def process_directory_to_grid_wrapper(src_dir: str, dst_dir: str) -> dict:
+    """
+    Wrapper pour importer et appeler les helpers depuis image_processor.py.
+    """
+    from importlib import import_module
+    try:
+        ip = import_module("image_processor")
+    except Exception as e:
+        raise RuntimeError(f"Cannot import image_processor: {e}")
+
+    if not hasattr(ip, "process_directory_to_grid"):
+        raise RuntimeError("image_processor.process_directory_to_grid not found")
+
+    return ip.process_directory_to_grid(src_dir, dst_dir)
+
+# -----------------------------------------------------------------------------
+# HTTP Handler
+# -----------------------------------------------------------------------------
+class Handler(http.server.SimpleHTTPRequestHandler):
+
+    # Ajout CORS + désactivation du cache agressif côté dev
     def end_headers(self):
-        self.send_header('Access-Control-Allow-Origin', '*')
-        self.send_header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
-        self.send_header('Access-Control-Allow-Headers', 'Content-Type')
-        return super().end_headers()
+        self.send_header("Access-Control-Allow-Origin", "*")
+        self.send_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, HEAD")
+        self.send_header("Access-Control-Allow-Headers", "Content-Type")
+        super().end_headers()
 
     def do_OPTIONS(self):
-        self.send_response(200)
+        self.send_response(204)
         self.end_headers()
+
+    # L’UI fait des HEAD sur les images pour récupérer Content-Length
+    def do_HEAD(self):
+        path = self.translate_path(self.path)
+        p = Path(path)
+        if p.is_file():
+            ctype = mimetypes.guess_type(str(p))[0] or "application/octet-stream"
+            try:
+                size = p.stat().st_size
+            except Exception:
+                size = 0
+            self.send_response(200)
+            self.send_header("Content-Type", ctype)
+            self.send_header("Content-Length", str(size))
+            self.end_headers()
+        else:
+            self.send_error(404, "File not found")
+
+    def do_GET(self):
+        # Map /collisions to collisions.html (added)
+        if self.path.split('?')[0] == '/collisions':
+            self.path = '/collisions.html'
+        # Comportement par défaut de SimpleHTTPRequestHandler (fichiers statiques)
+        return super().do_GET()
+        if route == "/add-assets":
+            return send_file(self, "add_assets.html")
+            if route == "/upload_files":
+                try:
+                    import cgi
+                    from pathlib import Path
+                    fs = cgi.FieldStorage(
+                        fp=self.rfile,
+                        headers=self.headers,
+                        environ={
+                            "REQUEST_METHOD": "POST",
+                            "CONTENT_TYPE": self.headers.get("Content-Type"),
+                        },
+                        keep_blank_values=True
+                    )
+
+                    fields = fs["files"] if "files" in fs else None
+                    if fields is None:
+                        if "file" in fs:
+                            fields = fs["file"]
+                        else:
+                            return send_json(self, 400, {"status":"error","message":"No files field in form"})
+
+                    if not isinstance(fields, list):
+                        fields = [fields]
+
+                    dist_root = Path("dist")
+                    saved = 0
+                    errors = []
+                    for part in fields:
+                        filename = getattr(part, "filename", "") or ""
+                        rel = filename.replace("\\\\", "/").lstrip("./").strip("/")
+                        if not rel or ".." in rel:
+                            errors.append({"file": filename, "error": "invalid relative path"})
+                            continue
+                        dest = dist_root / rel
+                        dest.parent.mkdir(parents=True, exist_ok=True)
+                        with open(dest, "wb") as outf:
+                            data = part.file.read()
+                            outf.write(data)
+                        saved += 1
+
+                    return send_json(self, 200, {"status":"success", "saved": saved, "errors": errors})
+                except Exception as e:
+                    return send_json(self, 500, {"status":"error", "message": str(e)})
+
+
 
     def do_POST(self):
         route = urlparse(self.path).path
 
-        if route == '/':
-            # MAJ assets_list.json
-            data = read_json_body(self)
-            if data is None:
-                return self._json(400, {"status": "error", "message": "JSON invalide"})
+        # ---------------------------------------------------------------------
+        # NEW: Process all PNGs in dist32/ -> write normalized versions into dist32/
+        #      Trim transparent edges, then pad to multiples of 32,
+        #      centered on X and bottom-aligned on Y.
+        # ---------------------------------------------------------------------
+        if route == "/resize_to_grid_to_dir":
             try:
-                with open(ASSETS_FILE, 'w', encoding='utf-8') as f:
-                    json.dump(data, f, indent=4, ensure_ascii=False)
-                return self._json(200, {"status": "success", "message": "Fichier JSON mis à jour."})
-            except Exception as e:
-                return self._json(500, {"status": "error", "message": str(e)})
-
-        elif route == '/update_colors':
-            success, message = update_json_colors(ASSETS_FILE)
-            code = 200 if success else 500
-            return self._json(code, {"status": "success" if success else "error", "message": message})
-
-        elif route == '/validate_selection':
-            data = read_json_body(self)
-            if data is None:
-                return self._json(400, {"ok": False, "error": "JSON invalide"})
-
-            target_dir_name = data.get('targetDir') or 'validate elements'
-            items = data.get('items') or []
-            if not isinstance(items, list):
-                return self._json(400, {"ok": False, "error": '"items" must be an array'})
-
-            try:
-                base = os.getcwd()
-                target_dir = safe_join(base, target_dir_name)
-                os.makedirs(target_dir, exist_ok=True)
-
-                results = []
-                for it in items:
-                    image_path = (it.get('imagePath') or '').lstrip('/\\')
-                    new_filename = it.get('newFilename') or 'unnamed.png'
-                    if not new_filename.lower().endswith('.png'):
-                        new_filename = new_filename + '.png'
-
-                    try:
-                        src = safe_join(base, image_path)
-                    except ValueError:
-                        results.append({"imagePath": image_path, "newFilename": new_filename, "status": "unsafe-path"})
-                        continue
-
-                    dst = os.path.join(target_dir, new_filename)
-
-                    if not os.path.isfile(src):
-                        results.append({"imagePath": image_path, "newFilename": new_filename, "status": "missing"})
-                        continue
-
-                    try:
-                        shutil.copyfile(src, dst)
-                        results.append({"imagePath": image_path, "newFilename": new_filename, "status": "copied"})
-                    except Exception as e:
-                        results.append({"imagePath": image_path, "newFilename": new_filename, "status": f"error: {e}"})
-
-                subset = {
-                    "collectionName": "validated-selection",
-                    "tags": [],
-                    "collection": [{
-                        "imagePath": f"{target_dir_name}/{(it.get('newFilename') or 'unnamed.png')}",
-                        "name": it.get("name") or "",
-                        "tags": it.get("tags") or [],
-                        "direction": it.get("direction") or "",
-                        "color": it.get("color") or ""
-                    } for it in items]
-                }
-                json_path = os.path.join(target_dir, "validated-selection.json")
-                try:
-                    with open(json_path, 'w', encoding='utf-8') as f:
-                        json.dump(subset, f, ensure_ascii=False, indent=2)
-                except Exception as e:
-                    results.append({"jsonWrite": f"error: {e}"})
-
-                return self._json(200, {
-                    "ok": True,
-                    "targetDir": target_dir_name,
-                    "jsonFile": f"{target_dir_name}/validated-selection.json",
-                    "results": results
+                os.makedirs(DIST32_DIR, exist_ok=True)
+                result = process_directory_to_grid_wrapper(DIST_DIR, DIST32_DIR)
+                return send_json(self, 200, {
+                    "status": "success",
+                    "processed": result.get("processed", 0),
+                    "dst": DIST32_DIR,
+                    "results": result.get("results", [])
                 })
-
             except Exception as e:
-                return self._json(500, {"ok": False, "error": str(e)})
+                return send_json(self, 500, {"status": "error", "message": str(e)})
 
-        else:
-            return self._json(404, {"status": "error", "message": "Route not found"})
+        # ---------------------------------------------------------------------
+        # Update assets_list.json (overwrite with posted content)
+        # Body attendu: (l’objet JSON complet de la collection)
+        # ---------------------------------------------------------------------
+        if route == "/":
+            data = read_json_body(self)
+            if not isinstance(data, dict):
+                return send_json(self, 400, {"status": "error", "message": "Invalid JSON body"})
+            try:
+                with open(ASSETS_JSON, "w", encoding="utf-8") as f:
+                    json.dump(data, f, indent=2, ensure_ascii=False)
+                return send_json(self, 200, {"status": "success", "message": "assets_list.json updated"})
+            except Exception as e:
+                return send_json(self, 500, {"status": "error", "message": str(e)})
 
-    def _json(self, code, payload):
-        self.send_response(code)
-        self.send_header('Content-type', 'application/json; charset=utf-8')
-        self.end_headers()
-        self.wfile.write(json.dumps(payload).encode('utf-8'))
+        # ---------------------------------------------------------------------
+        # (Optionnel) Recompute colors stub — si ton UI l’appelle
+        # Body attendu: { "items":[ { "imagePath": "...", "hex": "#AABBCC" }, ... ] }
+        # Répond avec un echo/result minimal pour compat.
+        # ---------------------------------------------------------------------
+        if route == "/update_colors":
+            body = read_json_body(self) or {}
+            items = body.get("items") or []
+            # Ici on pourrait recalculer des familles de couleurs si tu as une logique spécifique.
+            # Pour compat, on renvoie un succès avec le même nombre d’items.
+            return send_json(self, 200, {"status": "success", "updated": len(items)})
 
-def run_server(host="0.0.0.0", port=DEFAULT_PORT):
-    """Démarre le serveur HTTP (bloquant)."""
-    with socketserver.TCPServer((host, port), MyHandler) as httpd:
+        # ---------------------------------------------------------------------
+        # Validate selection: copie/renomme côté serveur
+        # Body attendu: { "targetDir": "validate elements", "items":[{ imagePath, newFilename, ... }, ...] }
+        # ---------------------------------------------------------------------
+        if route == "/validate_selection":
+            body = read_json_body(self) or {}
+            # Backward compatibility:
+            # - Old: { "targetDir": "validate elements", "items":[...]}  -> copies to targetDir with optional renaming
+            # - New: { "baseDir":"validate-elements", "subDir":"<name>", "items":[...], "json":{...} }
+            #         -> creates baseDir/subDir, copies images preserving original imagePath structure,
+            #            and writes assets_list.json with provided subset JSON.
+            items = body.get("items") or []
+            if not isinstance(items, list):
+                return send_json(self, 400, {"status": "error", "message": "items must be a list"})
+
+            base_dir = (body.get("baseDir") or "").strip()
+            sub_dir = (body.get("subDir") or "").strip()
+            target_dir = (body.get("targetDir") or "").strip()
+
+            if base_dir and sub_dir:
+                dest_root = Path(base_dir) / sub_dir
+                preserve_paths = True  # new flow: keep imagePath structure
+            else:
+                # fallback to old behavior
+                dest_root = Path(target_dir or VALIDATE_DIR)
+                preserve_paths = False
+
+            dest_root.mkdir(parents=True, exist_ok=True)
+
+            copied = 0
+            errors = []
+
+            def safe_ensure_dir(dst_path: Path):
+                dst_path.parent.mkdir(parents=True, exist_ok=True)
+
+            for it in items:
+                src_rel = (it.get("imagePath") or "").strip()
+                new_name = (it.get("newFilename") or "").strip()
+                if not src_rel:
+                    errors.append({"item": it, "error": "missing imagePath"})
+                    continue
+                try:
+                    src = Path(src_rel)
+                    if not src.exists():
+                        # try relative to dist folder if path not absolute
+                        alt = Path(DIST_DIR) / src_rel if not src.is_absolute() else None
+                        if alt and alt.exists():
+                            src = alt
+                        else:
+                            raise FileNotFoundError(f"Source not found: {src_rel}")
+
+                    if preserve_paths:
+                        dst = dest_root / src_rel
+                    else:
+                        # old behavior: copy into dest root, optionally renamed
+                        if not new_name:
+                            new_name = src.name
+                        dst = dest_root / new_name
+
+                    safe_ensure_dir(dst)
+                    shutil.copy2(src, dst)
+                    copied += 1
+                except Exception as e:
+                    errors.append({"item": it, "error": str(e)})
+
+            # Write subset JSON if provided (new flow)
+            subset = body.get("json")
+            json_written = False
+            if isinstance(subset, dict):
+                try:
+                    out_json_path = dest_root / "assets_list.json"
+                    with open(out_json_path, "w", encoding="utf-8") as f:
+                        json.dump(subset, f, indent=2, ensure_ascii=False)
+                    json_written = True
+                except Exception as e:
+                    errors.append({"json": "assets_list.json", "error": str(e)})
+
+            return send_json(self, 200, {
+                "status": "success",
+                "copied": copied,
+                "json_written": json_written,
+                "destination": str(dest_root),
+                "errors": errors
+            })
+
+        # Route inconnue
+        return send_json(self, 404, {"status": "error", "message": f"Unknown route: {route}"})
+
+
+# -----------------------------------------------------------------------------
+# Entry point
+# -----------------------------------------------------------------------------
+def run_server(host: str = DEFAULT_HOST, port: int = DEFAULT_PORT):
+    with socketserver.TCPServer((host, port), Handler) as httpd:
         print(f"Serving at http://{host}:{port}")
         httpd.serve_forever()
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     run_server()

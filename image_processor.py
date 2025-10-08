@@ -331,3 +331,54 @@ def generate_json_file(data: Dict, out_file: str = "assets_list.json", collectio
     with out.open("w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
     print(f"[OK] JSON écrit → {out.resolve()}")
+
+# === Grid processing helpers (added) ==========================================
+from PIL import Image
+from pathlib import Path as _Path
+
+def trim_transparent_borders(img: Image.Image) -> Image.Image:
+    if img.mode not in ("RGBA", "LA"):
+        return img.convert("RGBA")
+    alpha = img.split()[-1]
+    bbox = alpha.getbbox()
+    if bbox:
+        return img.crop(bbox)
+    return img
+
+def pad_to_multiple_of_32_center_x_align_bottom(img: Image.Image) -> Image.Image:
+    if img.mode != "RGBA":
+        img = img.convert("RGBA")
+    w, h = img.size
+    new_w = ((w + 31) // 32) * 32
+    new_h = ((h + 31) // 32) * 32
+    canvas = Image.new("RGBA", (new_w, new_h), (0, 0, 0, 0))
+    x = (new_w - w) // 2
+    y = new_h - h
+    canvas.paste(img, (x, y), img)
+    return canvas
+
+def process_image_to_grid(src_path: str, dst_path: str) -> dict:
+    try:
+        with Image.open(src_path) as im:
+            im = im.convert("RGBA")
+            im = trim_transparent_borders(im)
+            im = pad_to_multiple_of_32_center_x_align_bottom(im)
+            _Path(dst_path).parent.mkdir(parents=True, exist_ok=True)
+            im.save(dst_path, format="PNG")
+        return { "src": str(src_path), "dst": str(dst_path), "status": "ok" }
+    except Exception as e:
+        return { "src": str(src_path), "dst": str(dst_path), "status": f"error: {e}" }
+
+def process_directory_to_grid(src_dir: str, dst_dir: str) -> dict:
+    src = _Path(src_dir)
+    dst = _Path(dst_dir)
+    results = []
+    count = 0
+    for p in src.rglob("*.png"):
+        rel = p.relative_to(src)
+        out = dst / rel
+        res = process_image_to_grid(str(p), str(out))
+        results.append(res)
+        if res.get("status") == "ok":
+            count += 1
+    return { "processed": count, "results": results }
