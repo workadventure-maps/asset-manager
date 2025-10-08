@@ -23,14 +23,13 @@
     },
     {
       "version": 0.1,
-      "name": "Round Table",
+      "name": "Big Wood Table",
       "tags": [
-        "Round Table",
-        "Table"
+        "Round Table"
       ],
       "imagePath": "dist/round_table-brown-right-dd4c85bf.png",
       "direction": "front",
-      "color": "#c57a59",
+      "color": "#D2B48C",
       "collisionGrid": [
         [
           1,
@@ -43,12 +42,12 @@
       ],
       "depthOffset": -53,
       "secondaryColor": "",
-      "category": "",
+      "category": "Furniture & Decoration",
       "newFilename": ""
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Wood Chair",
       "tags": [
         "Chairs"
       ],
@@ -62,7 +61,7 @@
     },
     {
       "version": 0.1,
-      "name": "Big Table",
+      "name": "Glass Table",
       "tags": [
         "Table"
       ],
@@ -102,13 +101,13 @@
     },
     {
       "version": 0.1,
-      "name": "Tree",
+      "name": "Tree 1",
       "tags": [
-        "Tree"
+        "Trees"
       ],
       "imagePath": "dist/tree-dark_blue-left-8b74f38e.png",
       "direction": "front",
-      "color": "#547351",
+      "color": "#228B22",
       "collisionGrid": [
         [
           0,
@@ -193,13 +192,13 @@
         ]
       ],
       "depthOffset": -127,
-      "secondaryColor": "",
-      "category": "",
+      "secondaryColor": "#A52A2A",
+      "category": "Nature & Landscape",
       "newFilename": ""
     },
     {
       "version": 0.1,
-      "name": "Table",
+      "name": "Corner table",
       "tags": [
         "Table"
       ],
@@ -248,7 +247,7 @@
     },
     {
       "version": 0.1,
-      "name": "Book",
+      "name": "Book Wall 1",
       "tags": [
         "Book"
       ],
@@ -276,7 +275,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Wood Chair",
       "tags": [
         "Chairs"
       ],
@@ -304,7 +303,7 @@
     },
     {
       "version": 0.1,
-      "name": "Couche",
+      "name": "Single sofa",
       "tags": [
         "Sofa",
         "Furniture"
@@ -319,7 +318,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "White Chair",
       "tags": [
         "Chairs"
       ],
@@ -389,14 +388,13 @@
     },
     {
       "version": 0.1,
-      "name": "Round Table",
+      "name": "High Table",
       "tags": [
-        "Round Table",
-        "Table"
+        "Round Table"
       ],
       "imagePath": "dist/round_table-pink-front-409eff63.png",
       "direction": "front",
-      "color": "#D2B48C",
+      "color": "#F5F5DC",
       "collisionGrid": [
         [
           0,
@@ -413,12 +411,12 @@
       ],
       "depthOffset": -65,
       "secondaryColor": "",
-      "category": "",
+      "category": "Furniture & Decoration",
       "newFilename": ""
     },
     {
       "version": 0.1,
-      "name": "Small Table",
+      "name": "Glass Table",
       "tags": [
         "Table"
       ],
@@ -444,7 +442,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "White Chair",
       "tags": [
         "Chairs"
       ],
@@ -458,7 +456,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Beige Chair",
       "tags": [
         "Chairs"
       ],
@@ -471,13 +469,13 @@
     },
     {
       "version": 0.1,
-      "name": "Tree",
+      "name": "Tree 2",
       "tags": [
-        "Tree"
+        "Trees"
       ],
       "imagePath": "dist/tree-dark_blue-left-1-37ea0b8e.png",
       "direction": "front",
-      "color": "#435050",
+      "color": "#228B22",
       "depthOffset": -107,
       "collisionGrid": [
         [
@@ -537,8 +535,8 @@
           0
         ]
       ],
-      "secondaryColor": "",
-      "category": "",
+      "secondaryColor": "#A52A2A",
+      "category": "Nature & Landscape",
       "newFilename": ""
     },
     {
@@ -550,7 +548,7 @@
       ],
       "imagePath": "dist/small_table-light_blue-front-4a1b580f.png",
       "direction": "back",
-      "color": "#A9A9A9",
+      "color": "#D3D3D3",
       "depthOffset": -42,
       "secondaryColor": "",
       "category": "",
@@ -558,7 +556,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Beige Chair",
       "tags": [
         "Chairs"
       ],
@@ -572,7 +570,7 @@
     },
     {
       "version": 0.1,
-      "name": "Book",
+      "name": "White Chair",
       "tags": [
         "Chairs"
       ],
@@ -586,7 +584,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Wood Chair",
       "tags": [
         "Chairs"
       ],
@@ -628,7 +626,7 @@
     },
     {
       "version": 0.1,
-      "name": "Book",
+      "name": "Beige Chair",
       "tags": [
         "Chairs"
       ],
@@ -642,7 +640,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Wood Chair",
       "tags": [
         "Chairs"
       ],
@@ -705,7 +703,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Wood Chair",
       "tags": [
         "Chairs"
       ],
@@ -733,7 +731,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "White Chair",
       "tags": [
         "Chairs"
       ],
@@ -762,13 +760,13 @@
     },
     {
       "version": 0.1,
-      "name": "Tree",
+      "name": "Tree 3",
       "tags": [
-        "Tree"
+        "Trees"
       ],
       "imagePath": "dist/tree-dark_green-down-c7a7e40a.png",
       "direction": "front",
-      "color": "#52944a",
+      "color": "#228B22",
       "depthOffset": -49,
       "collisionGrid": [
         [
@@ -892,8 +890,8 @@
           0
         ]
       ],
-      "secondaryColor": "",
-      "category": "",
+      "secondaryColor": "#A52A2A",
+      "category": "Nature & Landscape",
       "newFilename": ""
     },
     {
@@ -942,13 +940,13 @@
     },
     {
       "version": 0.1,
-      "name": "Tree",
+      "name": "Tree 4",
       "tags": [
-        "Tree"
+        "Trees"
       ],
       "imagePath": "dist/tree-dark_blue-right-f8cdfa0c.png",
       "direction": "front",
-      "color": "#5c7c63",
+      "color": "#228B22",
       "depthOffset": -99,
       "collisionGrid": [
         [
@@ -1008,20 +1006,19 @@
           0
         ]
       ],
-      "secondaryColor": "",
-      "category": "",
+      "secondaryColor": "#A52A2A",
+      "category": "Nature & Landscape",
       "newFilename": ""
     },
     {
       "version": 0.1,
-      "name": "Round Table",
+      "name": "Big Wood Table",
       "tags": [
-        "Round Table",
-        "Table"
+        "Round Table"
       ],
       "imagePath": "dist/round_table-pink-right-20790aed.png",
       "direction": "front",
-      "color": "#d18462",
+      "color": "#D2B48C",
       "depthOffset": -58,
       "collisionGrid": [
         [
@@ -1034,12 +1031,12 @@
         ]
       ],
       "secondaryColor": "",
-      "category": "",
+      "category": "Furniture & Decoration",
       "newFilename": ""
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Beige Chair",
       "tags": [
         "Chairs"
       ],
@@ -1074,7 +1071,7 @@
       ],
       "imagePath": "dist/small_couche-brown-right-1-a74d6c16.png",
       "direction": "front",
-      "color": "#545453",
+      "color": "#000000",
       "depthOffset": -41,
       "secondaryColor": "",
       "category": "",
@@ -1176,7 +1173,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Beige Chair",
       "tags": [
         "Chairs"
       ],
@@ -1190,7 +1187,7 @@
     },
     {
       "version": 0.1,
-      "name": "Book",
+      "name": "White Chair",
       "tags": [
         "Chairs"
       ],
@@ -1204,13 +1201,13 @@
     },
     {
       "version": 0.1,
-      "name": "Tree",
+      "name": "Tree 5",
       "tags": [
-        "Tree"
+        "Trees"
       ],
       "imagePath": "dist/tree-dark_blue-right-1-3e046f52.png",
       "direction": "front",
-      "color": "#574a4a",
+      "color": "#228B22",
       "collisionGrid": [
         [
           0,
@@ -1244,13 +1241,13 @@
         ]
       ],
       "depthOffset": -77,
-      "secondaryColor": "",
-      "category": "",
+      "secondaryColor": "#A52A2A",
+      "category": "Nature & Landscape",
       "newFilename": ""
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Beige Chair",
       "tags": [
         "Chairs"
       ],
@@ -1264,14 +1261,13 @@
     },
     {
       "version": 0.1,
-      "name": "Round Table",
+      "name": "Small Wood Round Table",
       "tags": [
-        "Round Table",
-        "Table"
+        "Round Table"
       ],
       "imagePath": "dist/round_table-pink-right-1-d3a766b7.png",
       "direction": "front",
-      "color": "#dfad7a",
+      "color": "#F5F5DC",
       "depthOffset": -58,
       "collisionGrid": [
         [
@@ -1288,12 +1284,12 @@
         ]
       ],
       "secondaryColor": "",
-      "category": "",
+      "category": "Furniture & Decoration",
       "newFilename": ""
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Wood Chair",
       "tags": [
         "Chairs"
       ],
@@ -1307,7 +1303,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chair",
+      "name": "White Chair",
       "tags": [
         "Chairs"
       ],
@@ -1321,14 +1317,13 @@
     },
     {
       "version": 0.1,
-      "name": "Round Table",
+      "name": "Medium Wood Round Table",
       "tags": [
-        "Round Table",
-        "Table"
+        "Round Table"
       ],
       "imagePath": "dist/round_table-pink-back-d20ede0d.png",
-      "direction": "back",
-      "color": "#D2B48C",
+      "direction": "front",
+      "color": "#F5F5DC",
       "collisionGrid": [
         [
           0,
@@ -1341,12 +1336,12 @@
       ],
       "depthOffset": -42,
       "secondaryColor": "",
-      "category": "",
+      "category": "Furniture & Decoration",
       "newFilename": ""
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Beige Chair",
       "tags": [
         "Chairs"
       ],
@@ -1360,7 +1355,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Wood Chair",
       "tags": [
         "Chairs"
       ],
@@ -1374,7 +1369,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Wood Chair",
       "tags": [
         "Chairs"
       ],
@@ -1402,7 +1397,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Beige Chair",
       "tags": [
         "Chairs"
       ],
@@ -1416,7 +1411,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Brown Chair",
       "tags": [
         "Chairs"
       ],
@@ -1487,7 +1482,7 @@
         "Furniture"
       ],
       "imagePath": "dist/small_couche-teal-right-40036213.png",
-      "direction": "right",
+      "direction": "back",
       "color": "#53a25d",
       "depthOffset": -42,
       "secondaryColor": "",
@@ -1496,7 +1491,7 @@
     },
     {
       "version": 0.1,
-      "name": "Book",
+      "name": "Book Wall 2",
       "tags": [
         "Book"
       ],
@@ -1509,14 +1504,13 @@
     },
     {
       "version": 0.1,
-      "name": "Round Table",
+      "name": "Glass Round Table",
       "tags": [
-        "Round Table",
-        "Table"
+        "Round Table"
       ],
       "imagePath": "dist/round_table-brown-right-1-ee82c772.png",
       "direction": "front",
-      "color": "#d1bda9",
+      "color": "#FFFFFF",
       "depthOffset": -42,
       "collisionGrid": [
         [
@@ -1529,12 +1523,12 @@
         ]
       ],
       "secondaryColor": "",
-      "category": "",
+      "category": "Furniture & Decoration",
       "newFilename": ""
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Beige Chair",
       "tags": [
         "Chairs"
       ],
@@ -1548,7 +1542,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Brown Chair",
       "tags": [
         "Chairs"
       ],
@@ -1561,7 +1555,7 @@
     },
     {
       "version": 0.1,
-      "name": "Table",
+      "name": "Glass Table",
       "tags": [
         "Table"
       ],
@@ -1630,7 +1624,7 @@
     },
     {
       "version": 0.1,
-      "name": "Table",
+      "name": "Glass Table",
       "tags": [
         "Table"
       ],
@@ -1681,9 +1675,9 @@
     },
     {
       "version": 0.1,
-      "name": "Tree",
+      "name": "Tree 6",
       "tags": [
-        "Tree"
+        "Trees"
       ],
       "imagePath": "dist/tree-green-up-153ecb66.png",
       "direction": "front",
@@ -1823,8 +1817,8 @@
         ]
       ],
       "depthOffset": -41,
-      "secondaryColor": "",
-      "category": "",
+      "secondaryColor": "#A52A2A",
+      "category": "Nature & Landscape",
       "newFilename": ""
     },
     {
@@ -1888,14 +1882,13 @@
     },
     {
       "version": 0.1,
-      "name": "Round Table",
+      "name": "Medium Wood Round Table",
       "tags": [
-        "Round Table",
-        "Table"
+        "Round Table"
       ],
       "imagePath": "dist/round_table-pink-right-2-b417383f.png",
       "direction": "front",
-      "color": "#d08361",
+      "color": "#D2B48C",
       "depthOffset": -42,
       "collisionGrid": [
         [
@@ -1908,12 +1901,12 @@
         ]
       ],
       "secondaryColor": "",
-      "category": "",
+      "category": "Furniture & Decoration",
       "newFilename": ""
     },
     {
       "version": 0.1,
-      "name": "Chair",
+      "name": "Beige Chair",
       "tags": [
         "Chairs"
       ],
@@ -1927,7 +1920,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Beige Chair",
       "tags": [
         "Chairs"
       ],
@@ -1941,7 +1934,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "White Chair",
       "tags": [
         "Chairs"
       ],
@@ -1955,7 +1948,7 @@
     },
     {
       "version": 0.1,
-      "name": "Book",
+      "name": "Book Wall 3",
       "tags": [
         "Book"
       ],
@@ -1968,7 +1961,7 @@
     },
     {
       "version": 0.1,
-      "name": "Book",
+      "name": "Book Wall 4",
       "tags": [
         "Book"
       ],
@@ -2047,8 +2040,8 @@
         "Furniture"
       ],
       "imagePath": "dist/small_couche-red-right-1-ee121684.png",
-      "direction": "right",
-      "color": "#c20a2b",
+      "direction": "back",
+      "color": "#FF0000",
       "depthOffset": -41,
       "secondaryColor": "",
       "category": "",
@@ -2070,7 +2063,7 @@
     },
     {
       "version": 0.1,
-      "name": "Regular Table",
+      "name": "Corner table",
       "tags": [
         "Table"
       ],
@@ -2104,7 +2097,7 @@
     },
     {
       "version": 0.1,
-      "name": "Book",
+      "name": "Beige Chair",
       "tags": [
         "Chairs"
       ],
@@ -2118,7 +2111,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Wood Chair",
       "tags": [
         "Chairs"
       ],
@@ -2132,7 +2125,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Wood Chair",
       "tags": [
         "Chairs"
       ],
@@ -2176,7 +2169,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Beige Chair",
       "tags": [
         "Chairs"
       ],
@@ -2189,7 +2182,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Beige Chair",
       "tags": [
         "Chairs"
       ],
@@ -2237,7 +2230,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "White Chair",
       "tags": [
         "Chairs"
       ],
@@ -2251,7 +2244,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Wood Chair",
       "tags": [
         "Chairs"
       ],
@@ -2264,7 +2257,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Wood Chair",
       "tags": [
         "Chairs"
       ],
@@ -2420,7 +2413,7 @@
     },
     {
       "version": 0.1,
-      "name": "Book",
+      "name": "Book Wall 5",
       "tags": [
         "Book"
       ],
@@ -2433,7 +2426,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Wood Chair",
       "tags": [
         "Chairs"
       ],
@@ -2447,13 +2440,13 @@
     },
     {
       "version": 0.1,
-      "name": "Tree",
+      "name": "Tree 7",
       "tags": [
-        "Tree"
+        "Trees"
       ],
       "imagePath": "dist/tree-dark_blue-up-525696bb.png",
       "direction": "front",
-      "color": "#808080",
+      "color": "#228B22",
       "collisionGrid": [
         [
           0,
@@ -2567,13 +2560,13 @@
         ]
       ],
       "depthOffset": -154,
-      "secondaryColor": "",
-      "category": "",
+      "secondaryColor": "#A52A2A",
+      "category": "Nature & Landscape",
       "newFilename": ""
     },
     {
       "version": 0.1,
-      "name": "Chair",
+      "name": "White Chair",
       "tags": [
         "Chairs"
       ],
@@ -2587,21 +2580,21 @@
     },
     {
       "version": 0.1,
-      "name": "Tree",
+      "name": "Tree 8",
       "tags": [
-        "Tree"
+        "Trees"
       ],
       "imagePath": "dist/tree-dark_green-right-fbaf626e.png",
       "direction": "front",
       "color": "#228B22",
       "depthOffset": -37,
-      "secondaryColor": "",
-      "category": "",
+      "secondaryColor": "#A52A2A",
+      "category": "Nature & Landscape",
       "newFilename": ""
     },
     {
       "version": 0.1,
-      "name": "Small Table",
+      "name": "Glass Table",
       "tags": [
         "Table"
       ],
@@ -2694,7 +2687,7 @@
     },
     {
       "version": 0.1,
-      "name": "Table",
+      "name": "Glass Table",
       "tags": [
         "Table"
       ],
@@ -2726,14 +2719,13 @@
     },
     {
       "version": 0.1,
-      "name": "Round Table",
+      "name": "Medium Wood Round Table",
       "tags": [
-        "Round Table",
-        "Table"
+        "Round Table"
       ],
       "imagePath": "dist/round_table-brown-right-2-f82fd12a.png",
       "direction": "front",
-      "color": "#c27757",
+      "color": "#D2B48C",
       "collisionGrid": [
         [
           0,
@@ -2746,12 +2738,12 @@
       ],
       "depthOffset": -39,
       "secondaryColor": "",
-      "category": "",
+      "category": "Furniture & Decoration",
       "newFilename": ""
     },
     {
       "version": 0.1,
-      "name": "Table",
+      "name": "Glass Table",
       "tags": [
         "Table"
       ],
@@ -2812,7 +2804,7 @@
     },
     {
       "version": 0.1,
-      "name": "Book",
+      "name": "White Chair",
       "tags": [
         "Chairs"
       ],
@@ -2825,13 +2817,13 @@
     },
     {
       "version": 0.1,
-      "name": "Tree",
+      "name": "Tree 9",
       "tags": [
-        "Tree"
+        "Trees"
       ],
       "imagePath": "dist/tree-dark_blue-right-2-682b244b.png",
       "direction": "front",
-      "color": "#6a705a",
+      "color": "#228B22",
       "depthOffset": -94,
       "collisionGrid": [
         [
@@ -2907,13 +2899,13 @@
           0
         ]
       ],
-      "secondaryColor": "",
-      "category": "",
+      "secondaryColor": "#A52A2A",
+      "category": "Nature & Landscape",
       "newFilename": ""
     },
     {
       "version": 0.1,
-      "name": "Book",
+      "name": "Book Wall 6",
       "tags": [
         "Book"
       ],
@@ -2998,7 +2990,7 @@
     },
     {
       "version": 0.1,
-      "name": "Book",
+      "name": "Book Wall 7",
       "tags": [
         "Book"
       ],
@@ -3039,7 +3031,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "White Chair",
       "tags": [
         "Chairs"
       ],
@@ -3082,14 +3074,13 @@
     },
     {
       "version": 0.1,
-      "name": "Round Table",
+      "name": "High Table",
       "tags": [
-        "Round Table",
-        "Table"
+        "Round Table"
       ],
       "imagePath": "dist/round_table-pink-front-1-976a95df.png",
       "direction": "front",
-      "color": "#d7a476",
+      "color": "#F5F5DC",
       "collisionGrid": [
         [
           0,
@@ -3106,12 +3097,12 @@
       ],
       "depthOffset": -31,
       "secondaryColor": "",
-      "category": "",
+      "category": "Furniture & Decoration",
       "newFilename": ""
     },
     {
       "version": 0.1,
-      "name": "Small Table",
+      "name": "Glass Table",
       "tags": [
         "Table"
       ],
@@ -3139,7 +3130,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Beige Chair",
       "tags": [
         "Chairs"
       ],
@@ -3153,7 +3144,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Wood Chair",
       "tags": [
         "Chairs"
       ],
@@ -3182,13 +3173,13 @@
     },
     {
       "version": 0.1,
-      "name": "Tree",
+      "name": "Tree 10",
       "tags": [
-        "Tree"
+        "Trees"
       ],
       "imagePath": "dist/tree-dark_blue-right-3-c5e9ddf1.png",
       "direction": "front",
-      "color": "#574a4a",
+      "color": "#228B22",
       "depthOffset": -65,
       "collisionGrid": [
         [
@@ -3222,13 +3213,13 @@
           0
         ]
       ],
-      "secondaryColor": "",
-      "category": "",
+      "secondaryColor": "#A52A2A",
+      "category": "Nature & Landscape",
       "newFilename": ""
     },
     {
       "version": 0.1,
-      "name": "Book",
+      "name": "White Chair",
       "tags": [
         "Chairs"
       ],
@@ -3241,7 +3232,7 @@
     },
     {
       "version": 0.1,
-      "name": "Book",
+      "name": "Beige Chair",
       "tags": [
         "Chairs"
       ],
@@ -3255,7 +3246,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Beige Chair",
       "tags": [
         "Chairs"
       ],
@@ -3296,7 +3287,7 @@
     },
     {
       "version": 0.1,
-      "name": "Table",
+      "name": "Corner table",
       "tags": [
         "Table"
       ],
@@ -3330,7 +3321,7 @@
     },
     {
       "version": 0.1,
-      "name": "Book",
+      "name": "Book Wall 8",
       "tags": [
         "Book"
       ],
@@ -3343,7 +3334,7 @@
     },
     {
       "version": 0.1,
-      "name": "Book",
+      "name": "Book Wall 9",
       "tags": [
         "Book"
       ],
@@ -3356,13 +3347,13 @@
     },
     {
       "version": 0.1,
-      "name": "Tree",
+      "name": "Tree 11",
       "tags": [
-        "Tree"
+        "Trees"
       ],
       "imagePath": "dist/tree-dark_blue-right-4-2f3fb611.png",
       "direction": "front",
-      "color": "#67794b",
+      "color": "#228B22",
       "collisionGrid": [
         [
           0,
@@ -3446,13 +3437,13 @@
         ]
       ],
       "depthOffset": -95,
-      "secondaryColor": "",
-      "category": "",
+      "secondaryColor": "#A52A2A",
+      "category": "Nature & Landscape",
       "newFilename": ""
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Wood Chair",
       "tags": [
         "Chairs"
       ],
@@ -3565,13 +3556,13 @@
     },
     {
       "version": 0.1,
-      "name": "Tree",
+      "name": "Tree 12",
       "tags": [
-        "Tree"
+        "Trees"
       ],
       "imagePath": "dist/tree-teal-up-1950d057.png",
       "direction": "front",
-      "color": "#187b52",
+      "color": "#228B22",
       "depthOffset": -40,
       "collisionGrid": [
         [
@@ -3674,8 +3665,8 @@
           0
         ]
       ],
-      "secondaryColor": "",
-      "category": "",
+      "secondaryColor": "#A52A2A",
+      "category": "Nature & Landscape",
       "newFilename": ""
     },
     {
@@ -3745,7 +3736,7 @@
         "Furniture"
       ],
       "imagePath": "dist/small_couche-red-front-6a49c916.png",
-      "direction": "front",
+      "direction": "left",
       "color": "#FF0000",
       "depthOffset": -77,
       "secondaryColor": "",
@@ -3761,7 +3752,7 @@
       ],
       "imagePath": "dist/small_couche-light_blue-right-9147bcd5.png",
       "direction": "left",
-      "color": "#4799c6",
+      "color": "#0000FF",
       "depthOffset": -79,
       "secondaryColor": "",
       "category": "",
@@ -3784,7 +3775,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Wood Chair",
       "tags": [
         "Chairs"
       ],
@@ -3798,7 +3789,7 @@
     },
     {
       "version": 0.1,
-      "name": "Table",
+      "name": "Glass Table",
       "tags": [
         "Table"
       ],
@@ -3838,7 +3829,7 @@
     },
     {
       "version": 0.1,
-      "name": "Book",
+      "name": "White Chair",
       "tags": [
         "Chairs"
       ],
@@ -3859,7 +3850,7 @@
       ],
       "imagePath": "dist/small_couche-teal-right-1-680afe63.png",
       "direction": "right",
-      "color": "#5db35f",
+      "color": "#00FF00",
       "depthOffset": -80,
       "secondaryColor": "",
       "category": "",
@@ -3941,7 +3932,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Beige Chair",
       "tags": [
         "Chairs"
       ],
@@ -4022,7 +4013,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "White Chair",
       "tags": [
         "Chairs"
       ],
@@ -4066,14 +4057,13 @@
     },
     {
       "version": 0.1,
-      "name": "Round Table",
+      "name": "Medium Wood Round Table",
       "tags": [
-        "Round Table",
-        "Table"
+        "Round Table"
       ],
       "imagePath": "dist/round_table-brown-right-3-31a6881b.png",
       "direction": "front",
-      "color": "#e4c4a7",
+      "color": "#F5F5DC",
       "collisionGrid": [
         [
           1,
@@ -4085,15 +4075,14 @@
         ]
       ],
       "secondaryColor": "",
-      "category": "",
+      "category": "Furniture & Decoration",
       "newFilename": ""
     },
     {
       "version": 0.1,
-      "name": "Round Table",
+      "name": "Solo Puff",
       "tags": [
-        "Round Table",
-        "Table"
+        "Solo Puff"
       ],
       "imagePath": "dist/round_table-pink-right-3-edbcc561.png",
       "direction": "front",
@@ -4120,7 +4109,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "White Chair",
       "tags": [
         "Chairs"
       ],
@@ -4134,7 +4123,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Chair Cover",
       "tags": [
         "Chairs"
       ],
@@ -4154,7 +4143,7 @@
       ],
       "imagePath": "dist/solo_puff-purple-right-e44c641a.png",
       "direction": "front",
-      "color": "#ae76af",
+      "color": "#FF69B4",
       "depthOffset": -35,
       "secondaryColor": "",
       "category": "",
@@ -4193,7 +4182,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Wood Chair",
       "tags": [
         "Chairs"
       ],
@@ -4206,9 +4195,9 @@
     },
     {
       "version": 0.1,
-      "name": "Book",
+      "name": "Small Bookshelves",
       "tags": [
-        "Book"
+        "Bookshelves"
       ],
       "imagePath": "dist/book-brown-right-7-4adbe4fa.png",
       "direction": "front",
@@ -4256,7 +4245,7 @@
     },
     {
       "version": 0.1,
-      "name": "Book",
+      "name": "White Chair",
       "tags": [
         "Chairs"
       ],
@@ -4307,7 +4296,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Beige Chair",
       "tags": [
         "Chairs"
       ],
@@ -4334,7 +4323,7 @@
     },
     {
       "version": 0.1,
-      "name": "Table",
+      "name": "Corner table",
       "tags": [
         "Table"
       ],
@@ -4486,7 +4475,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Wood Chair",
       "tags": [
         "Chairs"
       ],
@@ -4500,7 +4489,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chair",
+      "name": "White Chair",
       "tags": [
         "Chairs"
       ],
@@ -4514,7 +4503,7 @@
     },
     {
       "version": 0.1,
-      "name": "Table",
+      "name": "Corner table",
       "tags": [
         "Table"
       ],
@@ -4649,14 +4638,13 @@
     },
     {
       "version": 0.1,
-      "name": "Round Table",
+      "name": "Big Wood Table",
       "tags": [
-        "Round Table",
-        "Table"
+        "Round Table"
       ],
       "imagePath": "dist/round_table-brown-right-4-a7fbc4a6.png",
       "direction": "front",
-      "color": "#e7c9ac",
+      "color": "#F5F5DC",
       "collisionGrid": [
         [
           1,
@@ -4668,7 +4656,7 @@
         ]
       ],
       "secondaryColor": "",
-      "category": "",
+      "category": "Furniture & Decoration",
       "newFilename": ""
     },
     {
@@ -4751,14 +4739,14 @@
     },
     {
       "version": 0.1,
-      "name": "Two-Seater Sofa",
+      "name": "Single Sofa",
       "tags": [
         "Sofa",
         "Furniture"
       ],
       "imagePath": "dist/small_table-brown-front-1-ae43630a.png",
       "direction": "left",
-      "color": "#4f4f4f",
+      "color": "#000000",
       "depthOffset": -46,
       "secondaryColor": "",
       "category": "",
@@ -4805,7 +4793,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chair",
+      "name": "Wood Chair",
       "tags": [
         "Chairs"
       ],
@@ -4939,8 +4927,8 @@
         "Furniture"
       ],
       "imagePath": "dist/small_couche-brown-front-2-2e156fb6.png",
-      "direction": "front",
-      "color": "#4f4f4e",
+      "direction": "left",
+      "color": "#000000",
       "depthOffset": -79,
       "secondaryColor": "",
       "category": "",
@@ -4954,8 +4942,8 @@
         "Furniture"
       ],
       "imagePath": "dist/small_couche-teal-right-2-09128819.png",
-      "direction": "right",
-      "color": "#5db35f",
+      "direction": "left",
+      "color": "#00FF00",
       "depthOffset": -78,
       "secondaryColor": "",
       "category": "",
@@ -5094,7 +5082,7 @@
     },
     {
       "version": 0.1,
-      "name": "Table",
+      "name": "Corner table",
       "tags": [
         "Table"
       ],
@@ -5217,7 +5205,7 @@
     },
     {
       "version": 0.1,
-      "name": "Book",
+      "name": "White Chair",
       "tags": [
         "Chairs"
       ],
@@ -5291,7 +5279,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Beige Chair",
       "tags": [
         "Chairs"
       ],
@@ -5326,7 +5314,7 @@
       ],
       "imagePath": "dist/solo_puff-teal-right-17be25de.png",
       "direction": "front",
-      "color": "#4caf5b",
+      "color": "#00FF00",
       "depthOffset": -36,
       "secondaryColor": "",
       "category": "",
@@ -5409,7 +5397,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Wood Chair",
       "tags": [
         "Chairs"
       ],
@@ -5423,14 +5411,13 @@
     },
     {
       "version": 0.1,
-      "name": "Round Table",
+      "name": "High Table",
       "tags": [
-        "Round Table",
-        "Table"
+        "Round Table"
       ],
       "imagePath": "dist/round_table-pink-front-2-6d98b9d2.png",
       "direction": "front",
-      "color": "#e7caac",
+      "color": "#F5F5DC",
       "depthOffset": -65,
       "collisionGrid": [
         [
@@ -5447,12 +5434,12 @@
         ]
       ],
       "secondaryColor": "",
-      "category": "",
+      "category": "Furniture & Decoration",
       "newFilename": ""
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Chair Cover",
       "tags": [
         "Chairs"
       ],
@@ -5540,7 +5527,7 @@
     },
     {
       "version": 0.1,
-      "name": "Solo Puff",
+      "name": "Solo Puff Flat",
       "tags": [
         "Solo Puff"
       ],
@@ -5553,7 +5540,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Beige Chair",
       "tags": [
         "Chairs"
       ],
@@ -5567,20 +5554,20 @@
     },
     {
       "version": 0.1,
-      "name": "Solo Puff",
+      "name": "Solo Puff Flat",
       "tags": [
         "Solo Puff"
       ],
       "imagePath": "dist/solo_puff-teal-right-2-cb655204.png",
       "direction": "front",
-      "color": "#59b15d",
+      "color": "#00FF00",
       "secondaryColor": "",
       "category": "",
       "newFilename": ""
     },
     {
       "version": 0.1,
-      "name": "Two-Seater Sofa",
+      "name": "Single Sofa",
       "tags": [
         "Sofa",
         "Furniture"
@@ -5595,7 +5582,7 @@
     },
     {
       "version": 0.1,
-      "name": "Book",
+      "name": "Book Wall 10",
       "tags": [
         "Book"
       ],
@@ -5608,7 +5595,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chair",
+      "name": "White Chair",
       "tags": [
         "Chairs"
       ],
@@ -5622,7 +5609,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chair",
+      "name": "Beige Chair",
       "tags": [
         "Chairs"
       ],
@@ -5636,7 +5623,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Wood Chair",
       "tags": [
         "Chairs"
       ],
@@ -5762,7 +5749,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chair",
+      "name": "Wood Chair",
       "tags": [
         "Chairs"
       ],
@@ -5902,7 +5889,7 @@
     },
     {
       "version": 0.1,
-      "name": "Table",
+      "name": "Glass Table",
       "tags": [
         "Table"
       ],
@@ -5942,7 +5929,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Wood Chair",
       "tags": [
         "Chairs"
       ],
@@ -6004,7 +5991,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Beige Chair",
       "tags": [
         "Chairs"
       ],
@@ -6023,7 +6010,7 @@
         "Furniture"
       ],
       "imagePath": "dist/small_couche-pink-right-1-9668e137.png",
-      "direction": "right",
+      "direction": "left",
       "color": "#eaa5ca",
       "depthOffset": -79,
       "secondaryColor": "",
@@ -6081,7 +6068,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Wood Chair",
       "tags": [
         "Chairs"
       ],
@@ -6185,7 +6172,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Wood Chair",
       "tags": [
         "Chairs"
       ],
@@ -6199,7 +6186,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Beige Chair",
       "tags": [
         "Chairs"
       ],
@@ -6213,7 +6200,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Beige Chair",
       "tags": [
         "Chairs"
       ],
@@ -6227,7 +6214,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Beige Chair",
       "tags": [
         "Chairs"
       ],
@@ -6247,7 +6234,7 @@
       ],
       "imagePath": "dist/solo_puff-light_blue-right-2-ff36e0ca.png",
       "direction": "front",
-      "color": "#bcbcbf",
+      "color": "#D3D3D3",
       "depthOffset": -36,
       "secondaryColor": "",
       "category": "",
@@ -6270,7 +6257,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Beige Chair",
       "tags": [
         "Chairs"
       ],
@@ -6283,7 +6270,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Beige Chair",
       "tags": [
         "Chairs"
       ],
@@ -6312,33 +6299,33 @@
     },
     {
       "version": 0.1,
-      "name": "Solo Puff",
+      "name": "Solo Puff Flat",
       "tags": [
         "Solo Puff"
       ],
       "imagePath": "dist/solo_puff-brown-front-44eb8088.png",
       "direction": "front",
-      "color": "#4d4d4c",
+      "color": "#000000",
       "secondaryColor": "",
       "category": "",
       "newFilename": ""
     },
     {
       "version": 0.1,
-      "name": "Solo Puff",
+      "name": "Solo Puff Flat",
       "tags": [
         "Solo Puff"
       ],
       "imagePath": "dist/solo_puff-light_blue-right-3-3f1aa1f0.png",
       "direction": "front",
-      "color": "#4695c3",
+      "color": "#0000FF",
       "secondaryColor": "",
       "category": "",
       "newFilename": ""
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Wood Chair",
       "tags": [
         "Chairs"
       ],
@@ -6352,7 +6339,7 @@
     },
     {
       "version": 0.1,
-      "name": "Book",
+      "name": "Book Wall 11",
       "tags": [
         "Book"
       ],
@@ -6365,7 +6352,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Wood Chair",
       "tags": [
         "Chairs"
       ],
@@ -6431,7 +6418,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Wood Chair",
       "tags": [
         "Chairs"
       ],
@@ -6518,12 +6505,11 @@
       "version": 0.1,
       "name": "Round Table",
       "tags": [
-        "Round Table",
-        "Table"
+        "Round Table"
       ],
       "imagePath": "dist/round_table-pink-right-4-a067bddf.png",
       "direction": "front",
-      "color": "#c2905e",
+      "color": "#D2B48C",
       "collisionGrid": [
         [
           1,
@@ -6536,12 +6522,12 @@
       ],
       "depthOffset": -40,
       "secondaryColor": "",
-      "category": "",
+      "category": "Furniture & Decoration",
       "newFilename": ""
     },
     {
       "version": 0.1,
-      "name": "Chair",
+      "name": "White Chair",
       "tags": [
         "Chairs"
       ],
@@ -6560,8 +6546,8 @@
         "Furniture"
       ],
       "imagePath": "dist/small_couche-brown-front-3-ab04dc49.png",
-      "direction": "front",
-      "color": "#4f4f4e",
+      "direction": "right",
+      "color": "#000000",
       "depthOffset": -78,
       "secondaryColor": "",
       "category": "",
@@ -6569,7 +6555,7 @@
     },
     {
       "version": 0.1,
-      "name": "Book",
+      "name": "White Chair",
       "tags": [
         "Chairs"
       ],
@@ -6665,7 +6651,7 @@
       ],
       "imagePath": "dist/small_couche-pink-right-2-ca21084c.png",
       "direction": "right",
-      "color": "#b57cba",
+      "color": "#FF69B4",
       "depthOffset": -78,
       "secondaryColor": "",
       "category": "",
@@ -6688,7 +6674,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chair",
+      "name": "Beige Chair",
       "tags": [
         "Chairs"
       ],
@@ -6775,7 +6761,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Beige Chair",
       "tags": [
         "Chairs"
       ],
@@ -6961,7 +6947,7 @@
     },
     {
       "version": 0.1,
-      "name": "Book",
+      "name": "White Chair",
       "tags": [
         "Chairs"
       ],
@@ -6975,7 +6961,7 @@
     },
     {
       "version": 0.1,
-      "name": "Book",
+      "name": "White Chair",
       "tags": [
         "Chairs"
       ],
@@ -7044,7 +7030,7 @@
     },
     {
       "version": 0.1,
-      "name": "Table",
+      "name": "Corner table",
       "tags": [
         "Table"
       ],
@@ -7077,7 +7063,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Beige Chair",
       "tags": [
         "Chairs"
       ],
@@ -7090,14 +7076,13 @@
     },
     {
       "version": 0.1,
-      "name": "Round Table",
+      "name": "Medium Wood Round Table",
       "tags": [
-        "Round Table",
-        "Table"
+        "Round Table"
       ],
       "imagePath": "dist/round_table-pink-right-5-b16d48a7.png",
       "direction": "front",
-      "color": "#eacdad",
+      "color": "#F5F5DC",
       "collisionGrid": [
         [
           1,
@@ -7110,7 +7095,7 @@
       ],
       "depthOffset": -42,
       "secondaryColor": "",
-      "category": "",
+      "category": "Furniture & Decoration",
       "newFilename": ""
     },
     {
@@ -7136,7 +7121,7 @@
       ],
       "imagePath": "dist/solo_puff-brown-right-1-a5b544e7.png",
       "direction": "front",
-      "color": "#4e4e4d",
+      "color": "#000000",
       "depthOffset": -34,
       "secondaryColor": "",
       "category": "",
@@ -7144,7 +7129,7 @@
     },
     {
       "version": 0.1,
-      "name": "Book",
+      "name": "White Chair",
       "tags": [
         "Chairs"
       ],
@@ -7157,7 +7142,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chair",
+      "name": "White Chair",
       "tags": [
         "Chairs"
       ],
@@ -7170,7 +7155,7 @@
     },
     {
       "version": 0.1,
-      "name": "Round Table",
+      "name": "White Round Table",
       "tags": [
         "Round Table"
       ],
@@ -7188,12 +7173,12 @@
         ]
       ],
       "secondaryColor": "",
-      "category": "",
+      "category": "Furniture & Decoration",
       "newFilename": ""
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "White Chair",
       "tags": [
         "Chairs"
       ],
@@ -7261,7 +7246,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chair",
+      "name": "Beige Chair",
       "tags": [
         "Chairs"
       ],
@@ -7275,7 +7260,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Wood Chair",
       "tags": [
         "Chairs"
       ],
@@ -7399,7 +7384,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Beige Chair",
       "tags": [
         "Chairs"
       ],
@@ -7413,7 +7398,7 @@
     },
     {
       "version": 0.1,
-      "name": "Table",
+      "name": "Glass Table",
       "tags": [
         "Table"
       ],
@@ -7608,7 +7593,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chair",
+      "name": "White Chair",
       "tags": [
         "Chairs"
       ],
@@ -7647,7 +7632,7 @@
     },
     {
       "version": 0.1,
-      "name": "Book",
+      "name": "White Chair",
       "tags": [
         "Chairs"
       ],
@@ -7661,7 +7646,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Wood Chair",
       "tags": [
         "Chairs"
       ],
@@ -7703,7 +7688,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Wood Chair",
       "tags": [
         "Chairs"
       ],
@@ -7732,14 +7717,13 @@
     },
     {
       "version": 0.1,
-      "name": "Round Table",
+      "name": "Big Wood Table",
       "tags": [
-        "Round Table",
-        "Table"
+        "Round Table"
       ],
       "imagePath": "dist/round_table-pink-right-6-8a2fca13.png",
       "direction": "front",
-      "color": "#c89563",
+      "color": "#D2B48C",
       "collisionGrid": [
         [
           1,
@@ -7751,19 +7735,18 @@
         ]
       ],
       "secondaryColor": "",
-      "category": "",
+      "category": "Furniture & Decoration",
       "newFilename": ""
     },
     {
       "version": 0.1,
-      "name": "Round Table",
+      "name": "High Table",
       "tags": [
-        "Round Table",
-        "Table"
+        "Round Table"
       ],
       "imagePath": "dist/round_table-pink-front-3-1560a497.png",
       "direction": "front",
-      "color": "#e0c3a5",
+      "color": "#F5F5DC",
       "depthOffset": -64,
       "collisionGrid": [
         [
@@ -7780,19 +7763,18 @@
         ]
       ],
       "secondaryColor": "",
-      "category": "",
+      "category": "Furniture & Decoration",
       "newFilename": ""
     },
     {
       "version": 0.1,
-      "name": "Round Table",
+      "name": "Big Wood Table",
       "tags": [
-        "Round Table",
-        "Table"
+        "Round Table"
       ],
       "imagePath": "dist/round_table-pink-right-7-03a67d6a.png",
       "direction": "front",
-      "color": "#ebd0b2",
+      "color": "#F5F5DC",
       "depthOffset": -53,
       "collisionGrid": [
         [
@@ -7805,12 +7787,12 @@
         ]
       ],
       "secondaryColor": "",
-      "category": "",
+      "category": "Furniture & Decoration",
       "newFilename": ""
     },
     {
       "version": 0.1,
-      "name": "Round Table",
+      "name": "White Round Table",
       "tags": [
         "Round Table"
       ],
@@ -7829,7 +7811,7 @@
       ],
       "depthOffset": -44,
       "secondaryColor": "",
-      "category": "",
+      "category": "Furniture & Decoration",
       "newFilename": ""
     },
     {
@@ -7849,7 +7831,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Wood Chair",
       "tags": [
         "Chairs"
       ],
@@ -7863,7 +7845,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Beige Chair",
       "tags": [
         "Chairs"
       ],
@@ -7901,7 +7883,7 @@
     },
     {
       "version": 0.1,
-      "name": "Book",
+      "name": "White Chair",
       "tags": [
         "Chairs"
       ],
@@ -7969,7 +7951,7 @@
     },
     {
       "version": 0.1,
-      "name": "Book",
+      "name": "White Chair",
       "tags": [
         "Chairs"
       ],
@@ -8035,7 +8017,7 @@
       ],
       "imagePath": "dist/chairs-brown-right-31-14a2fc65.png",
       "direction": "left",
-      "color": "#b8785f",
+      "color": "#FF7F50",
       "depthOffset": -82,
       "secondaryColor": "",
       "category": "",
@@ -8113,7 +8095,7 @@
         "Furniture"
       ],
       "imagePath": "dist/small_couche-light_blue-front-fe80d4ee.png",
-      "direction": "front",
+      "direction": "left",
       "color": "#c5c4c6",
       "depthOffset": -81,
       "secondaryColor": "",
@@ -8136,7 +8118,7 @@
     },
     {
       "version": 0.1,
-      "name": "Book",
+      "name": "White Chair",
       "tags": [
         "Chairs"
       ],
@@ -8215,8 +8197,8 @@
         "Furniture"
       ],
       "imagePath": "dist/solo_couche-orange-right-2-2e6e849a.png",
-      "direction": "right",
-      "color": "#edbe39",
+      "direction": "left",
+      "color": "#FFFF00",
       "depthOffset": -80,
       "secondaryColor": "",
       "category": "",
@@ -8239,7 +8221,7 @@
     },
     {
       "version": 0.1,
-      "name": "Book",
+      "name": "White Chair",
       "tags": [
         "Chairs"
       ],
@@ -8252,7 +8234,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chair",
+      "name": "Wood Chair",
       "tags": [
         "Chairs"
       ],
@@ -8508,7 +8490,7 @@
     },
     {
       "version": 0.1,
-      "name": "Book",
+      "name": "White Chair",
       "tags": [
         "Chairs"
       ],
@@ -8521,7 +8503,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chair",
+      "name": "Wood Chair",
       "tags": [
         "Chairs"
       ],
@@ -8535,26 +8517,26 @@
     },
     {
       "version": 0.1,
-      "name": "Solo Puff",
+      "name": "Solo Puff Flat",
       "tags": [
         "Solo Puff"
       ],
       "imagePath": "dist/solo_puff-purple-front-2d8611fd.png",
       "direction": "front",
-      "color": "#b176b1",
+      "color": "#FF69B4",
       "secondaryColor": "",
       "category": "",
       "newFilename": ""
     },
     {
       "version": 0.1,
-      "name": "Solo Puff",
+      "name": "Solo Puff Chair",
       "tags": [
         "Solo Puff"
       ],
       "imagePath": "dist/book-dark_blue-right-a71ccd62.png",
       "direction": "front",
-      "color": "#A9A9A9",
+      "color": "#D3D3D3",
       "depthOffset": -35,
       "secondaryColor": "",
       "category": "",
@@ -8591,7 +8573,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Wood Chair",
       "tags": [
         "Chairs"
       ],
@@ -8604,7 +8586,7 @@
     },
     {
       "version": 0.1,
-      "name": "Small Table",
+      "name": "Glass Table",
       "tags": [
         "Table"
       ],
@@ -8681,9 +8663,8 @@
     },
     {
       "version": 0.1,
-      "name": "Chair",
+      "name": "White Chair",
       "tags": [
-        "Book",
         "Chairs"
       ],
       "imagePath": "dist/book-brown-right-10-6efc5133.png",
@@ -8710,7 +8691,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Wood Chair",
       "tags": [
         "Chairs"
       ],
@@ -8723,7 +8704,7 @@
     },
     {
       "version": 0.1,
-      "name": "Table",
+      "name": "Corner table",
       "tags": [
         "Table"
       ],
@@ -8785,7 +8766,7 @@
     },
     {
       "version": 0.1,
-      "name": "Book",
+      "name": "Wood Chair",
       "tags": [
         "Chairs"
       ],
@@ -8799,7 +8780,7 @@
     },
     {
       "version": 0.1,
-      "name": "Solo Puff",
+      "name": "Solo Puff Chair",
       "tags": [
         "Solo Puff"
       ],
@@ -8813,7 +8794,7 @@
     },
     {
       "version": 0.1,
-      "name": "Solo PuffRound Table",
+      "name": "Solo Puff Flat",
       "tags": [
         "Solo Puff"
       ],
@@ -8826,7 +8807,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Beige Chair",
       "tags": [
         "Chairs"
       ],
@@ -8866,7 +8847,7 @@
     },
     {
       "version": 0.1,
-      "name": "Book",
+      "name": "White Chair",
       "tags": [
         "Chairs"
       ],
@@ -8879,7 +8860,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Beige Chair",
       "tags": [
         "Chairs"
       ],
@@ -8948,7 +8929,7 @@
     },
     {
       "version": 0.1,
-      "name": "Book",
+      "name": "White Chair",
       "tags": [
         "Chairs"
       ],
@@ -8976,7 +8957,7 @@
     },
     {
       "version": 0.1,
-      "name": "Table",
+      "name": "Corner table",
       "tags": [
         "Table"
       ],
@@ -9132,7 +9113,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chair",
+      "name": "White Chair",
       "tags": [
         "Chairs"
       ],
@@ -9146,7 +9127,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Beige Chair",
       "tags": [
         "Chairs"
       ],
@@ -9166,7 +9147,7 @@
       ],
       "imagePath": "dist/small_couche-pink-right-3-009cd049.png",
       "direction": "right",
-      "color": "#b57cba",
+      "color": "#FF69B4",
       "depthOffset": -81,
       "secondaryColor": "",
       "category": "",
@@ -9181,7 +9162,7 @@
       ],
       "imagePath": "dist/solo_couche-orange-right-3-5f394693.png",
       "direction": "right",
-      "color": "#edbe39",
+      "color": "#FFFF00",
       "depthOffset": -80,
       "secondaryColor": "",
       "category": "",
@@ -9345,7 +9326,7 @@
     },
     {
       "version": 0.1,
-      "name": "Solo Puff",
+      "name": "Solo Puff Flat",
       "tags": [
         "Solo Puff"
       ],
@@ -9358,7 +9339,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Beige Chair",
       "tags": [
         "Chairs"
       ],
@@ -9400,7 +9381,7 @@
     },
     {
       "version": 0.1,
-      "name": "Small Table",
+      "name": "Glass Table",
       "tags": [
         "Table"
       ],
@@ -9441,7 +9422,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Beige Chair",
       "tags": [
         "Chairs"
       ],
@@ -9455,7 +9436,7 @@
     },
     {
       "version": 0.1,
-      "name": "Solo Puff",
+      "name": "Solo Puff Flat",
       "tags": [
         "Solo Puff"
       ],
@@ -9488,7 +9469,7 @@
       ],
       "imagePath": "dist/solo_puff-brown-right-3-73e3764d.png",
       "direction": "front",
-      "color": "#af715b",
+      "color": "#800000",
       "depthOffset": -35,
       "secondaryColor": "",
       "category": "",
@@ -9496,7 +9477,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Beige Chair",
       "tags": [
         "Chairs"
       ],
@@ -9524,7 +9505,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Wood Chair",
       "tags": [
         "Chairs"
       ],
@@ -9538,27 +9519,26 @@
     },
     {
       "version": 0.1,
-      "name": "Solo Puff",
+      "name": "Solo Puff Flat",
       "tags": [
         "Solo Puff"
       ],
       "imagePath": "dist/solo_puff-orange-right-4-dd7f7e0a.png",
       "direction": "front",
-      "color": "#ebb934",
+      "color": "#FFFF00",
       "secondaryColor": "",
       "category": "",
       "newFilename": ""
     },
     {
       "version": 0.1,
-      "name": "Round Table",
+      "name": "Medium Wood Round Table",
       "tags": [
-        "Round Table",
-        "Table"
+        "Round Table"
       ],
       "imagePath": "dist/round_table-pink-right-8-a067bddf.png",
       "direction": "front",
-      "color": "#c2905e",
+      "color": "#D2B48C",
       "collisionGrid": [
         [
           1,
@@ -9571,12 +9551,12 @@
       ],
       "depthOffset": -43,
       "secondaryColor": "",
-      "category": "",
+      "category": "Furniture & Decoration",
       "newFilename": ""
     },
     {
       "version": 0.1,
-      "name": "Chair",
+      "name": "White Chair",
       "tags": [
         "Chairs"
       ],
@@ -9604,7 +9584,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Beige Chair",
       "tags": [
         "Chairs"
       ],
@@ -9714,7 +9694,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chair",
+      "name": "Wood Chair",
       "tags": [
         "Chairs"
       ],
@@ -9845,7 +9825,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Wood Chair",
       "tags": [
         "Chairs"
       ],
@@ -9858,7 +9838,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Wood Chair",
       "tags": [
         "Chairs"
       ],
@@ -9910,7 +9890,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chair",
+      "name": "Beige Chair",
       "tags": [
         "Chairs"
       ],
@@ -10012,7 +9992,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "White Chair",
       "tags": [
         "Chairs"
       ],
@@ -10040,7 +10020,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Wood Chair",
       "tags": [
         "Chairs"
       ],
@@ -10054,13 +10034,13 @@
     },
     {
       "version": 0.1,
-      "name": "Tree",
+      "name": "Tree 13",
       "tags": [
-        "Tree"
+        "Trees"
       ],
       "imagePath": "dist/tree-dark_blue-left-2-63855f72.png",
       "direction": "front",
-      "color": "#486b62",
+      "color": "#228B22",
       "collisionGrid": [
         [
           0,
@@ -10128,13 +10108,13 @@
         ]
       ],
       "depthOffset": -95,
-      "secondaryColor": "",
-      "category": "",
+      "secondaryColor": "#A52A2A",
+      "category": "Nature & Landscape",
       "newFilename": ""
     },
     {
       "version": 0.1,
-      "name": "Table",
+      "name": "Corner table",
       "tags": [
         "Table"
       ],
@@ -10190,7 +10170,7 @@
     },
     {
       "version": 0.1,
-      "name": "Book",
+      "name": "Book Wall 12",
       "tags": [
         "Book"
       ],
@@ -10203,7 +10183,7 @@
     },
     {
       "version": 0.1,
-      "name": "Book",
+      "name": "Book Wall 13",
       "tags": [
         "Book"
       ],
@@ -10261,7 +10241,7 @@
     },
     {
       "version": 0.1,
-      "name": "Book",
+      "name": "White Chair",
       "tags": [
         "Chairs"
       ],
@@ -10328,7 +10308,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Wood Chair",
       "tags": [
         "Chairs"
       ],
@@ -10342,13 +10322,13 @@
     },
     {
       "version": 0.1,
-      "name": "Solo Puff",
+      "name": "Solo Puff Flat",
       "tags": [
         "Solo Puff"
       ],
       "imagePath": "dist/solo_puff-brown-right-4-aca2de15.png",
       "direction": "front",
-      "color": "#b3735b",
+      "color": "#800000",
       "secondaryColor": "",
       "category": "",
       "newFilename": ""
@@ -10369,7 +10349,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Wood Chair",
       "tags": [
         "Chairs"
       ],
@@ -10383,7 +10363,7 @@
     },
     {
       "version": 0.1,
-      "name": "Book",
+      "name": "White Chair",
       "tags": [
         "Chairs"
       ],
@@ -10397,14 +10377,13 @@
     },
     {
       "version": 0.1,
-      "name": "Round Table",
+      "name": "Medium Wood Round Table",
       "tags": [
-        "Round Table",
-        "Table"
+        "Round Table"
       ],
       "imagePath": "dist/round_table-pink-right-9-743b3e00.png",
       "direction": "front",
-      "color": "#d39d6b",
+      "color": "#D2B48C",
       "depthOffset": -43,
       "collisionGrid": [
         [
@@ -10417,12 +10396,12 @@
         ]
       ],
       "secondaryColor": "",
-      "category": "",
+      "category": "Furniture & Decoration",
       "newFilename": ""
     },
     {
       "version": 0.1,
-      "name": "Table",
+      "name": "Glass Table",
       "tags": [
         "Table"
       ],
@@ -10452,7 +10431,7 @@
     },
     {
       "version": 0.1,
-      "name": "Book",
+      "name": "White Chair",
       "tags": [
         "Chairs"
       ],
@@ -10465,13 +10444,13 @@
     },
     {
       "version": 0.1,
-      "name": "Tree",
+      "name": "Tree 14",
       "tags": [
-        "Tree"
+        "Trees"
       ],
       "imagePath": "dist/tree-dark_blue-left-3-4a8190da.png",
       "direction": "front",
-      "color": "#4e3a44",
+      "color": "#228B22",
       "collisionGrid": [
         [
           0,
@@ -10618,13 +10597,13 @@
         ]
       ],
       "depthOffset": -193,
-      "secondaryColor": "",
-      "category": "",
+      "secondaryColor": "#A52A2A",
+      "category": "Nature & Landscape",
       "newFilename": ""
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Wood Chair",
       "tags": [
         "Chairs"
       ],
@@ -10644,7 +10623,7 @@
         "Furniture"
       ],
       "imagePath": "dist/small_couche-teal-right-4-42de6137.png",
-      "direction": "right",
+      "direction": "back",
       "color": "#2e95a2",
       "depthOffset": -42,
       "secondaryColor": "",
@@ -10681,7 +10660,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Beige Chair",
       "tags": [
         "Chairs"
       ],
@@ -10720,7 +10699,7 @@
     },
     {
       "version": 0.1,
-      "name": "Book",
+      "name": "White Chair",
       "tags": [
         "Chairs"
       ],
@@ -10747,7 +10726,7 @@
     },
     {
       "version": 0.1,
-      "name": "Book",
+      "name": "Book Wall 14",
       "tags": [
         "Book"
       ],
@@ -10795,7 +10774,7 @@
       ],
       "imagePath": "dist/small_couche-teal-right-5-2df0ca27.png",
       "direction": "front",
-      "color": "#64b861",
+      "color": "#00FF00",
       "depthOffset": -41,
       "secondaryColor": "",
       "category": "",
@@ -10816,7 +10795,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chair",
+      "name": "White Chair",
       "tags": [
         "Chairs"
       ],
@@ -10830,15 +10809,15 @@
     },
     {
       "version": 0.1,
-      "name": "Tree",
+      "name": " Tree 15",
       "tags": [
-        "Tree"
+        "Trees"
       ],
       "imagePath": "dist/tree-dark_blue-right-5-1596726a.png",
-      "direction": "right",
-      "color": "#508c66",
-      "secondaryColor": "",
-      "category": "",
+      "direction": "front",
+      "color": "#228B22",
+      "secondaryColor": "#A52A2A",
+      "category": "Nature & Landscape",
       "newFilename": ""
     },
     {
@@ -10871,7 +10850,7 @@
     },
     {
       "version": 0.1,
-      "name": "Book",
+      "name": "White Chair",
       "tags": [
         "Chairs"
       ],
@@ -10884,7 +10863,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Wood Chair",
       "tags": [
         "Chairs"
       ],
@@ -10952,7 +10931,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chair",
+      "name": "White Chair",
       "tags": [
         "Chairs"
       ],
@@ -10966,13 +10945,13 @@
     },
     {
       "version": 0.1,
-      "name": "Tree",
+      "name": "Tree 16",
       "tags": [
-        "Tree"
+        "Trees"
       ],
       "imagePath": "dist/tree-dark_blue-right-6-49e4483e.png",
       "direction": "front",
-      "color": "#587757",
+      "color": "#228B22",
       "collisionGrid": [
         [
           0,
@@ -11040,8 +11019,8 @@
         ]
       ],
       "depthOffset": -83,
-      "secondaryColor": "",
-      "category": "",
+      "secondaryColor": "#A52A2A",
+      "category": "Nature & Landscape",
       "newFilename": ""
     },
     {
@@ -11068,7 +11047,7 @@
       ],
       "imagePath": "dist/small_couche-orange-right-89fe25bd.png",
       "direction": "front",
-      "color": "#f0c33f",
+      "color": "#FFFF00",
       "depthOffset": -40,
       "secondaryColor": "",
       "category": "",
@@ -11116,7 +11095,7 @@
     },
     {
       "version": 0.1,
-      "name": "Book",
+      "name": "Book Wall 15",
       "tags": [
         "Book"
       ],
@@ -11129,7 +11108,7 @@
     },
     {
       "version": 0.1,
-      "name": "Book",
+      "name": "Book Wall 16",
       "tags": [
         "Book"
       ],
@@ -11176,7 +11155,7 @@
         "Furniture"
       ],
       "imagePath": "dist/small_couche-brown-front-4-f9403259.png",
-      "direction": "front",
+      "direction": "back",
       "color": "#834042",
       "depthOffset": -42,
       "secondaryColor": "",
@@ -11185,7 +11164,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Wood Chair",
       "tags": [
         "Chairs"
       ],
@@ -11198,13 +11177,13 @@
     },
     {
       "version": 0.1,
-      "name": "Tree",
+      "name": "Tree 17",
       "tags": [
-        "Tree"
+        "Trees"
       ],
       "imagePath": "dist/tree-dark_blue-left-4-e993609c.png",
       "direction": "front",
-      "color": "#2b4f54",
+      "color": "#228B22",
       "depthOffset": -114,
       "collisionGrid": [
         [
@@ -11257,13 +11236,13 @@
           0
         ]
       ],
-      "secondaryColor": "",
-      "category": "",
+      "secondaryColor": "#A52A2A",
+      "category": "Nature & Landscape",
       "newFilename": ""
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Beige Chair",
       "tags": [
         "Chairs"
       ],
@@ -11276,7 +11255,7 @@
     },
     {
       "version": 0.1,
-      "name": "Small Table",
+      "name": "Glass Table",
       "tags": [
         "Table"
       ],
@@ -11349,7 +11328,7 @@
     },
     {
       "version": 0.1,
-      "name": "Table",
+      "name": "Glass Table",
       "tags": [
         "Table"
       ],
@@ -11377,7 +11356,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Wood Chair",
       "tags": [
         "Chairs"
       ],
@@ -11390,7 +11369,7 @@
     },
     {
       "version": 0.1,
-      "name": "Book",
+      "name": "White Chair",
       "tags": [
         "Chairs"
       ],
@@ -11416,7 +11395,7 @@
     },
     {
       "version": 0.1,
-      "name": "Book",
+      "name": "Book Wall 17",
       "tags": [
         "Book"
       ],
@@ -11429,7 +11408,7 @@
     },
     {
       "version": 0.1,
-      "name": "Book",
+      "name": "Book Wall 18",
       "tags": [
         "Book"
       ],
@@ -11478,7 +11457,7 @@
     },
     {
       "version": 0.1,
-      "name": "Book",
+      "name": "Book Wall 19",
       "tags": [
         "Book"
       ],
@@ -11504,13 +11483,13 @@
     },
     {
       "version": 0.1,
-      "name": "Tree",
+      "name": "Tree 18",
       "tags": [
-        "Tree"
+        "Trees"
       ],
       "imagePath": "dist/tree-dark_blue-right-7-3c13cbbc.png",
       "direction": "front",
-      "color": "#677358",
+      "color": "#228B22",
       "depthOffset": -100,
       "collisionGrid": [
         [
@@ -11570,8 +11549,8 @@
           0
         ]
       ],
-      "secondaryColor": "",
-      "category": "",
+      "secondaryColor": "#A52A2A",
+      "category": "Nature & Landscape",
       "newFilename": ""
     },
     {
@@ -11589,14 +11568,13 @@
     },
     {
       "version": 0.1,
-      "name": "Round Table",
+      "name": "High Table",
       "tags": [
-        "Round Table",
-        "Table"
+        "Round Table"
       ],
       "imagePath": "dist/round_table-pink-right-10-cf7363c6.png",
       "direction": "front",
-      "color": "#c87f60",
+      "color": "#D2B48C",
       "depthOffset": -65,
       "collisionGrid": [
         [
@@ -11613,7 +11591,7 @@
         ]
       ],
       "secondaryColor": "",
-      "category": "",
+      "category": "Furniture & Decoration",
       "newFilename": ""
     },
     {
@@ -11633,7 +11611,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Beige Chair",
       "tags": [
         "Chairs"
       ],
@@ -11646,13 +11624,13 @@
     },
     {
       "version": 0.1,
-      "name": "Tree",
+      "name": "Tree 19",
       "tags": [
-        "Tree"
+        "Trees"
       ],
       "imagePath": "dist/tree-dark_green-right-1-04e4e4ea.png",
       "direction": "front",
-      "color": "#3e8e4e",
+      "color": "#228B22",
       "depthOffset": -39,
       "collisionGrid": [
         [
@@ -11786,8 +11764,8 @@
           0
         ]
       ],
-      "secondaryColor": "",
-      "category": "",
+      "secondaryColor": "#A52A2A",
+      "category": "Nature & Landscape",
       "newFilename": ""
     },
     {
@@ -11821,7 +11799,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Beige Chair",
       "tags": [
         "Chairs"
       ],
@@ -11850,13 +11828,13 @@
     },
     {
       "version": 0.1,
-      "name": "Tree",
+      "name": "Tree 20",
       "tags": [
-        "Tree"
+        "Trees"
       ],
       "imagePath": "dist/tree-teal-right-31586f8d.png",
       "direction": "front",
-      "color": "#2f8f4f",
+      "color": "#228B22",
       "collisionGrid": [
         [
           0,
@@ -11875,8 +11853,8 @@
         ]
       ],
       "depthOffset": -31,
-      "secondaryColor": "",
-      "category": "",
+      "secondaryColor": "#A52A2A",
+      "category": "Nature & Landscape",
       "newFilename": ""
     },
     {
@@ -11896,14 +11874,13 @@
     },
     {
       "version": 0.1,
-      "name": "Round Table",
+      "name": "Glass Round Table",
       "tags": [
-        "Round Table",
-        "Table"
+        "Round Table"
       ],
       "imagePath": "dist/round_table-dark_green-up-38501d2e.png",
       "direction": "front",
-      "color": "#c5c4be",
+      "color": "#FFFFFF",
       "collisionGrid": [
         [
           1,
@@ -11915,12 +11892,12 @@
         ]
       ],
       "secondaryColor": "",
-      "category": "",
+      "category": "Furniture & Decoration",
       "newFilename": ""
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Wood Chair",
       "tags": [
         "Chairs"
       ],
@@ -11933,7 +11910,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Wood Chair",
       "tags": [
         "Chairs"
       ],
@@ -11962,7 +11939,7 @@
     },
     {
       "version": 0.1,
-      "name": "Table",
+      "name": "Corner table",
       "tags": [
         "Table"
       ],
@@ -12043,7 +12020,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chair",
+      "name": "White Chair",
       "tags": [
         "Chairs"
       ],
@@ -12057,7 +12034,7 @@
     },
     {
       "version": 0.1,
-      "name": "Book",
+      "name": "White Chair",
       "tags": [
         "Chairs"
       ],
@@ -12077,8 +12054,8 @@
         "Furniture"
       ],
       "imagePath": "dist/small_couche-pink-right-5-dcd8380c.png",
-      "direction": "right",
-      "color": "#d79dbf",
+      "direction": "back",
+      "color": "#FFC0CB",
       "depthOffset": -41,
       "secondaryColor": "",
       "category": "",
@@ -12086,7 +12063,7 @@
     },
     {
       "version": 0.1,
-      "name": "Solo Puff",
+      "name": "Solo Puff Flat",
       "tags": [
         "Solo Puff"
       ],
@@ -12113,7 +12090,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Wood Chair",
       "tags": [
         "Chairs"
       ],
@@ -12127,7 +12104,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Beige Chair",
       "tags": [
         "Chairs"
       ],
@@ -12141,7 +12118,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Wood Chair",
       "tags": [
         "Chairs"
       ],
@@ -12155,7 +12132,7 @@
     },
     {
       "version": 0.1,
-      "name": "Table",
+      "name": "Glass Table",
       "tags": [
         "Table"
       ],
@@ -12187,14 +12164,13 @@
     },
     {
       "version": 0.1,
-      "name": "Round Table",
+      "name": "Big Wood Table",
       "tags": [
-        "Round Table",
-        "Table"
+        "Round Table"
       ],
       "imagePath": "dist/round_table-pink-right-11-3378eb5d.png",
       "direction": "front",
-      "color": "#d6a16e",
+      "color": "#D2B48C",
       "depthOffset": -53,
       "collisionGrid": [
         [
@@ -12207,12 +12183,12 @@
         ]
       ],
       "secondaryColor": "",
-      "category": "",
+      "category": "Furniture & Decoration",
       "newFilename": ""
     },
     {
       "version": 0.1,
-      "name": "Book",
+      "name": "White Chair",
       "tags": [
         "Chairs"
       ],
@@ -12225,7 +12201,7 @@
     },
     {
       "version": 0.1,
-      "name": "Solo Puff",
+      "name": "Solo Puff Flat",
       "tags": [
         "Solo Puff"
       ],
@@ -12252,7 +12228,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chair",
+      "name": "Beige Chair",
       "tags": [
         "Chairs"
       ],
@@ -12294,7 +12270,7 @@
     },
     {
       "version": 0.1,
-      "name": "Regular Table",
+      "name": "Corner table",
       "tags": [
         "Table"
       ],
@@ -12377,7 +12353,7 @@
     },
     {
       "version": 0.1,
-      "name": "Book",
+      "name": "Book Wall 20",
       "tags": [
         "Book"
       ],
@@ -12397,7 +12373,7 @@
       ],
       "imagePath": "dist/small_couche-light_blue-right-3-963cf951.png",
       "direction": "front",
-      "color": "#4d9cc9",
+      "color": "#0000FF",
       "depthOffset": -40,
       "secondaryColor": "",
       "category": "",
@@ -12420,14 +12396,13 @@
     },
     {
       "version": 0.1,
-      "name": "Round Table",
+      "name": "Glass Round Table",
       "tags": [
-        "Round Table",
-        "Table"
+        "Round Table"
       ],
       "imagePath": "dist/round_table-brown-right-5-1b8dd562.png",
       "direction": "front",
-      "color": "#d7c4b1",
+      "color": "#FFFFFF",
       "collisionGrid": [
         [
           1,
@@ -12439,12 +12414,12 @@
         ]
       ],
       "secondaryColor": "",
-      "category": "",
+      "category": "Furniture & Decoration",
       "newFilename": ""
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Beige Chair",
       "tags": [
         "Chairs"
       ],
@@ -12458,7 +12433,7 @@
     },
     {
       "version": 0.1,
-      "name": "Table",
+      "name": "Glass Table",
       "tags": [
         "Table"
       ],
@@ -12483,14 +12458,13 @@
     },
     {
       "version": 0.1,
-      "name": "Round Table",
+      "name": "Glass Round Table",
       "tags": [
-        "Round Table",
-        "Table"
+        "Round Table"
       ],
       "imagePath": "dist/round_table-dark_green-up-1-8b52cc03.png",
       "direction": "front",
-      "color": "#c9c7c2",
+      "color": "#FFFFFF",
       "collisionGrid": [
         [
           1,
@@ -12503,7 +12477,7 @@
       ],
       "depthOffset": -53,
       "secondaryColor": "",
-      "category": "",
+      "category": "Furniture & Decoration",
       "newFilename": ""
     },
     {
@@ -12538,7 +12512,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Beige Chair",
       "tags": [
         "Chairs"
       ],
@@ -12582,7 +12556,7 @@
     },
     {
       "version": 0.1,
-      "name": "Table",
+      "name": "Glass Table",
       "tags": [
         "Table"
       ],
@@ -12610,7 +12584,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Wood Chair",
       "tags": [
         "Chairs"
       ],
@@ -12652,7 +12626,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Beige Chair",
       "tags": [
         "Chairs"
       ],
@@ -12672,7 +12646,7 @@
       ],
       "imagePath": "dist/small_couche-pink-right-6-22a4c25b.png",
       "direction": "front",
-      "color": "#b97fbf",
+      "color": "#FF69B4",
       "depthOffset": -39,
       "secondaryColor": "",
       "category": "",
@@ -12723,7 +12697,7 @@
     },
     {
       "version": 0.1,
-      "name": "Book",
+      "name": "Book Wall 21",
       "tags": [
         "Book"
       ],
@@ -12736,7 +12710,7 @@
     },
     {
       "version": 0.1,
-      "name": "Book",
+      "name": "Book Wall 22",
       "tags": [
         "Book"
       ],
@@ -12810,7 +12784,7 @@
     },
     {
       "version": 0.1,
-      "name": "Regular Table",
+      "name": "Corner table",
       "tags": [
         "Table"
       ],
@@ -12843,7 +12817,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Beige Chair",
       "tags": [
         "Chairs"
       ],
@@ -12857,7 +12831,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Wood Chair",
       "tags": [
         "Chairs"
       ],
@@ -12885,7 +12859,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chair",
+      "name": "Beige Chair",
       "tags": [
         "Chairs"
       ],
@@ -12933,7 +12907,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Beige Chair",
       "tags": [
         "Chairs"
       ],
@@ -12947,7 +12921,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "White Chair",
       "tags": [
         "Chairs"
       ],
@@ -12976,7 +12950,7 @@
     },
     {
       "version": 0.1,
-      "name": "Solo Puff",
+      "name": "Solo Puff Flat",
       "tags": [
         "Solo Puff"
       ],
@@ -13004,13 +12978,13 @@
     },
     {
       "version": 0.1,
-      "name": "Tree",
+      "name": "Tree 21",
       "tags": [
-        "Tree"
+        "Trees"
       ],
       "imagePath": "dist/tree-dark_blue-left-5-0e347e81.png",
       "direction": "front",
-      "color": "#3f5853",
+      "color": "#228B22",
       "depthOffset": -114,
       "collisionGrid": [
         [
@@ -13063,13 +13037,13 @@
           0
         ]
       ],
-      "secondaryColor": "",
-      "category": "",
+      "secondaryColor": "#A52A2A",
+      "category": "Nature & Landscape",
       "newFilename": ""
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Wood Chair",
       "tags": [
         "Chairs"
       ],
@@ -13083,7 +13057,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chair",
+      "name": "White Chair",
       "tags": [
         "Chairs"
       ],
@@ -13137,7 +13111,7 @@
     },
     {
       "version": 0.1,
-      "name": "Book",
+      "name": "Book Wall 23",
       "tags": [
         "Book"
       ],
@@ -13170,7 +13144,7 @@
       ],
       "imagePath": "dist/small_couche-pink-right-8-8fa7c1cb.png",
       "direction": "right",
-      "color": "#a26ea8",
+      "color": "#FF69B4",
       "depthOffset": -40,
       "secondaryColor": "",
       "category": "",
@@ -13178,7 +13152,7 @@
     },
     {
       "version": 0.1,
-      "name": "Book",
+      "name": "White Chair",
       "tags": [
         "Chairs"
       ],
@@ -13191,7 +13165,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chair",
+      "name": "Wood Chair",
       "tags": [
         "Chairs"
       ],
@@ -13218,14 +13192,13 @@
     },
     {
       "version": 0.1,
-      "name": "Round Table",
+      "name": "High Table",
       "tags": [
-        "Round Table",
-        "Table"
+        "Round Table"
       ],
       "imagePath": "dist/round_table-pink-right-12-ed20a9d6.png",
       "direction": "front",
-      "color": "#ca8061",
+      "color": "#D2B48C",
       "depthOffset": -65,
       "collisionGrid": [
         [
@@ -13242,7 +13215,7 @@
         ]
       ],
       "secondaryColor": "",
-      "category": "",
+      "category": "Furniture & Decoration",
       "newFilename": ""
     },
     {
@@ -13260,7 +13233,7 @@
     },
     {
       "version": 0.1,
-      "name": "Table",
+      "name": "Glass Table",
       "tags": [
         "Table"
       ],
@@ -13292,7 +13265,7 @@
     },
     {
       "version": 0.1,
-      "name": "Chairs",
+      "name": "Beige Chair",
       "tags": [
         "Chairs"
       ],
@@ -18679,12 +18652,12 @@
     },
     {
       "imagePath": "dist/lamps_03-4ca4317b.png",
-      "name": "Lamp",
+      "name": "Floor Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#FF0000",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -18703,12 +18676,12 @@
     },
     {
       "imagePath": "dist/lamps_05-d5c35197.png",
-      "name": "Lamp",
+      "name": "Floor Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#FF69B4",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -18727,12 +18700,12 @@
     },
     {
       "imagePath": "dist/lamps_06-14fa23f9.png",
-      "name": "Lamp",
+      "name": "Floor Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#0000FF",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -18751,12 +18724,12 @@
     },
     {
       "imagePath": "dist/lamps_07-118f0dea.png",
-      "name": "Lamp",
+      "name": "Floor Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#00FF00",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -18775,12 +18748,12 @@
     },
     {
       "imagePath": "dist/lamps_08-22517008.png",
-      "name": "Lamp",
+      "name": "Floor Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#228B22",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -18799,12 +18772,12 @@
     },
     {
       "imagePath": "dist/lamps_09-90917228.png",
-      "name": "Lamp",
+      "name": "Floor Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#000000",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -18823,12 +18796,12 @@
     },
     {
       "imagePath": "dist/lamps_11-4df344b4.png",
-      "name": "Lamp",
+      "name": "Floor Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#D3D3D3",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -18847,12 +18820,12 @@
     },
     {
       "imagePath": "dist/lamps_12-3b51364f.png",
-      "name": "Lamp",
+      "name": "Floor Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#F5F5DC",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -18871,12 +18844,12 @@
     },
     {
       "imagePath": "dist/lamps_15-d92846c7.png",
-      "name": "Lamp",
+      "name": "Two-legged Floor Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#FF0000",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -18895,12 +18868,12 @@
     },
     {
       "imagePath": "dist/lamps_17-2d7a6c96.png",
-      "name": "Lamp",
+      "name": "Two-legged Floor Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#FF69B4",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -18919,12 +18892,12 @@
     },
     {
       "imagePath": "dist/lamps_19-2c20bfad.png",
-      "name": "Lamp",
+      "name": "Two-legged Floor Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#0000FF",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -18943,12 +18916,12 @@
     },
     {
       "imagePath": "dist/lamps_21-0b46f403.png",
-      "name": "Lamp",
+      "name": "Two-legged Floor Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#00FF00",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -18967,12 +18940,12 @@
     },
     {
       "imagePath": "dist/lamps_23-ea5453a7.png",
-      "name": "Lamp",
+      "name": "Two-legged Floor Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#228B22",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -18991,12 +18964,12 @@
     },
     {
       "imagePath": "dist/lamps_25-6cab9699.png",
-      "name": "Lamp",
+      "name": "Two-legged Floor Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#000000",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -19015,12 +18988,12 @@
     },
     {
       "imagePath": "dist/lamps_27-b8965b4d.png",
-      "name": "Lamp",
+      "name": "Two-legged Floor Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#D3D3D3",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -19039,12 +19012,12 @@
     },
     {
       "imagePath": "dist/lamps_29-9e4e14b2.png",
-      "name": "Lamp",
+      "name": "Two-legged Floor Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#F5F5DC",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -19063,12 +19036,12 @@
     },
     {
       "imagePath": "dist/lamps_44-eee00dc5.png",
-      "name": "Lamp",
+      "name": "Tripod Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#F5F5DC",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -19087,12 +19060,12 @@
     },
     {
       "imagePath": "dist/lamps_46-5defbf10.png",
-      "name": "Lamp",
+      "name": "Tripod Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#FF7F50",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -19111,12 +19084,12 @@
     },
     {
       "imagePath": "dist/lamps_48-978d2ab7.png",
-      "name": "Lamp",
+      "name": "Tripod Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#FFD700",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -19135,12 +19108,12 @@
     },
     {
       "imagePath": "dist/lamps_50-620e47e6.png",
-      "name": "Lamp",
+      "name": "Tripod Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#FF0000",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -19159,12 +19132,12 @@
     },
     {
       "imagePath": "dist/lamps_51-8911e6dc.png",
-      "name": "Lamp",
+      "name": "Tripod Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#FF69B4",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -19183,12 +19156,12 @@
     },
     {
       "imagePath": "dist/lamps_52-bd2bea50.png",
-      "name": "Lamp",
+      "name": "Tripod Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#ADD8E6",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -19207,12 +19180,12 @@
     },
     {
       "imagePath": "dist/lamps_53-a09b3767.png",
-      "name": "Lamp",
+      "name": "Tripod Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#0000FF",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -19231,12 +19204,12 @@
     },
     {
       "imagePath": "dist/lamps_55-1909d18b.png",
-      "name": "Lamp",
+      "name": "Tripod Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#00FF00",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -19255,12 +19228,12 @@
     },
     {
       "imagePath": "dist/lamps_57-16812dff.png",
-      "name": "Lamp",
+      "name": "Tripod Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#228B22",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -19279,12 +19252,12 @@
     },
     {
       "imagePath": "dist/lamps_58-a4bb2812.png",
-      "name": "Lamp",
+      "name": "Tripod Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#000000",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -19303,12 +19276,12 @@
     },
     {
       "imagePath": "dist/lamps_59-16856338.png",
-      "name": "Lamp",
+      "name": "Tripod Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#D3D3D3",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -19327,12 +19300,12 @@
     },
     {
       "imagePath": "dist/lamps_61-83ce047d.png",
-      "name": "Lamp",
+      "name": "Tripod Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#F5F5DC",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -19351,12 +19324,12 @@
     },
     {
       "imagePath": "dist/lamps_71-d1dad63c.png",
-      "name": "Lamp",
+      "name": "Old Floor Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#000000",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -19375,12 +19348,12 @@
     },
     {
       "imagePath": "dist/lamps_72-89c969cb.png",
-      "name": "Lamp",
+      "name": "Old Floor Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#D3D3D3",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -19399,12 +19372,12 @@
     },
     {
       "imagePath": "dist/lamps_73-1e1ec789.png",
-      "name": "Lamp",
+      "name": "Old Floor Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#F5F5DC",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -19423,12 +19396,12 @@
     },
     {
       "imagePath": "dist/lamps_74-5d00102f.png",
-      "name": "Lamp",
+      "name": "Old Floor Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#FF7F50",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -19447,12 +19420,12 @@
     },
     {
       "imagePath": "dist/lamps_75-2d08936c.png",
-      "name": "Lamp",
+      "name": "Old Floor Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#FF69B4",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -19471,12 +19444,12 @@
     },
     {
       "imagePath": "dist/lamps_76-3a080f89.png",
-      "name": "Lamp",
+      "name": "Old Floor Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#FF0000",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -19495,12 +19468,12 @@
     },
     {
       "imagePath": "dist/lamps_77-7673e228.png",
-      "name": "Lamp",
+      "name": "Old Floor Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#0000FF",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -19519,12 +19492,12 @@
     },
     {
       "imagePath": "dist/lamps_78-a86e8af0.png",
-      "name": "Lamp",
+      "name": "Old Floor Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#00FF00",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -19543,12 +19516,12 @@
     },
     {
       "imagePath": "dist/lamps_79-6f9a96dd.png",
-      "name": "Lamp",
+      "name": "Old Floor Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#228B22",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -19567,12 +19540,12 @@
     },
     {
       "imagePath": "dist/lamps_82-7a4a8888.png",
-      "name": "Lamp",
+      "name": "Arc Floor Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#F5F5DC",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -19597,12 +19570,12 @@
     },
     {
       "imagePath": "dist/lamps_84-61751999.png",
-      "name": "Lamp",
+      "name": "Arc Floor Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#FFD700",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -19627,12 +19600,12 @@
     },
     {
       "imagePath": "dist/lamps_85-3c4cde2e.png",
-      "name": "Lamp",
+      "name": "Arc Floor Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#FF7F50",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -19657,12 +19630,12 @@
     },
     {
       "imagePath": "dist/lamps_87-30b49b18.png",
-      "name": "Lamp",
+      "name": "Arc Floor Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#FF0000",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -19687,12 +19660,12 @@
     },
     {
       "imagePath": "dist/lamps_88-e52d2cb1.png",
-      "name": "Lamp",
+      "name": "Arc Floor Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#FF69B4",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -19717,12 +19690,12 @@
     },
     {
       "imagePath": "dist/lamps_90-ea363e12.png",
-      "name": "Lamp",
+      "name": "Arc Floor Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#ADD8E6",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -19747,12 +19720,12 @@
     },
     {
       "imagePath": "dist/lamps_91-d320aa0d.png",
-      "name": "Lamp",
+      "name": "Arc Floor Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#0000FF",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -19777,12 +19750,12 @@
     },
     {
       "imagePath": "dist/lamps_92-75ba2d6d.png",
-      "name": "Lamp",
+      "name": "Arc Floor Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#000080",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -19807,12 +19780,12 @@
     },
     {
       "imagePath": "dist/lamps_93-e38446bc.png",
-      "name": "Lamp",
+      "name": "Arc Floor Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#00FF00",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -19837,12 +19810,12 @@
     },
     {
       "imagePath": "dist/lamps_94-3fb05f1f.png",
-      "name": "Lamp",
+      "name": "Arc Floor Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#228B22",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -19867,12 +19840,12 @@
     },
     {
       "imagePath": "dist/lamps_95-5581e350.png",
-      "name": "Lamp",
+      "name": "Arc Floor Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#000000",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -19897,12 +19870,12 @@
     },
     {
       "imagePath": "dist/lamps_96-1ba168c7.png",
-      "name": "Lamp",
+      "name": "Arc Floor Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#D3D3D3",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -19927,12 +19900,12 @@
     },
     {
       "imagePath": "dist/lamps_104-984feb14.png",
-      "name": "Lamp",
+      "name": "3 Spot Floor Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#D3D3D3",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -19940,12 +19913,12 @@
     },
     {
       "imagePath": "dist/lamps_105-13abddfb.png",
-      "name": "Lamp",
+      "name": "3 Spot Floor Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#000000",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -19953,12 +19926,12 @@
     },
     {
       "imagePath": "dist/lamps_106-48e0168c.png",
-      "name": "Lamp",
+      "name": "3 Spot Floor Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#FFFF00",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -19966,12 +19939,12 @@
     },
     {
       "imagePath": "dist/lamps_107-36819d33.png",
-      "name": "Lamp",
+      "name": "3 Spot Floor Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#FFD700",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -19979,12 +19952,12 @@
     },
     {
       "imagePath": "dist/lamps_110-29fee588.png",
-      "name": "Lamp",
+      "name": "Articulated Floor Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#D3D3D3",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -20006,12 +19979,12 @@
     },
     {
       "imagePath": "dist/lamps_111-e47797b6.png",
-      "name": "Lamp",
+      "name": "Articulated Floor Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#000000",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -20033,7 +20006,7 @@
     },
     {
       "imagePath": "dist/lamps_112-df6ba4f9.png",
-      "name": "Lamp",
+      "name": "Articulated Floor Lamp",
       "tags": [
         "Lamps"
       ],
@@ -20060,12 +20033,12 @@
     },
     {
       "imagePath": "dist/lamps_113-46605a75.png",
-      "name": "Lamp",
+      "name": "Articulated Floor Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#FFD700",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -20087,12 +20060,12 @@
     },
     {
       "imagePath": "dist/lamps_116-4850a478.png",
-      "name": "Lamp",
+      "name": "2 Spot Floor Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#D3D3D3",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -20100,12 +20073,12 @@
     },
     {
       "imagePath": "dist/lamps_117-e4ca8f46.png",
-      "name": "Lamp",
+      "name": "2 Spot Floor Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#000000",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -20113,12 +20086,12 @@
     },
     {
       "imagePath": "dist/lamps_118-6ab5c8d5.png",
-      "name": "Lamp",
+      "name": "2 Spot Floor Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#FFFF00",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -20126,12 +20099,12 @@
     },
     {
       "imagePath": "dist/lamps_119-c4e2f0a2.png",
-      "name": "Lamp",
+      "name": "2 Spot Floor Lamp",
       "tags": [
         "Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#FFD700",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": "",
@@ -20145,7 +20118,7 @@
         "Desk Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#F5F5DC",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": ""
@@ -20158,7 +20131,7 @@
         "Desk Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#FFA500",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": ""
@@ -20171,7 +20144,7 @@
         "Desk Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#8B4513",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": ""
@@ -20184,7 +20157,7 @@
         "Desk Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#FF0000",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": ""
@@ -20197,7 +20170,7 @@
         "Desk Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#FF69B4",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": ""
@@ -20210,7 +20183,7 @@
         "Desk Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#00FFFF",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": ""
@@ -20223,7 +20196,7 @@
         "Desk Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#0000FF",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": ""
@@ -20236,7 +20209,7 @@
         "Desk Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#00FF00",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": ""
@@ -20249,7 +20222,7 @@
         "Desk Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#228B22",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": ""
@@ -20262,7 +20235,7 @@
         "Desk Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#000000",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": ""
@@ -20275,202 +20248,202 @@
         "Desk Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#D3D3D3",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": ""
     },
     {
       "imagePath": "dist/lamps_146-c91618b6.png",
-      "name": "Desk Lamp",
+      "name": "Old Desk Lamp",
       "tags": [
         "Lamps",
         "Desk Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#D3D3D3",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": ""
     },
     {
       "imagePath": "dist/lamps_148-851fbb52.png",
-      "name": "Desk Lamp",
+      "name": "Old Desk Lamp",
       "tags": [
         "Lamps",
         "Desk Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#F5F5DC",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": ""
     },
     {
       "imagePath": "dist/lamps_150-daa7f2af.png",
-      "name": "Desk Lamp",
+      "name": "Old Desk Lamp",
       "tags": [
         "Lamps",
         "Desk Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#FFC0CB",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": ""
     },
     {
       "imagePath": "dist/lamps_152-40902e8d.png",
-      "name": "Desk Lamp",
+      "name": "Old Desk Lamp",
       "tags": [
         "Lamps",
         "Desk Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#FF69B4",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": ""
     },
     {
       "imagePath": "dist/lamps_154-15d6501f.png",
-      "name": "Desk Lamp",
+      "name": "Old Desk Lamp",
       "tags": [
         "Lamps",
         "Desk Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#FF0000",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": ""
     },
     {
       "imagePath": "dist/lamps_156-8a8f22cf.png",
-      "name": "Desk Lamp",
+      "name": "Old Desk Lamp",
       "tags": [
         "Lamps",
         "Desk Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#0000FF",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": ""
     },
     {
       "imagePath": "dist/lamps_158-3bc9410e.png",
-      "name": "Desk Lamp",
+      "name": "Old Desk Lamp",
       "tags": [
         "Lamps",
         "Desk Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#00FF00",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": ""
     },
     {
       "imagePath": "dist/lamps_160-90fbd923.png",
-      "name": "Desk Lamp",
+      "name": "Old Desk Lamp",
       "tags": [
         "Lamps",
         "Desk Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#228B22",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": ""
     },
     {
       "imagePath": "dist/lamps_162-23862464.png",
-      "name": "Desk Lamp",
+      "name": "Old Desk Lamp",
       "tags": [
         "Lamps",
         "Desk Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#000000",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": ""
     },
     {
       "imagePath": "dist/lamps_164-1911138e.png",
-      "name": "Desk Lamp",
+      "name": "Articulated Desk Lamp",
       "tags": [
         "Lamps",
         "Desk Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#D3D3D3",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": ""
     },
     {
       "imagePath": "dist/lamps_165-eddb29b6.png",
-      "name": "Desk Lamp",
+      "name": "Articulated Desk Lamp",
       "tags": [
         "Lamps",
         "Desk Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#000000",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": ""
     },
     {
       "imagePath": "dist/lamps_166-10c36f5f.png",
-      "name": "Desk Lamp",
+      "name": "Articulated Desk Lamp",
       "tags": [
         "Lamps",
         "Desk Lamps"
       ],
       "direction": "front",
-      "color": "",
+      "color": "#FFFF00",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": ""
     },
     {
       "imagePath": "dist/lamps_167-050732fc.png",
-      "name": "Desk Lamp",
+      "name": "Articulated Desk Lamp",
       "tags": [
         "Lamps",
         "Desk Lamps"
       ],
-      "direction": "front",
-      "color": "",
+      "direction": "back",
+      "color": "#FFD700",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": ""
     },
     {
       "imagePath": "dist/lamps_168-cd31fc78.png",
-      "name": "Desk Lamp",
+      "name": "Articulated Desk Lamp",
       "tags": [
         "Lamps",
         "Desk Lamps"
       ],
-      "direction": "front",
-      "color": "",
+      "direction": "back",
+      "color": "#D3D3D3",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": ""
     },
     {
       "imagePath": "dist/lamps_169-c2c501e3.png",
-      "name": "Desk Lamp",
+      "name": "Articulated Desk Lamp",
       "tags": [
         "Lamps",
         "Desk Lamps"
       ],
-      "direction": "front",
-      "color": "",
+      "direction": "back",
+      "color": "#000000",
       "secondaryColor": "",
       "category": "Furniture & Decoration",
       "newFilename": ""
