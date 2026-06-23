@@ -1,158 +1,127 @@
-
 # Assets Collection Manager
 
-Ce projet permet de **scanner des images**, de les organiser avec des métadonnées (nom, direction, couleur, tags),
-de **nettoyer** les dossiers d’images, et de les gérer via une **interface web**.
+Outil web local pour **organiser, éditer et préparer des assets graphiques** (sprites PNG).
+Il permet de scanner des images, de leur attribuer des métadonnées (nom, direction, couleur,
+tags, catégorie, dates), de filtrer/éditer la collection via une interface web, de **réaligner**
+les images, de constituer des **packs validés**, et de basculer la collection par défaut.
+
+> 📖 Documentation détaillée : voir **[DOCUMENTATION.md](DOCUMENTATION.md)**.
 
 ---
 
-## 📂 Arborescence principale
+## 🚀 Démarrage rapide
+
+```bash
+# 1. (optionnel) scanner les images de src/ vers dist/ et générer assets_list.json
+python3 main.py --mode scan
+
+# 2. lancer le serveur web (sert les pages + l'API)
+python3 main.py --mode serve
+```
+
+Puis ouvre **http://localhost:8000** dans le navigateur.
+
+> ⚠️ Toute modification d'un fichier `.py` nécessite de **redémarrer le serveur**
+> (`Ctrl+C` puis relance). Les modifications de pages/JS/CSS ne demandent qu'un
+> rechargement forcé du navigateur (`Cmd/Ctrl + Shift + R`, le serveur ne pose pas d'anti-cache).
+
+Dépendance optionnelle : **Pillow** (`pip install pillow`) pour l'estimation de couleur au scan
+et le traitement d'images. Le reste fonctionne sans dépendance externe.
+
+---
+
+## 📂 Arborescence
 
 ```
 .
-├── model/              # Contient les modèles IA ou fichiers associés (ex: CLIP)
-│   ├── clip/           # (optionnel) modèle CLIP si tu veux activer la reconnaissance automatique
-│   └── ...             # autres modèles ou checkpoints
-├── src/                # Dossier source où déposer les nouvelles images (non encore traitées)
-├── dist/               # Dossier de sortie : contient les images renommées et organisées
-├── unknow/             # Images non classées (ex: direction introuvable)
-├── assets_list.json    # Base de données JSON de la collection (générée par le scan)
-├── main.py             # Point d'entrée principal (orchestrateur: clean/scan/serve/all)
-├── server.py           # Serveur web (routes JSON, update_colors, validate_selection)
-├── image_processor.py  # Scan/traitement (lazy-load modèle, couleur moyenne, renommage)
-├── update_colors.py    # Utilitaire pour mettre à jour les couleurs du JSON
-├── clean-images.py     # Utilitaire de nettoyage (doublons, temporaires, etc.)
-├── index.html          # Interface utilisateur
-├── app.js              # Logique côté client
-├── app.css             # Styles
+├── main.py               # Orchestrateur CLI (clean / scan / serve / …)
+├── server.py             # Serveur HTTP + API JSON (pages "jolies" + routes POST)
+├── image_processor.py    # Scan src/ → dist/, couleur, dates, normalisation 32px
+├── clean-images.py       # Nettoyage des dossiers d'images
+│
+├── index.html            # Page principale : collection (filtres, édition, validate, delete…)
+├── add_assets.html       # Import d'images + génération d'un JSON
+├── align.html            # Réalignement / rognage / miroir / duplication d'images
+├── collection_list.html  # Liste des packs de validated/ + "Use as default"
+├── collisions.html       # Outil collisions (existant)
+│
+├── app.js                # Logique de l'index
+├── app.css               # Styles de l'index
+├── topbar.css            # Barre de navigation partagée (toutes les pages)
+├── collisions.css / .js  # Page collisions
+│
+├── assets_list.json      # Base de données de la collection (racine = collection par défaut)
+├── src/                  # Images sources à traiter (entrée du scan)
+├── dist/                 # Images organisées (sortie du scan, servies par le serveur)
+├── dist32/               # Versions normalisées sur grille 32px (optionnel)
+├── unknow/               # Images sans direction détectée
+└── validated/            # Packs validés : validated/<nom>/ (images + assets_list.json)
 ```
 
 ---
 
-## 📦 Le dossier `model/`
+## 🧭 Les pages
 
-Le dossier `model/` est prévu pour stocker les **modèles IA** utilisés par le pipeline.  
-
-### 1. Reconnaissance via CLIP (optionnel)
-- Si tu actives la partie **CLIP** dans `image_processor.py`, celui-ci ira chercher un modèle dans `model/clip/`.
-- Typiquement, Hugging Face télécharge le modèle `openai/clip-vit-base-patch32` et le met en cache.  
-  Tu peux soit :
-  - laisser Hugging Face gérer le cache (dans `~/.cache/huggingface/`),  
-  - soit copier manuellement le modèle dans `model/clip/` pour un usage offline.
-
-### 2. Autres modèles
-- Tu peux stocker ici d’autres modèles ou fichiers (par ex. classification couleurs avancée, détection d’objets, etc.)
-- La logique dans `image_processor.py` peut être adaptée pour charger ces fichiers.
-
-### 3. Nomenclature attendue
-- Pour CLIP, le répertoire attendu ressemble à ceci :
-  ```
-  model/clip/
-  ├── config.json
-  ├── preprocessor_config.json
-  ├── pytorch_model.bin
-  └── vocab.json
-  ```
-- Pour d’autres modèles, adopte la convention :
-  ```
-  model/<nom_du_modele>/
-  ├── fichiers_model.bin / config.json / ...
-  ```
+| Page | URL | Rôle |
+|------|-----|------|
+| **Index** | `/` | Parcourir, filtrer et éditer la collection ; valider une sélection ; supprimer ; doublons |
+| **Collections** | `/collection-list` | Lister les packs de `validated/`, en définir un par défaut |
+| **Add Assets** | `/add-assets` | Importer des images dans `dist/` et générer un JSON |
+| **Align** | `/align` | Recadrer, aligner, mettre en miroir et dupliquer des images |
+| **Collisions** | `/collisions` | Outil de collisions |
 
 ---
 
-## 🐍 Scripts Python
+## 🗃️ Schéma d'un asset (`assets_list.json`)
 
-### `main.py` (orchestrateur)
-Gère tout le workflow avec des **modes** :
-- `--mode serve` : lance **uniquement** le serveur web (pas de scan, pas de clean)
-- `--mode scan` : scanne les images (`src/` → `dist/` + maj `assets_list.json`)
-- `--mode clean` : exécute `clean-images.py` (nettoyage des dossiers `src/`, `dist/`, `unknow/`)
-- `--mode clean-scan` : **clean puis scan** (utile après ajout massif d’images)
-- `--mode all` : **clean + scan puis serve** (workflow complet clé-en-main)
-
-Options communes :
-- `--model-dir` (par défaut `model/`)
-- `--src-dir` (par défaut `src/`)
-- `--dist-dir` (par défaut `dist/`)
-- `--unknow-dir` (par défaut `unknow/`)
-- `--host` (par défaut `0.0.0.0`), `--port` (par défaut `8000`)
-
-Exemples :
-```bash
-# Juste servir l'app, sans rescanner ni nettoyer
-python main.py --mode serve
-
-# Nettoyer les dossiers puis scanner
-python main.py --mode clean-scan
-
-# Tout faire (nettoyage + scan + serveur)
-python main.py --mode all
+```json
+{
+  "collectionName": "Assets",
+  "tags": ["Furniture", "Outdoor"],
+  "collection": [
+    {
+      "imagePath": "dist/chair-brown-front-1.png",
+      "name": "chair",
+      "tags": ["Furniture"],
+      "direction": "front",
+      "color": "#A52A2A",
+      "secondaryColor": "",
+      "category": "Furniture & Decoration",
+      "dateAdded": "2026-06-23T14:00:00Z",
+      "dateModified": ""
+    }
+  ]
+}
 ```
 
-> Implémentation : `main.py` tente d'**importer** `clean_images` (si ton fichier s'appelle `clean_images.py`)
-> et d'appeler `main()`, `run()` ou `clean()`. S'il ne trouve pas de fonction, il exécute `clean-images.py`
-> en **sous-processus** avec les arguments `--src`, `--dist`, `--unknow` (si le script les supporte).
+---
 
-### `server.py`
-Serveur HTTP minimaliste (`http.server`) avec CORS :
-- `POST /` → met à jour `assets_list.json`
-- `POST /update_colors` → re-mappe les couleurs dans le JSON
-- `POST /validate_selection` → copie/renomme dans `validate elements/` + JSON filtré
+## 🔁 Workflows typiques
 
-Expose `run_server(host, port)` (utilisé par `main.py`).
-
-### `image_processor.py`
-Pipeline de traitement :
-- Parcours `src/` → déduit **direction** (front/back/left/right/up/down) d'après le nom
-- Estime la **couleur dominante** (Pillow) puis assigne la **famille** la plus proche
-- Renomme : `name-color-direction-index.png` et copie vers `dist/` (ou `unknow/` si direction inconnue)
-- Re-scanne `dist/` pour régénérer la collection
-- Écrit `assets_list.json`
-
-Le **modèle** (CLIP) est en **lazy-load** et n'est pas utilisé par défaut (prêt si tu veux enrichir les tags).
-
-### `update_colors.py`
-Utilitaire pour re-catégoriser les couleurs déjà présentes dans `assets_list.json`.
-
-### `clean-images.py`
-Nettoie les dossiers d’images (suppression de doublons, temporaires, etc.).  
-Peut être lancé **directement** ou via `main.py --mode clean` / `--mode clean-scan` / `--mode all`.
+- **Constituer un pack** : Index → filtrer/éditer → sélectionner → **Validate Selection** →
+  crée `validated/<nom>/` (images + JSON). Voir la liste dans **Collections**.
+- **Changer la collection par défaut** : **Collections** → **Use as default** (réécrit
+  `assets_list.json` racine).
+- **Corriger des marges transparentes** : **Align** → choisir l'asset → aligner / rogner /
+  miroir → **Save now** ou **Add to batch** puis **Save all**.
+- **Dupliquer un sprite en miroir** : **Align** → Flip H → **Save as copy** (nouveau fichier +
+  entrée JSON, direction `left`/`right` inversée automatiquement).
 
 ---
 
-## 🌐 Frontend
+## 🛠️ CLI `main.py`
 
-### `index.html` / `app.js` / `app.css`
-- Affiche la collection, filtres (nom/tags/direction/couleur), **infinite scroll**
-- Édition par carte, **édition en masse** via modale
-- Compteurs par option (tags, couleurs, directions)
-- **Toasts** de notifications empilés
-- Bouton **Validate Selection** → envoie la sélection au serveur (copie/rename) et télécharge un JSON filtré côté client
-- L’**accessibilité** est améliorée (ARIA, focus), et la performance optimisée (DOM minimal diffs)
+| Mode | Effet |
+|------|-------|
+| `--mode serve` | Lance uniquement le serveur web (défaut) |
+| `--mode scan` | Scanne `src/` → `dist/` et met à jour `assets_list.json` |
+| `--mode clean` | Exécute `clean-images.py` |
+| `--mode clean-scan` | Clean puis scan |
+| `--mode all` | Clean + scan + serve |
+
+Options : `--src-dir`, `--dist-dir`, `--unknow-dir`, `--model-dir`, `--host`, `--port`.
 
 ---
 
-## 🚀 Workflow recommandé
-
-1. **Nettoyer** (optionnel) :
-   ```bash
-   python main.py --mode clean
-   ```
-
-2. **Scanner** pour générer/mettre à jour `assets_list.json` :
-   ```bash
-   python main.py --mode scan
-   ```
-
-3. **Servir** l'application web **sans rescanner** :
-   ```bash
-   python main.py --mode serve
-   ```
-
-4. **Tout-en-un** :
-   ```bash
-   python main.py --mode all
-   ```
-
-Ouvrir `index.html` dans le navigateur pour utiliser l’interface.
+Pour le détail des routes API, des filtres, des formats et des comportements,
+voir **[DOCUMENTATION.md](DOCUMENTATION.md)**.

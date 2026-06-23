@@ -21,7 +21,7 @@ ASSETS_JSON = "assets_list.json"
 # Dossiers par défaut
 DIST_DIR = "dist"
 DIST32_DIR = "dist32"
-VALIDATE_DIR = "validate elements"
+VALIDATED_DIR = "validated"
 
 # -----------------------------------------------------------------------------
 # Utils
@@ -99,61 +99,98 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self.send_error(404, "File not found")
 
     def do_GET(self):
-        # Map /collisions to collisions.html (added)
-        if self.path.split('?')[0] == '/collisions':
+        # Routes "jolies" -> fichiers HTML statiques
+        route = self.path.split('?')[0]
+        if route == '/list_collections':
+            return self.list_collections()
+        if route == '/collisions':
             self.path = '/collisions.html'
+        elif route in ('/add-assets', '/add_assets'):
+            self.path = '/add_assets.html'
+        elif route == '/align':
+            self.path = '/align.html'
+        elif route in ('/collection-list', '/collection_list', '/collections'):
+            self.path = '/collection_list.html'
         # Comportement par défaut de SimpleHTTPRequestHandler (fichiers statiques)
         return super().do_GET()
-        if route == "/add-assets":
-            return send_file(self, "add_assets.html")
-            if route == "/upload_files":
+
+    def list_collections(self):
+        """Liste les collections présentes dans validated/ (nom, tags, nb d'images)."""
+        base = Path(VALIDATED_DIR)
+        items = []
+        if base.is_dir():
+            for d in sorted(base.iterdir()):
+                if not d.is_dir():
+                    continue
+                jf = d / "assets_list.json"
+                if not jf.is_file():
+                    continue
                 try:
-                    import cgi
-                    from pathlib import Path
-                    fs = cgi.FieldStorage(
-                        fp=self.rfile,
-                        headers=self.headers,
-                        environ={
-                            "REQUEST_METHOD": "POST",
-                            "CONTENT_TYPE": self.headers.get("Content-Type"),
-                        },
-                        keep_blank_values=True
-                    )
+                    data = json.loads(jf.read_text(encoding="utf-8"))
+                except Exception:
+                    continue
+                coll = data.get("collection") if isinstance(data.get("collection"), list) else []
+                thumb = None
+                if coll and isinstance(coll[0], dict) and coll[0].get("imagePath"):
+                    name = str(coll[0]["imagePath"]).split("/")[-1]
+                    if name:
+                        thumb = f"{VALIDATED_DIR}/{d.name}/{name}"
+                items.append({
+                    "dir": d.name,
+                    "collectionName": data.get("collectionName") or d.name,
+                    "tags": data.get("tags") or [],
+                    "count": len(coll),
+                    "thumb": thumb,
+                })
+        return send_json(self, 200, {"collections": items})
 
-                    fields = fs["files"] if "files" in fs else None
-                    if fields is None:
-                        if "file" in fs:
-                            fields = fs["file"]
-                        else:
-                            return send_json(self, 400, {"status":"error","message":"No files field in form"})
+    def handle_upload(self):
+        """Reçoit un multipart/form-data (champ 'files' ou 'file') et écrit les
+        fichiers sous dist/ en préservant leur chemin relatif."""
+        try:
+            import cgi
+            fs = cgi.FieldStorage(
+                fp=self.rfile,
+                headers=self.headers,
+                environ={
+                    "REQUEST_METHOD": "POST",
+                    "CONTENT_TYPE": self.headers.get("Content-Type", ""),
+                },
+                keep_blank_values=True
+            )
 
-                    if not isinstance(fields, list):
-                        fields = [fields]
+            fields = fs["files"] if "files" in fs else (fs["file"] if "file" in fs else None)
+            if fields is None:
+                return send_json(self, 400, {"status": "error", "message": "No files field in form"})
 
-                    dist_root = Path("dist")
-                    saved = 0
-                    errors = []
-                    for part in fields:
-                        filename = getattr(part, "filename", "") or ""
-                        rel = filename.replace("\\\\", "/").lstrip("./").strip("/")
-                        if not rel or ".." in rel:
-                            errors.append({"file": filename, "error": "invalid relative path"})
-                            continue
-                        dest = dist_root / rel
-                        dest.parent.mkdir(parents=True, exist_ok=True)
-                        with open(dest, "wb") as outf:
-                            data = part.file.read()
-                            outf.write(data)
-                        saved += 1
+            if not isinstance(fields, list):
+                fields = [fields]
 
-                    return send_json(self, 200, {"status":"success", "saved": saved, "errors": errors})
-                except Exception as e:
-                    return send_json(self, 500, {"status":"error", "message": str(e)})
+            dist_root = Path(DIST_DIR)
+            saved = 0
+            errors = []
+            for part in fields:
+                filename = getattr(part, "filename", "") or ""
+                rel = filename.replace("\\", "/").lstrip("./").strip("/")
+                if not rel or ".." in rel.split("/"):
+                    errors.append({"file": filename, "error": "invalid relative path"})
+                    continue
+                dest = dist_root / rel
+                dest.parent.mkdir(parents=True, exist_ok=True)
+                with open(dest, "wb") as outf:
+                    outf.write(part.file.read())
+                saved += 1
 
-
+            return send_json(self, 200, {"status": "success", "saved": saved, "errors": errors})
+        except Exception as e:
+            return send_json(self, 500, {"status": "error", "message": str(e)})
 
     def do_POST(self):
         route = urlparse(self.path).path
+
+        # Upload d'images depuis add_assets.html -> dist/
+        if route == "/upload_files":
+            return self.handle_upload()
 
         # ---------------------------------------------------------------------
         # NEW: Process all PNGs in dist32/ -> write normalized versions into dist32/
@@ -174,6 +211,91 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                 return send_json(self, 500, {"status": "error", "message": str(e)})
 
         # ---------------------------------------------------------------------
+        # Use a validated collection as the project-root default assets_list.json.
+        # Image paths are rewritten to validated/<dir>/<file> so they resolve.
+        # Body attendu: { "dir": "<name>" }
+        # ---------------------------------------------------------------------
+        if route == "/use_as_default":
+            body = read_json_body(self) or {}
+            sub = (body.get("dir") or "").strip().strip("/\\")
+            if not sub or "/" in sub or "\\" in sub or sub in (".", ".."):
+                return send_json(self, 400, {"status": "error", "message": "Invalid directory"})
+            src_json = Path(VALIDATED_DIR) / sub / "assets_list.json"
+            if not src_json.is_file():
+                return send_json(self, 404, {"status": "error", "message": "Collection not found"})
+            try:
+                data = json.loads(src_json.read_text(encoding="utf-8"))
+                out = dict(data)
+                out.pop("imageBase", None)
+                new_coll = []
+                for a in (data.get("collection") or []):
+                    a2 = dict(a)
+                    name = str(a2.get("imagePath", "")).split("/")[-1]
+                    if name:
+                        a2["imagePath"] = f"{VALIDATED_DIR}/{sub}/{name}"
+                    new_coll.append(a2)
+                out["collection"] = new_coll
+                with open(ASSETS_JSON, "w", encoding="utf-8") as f:
+                    json.dump(out, f, indent=2, ensure_ascii=False)
+                return send_json(self, 200, {
+                    "status": "success",
+                    "collectionName": out.get("collectionName"),
+                    "count": len(new_coll),
+                })
+            except Exception as e:
+                return send_json(self, 500, {"status": "error", "message": str(e)})
+
+        # ---------------------------------------------------------------------
+        # Append one asset entry to the root assets_list.json. Used when an asset
+        # is duplicated/mirrored on align.html.
+        # Body attendu: { "asset": { imagePath, name, ... } }
+        # ---------------------------------------------------------------------
+        if route == "/append_asset":
+            body = read_json_body(self) or {}
+            asset = body.get("asset")
+            if not isinstance(asset, dict) or not asset.get("imagePath"):
+                return send_json(self, 400, {"status": "error", "message": "Invalid asset"})
+            try:
+                data = {"collectionName": "Assets", "tags": [], "collection": []}
+                p = Path(ASSETS_JSON)
+                if p.is_file():
+                    try:
+                        data = json.loads(p.read_text(encoding="utf-8"))
+                    except Exception:
+                        pass
+                data.setdefault("collection", []).append(asset)
+                with open(ASSETS_JSON, "w", encoding="utf-8") as f:
+                    json.dump(data, f, indent=2, ensure_ascii=False)
+                return send_json(self, 200, {"status": "success", "count": len(data["collection"])})
+            except Exception as e:
+                return send_json(self, 500, {"status": "error", "message": str(e)})
+
+        # ---------------------------------------------------------------------
+        # Save an (aligned) PNG back to a relative project path. Used by align.html.
+        # Body attendu: { "path": "dist/foo.png", "dataUrl": "data:image/png;base64,..." }
+        # ---------------------------------------------------------------------
+        if route == "/save_image":
+            body = read_json_body(self) or {}
+            rel = (body.get("path") or "").strip().replace("\\", "/").lstrip("/")
+            data_url = body.get("dataUrl") or ""
+            if not rel or ".." in rel.split("/"):
+                return send_json(self, 400, {"status": "error", "message": "Invalid path"})
+            if not data_url.startswith("data:image/png;base64,"):
+                return send_json(self, 400, {"status": "error", "message": "Expected a PNG data URL"})
+            try:
+                import base64
+                raw = base64.b64decode(data_url.split(",", 1)[1])
+                p = Path(rel)
+                if p.is_absolute():
+                    return send_json(self, 400, {"status": "error", "message": "Absolute paths are not allowed"})
+                p.parent.mkdir(parents=True, exist_ok=True)
+                with open(p, "wb") as f:
+                    f.write(raw)
+                return send_json(self, 200, {"status": "success", "path": rel, "bytes": len(raw)})
+            except Exception as e:
+                return send_json(self, 500, {"status": "error", "message": str(e)})
+
+        # ---------------------------------------------------------------------
         # Update assets_list.json (overwrite with posted content)
         # Body attendu: (l’objet JSON complet de la collection)
         # ---------------------------------------------------------------------
@@ -189,90 +311,87 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                 return send_json(self, 500, {"status": "error", "message": str(e)})
 
         # ---------------------------------------------------------------------
-        # (Optionnel) Recompute colors stub — si ton UI l’appelle
-        # Body attendu: { "items":[ { "imagePath": "...", "hex": "#AABBCC" }, ... ] }
-        # Répond avec un echo/result minimal pour compat.
-        # ---------------------------------------------------------------------
-        if route == "/update_colors":
-            body = read_json_body(self) or {}
-            items = body.get("items") or []
-            # Ici on pourrait recalculer des familles de couleurs si tu as une logique spécifique.
-            # Pour compat, on renvoie un succès avec le même nombre d’items.
-            return send_json(self, 200, {"status": "success", "updated": len(items)})
-
-        # ---------------------------------------------------------------------
-        # Validate selection: copie/renomme côté serveur
-        # Body attendu: { "targetDir": "validate elements", "items":[{ imagePath, newFilename, ... }, ...] }
+        # Validate selection: crée validated/<dir> avec les images (à plat)
+        # et le JSON au même niveau. Refuse si le dossier existe déjà.
+        # Body attendu: { "dir": "<name>", "items":[{ imagePath, newFilename }], "json": {...} }
         # ---------------------------------------------------------------------
         if route == "/validate_selection":
             body = read_json_body(self) or {}
-            # Backward compatibility:
-            # - Old: { "targetDir": "validate elements", "items":[...]}  -> copies to targetDir with optional renaming
-            # - New: { "baseDir":"validate-elements", "subDir":"<name>", "items":[...], "json":{...} }
-            #         -> creates baseDir/subDir, copies images preserving original imagePath structure,
-            #            and writes assets_list.json with provided subset JSON.
             items = body.get("items") or []
             if not isinstance(items, list):
                 return send_json(self, 400, {"status": "error", "message": "items must be a list"})
 
-            base_dir = (body.get("baseDir") or "").strip()
-            sub_dir = (body.get("subDir") or "").strip()
-            target_dir = (body.get("targetDir") or "").strip()
+            sub_dir = (body.get("dir") or body.get("subDir") or "").strip().strip("/\\")
+            if not sub_dir:
+                return send_json(self, 400, {"status": "error", "message": "Missing directory name"})
+            if "/" in sub_dir or "\\" in sub_dir or sub_dir in (".", ".."):
+                return send_json(self, 400, {"status": "error", "message": "Invalid directory name"})
 
-            if base_dir and sub_dir:
-                dest_root = Path(base_dir) / sub_dir
-                preserve_paths = True  # new flow: keep imagePath structure
-            else:
-                # fallback to old behavior
-                dest_root = Path(target_dir or VALIDATE_DIR)
-                preserve_paths = False
+            dest_root = Path(VALIDATED_DIR) / sub_dir
+            if dest_root.exists():
+                return send_json(self, 409, {
+                    "status": "exists",
+                    "message": f'Folder "{VALIDATED_DIR}/{sub_dir}" already exists',
+                })
 
-            dest_root.mkdir(parents=True, exist_ok=True)
+            try:
+                dest_root.mkdir(parents=True, exist_ok=False)
+            except FileExistsError:
+                return send_json(self, 409, {
+                    "status": "exists",
+                    "message": f'Folder "{VALIDATED_DIR}/{sub_dir}" already exists',
+                })
 
             copied = 0
             errors = []
-
-            def safe_ensure_dir(dst_path: Path):
-                dst_path.parent.mkdir(parents=True, exist_ok=True)
+            name_map = {}  # imagePath d'origine -> nom de fichier copié
 
             for it in items:
                 src_rel = (it.get("imagePath") or "").strip()
-                new_name = (it.get("newFilename") or "").strip()
                 if not src_rel:
                     errors.append({"item": it, "error": "missing imagePath"})
                     continue
                 try:
                     src = Path(src_rel)
                     if not src.exists():
-                        # try relative to dist folder if path not absolute
                         alt = Path(DIST_DIR) / src_rel if not src.is_absolute() else None
                         if alt and alt.exists():
                             src = alt
                         else:
                             raise FileNotFoundError(f"Source not found: {src_rel}")
 
-                    if preserve_paths:
-                        dst = dest_root / src_rel
-                    else:
-                        # old behavior: copy into dest root, optionally renamed
-                        if not new_name:
-                            new_name = src.name
-                        dst = dest_root / new_name
+                    # Copie à plat dans le dossier, nom = newFilename sinon nom d'origine
+                    dst_name = (it.get("newFilename") or src.name).strip() or src.name
+                    dst = dest_root / dst_name
+                    if dst.exists():
+                        stem, suffix, k = dst.stem, dst.suffix, 1
+                        while (dest_root / f"{stem}-{k}{suffix}").exists():
+                            k += 1
+                        dst = dest_root / f"{stem}-{k}{suffix}"
+                        dst_name = dst.name
 
-                    safe_ensure_dir(dst)
                     shutil.copy2(src, dst)
+                    name_map[src_rel] = dst_name
                     copied += 1
                 except Exception as e:
                     errors.append({"item": it, "error": str(e)})
 
-            # Write subset JSON if provided (new flow)
+            # JSON au même niveau, avec imagePath réécrit vers le fichier copié
             subset = body.get("json")
             json_written = False
             if isinstance(subset, dict):
                 try:
-                    out_json_path = dest_root / "assets_list.json"
-                    with open(out_json_path, "w", encoding="utf-8") as f:
-                        json.dump(subset, f, indent=2, ensure_ascii=False)
+                    out = dict(subset)
+                    # Hint so the UI can resolve image paths when this pack is reloaded.
+                    out["imageBase"] = f"{VALIDATED_DIR}/{sub_dir}"
+                    out["collection"] = []
+                    for a in (subset.get("collection") or []):
+                        a2 = dict(a)
+                        if a2.get("imagePath") in name_map:
+                            a2["imagePath"] = name_map[a2["imagePath"]]
+                        out["collection"].append(a2)
+                    with open(dest_root / "assets_list.json", "w", encoding="utf-8") as f:
+                        json.dump(out, f, indent=2, ensure_ascii=False)
                     json_written = True
                 except Exception as e:
                     errors.append({"json": "assets_list.json", "error": str(e)})
@@ -292,10 +411,18 @@ class Handler(http.server.SimpleHTTPRequestHandler):
 # -----------------------------------------------------------------------------
 # Entry point
 # -----------------------------------------------------------------------------
+class ReusableTCPServer(socketserver.TCPServer):
+    # Permet de relancer immédiatement le serveur sans attendre la fin du TIME_WAIT.
+    allow_reuse_address = True
+
+
 def run_server(host: str = DEFAULT_HOST, port: int = DEFAULT_PORT):
-    with socketserver.TCPServer((host, port), Handler) as httpd:
+    with ReusableTCPServer((host, port), Handler) as httpd:
         print(f"Serving at http://{host}:{port}")
-        httpd.serve_forever()
+        try:
+            httpd.serve_forever()
+        except KeyboardInterrupt:
+            print("\nStopping server…")
 
 if __name__ == "__main__":
     run_server()

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Collection List</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="topbar.css">
+  <style>
+    :root{
+      --bg:#eef1f6;--surface:#fff;--surface-2:#f7f8fb;--border:#e5e8f0;--border-strong:#d3d8e4;
+      --text:#1f2430;--text-muted:#6b7280;--accent:#4f46e5;--accent-hover:#4338ca;
+      --success:#16a34a;--radius:14px;--radius-xs:8px;--shadow-sm:0 1px 2px rgba(16,24,40,.06);--shadow-md:0 6px 18px rgba(16,24,40,.08);
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text)}
+    .wrap{max-width:1100px;margin:0 auto;padding:18px 24px 60px}
+    .head{display:flex;align-items:center;gap:12px;margin:6px 0 18px}
+    .head h2{margin:0;font-size:1.3rem}
+    .head .muted{color:var(--text-muted);font-size:.9rem}
+    .btn{appearance:none;border:1px solid var(--border-strong);background:var(--surface);border-radius:var(--radius-xs);padding:8px 12px;cursor:pointer;font-size:.88rem;font-weight:600;color:var(--text);transition:background .15s,border-color .15s}
+    .btn:hover{background:var(--surface-2);border-color:var(--accent)}
+
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
+    .card{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow-sm);overflow:hidden}
+    .card .top{display:flex;gap:12px;padding:14px}
+    .thumb{width:64px;height:64px;flex:none;border-radius:var(--radius-xs);object-fit:contain;image-rendering:pixelated;background:#f3f4f8;border:1px solid var(--border)}
+    .meta{min-width:0;flex:1}
+    .name{font-weight:700;font-size:1.02rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .dir{font-size:.78rem;color:var(--text-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .count{display:inline-block;margin-top:6px;font-size:.78rem;font-weight:700;color:var(--accent);background:#eef2ff;border-radius:999px;padding:2px 10px}
+    .tags{display:flex;flex-wrap:wrap;gap:6px;padding:0 14px 12px}
+    .tag{font-size:.74rem;font-weight:600;color:var(--text-muted);background:var(--surface-2);border:1px solid var(--border);border-radius:999px;padding:2px 9px}
+    .no-tags{font-size:.78rem;color:var(--text-muted);padding:0 14px 12px}
+    .actions{margin-top:auto;display:flex;gap:8px;padding:12px 14px;border-top:1px solid var(--border);background:var(--surface-2)}
+    .btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+    .btn.primary:hover{background:var(--accent-hover)}
+    .state{padding:48px;text-align:center;color:var(--text-muted)}
+    a.btn{text-decoration:none;display:inline-flex;align-items:center}
+  </style>
+</head>
+<body>
+
+  <header class="app-topbar">
+    <div class="topbar-left">
+      <h1 class="app-title">Asset Manager</h1>
+      <nav class="app-nav">
+        <a href="index.html" class="nav-link">Index</a>
+        <a href="collection_list.html" class="nav-link" aria-current="page">Collections</a>
+        <a href="add_assets.html" class="nav-link">Add Assets</a>
+        <a href="align.html" class="nav-link">Align</a>
+        <a href="collisions.html" class="nav-link">Collisions</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="head">
+      <h2>Collection List</h2>
+      <span class="muted" id="sub">Scanning <code>validated/</code>…</span>
+      <button class="btn" id="refresh" style="margin-left:auto">Refresh</button>
+    </div>
+    <div id="grid" class="grid"></div>
+    <div id="state" class="state">Loading…</div>
+  </div>
+
+  <script>
+    const API_URL = 'http://localhost:8000';
+    const $ = s => document.querySelector(s);
+    const gridEl = $('#grid');
+    const stateEl = $('#state');
+    const subEl = $('#sub');
+
+    function esc(s){ return String(s==null?'':s).replace(/[&<>"']/g, m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
+
+    async function load(){
+      gridEl.innerHTML = '';
+      stateEl.style.display = '';
+      stateEl.textContent = 'Loading…';
+      try{
+        const r = await fetch(`${API_URL}/list_collections?t=${Date.now()}`);
+        const data = await r.json();
+        const cols = data.collections || [];
+        subEl.innerHTML = `${cols.length} collection(s) in <code>validated/</code>`;
+        if (!cols.length){
+          stateEl.textContent = 'No collection yet. Create one with "Validate Selection" on the Index page.';
+          return;
+        }
+        stateEl.style.display = 'none';
+        for (const c of cols) gridEl.appendChild(renderCard(c));
+      }catch(err){
+        console.error(err);
+        stateEl.textContent = 'Could not reach the server. Make sure it is running.';
+      }
+    }
+
+    function renderCard(c){
+      const card = document.createElement('div');
+      card.className = 'card';
+      const tags = (c.tags||[]).map(t=>`<span class="tag">${esc(t)}</span>`).join('');
+      card.innerHTML = `
+        <div class="top">
+          ${c.thumb ? `<img class="thumb" src="${esc(c.thumb)}" alt="">` : `<div class="thumb"></div>`}
+          <div class="meta">
+            <div class="name" title="${esc(c.collectionName)}">${esc(c.collectionName)}</div>
+            <div class="dir">validated/${esc(c.dir)}</div>
+            <span class="count">${c.count} image${c.count===1?'':'s'}</span>
+          </div>
+        </div>
+        ${tags ? `<div class="tags">${tags}</div>` : `<div class="no-tags">No tags</div>`}
+        <div class="actions">
+          <a class="btn" href="index.html" title="Open Index (after setting as default)">Index</a>
+          <button class="btn primary" data-dir="${esc(c.dir)}" style="margin-left:auto">Use as default</button>
+        </div>`;
+      card.querySelector('.btn.primary').addEventListener('click', (e)=> useAsDefault(c.dir, e.target));
+      return card;
+    }
+
+    async function useAsDefault(dir, btn){
+      if (!confirm(`Set "${dir}" as the project default collection?\nThis overwrites the root assets_list.json.`)) return;
+      const old = btn.textContent; btn.disabled = true; btn.textContent = 'Applying…';
+      try{
+        const r = await fetch(`${API_URL}/use_as_default`, {
+          method:'POST', headers:{'Content-Type':'application/json'},
+          body: JSON.stringify({ dir })
+        });
+        const out = await r.json().catch(()=>({}));
+        if (!r.ok) throw new Error(out.message || `Server error ${r.status}`);
+        btn.textContent = 'Done ✓';
+        alert(`"${out.collectionName||dir}" is now the default (${out.count||0} images).\nReload the Index to see it.`);
+      }catch(err){
+        alert(`Failed: ${err.message}`);
+        btn.textContent = old;
+      }finally{
+        btn.disabled = false;
+        setTimeout(()=>{ btn.textContent = old; }, 1500);
+      }
+    }
+
+    $('#refresh').addEventListener('click', load);
+    load();
+  </script>
+</body>
+</html>

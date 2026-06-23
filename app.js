@@ -6,6 +6,13 @@
   const API_URL = 'http://localhost:8000';
   let ASSETS_FILE = 'assets_list.json'; // <- can change if we reset after upload
 
+  // Persistence of the active data source across page refreshes.
+  const LS_SRC = 'assetmgr:source';        // 'file' | 'upload'
+  const LS_CACHE = 'assetmgr:uploadCache'; // { json, name }
+  function persistSource(t){ try{ localStorage.setItem(LS_SRC, t); }catch{} }
+  function persistCache(c){ try{ localStorage.setItem(LS_CACHE, JSON.stringify(c)); }catch(e){ console.warn('Could not persist loaded JSON (too large?)', e); } }
+  function readCache(){ try{ const s = localStorage.getItem(LS_CACHE); return s ? JSON.parse(s) : null; }catch{ return null; } }
+
   // ==== STATE (unique, defensive) ===========================================
   if (!window.state) {
     window.state = {
@@ -18,7 +25,7 @@
       // Infinite scroll (kept)
       pagination: { batchSize: 50, page: 0, loading: false, renderedCount: 0 },
       // filters
-      filter: { name:'', tags:[], direction:'', colorHex:'' },
+      filter: { name:'', tags:[], direction:'', colorHex:'', noTags:false, noColor:false, duplicatesOnly:false },
       // catalog/meta
       availableTags: [],
       counts: { tags:{}, direction:{}, color:{} },
@@ -33,10 +40,14 @@
 
   // ==== Constantes (BACK OK) ===============================================
   const ALL_TAGS_DEFAULT = [
-    "Furniture","Bathroom","Kitchen","Electronics","Decoration","Lighting",
-    "Meeting & School","Outdoor","Recreation & Gaming"
+    "Furniture","Bathroom","Kitchen","Electronics","Bedroom","Office",
+    "Plants","Food & Drink","Decoration","Transportation","Storage",
+    "Walls & Doors","Signage","Lighting","Meeting & School","Outdoor",
+    "Recreation & Gaming"
   ];
   const ALL_DIRECTIONS = ["front","back","left","right","up","down","unknow"];
+  // Sentinel value used by the color filter to mean "assets without a color".
+  const NO_COLOR = '__none__';
   const COLOR_FAMILIES = {
     red:"#FF0000",maroon:"#800000",crimson:"#DC143C",coral:"#FF7F50",
     blue:"#0000FF",navy:"#000080",teal:"#008080",cyan:"#00FFFF",
@@ -92,6 +103,33 @@
     }
     return best;
   };
+  const hexToHsl = (hex) => {
+    const c = hexToRgb(hex); if (!c) return [0,0,0];
+    const r=c.r/255, g=c.g/255, b=c.b/255;
+    const max=Math.max(r,g,b), min=Math.min(r,g,b), d=max-min;
+    let h=0, s=0, l=(max+min)/2;
+    if (d){
+      s = l>0.5 ? d/(2-max-min) : d/(max+min);
+      switch(max){
+        case r: h=((g-b)/d+(g<b?6:0)); break;
+        case g: h=(b-r)/d+2; break;
+        default: h=(r-g)/d+4;
+      }
+      h/=6;
+    }
+    return [h*360, s, l];
+  };
+  // Couleurs triées pour l'affichage : chromatiques par teinte (puis clair→foncé),
+  // puis les achromatiques (gris/noir/blanc) du plus clair au plus foncé.
+  const COLOR_FAMILIES_SORTED = Object.entries(COLOR_FAMILIES).sort((a,b)=>{
+    const [ha,sa,la] = hexToHsl(a[1]);
+    const [hb,sb,lb] = hexToHsl(b[1]);
+    const ga = sa < 0.12, gb = sb < 0.12;
+    if (ga !== gb) return ga ? 1 : -1;
+    if (ga && gb) return lb - la;
+    if (Math.abs(ha-hb) > 1) return ha - hb;
+    return lb - la;
+  });
   const formatBytes = (bytes, decimals = 2) => {
     const n = Number(bytes);
     if (!n || n <= 0) return '';
@@ -101,6 +139,12 @@
   };
   function escapeHtml(str){
     return String(str).replace(/[&<>"']/g, m=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[m]));
+  }
+  const nowISO = () => new Date().toISOString();
+  function formatDate(iso){
+    if (!iso) return '—';
+    const d = new Date(iso);
+    return isNaN(d) ? '—' : d.toLocaleString();
   }
 
   // NEW: use dist32 when toggle is ON
@@ -219,7 +263,7 @@
   }
 
   /* ========= Tags inputs ========= */
-  function createTagsInput({container, initial = [], onChange}) {
+  function createTagsInput({container, initial = [], onChange, noTagsToggle = false}) {
     if (!container) return;
 
     let input = container.querySelector('input');
@@ -262,6 +306,23 @@
     function renderSuggestions(q='') {
       scroll.innerHTML = '';
       const cur = new Set(currentTags());
+
+      // Special "No tags" entry, first in the list (filter dropdown only).
+      if (noTagsToggle){
+        const count = (state.data.collection||[]).filter(a => (a.tags||[]).length === 0).length;
+        const item = document.createElement('div');
+        item.className = 'tags-list-item special';
+        if (state.filter.noTags) item.classList.add('selected');
+        item.textContent = `No tags (${count})`;
+        item.addEventListener('click', (e)=>{
+          e.stopPropagation();
+          state.filter.noTags = !state.filter.noTags;
+          filterAssets();
+          renderSuggestions(search.value);
+        });
+        scroll.appendChild(item);
+      }
+
       const suggestions = (state.availableTags||[]).filter(t => t.toLowerCase().includes(q.toLowerCase()));
       for (const t of suggestions) {
         const item = document.createElement('div');
@@ -279,6 +340,17 @@
 
     search.addEventListener('input', ()=> renderSuggestions(search.value));
     renderSuggestions('');
+
+    // Open the suggestions panel when the user focuses/clicks the tags field.
+    function openList(){
+      $$('.color-options-list, .tags-list-container, .category-options-list').forEach(p=>{
+        if (p !== list) p.setAttribute('aria-hidden','true');
+      });
+      list.setAttribute('aria-hidden','false');
+      renderSuggestions(search.value || '');
+    }
+    input.addEventListener('focus', openList);
+    input.addEventListener('click', (e)=>{ e.stopPropagation(); openList(); });
 
     input.addEventListener('keydown', (e)=>{
       if (e.key === 'Enter' || e.key === ',') {
@@ -352,7 +424,7 @@
   }
 
   /* ========= Color select ========= */
-  function createColorSelect(root, { initialHex='', allowAll=false, onChange, showCounts=true }){
+  function createColorSelect(root, { initialHex='', allowAll=false, allowNone=false, onChange, showCounts=true }){
     if (!root) return { setValue(){}, refreshCounts(){} };
     // Inject structure if needed (bulk dynamic)
     if (!root.querySelector('.selected-color-display')){
@@ -372,14 +444,26 @@
     makePanelInteractive(panel);
 
     function setValue(hex, label, { silent=false } = {}){
-      swatch.style.backgroundColor = hex || 'transparent';
-      nameEl.textContent = label || (hex ? closestColorFamily(hex) : (allowAll ? 'All Colors' : 'Leave unchanged'));
-      hexEl.textContent = hex || '';
+      const isNone = hex === NO_COLOR;
+      swatch.classList.toggle('none', isNone);
+      swatch.style.backgroundColor = (hex && !isNone) ? hex : 'transparent';
+      nameEl.textContent = label || (isNone ? 'No color' : (hex ? closestColorFamily(hex) : (allowAll ? 'All Colors' : 'Leave unchanged')));
+      hexEl.textContent = isNone ? '' : (hex || '');
       root.dataset.hex = hex || '';
       if (!silent && typeof onChange === 'function') onChange(root.dataset.hex);
     }
     function buildOptions(){
       panel.innerHTML = '';
+      if (allowNone){
+        const countNone = (state.data.collection||[]).filter(a=>!a.color).length;
+        const opt = document.createElement('div');
+        opt.className='color-option'; opt.dataset.value=NO_COLOR;
+        opt.innerHTML = `<div class="color-swatch none"></div>
+                         <span class="co-name">No color</span>
+                         ${showCounts ? `<span class="co-count">(${countNone})</span>` : ''}`;
+        opt.addEventListener('click', (e)=>{ e.stopPropagation(); setValue(NO_COLOR, 'No color'); togglePanel(panel, root); });
+        panel.appendChild(opt);
+      }
       if (allowAll){
         const countAll = Object.values(state.counts.color).reduce((a,b)=>a+b,0);
         const opt = document.createElement('div');
@@ -390,7 +474,7 @@
         opt.addEventListener('click', (e)=>{ e.stopPropagation(); setValue('', 'All Colors'); togglePanel(panel, root); });
         panel.appendChild(opt);
       }
-      for (const [fam, hex] of Object.entries(COLOR_FAMILIES)){
+      for (const [fam, hex] of COLOR_FAMILIES_SORTED){
         const count = state.counts.color[fam] || 0;
         const opt = document.createElement('div');
         opt.className='color-option'; opt.dataset.value=hex; opt.dataset.name=fam;
@@ -409,7 +493,9 @@
         const fam = opt.dataset.name;
         const span = opt.querySelector('.co-count');
         if (!showCounts || !span) return;
-        if (!fam){
+        if (opt.dataset.value === NO_COLOR){
+          span.textContent = `(${(state.data.collection||[]).filter(a=>!a.color).length})`;
+        } else if (!fam){
           const countAll = Object.values(state.counts.color).reduce((a,b)=>a+b,0);
           span.textContent = `(${countAll||0})`;
         } else {
@@ -678,6 +764,13 @@
     });
     card.appendChild(catGroup);
 
+    // Dates (read-only)
+    const datesEl = document.createElement('div');
+    datesEl.className = 'asset-dates';
+    datesEl.innerHTML = `<span title="Date added">＋ ${formatDate(asset.dateAdded)}</span>`
+                      + `<span title="Last modified">✎ ${asset.dateModified ? formatDate(asset.dateModified) : '—'}</span>`;
+    card.appendChild(datesEl);
+
     // Selection
     card.addEventListener('click', (evt)=>{
       const interactive = evt.target.closest('input, select, .tags-input-container, [data-component="color-select"], .custom-category-select, .category-options-list');
@@ -748,7 +841,9 @@
       }
 
       draw();
-      new ResizeObserver(draw).observe(img);
+      const ro = new ResizeObserver(draw);
+      ro.observe(img);
+      (state._observers || (state._observers = [])).push(ro);
     }
 
     return card;
@@ -759,6 +854,10 @@
     if (!container) return;
 
     if (reset){
+      // Disconnect grid observers from the cards we're about to discard
+      // (otherwise they pile up on every edit/filter and leak memory).
+      (state._observers || []).forEach(o => { try { o.disconnect(); } catch {} });
+      state._observers = [];
       container.innerHTML = '';
       state.cardsByPath.clear();
       state.pagination.page = 0;
@@ -770,11 +869,26 @@
     const BATCH = 60;
     let i = state.pagination.renderedCount = 0;
 
+    // Group headers when showing duplicates.
+    const grouped = state.filter.duplicatesOnly;
+    let lastKey = null;
+    const groupCounts = new Map();
+    if (grouped){
+      for (const a of list){ const k = dupKey(a); groupCounts.set(k, (groupCounts.get(k)||0)+1); }
+    }
+
     function step(){
       const frag = document.createDocumentFragment();
       const end = Math.min(i + BATCH, list.length);
       for (; i < end; i++){
         const asset = list[i];
+        if (grouped){
+          const k = dupKey(asset);
+          if (k !== lastKey){
+            lastKey = k;
+            frag.appendChild(buildDupGroupHeader(asset, groupCounts.get(k)||0));
+          }
+        }
         frag.appendChild(buildAssetCard(asset));
       }
       container.appendChild(frag);
@@ -789,6 +903,22 @@
   }
 
   /* ========= Filtering ========= */
+  // Duplicate grouping key: name + direction + color family.
+  function dupKey(a){
+    return `${(a.name||'').trim().toLowerCase()}|${a.direction||''}|${closestColorFamily(a.color)}`;
+  }
+  function buildDupGroupHeader(asset, count){
+    const fam = closestColorFamily(asset.color);
+    const hex = COLOR_FAMILIES[fam] || asset.color || '#000';
+    const header = document.createElement('div');
+    header.className = 'dup-group-header';
+    header.innerHTML =
+      `<span class="gh-swatch" style="background:${hex}"></span>
+       <span class="gh-name">${escapeHtml(asset.name || '(no name)')}</span>
+       <span class="gh-meta">${escapeHtml(asset.direction || '—')} · ${escapeHtml(fam)}</span>
+       <span class="gh-badge">${count}</span>`;
+    return header;
+  }
   function readFilterTags(){
     const c = $('#filter-tags-container');
     if (!c) return [];
@@ -801,36 +931,72 @@
     const direction = state.filter.direction;
     const colorHex = state.filter.colorHex;
     const colorFamily = colorHex ? closestColorFamily(colorHex) : '';
+    const noTags = state.filter.noTags;
+    const noColor = state.filter.noColor;
+
+    // Duplicates: assets sharing the same name + direction + color family.
+    const dupOnly = state.filter.duplicatesOnly;
+    let dupSet = null;
+    if (dupOnly){
+      const groups = new Map();
+      for (const a of (state.data.collection||[])){
+        const key = `${(a.name||'').trim().toLowerCase()}|${a.direction||''}|${closestColorFamily(a.color)}`;
+        if (!groups.has(key)) groups.set(key, []);
+        groups.get(key).push(a.imagePath);
+      }
+      dupSet = new Set();
+      for (const arr of groups.values()){
+        if (arr.length > 1) arr.forEach(p => dupSet.add(p));
+      }
+    }
 
     const out = [];
     for (const asset of (state.data.collection||[])){
-      const nameOk = !nameQ || (asset.name||'').toLowerCase().includes(nameQ) || (asset.imagePath||'').toLowerCase().includes(nameQ);
+      const nameOk = !nameQ || (asset.name||'').toLowerCase().includes(nameQ);
       const tagsOk = tags.length===0 || tags.every(t => (asset.tags||[]).includes(t));
       const dirOk  = !direction || asset.direction === direction;
       const colOk  = !colorFamily || closestColorFamily(asset.color) === colorFamily;
-      if (nameOk && tagsOk && dirOk && colOk) out.push(asset);
+      const noTagsOk  = !noTags  || (asset.tags||[]).length === 0;
+      const noColorOk = !noColor || !asset.color;
+      const dupOk = !dupOnly || dupSet.has(asset.imagePath);
+      if (nameOk && tagsOk && dirOk && colOk && noTagsOk && noColorOk && dupOk) out.push(asset);
     }
     return out;
   }
   function filterAssets(){
     state.renderList = computeFilteredList();
+    if (state.filter.duplicatesOnly){
+      // Keep duplicate groups contiguous so headers split them cleanly.
+      state.renderList.sort((a,b)=> dupKey(a).localeCompare(dupKey(b)));
+    }
     renderPage({ reset:true });
   }
 
   /* ========= Data updates ========= */
-  function updateAsset(imagePath, field, value){
+  // Debounced server push (avoids one POST per keystroke).
+  function schedulePush(){ debounce('push-json', pushJSON, 400); }
+
+  function updateAsset(imagePath, field, value, opts = {}){
     const asset = (state.data.collection||[]).find(a => a.imagePath === imagePath);
-    if (!asset) return;
+    if (!asset) return null;
     asset[field] = value;
+    asset.dateModified = nowISO();
+    if (!asset.dateAdded) asset.dateAdded = asset.dateModified;
+
+    // In batch mode (bulk edit), the caller runs the side-effects once at the end.
+    if (opts.batch) return asset;
 
     const fileLabel = asset.name || (asset.imagePath.split('/').pop() || 'item');
     const fieldLabel = (field.charAt(0).toUpperCase() + field.slice(1));
     showNotification('info', `${fieldLabel} updated on "${fileLabel}"`);
 
+    // Update counts in place (refreshes existing cards/filters without rebuilding
+    // the grid). We deliberately do NOT call filterAssets() here: re-rendering
+    // would destroy the card being edited and steal focus mid-typing.
     recalcCountsAndTags();
     populateFilters();
-    pushJSON();
-    filterAssets();
+    schedulePush();
+    return asset;
   }
   function pushJSON(){
     // Don't push if current source is an uploaded local JSON (avoid overwriting server file)
@@ -927,14 +1093,19 @@
 
       for (const card of selected){
         const path = card.dataset.imagePath;
-        if (newName)  updateAsset(path, 'name', newName);
-        if (newTags.length) updateAsset(path, 'tags', newTags);
-        if (newDir)   updateAsset(path, 'direction', newDir);
-        if (newColor) updateAsset(path, 'color', newColor);
-        if (newSColor) updateAsset(path, 'secondaryColor', newSColor);
-        if (newCategory) updateAsset(path, 'category', newCategory);
+        if (newName)  updateAsset(path, 'name', newName, { batch:true });
+        if (newTags.length) updateAsset(path, 'tags', newTags, { batch:true });
+        if (newDir)   updateAsset(path, 'direction', newDir, { batch:true });
+        if (newColor) updateAsset(path, 'color', newColor, { batch:true });
+        if (newSColor) updateAsset(path, 'secondaryColor', newSColor, { batch:true });
+        if (newCategory) updateAsset(path, 'category', newCategory, { batch:true });
       }
-      showToast('Bulk edit applied.','success');
+      // Run the heavy side-effects once, then re-render to reflect new values.
+      recalcCountsAndTags();
+      populateFilters();
+      pushJSON();
+      filterAssets();
+      showToast(`Bulk edit applied to ${selected.length} asset(s).`,'success');
       close();
     });
 
@@ -948,8 +1119,9 @@
     setHidden($('#deselect-btn'), n===0);
     setHidden($('#bulk-edit-btn'), n===0);
     setHidden($('#validate-btn'), n===0);
-    setHidden($('#update-colors-btn'), n===0);
+    setHidden($('#delete-btn'), n===0);
     patchText($('#selected-count'), String(n));
+    patchText($('#delete-count'), String(n));
   }
 
   function setupToolbar(modalCtl){
@@ -981,6 +1153,20 @@
       });
     }
 
+    const dupBtn = $('#check-duplicates-btn');
+    if (dupBtn){
+      dupBtn.addEventListener('click', ()=>{
+        state.filter.duplicatesOnly = !state.filter.duplicatesOnly;
+        dupBtn.classList.toggle('active', state.filter.duplicatesOnly);
+        dupBtn.textContent = state.filter.duplicatesOnly ? 'Show all' : 'Check duplicates';
+        filterAssets();
+        if (state.filter.duplicatesOnly){
+          const n = state.renderList.length;
+          showToast(n ? `${n} duplicate asset(s) found` : 'No duplicates found', n ? 'info' : 'success');
+        }
+      });
+    }
+
     $('#select-all-btn')?.addEventListener('click', ()=>{
       $$('.asset-card').forEach(c=>c.classList.add('selected'));
       updateSelectionUI();
@@ -991,7 +1177,22 @@
     });
     $('#bulk-edit-btn')?.addEventListener('click', ()=> modalCtl.open());
 
-    // Validate Selection (with target folder prompt)
+    // Delete selected assets from the JSON (images are kept on disk).
+    $('#delete-btn')?.addEventListener('click', ()=>{
+      const selectedPaths = $$('.asset-card.selected').map(c=>c.dataset.imagePath);
+      if (!selectedPaths.length) return;
+      if (!confirm(`Remove ${selectedPaths.length} asset(s) from the JSON?\n(The image files are kept on disk.)`)) return;
+      const set = new Set(selectedPaths);
+      state.data.collection = (state.data.collection||[]).filter(a => !set.has(a.imagePath));
+      recalcCountsAndTags();
+      populateFilters();
+      pushJSON();
+      filterAssets();
+      updateSelectionUI();
+      showToast(`${selectedPaths.length} asset(s) removed from JSON`, 'success');
+    });
+
+    // Validate Selection -> creates validated/<name>/ with the images + JSON.
     $('#validate-btn')?.addEventListener('click', async ()=>{
       const selectedPaths = $$('.asset-card.selected').map(c=>c.dataset.imagePath);
       if (!selectedPaths.length){
@@ -999,104 +1200,109 @@
         return;
       }
 
-      const folderName = prompt('Folder name to create inside "validate-elements":','new-pack');
-      if (folderName === null) return; // cancel
-      const cleanFolder = (folderName || '').trim();
-      if (!cleanFolder){
-        alert('Please enter a valid folder name.');
-        return;
-      }
-
       const selectedAssets = (state.data.collection||[]).filter(a => selectedPaths.includes(a.imagePath));
       const items = selectedAssets.map(a => ({
         imagePath: a.imagePath,
-        name: a.name || '',
-        tags: a.tags || [],
-        direction: a.direction || '',
-        color: a.color || '',
-        secondaryColor: a.secondaryColor || '',
-        category: a.category || '',
         newFilename: buildFilename(a)
       }));
-
-      // JSON subset
       const subset = {
         collectionName: (state.data.collectionName || ''),
         tags: state.data.tags || [],
         collection: selectedAssets
       };
 
-      // Server: create validate-elements/<folderName> + copy images + JSON
-      let serverOk = false;
-      try{
-        const res = await fetch(`${API_URL}/validate_selection`, {
-          method: 'POST',
-          headers: { 'Content-Type':'application/json' },
-          body: JSON.stringify({
-            baseDir: 'validate-elements',
-            subDir: cleanFolder,
-            items,
-            json: subset
-          })
-        });
-        if (!res.ok){
-          const txt = await res.text().catch(()=> '');
-          throw new Error(txt || `Server error ${res.status}`);
+      // Ask for the folder name; re-ask if it already exists.
+      let suggestion = 'new-pack';
+      let folderName = prompt('Folder name to create inside "validated":', suggestion);
+      while (folderName !== null){
+        const clean = folderName.trim();
+        if (!clean){
+          folderName = prompt('Please enter a valid folder name:', suggestion);
+          continue;
         }
-        const out = await res.json().catch(()=> ({}));
-        serverOk = true;
-        showNotification('success', `Saved ${items.length} item(s) to validate-elements/${cleanFolder}`);
-        console.log('Validate server response:', out);
-      }catch(err){
-        console.error(err);
-        showNotification('error', `Server validate failed: ${err.message}`);
-      }
+        try{
+          const res = await fetch(`${API_URL}/validate_selection`, {
+            method: 'POST',
+            headers: { 'Content-Type':'application/json' },
+            body: JSON.stringify({ dir: clean, items, json: subset })
+          });
+          const out = await res.json().catch(()=> ({}));
 
-      // Client fallback
-      const clientName = `${cleanFolder || 'validated'}-selection.json`;
-      downloadJSON(clientName, subset);
-
-      if (!serverOk){
-        alert('Server validate failed. A local JSON export has been downloaded.');
+          if (res.status === 409){
+            // Folder already exists -> tell the user and re-ask.
+            folderName = prompt(`The folder "validated/${clean}" already exists. Please choose another name:`, `${clean}-2`);
+            continue;
+          }
+          if (!res.ok){
+            throw new Error(out.message || `Server error ${res.status}`);
+          }
+          showNotification('success', `Saved ${out.copied || items.length} image(s) + JSON to validated/${clean}`);
+        }catch(err){
+          console.error(err);
+          showNotification('error', `Validate failed: ${err.message}`);
+        }
+        return; // done (success or hard error)
       }
     });
 
-    $('#update-colors-btn')?.addEventListener('click', ()=>{
-      if (!confirm("Are you sure you want to update the colors of all assets? This action is irreversible.")) return;
-      fetch(`${API_URL}/update_colors`, { method:'POST', headers:{'Content-Type':'application/json'} })
-          .then(r=>{ if(!r.ok) throw new Error('Color update failed.'); return r.json(); })
-          .then(d=>{ alert(d.message||'Colors updated'); loadAssets(); })
-          .catch(err=> alert(`Error: ${err.message}`));
-    });
   }
 
   /* ========= JSON Switcher (Upload / Reset) ========= */
   function injectJsonControls(){
     let host = $('#json-controls');
     if (!host){
-      const header = document.querySelector('.header') || document.body;
+      const target = document.querySelector('.topbar-right') || document.querySelector('.app-topbar') || document.body;
       host = document.createElement('div');
       host.id = 'json-controls';
-      host.className = 'group';
-      host.style.marginLeft = 'auto';
       host.innerHTML = `
-        <input type="file" id="json-upload" accept="application/json" style="display:none" />
-        <button id="btn-load-json" class="btn">Load JSON</button>
-        <button id="btn-reset-json" class="btn ghost" title="Reload default assets_list.json">Reset to default</button>
-        <span id="json-source-label" class="muted" style="margin-left:8px; font-size:.9rem;"></span>
+        <input type="file" id="json-upload" accept="application/json" hidden />
+        <div class="source-switch" role="group" aria-label="Data source">
+          <button type="button" id="src-default" class="seg" title="Project root assets_list.json">Default</button>
+          <button type="button" id="src-loaded" class="seg" hidden></button>
+        </div>
+        <button id="btn-load-json" class="menu-btn primary" title="Load a JSON collection">
+          <span aria-hidden="true">⬆</span> Load JSON
+        </button>
       `;
-      header.appendChild(host);
+      target.appendChild(host);
     }
 
-    const fileInput = $('#json-upload');
-    const btnLoad   = $('#btn-load-json');
-    const btnReset  = $('#btn-reset-json');
-    const label     = $('#json-source-label');
+    const fileInput  = $('#json-upload');
+    const btnLoad    = $('#btn-load-json');
+    const segDefault = $('#src-default');
+    const segLoaded  = $('#src-loaded');
 
-    const updateLabel = () => {
-      const t = state.source.type === 'upload' ? `Loaded: ${state.source.name}` : `Source: ${state.source.name}`;
-      patchText(label, t);
-    };
+    // Reflect the active source on the segmented switch; show the loaded
+    // segment only once a file has been loaded (kept in memory for switching).
+    function refreshSwitch(){
+      const isUpload = state.source.type === 'upload';
+      if (state._uploadCache){
+        segLoaded.hidden = false;
+        segLoaded.textContent = state._uploadCache.name;
+        segLoaded.title = `Loaded file: ${state._uploadCache.name}`;
+      } else {
+        segLoaded.hidden = true;
+      }
+      segDefault.classList.toggle('active', !isUpload);
+      segLoaded.classList.toggle('active', isUpload);
+    }
+    state._refreshSourceSwitch = refreshSwitch;
+
+    // Switch back to the project-root JSON.
+    segDefault?.addEventListener('click', ()=>{
+      if (state.source.type === 'file') return; // already active
+      state.source = { type:'file', name:'assets_list.json' };
+      ASSETS_FILE = 'assets_list.json';
+      loadAssets().then(refreshSwitch);
+    });
+
+    // Switch back to the last loaded JSON (no re-upload needed).
+    segLoaded?.addEventListener('click', ()=>{
+      if (!state._uploadCache || state.source.type === 'upload') return;
+      const c = state._uploadCache;
+      applyExternalJSON(JSON.parse(JSON.stringify(c.json)), c.name);
+      refreshSwitch();
+    });
 
     btnLoad?.addEventListener('click', () => fileInput?.click());
     fileInput?.addEventListener('change', async (e) => {
@@ -1105,7 +1311,34 @@
       try{
         const text = await file.text();
         const json = JSON.parse(text);
+
+        // Validated packs store bare filenames (images sit next to the JSON).
+        // Served from the project root, those won't resolve, so offer to
+        // prepend a base folder to every image path.
+        const coll = Array.isArray(json.collection) ? json.collection : [];
+        const looksBare = coll.length && coll.every(a => a && a.imagePath && !String(a.imagePath).includes('/'));
+        // Prefer the base path saved by the server when the pack was validated.
+        const suggested = json.imageBase ? String(json.imageBase) : (looksBare ? 'validated/' : '');
+        const base = prompt(
+          'Base path to prepend to image files (e.g. "validated/test-2").\nLeave empty to keep the paths unchanged.',
+          suggested
+        );
+        if (base !== null && base.trim()){
+          const b = base.trim().replace(/^\/+|\/+$/g, ''); // trim leading/trailing slashes
+          coll.forEach(a => {
+            if (a && a.imagePath){
+              const name = String(a.imagePath).split('/').pop();
+              a.imagePath = `${b}/${name}`;
+            }
+          });
+        }
+
+        // Keep a copy in memory + storage so the user can switch back to it
+        // instantly, and so it survives a page refresh.
+        state._uploadCache = { json: JSON.parse(JSON.stringify(json)), name: file.name };
+        persistCache(state._uploadCache);
         applyExternalJSON(json, file.name);
+        refreshSwitch();
         showToast(`JSON loaded (${file.name})`, 'success');
       }catch(err){
         console.error(err);
@@ -1115,14 +1348,7 @@
       }
     });
 
-    btnReset?.addEventListener('click', () => {
-      state.source = { type:'file', name: 'assets_list.json' };
-      ASSETS_FILE = 'assets_list.json';
-      loadAssets();
-      updateLabel();
-    });
-
-    updateLabel();
+    refreshSwitch();
   }
 
   function normalizeDataStructure(data){
@@ -1141,6 +1367,9 @@
       if (Array.isArray(a.category)) a.category = a.category[0] || '';
       a.category = String(a.category || '');
       a.newFilename = String(a.newFilename || '');
+      // Stamp dateAdded if missing (backfills older JSONs); keep dateModified.
+      a.dateAdded = String(a.dateAdded || '') || nowISO();
+      a.dateModified = String(a.dateModified || '');
     });
     return out;
   }
@@ -1149,14 +1378,17 @@
     const data = normalizeDataStructure(jsonObj);
     state.data = data;
     state.source = { type:'upload', name: filename };
+    persistSource('upload');
     recalcCountsAndTags();
     populateFilters();
+    populateGlobalTags();
     state.renderList = state.data.collection.slice();
     renderPage({ reset:true });
     updateSelectionUI();
     patchText($('#main-title'), state.data.collectionName || 'Assets Collection');
     const nameInput = $('#collection-name');
     if (nameInput) nameInput.value = state.data.collectionName || '';
+    state._refreshSourceSwitch?.();
   }
 
   /* ========= Filters wiring ========= */
@@ -1177,7 +1409,8 @@
       createTagsInput({
         container: ftags,
         initial: [],
-        onChange: ()=> filterAssets()
+        onChange: ()=> filterAssets(),
+        noTagsToggle: true
       });
     }
 
@@ -1186,7 +1419,12 @@
       createColorSelect(colorRoot, {
         initialHex: '',
         allowAll: true,
-        onChange: (hex)=> { state.filter.colorHex = hex || ''; filterAssets(); },
+        allowNone: true,
+        onChange: (val)=> {
+          if (val === NO_COLOR){ state.filter.noColor = true; state.filter.colorHex = ''; }
+          else { state.filter.noColor = false; state.filter.colorHex = val || ''; }
+          filterAssets();
+        },
         showCounts: true
       });
     }
@@ -1216,7 +1454,9 @@
         const fam = opt.dataset.name;
         const span = opt.querySelector('.co-count');
         if (!span) return;
-        if (!fam){
+        if (opt.dataset.value === NO_COLOR){
+          span.textContent = `(${(state.data.collection||[]).filter(a=>!a.color).length})`;
+        } else if (!fam){
           const countAll = Object.values(state.counts.color).reduce((a,b)=>a+b,0);
           span.textContent = `(${countAll||0})`;
         } else {
@@ -1234,6 +1474,7 @@
       const raw = await r.json();
       state.data = normalizeDataStructure(raw);
       state.source = { type:'file', name: ASSETS_FILE };
+      persistSource('file');
 
       document.title = state.data.collectionName || 'Assets Collection';
       patchText($('#main-title'), document.title);
@@ -1242,14 +1483,25 @@
 
       recalcCountsAndTags();
       populateFilters();
+      populateGlobalTags();
 
       state.renderList = state.data.collection.slice();
       renderPage({ reset:true });
       updateSelectionUI();
+      state._refreshSourceSwitch?.();
     } catch(err){
       console.error(err);
       const c = $('#container');
-      if (c) c.innerHTML = `<p>Error: Could not load data. Ensure "${ASSETS_FILE}" is present.</p>`;
+      if (c){
+        c.innerHTML = `
+          <div class="state-panel error">
+            <div class="state-icon" aria-hidden="true">⚠️</div>
+            <h3 class="state-title">Could not load the collection</h3>
+            <p class="state-text">Make sure <code>${escapeHtml(ASSETS_FILE)}</code> exists and that the server is running.</p>
+            <button type="button" class="state-btn" id="retry-load-btn">Retry</button>
+          </div>`;
+        $('#retry-load-btn')?.addEventListener('click', ()=> loadAssets());
+      }
     } finally {
       $('#loader')?.remove();
     }
@@ -1267,21 +1519,46 @@
       });
     }
 
-    const simple = $('#global-tags-simple');
-    if (simple){
-      createSimpleTagsInput(simple, state.data.tags||[], (tags)=>{
-        state.data.tags = tags; pushJSON();
-      });
+    populateGlobalTags();
+  }
+
+  // (Re)build the Global Tags input from state.data.tags. Called on every load
+  // so tags coming from the JSON are actually displayed.
+  function populateGlobalTags(){
+    const root = $('#global-tags-simple');
+    if (!root) return;
+    // Clear existing pills + input so we don't stack duplicate listeners.
+    root.querySelectorAll('.simple-pill, input').forEach(el => el.remove());
+    let seeding = true; // avoid a server push while seeding initial tags
+    createSimpleTagsInput(root, state.data.tags || [], (tags)=>{
+      if (seeding) return;
+      state.data.tags = tags; pushJSON();
+    });
+    seeding = false;
+  }
+
+  // Decide what to show on startup: the last loaded JSON (if the user was on
+  // it before refresh) or the project-root assets_list.json.
+  function bootstrapData(){
+    const src = localStorage.getItem(LS_SRC);
+    if (src === 'upload' && state._uploadCache){
+      try{
+        applyExternalJSON(JSON.parse(JSON.stringify(state._uploadCache.json)), state._uploadCache.name);
+        $('#loader')?.remove();
+        return;
+      }catch(e){ console.error('Could not restore loaded JSON', e); }
     }
+    loadAssets();
   }
 
   function init(){
+    state._uploadCache = readCache(); // restore cached upload so the switch can show it
     setupGlobalDropdownCloser();
     setupFilters();
     const modalCtl = setupModal();
     setupToolbar(modalCtl);
     setupGlobalMetadata();
-    loadAssets();
+    bootstrapData();
   }
 
   document.addEventListener('DOMContentLoaded', init);
@@ -1292,17 +1569,17 @@
     const st = document.createElement('style');
     st.id = 'cat-style';
     st.textContent = `
-      .custom-category-select { position: relative; }
-      .selected-category-display { display:flex; align-items:center; justify-content:space-between; border:1px solid #e6e8ef; border-radius:8px; padding:6px 10px; background:#fff; cursor:pointer; }
-      .category-options-list { position:absolute; top:100%; left:0; right:0; z-index:30; max-height:240px; overflow:auto; background:#fff; border:1px solid #e6e8ef; border-radius:10px; margin-top:6px; box-shadow:0 8px 24px rgba(0,0,0,.12); padding:6px; display:none; }
+      .custom-category-select { position: relative; cursor:pointer; }
+      .selected-category-display { display:flex; align-items:center; justify-content:space-between; border:1px solid var(--border-strong,#d3d8e4); border-radius:8px; padding:9px 12px; background:var(--surface,#fff); cursor:pointer; transition:border-color .15s, box-shadow .15s; }
+      .selected-category-display:hover { border-color:var(--accent,#4f46e5); }
+      [data-component="category-select"][aria-expanded="true"] .selected-category-display { border-color:var(--accent,#4f46e5); box-shadow:var(--ring,0 0 0 3px rgba(79,70,229,.22)); }
+      .category-name { font-size:.95rem; }
+      .category-options-list { position:absolute; top:calc(100% + 6px); left:0; right:0; z-index:30; max-height:280px; overflow:auto; background:var(--surface,#fff); border:1px solid var(--border,#e5e8f0); border-radius:10px; box-shadow:var(--shadow-lg,0 16px 40px rgba(16,24,40,.16)); padding:6px; display:none; }
       [data-component="category-select"][aria-expanded="true"] .category-options-list { display:block; }
-      .category-option { padding:8px 10px; border-radius:8px; cursor:pointer; }
-      .category-option:hover { background:#f8fafc; }
-      .category-option .cat-title { font-weight:600; font-size:.95rem; }
-      .category-option .cat-examples { font-size:.8rem; opacity:.7; margin-top:2px; }
-
-      #json-controls .btn { margin-left: 6px; }
-      #json-controls .muted { color:#70757a; }
+      .category-option { padding:9px 11px; border-radius:8px; cursor:pointer; }
+      .category-option:hover { background:var(--surface-2,#f7f8fb); }
+      .category-option .cat-title { font-weight:600; font-size:.9rem; }
+      .category-option .cat-examples { font-size:.78rem; color:var(--text-muted,#6b7280); margin-top:2px; }
     `;
     document.head.appendChild(st);
   })();

@@ -5,8 +5,12 @@ import re
 import json
 import shutil
 from dataclasses import dataclass
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Dict, List, Tuple, Iterable, Optional
+
+def now_iso() -> str:
+    return datetime.now(timezone.utc).isoformat(timespec="seconds")
 
 # --- Lazy model (placeholder / extensible) -----------------------------------
 # Si tu veux activer CLIP plus tard, charge-le uniquement quand on scanne.
@@ -149,6 +153,8 @@ class Asset:
     tags: List[str]
     direction: str
     color: str  # hex
+    dateAdded: str = ""
+    dateModified: str = ""
 
 def to_dict(a: Asset) -> Dict:
     return {
@@ -157,6 +163,8 @@ def to_dict(a: Asset) -> Dict:
         "tags": a.tags,
         "direction": a.direction,
         "color": a.color,
+        "dateAdded": a.dateAdded,
+        "dateModified": a.dateModified,
     }
 
 
@@ -311,6 +319,27 @@ def process_images(model_dir: str, src_dir: str, dist_dir: str, unknow_dir: str)
                     color="#000000",
                 )
             )
+
+    # Préserve les dates existantes; tamponne les nouveaux assets.
+    existing = {}
+    prev_path = Path("assets_list.json")
+    if prev_path.is_file():
+        try:
+            prev = json.loads(prev_path.read_text(encoding="utf-8"))
+            for a in (prev.get("collection") or []):
+                ip = a.get("imagePath")
+                if ip:
+                    existing[ip] = (a.get("dateAdded", ""), a.get("dateModified", ""))
+        except Exception:
+            pass
+
+    stamp = now_iso()
+    for a in assets:
+        prev = existing.get(a.imagePath)
+        if prev and prev[0]:
+            a.dateAdded, a.dateModified = prev[0], prev[1]
+        else:
+            a.dateAdded, a.dateModified = stamp, ""
 
     collection = {
         "collectionName": "Assets",

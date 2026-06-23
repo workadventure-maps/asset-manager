@@ -1,0 +1,3434 @@
+{
+  "collectionName": "Assets Eiffage",
+  "tags": [
+    "flat"
+  ],
+  "collection": [
+    {
+      "imagePath": "christmas-tree-and-sign_unknown.png",
+      "name": "Christmas Tree and sign",
+      "tags": [
+        "Plants",
+        "Outdoor"
+      ],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "Nature & Landscape",
+      "collisionGrid": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "depthOffset": -28,
+      "newFilename": ""
+    },
+    {
+      "imagePath": "banch_left_black.png",
+      "name": "Banch",
+      "tags": [
+        "Meeting & School",
+        "Office"
+      ],
+      "direction": "left",
+      "color": "#000000",
+      "secondaryColor": "",
+      "category": "Furniture & Decoration",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "water-plan_unknown.png",
+      "name": "Water Plan",
+      "tags": [
+        "Plants",
+        "Outdoor"
+      ],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "Nature & Landscape",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "stand-chair_back_light_grey.png",
+      "name": "Stand Chair",
+      "tags": [
+        "Meeting & School",
+        "Office"
+      ],
+      "direction": "back",
+      "color": "#D3D3D3",
+      "secondaryColor": "",
+      "category": "Furniture & Decoration",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "small-rounded-table_light_grey.png",
+      "name": "Small rounded table",
+      "tags": [
+        "Meeting & School",
+        "Office"
+      ],
+      "direction": "",
+      "color": "#D3D3D3",
+      "secondaryColor": "",
+      "category": "Furniture & Decoration",
+      "collisionGrid": [
+        [
+          1
+        ]
+      ],
+      "newFilename": ""
+    },
+    {
+      "imagePath": "asset-flats_08_light_grey.png",
+      "name": "Asset-Flats_08",
+      "tags": [],
+      "direction": "",
+      "color": "#D3D3D3",
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_62_unknown.png",
+      "name": "Flat_Office_62",
+      "tags": [],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "",
+      "collisionGrid": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "depthOffset": -32,
+      "newFilename": ""
+    },
+    {
+      "imagePath": "water-plan-big_unknown.png",
+      "name": "Water Plan Big",
+      "tags": [
+        "Plants",
+        "Outdoor"
+      ],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "Nature & Landscape",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "outside-table_unknown.png",
+      "name": "Outside Table",
+      "tags": [],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "",
+      "collisionGrid": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "depthOffset": -65,
+      "newFilename": ""
+    },
+    {
+      "imagePath": "armchair_black.png",
+      "name": "Armchair",
+      "tags": [
+        "Meeting & School",
+        "Office"
+      ],
+      "direction": "",
+      "color": "#000000",
+      "secondaryColor": "",
+      "category": "Furniture & Decoration",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "banch_red.png",
+      "name": "Banch",
+      "tags": [
+        "Meeting & School",
+        "Office"
+      ],
+      "direction": "",
+      "color": "#FF0000",
+      "secondaryColor": "",
+      "category": "Furniture & Decoration",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "water-cooler_unknown.png",
+      "name": "Water cooler",
+      "tags": [],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "",
+      "collisionGrid": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "depthOffset": -32,
+      "newFilename": ""
+    },
+    {
+      "imagePath": "laptop_back_unknown.png",
+      "name": "Laptop",
+      "tags": [],
+      "direction": "back",
+      "color": "",
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_202_unknown.png",
+      "name": "Flat_Office_202",
+      "tags": [],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "armchair_red.png",
+      "name": "Armchair",
+      "tags": [
+        "Office",
+        "Meeting & School"
+      ],
+      "direction": "",
+      "color": "#FF0000",
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "rock-1_unknown.png",
+      "name": "Rock 1",
+      "tags": [
+        "Plants",
+        "Outdoor"
+      ],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "Nature & Landscape",
+      "collisionGrid": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "depthOffset": -32,
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flower-1_unknown.png",
+      "name": "Flower 1",
+      "tags": [
+        "Plants",
+        "Outdoor"
+      ],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "Nature & Landscape",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_170_black.png",
+      "name": "Flat_Office_170",
+      "tags": [
+        "Meeting & School",
+        "Office"
+      ],
+      "direction": "",
+      "color": "#000000",
+      "secondaryColor": "",
+      "category": "Furniture & Decoration",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_164_unknown.png",
+      "name": "Flat_Office_164",
+      "tags": [],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "",
+      "collisionGrid": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "newFilename": ""
+    },
+    {
+      "imagePath": "banch_back_light_grey.png",
+      "name": "Banch",
+      "tags": [
+        "Plants",
+        "Outdoor"
+      ],
+      "direction": "back",
+      "color": "#D3D3D3",
+      "secondaryColor": "",
+      "category": "Nature & Landscape",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "coffee_unknown.png",
+      "name": "Coffee",
+      "tags": [],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "laptop_right_unknown.png",
+      "name": "Laptop",
+      "tags": [],
+      "direction": "right",
+      "color": "",
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "table-with-chair_unknown.png",
+      "name": "Table with chair",
+      "tags": [
+        "Meeting & School",
+        "Office"
+      ],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "Furniture & Decoration",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "stand-chair_red.png",
+      "name": "Stand Chair",
+      "tags": [
+        "Meeting & School",
+        "Office"
+      ],
+      "direction": "",
+      "color": "#FF0000",
+      "secondaryColor": "",
+      "category": "Furniture & Decoration",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "armchair_light_grey.png",
+      "name": "Armchair",
+      "tags": [
+        "Meeting & School",
+        "Office"
+      ],
+      "direction": "",
+      "color": "#D3D3D3",
+      "secondaryColor": "",
+      "category": "Furniture & Decoration",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flower-2_unknown.png",
+      "name": "Flower 2",
+      "tags": [
+        "Plants",
+        "Outdoor"
+      ],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "Nature & Landscape",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "sign-with-snow_unknown.png",
+      "name": "Sign with snow",
+      "tags": [],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "",
+      "collisionGrid": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "newFilename": ""
+    },
+    {
+      "imagePath": "rock-2_unknown.png",
+      "name": "Rock 2",
+      "tags": [
+        "Plants",
+        "Outdoor"
+      ],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "Nature & Landscape",
+      "collisionGrid": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ]
+      ],
+      "depthOffset": -31,
+      "newFilename": ""
+    },
+    {
+      "imagePath": "stand-table_unknown.png",
+      "name": "Stand table",
+      "tags": [
+        "Meeting & School",
+        "Office"
+      ],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "Furniture & Decoration",
+      "collisionGrid": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "depthOffset": -31,
+      "newFilename": ""
+    },
+    {
+      "imagePath": "table-desk_coral.png",
+      "name": "Table Desk",
+      "tags": [
+        "Meeting & School",
+        "Office"
+      ],
+      "direction": "",
+      "color": "#FF7F50",
+      "secondaryColor": "",
+      "category": "Furniture & Decoration",
+      "collisionGrid": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "newFilename": ""
+    },
+    {
+      "imagePath": "laptop_unknown.png",
+      "name": "Laptop",
+      "tags": [],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "stand-chair_black.png",
+      "name": "Stand Chair",
+      "tags": [
+        "Meeting & School",
+        "Office"
+      ],
+      "direction": "",
+      "color": "#000000",
+      "secondaryColor": "",
+      "category": "Furniture & Decoration",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "stand-chair_light_grey.png",
+      "name": "Stand Chair",
+      "tags": [
+        "Meeting & School",
+        "Office"
+      ],
+      "direction": "",
+      "color": "#D3D3D3",
+      "secondaryColor": "",
+      "category": "Furniture & Decoration",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_199_unknown.png",
+      "name": "Flat_Office_199",
+      "tags": [],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "bush_green.png",
+      "name": "Bush",
+      "tags": [
+        "Plants",
+        "Outdoor"
+      ],
+      "direction": "",
+      "color": "#00FF00",
+      "secondaryColor": "",
+      "category": "Nature & Landscape",
+      "collisionGrid": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "depthOffset": -30,
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_28_pink.png",
+      "name": "Flat_Office_28",
+      "tags": [],
+      "direction": "",
+      "color": "#FFC0CB",
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "christmas-tree-small_unknown.png",
+      "name": "Christmas Tree Small",
+      "tags": [
+        "Plants",
+        "Outdoor"
+      ],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "Nature & Landscape",
+      "collisionGrid": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "depthOffset": -29,
+      "newFilename": ""
+    },
+    {
+      "imagePath": "screen_back_unknown.png",
+      "name": "Screen",
+      "tags": [
+        "Meeting & School",
+        "Office"
+      ],
+      "direction": "back",
+      "color": "",
+      "secondaryColor": "",
+      "category": "Furniture & Decoration",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_01_pink.png",
+      "name": "Flat_Office_01",
+      "tags": [],
+      "direction": "",
+      "color": "#FFC0CB",
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_100_black.png",
+      "name": "Flat_Office_100",
+      "tags": [],
+      "direction": "",
+      "color": "#000000",
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "tree-6_red.png",
+      "name": "Tree 6",
+      "tags": [
+        "Plants",
+        "Outdoor"
+      ],
+      "direction": "",
+      "color": "#FF0000",
+      "secondaryColor": "",
+      "category": "Nature & Landscape",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_03_black.png",
+      "name": "Flat_Office_03",
+      "tags": [],
+      "direction": "",
+      "color": "#000000",
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "asset-flats_69_left_unknown.png",
+      "name": "Asset-Flats_69",
+      "tags": [],
+      "direction": "left",
+      "color": "",
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "asset-flats_55_unknown.png",
+      "name": "Asset-Flats_55",
+      "tags": [
+        "Meeting & School",
+        "Office"
+      ],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "Furniture & Decoration",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "asset-flats_41_unknown.png",
+      "name": "Asset-Flats_41",
+      "tags": [],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "asset-flats_83_unknown.png",
+      "name": "Asset-Flats_83",
+      "tags": [],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "",
+      "collisionGrid": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "depthOffset": -32,
+      "newFilename": ""
+    },
+    {
+      "imagePath": "asset-flats_97_blue.png",
+      "name": "Asset-Flats_97",
+      "tags": [
+        "Meeting & School",
+        "Office"
+      ],
+      "direction": "",
+      "color": "#0000FF",
+      "secondaryColor": "",
+      "category": "Furniture & Decoration",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_249_blue.png",
+      "name": "Flat_Office_249",
+      "tags": [],
+      "direction": "",
+      "color": "#0000FF",
+      "secondaryColor": "",
+      "category": "",
+      "collisionGrid": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "depthOffset": -32,
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_16_unknown.png",
+      "name": "Flat_Office_16",
+      "tags": [],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "",
+      "depthOffset": -32,
+      "collisionGrid": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_117_unknown.png",
+      "name": "Flat_Office_117",
+      "tags": [
+        "Meeting & School",
+        "Office"
+      ],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "Furniture & Decoration",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "bush_coral.png",
+      "name": "Bush",
+      "tags": [
+        "Plants",
+        "Outdoor"
+      ],
+      "direction": "",
+      "color": "#FF7F50",
+      "secondaryColor": "",
+      "category": "Nature & Landscape",
+      "collisionGrid": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "depthOffset": -30,
+      "newFilename": ""
+    },
+    {
+      "imagePath": "tree-7_unknown.png",
+      "name": "Tree 7",
+      "tags": [
+        "Plants",
+        "Outdoor"
+      ],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "Nature & Landscape",
+      "collisionGrid": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0
+        ]
+      ],
+      "depthOffset": -52,
+      "newFilename": ""
+    },
+    {
+      "imagePath": "bush-1_red.png",
+      "name": "Bush 1",
+      "tags": [
+        "Plants",
+        "Outdoor"
+      ],
+      "direction": "",
+      "color": "#FF0000",
+      "secondaryColor": "",
+      "category": "Nature & Landscape",
+      "depthOffset": -30,
+      "collisionGrid": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_12_unknown.png",
+      "name": "Flat_Office_12",
+      "tags": [
+        "Plants",
+        "Outdoor"
+      ],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "Nature & Landscape",
+      "collisionGrid": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "depthOffset": -32,
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_259_unknown.png",
+      "name": "Flat_Office_259",
+      "tags": [],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "",
+      "collisionGrid": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "depthOffset": -30,
+      "newFilename": ""
+    },
+    {
+      "imagePath": "asset-flats_51_yellow.png",
+      "name": "Asset-Flats_51",
+      "tags": [
+        "Meeting & School",
+        "Office"
+      ],
+      "direction": "",
+      "color": "#FFFF00",
+      "secondaryColor": "",
+      "category": "Furniture & Decoration",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "asset-flats_86_red.png",
+      "name": "Asset-Flats_86",
+      "tags": [],
+      "direction": "",
+      "color": "#FF0000",
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "tree-1_green.png",
+      "name": "Tree 1",
+      "tags": [
+        "Plants",
+        "Outdoor"
+      ],
+      "direction": "",
+      "color": "#00FF00",
+      "secondaryColor": "",
+      "category": "Nature & Landscape",
+      "collisionGrid": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ]
+      ],
+      "depthOffset": -32,
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_112_unknown.png",
+      "name": "Flat_Office_112",
+      "tags": [],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "bush_green-1.png",
+      "name": "Bush",
+      "tags": [
+        "Plants",
+        "Outdoor"
+      ],
+      "direction": "",
+      "color": "#00FF00",
+      "secondaryColor": "",
+      "category": "Nature & Landscape",
+      "collisionGrid": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "depthOffset": -30,
+      "newFilename": ""
+    },
+    {
+      "imagePath": "palm_unknown.png",
+      "name": "Palm",
+      "tags": [
+        "Plants",
+        "Outdoor"
+      ],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "Nature & Landscape",
+      "collisionGrid": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ]
+      ],
+      "depthOffset": -28,
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_104_unknown.png",
+      "name": "Flat_Office_104",
+      "tags": [],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_05_unknown.png",
+      "name": "Flat_Office_05",
+      "tags": [
+        "Plants",
+        "Outdoor"
+      ],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "Nature & Landscape",
+      "depthOffset": -31,
+      "collisionGrid": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "newFilename": ""
+    },
+    {
+      "imagePath": "asset-flats_53_green.png",
+      "name": "Asset-Flats_53",
+      "tags": [],
+      "direction": "",
+      "color": "#00FF00",
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "asset-flats_91_green.png",
+      "name": "Asset-Flats_91",
+      "tags": [],
+      "direction": "",
+      "color": "#00FF00",
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_10_unknown.png",
+      "name": "Flat_Office_10",
+      "tags": [
+        "Plants",
+        "Outdoor"
+      ],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "Nature & Landscape",
+      "collisionGrid": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "depthOffset": -31,
+      "newFilename": ""
+    },
+    {
+      "imagePath": "bush-2_green.png",
+      "name": "Bush 2",
+      "tags": [
+        "Plants",
+        "Outdoor"
+      ],
+      "direction": "",
+      "color": "#00FF00",
+      "secondaryColor": "",
+      "category": "Nature & Landscape",
+      "collisionGrid": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "depthOffset": -30,
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flower-3_unknown.png",
+      "name": "Flower 3",
+      "tags": [
+        "Plants",
+        "Outdoor"
+      ],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "Nature & Landscape",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "palm-curved_unknown.png",
+      "name": "Palm Curved",
+      "tags": [
+        "Plants",
+        "Outdoor"
+      ],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "Nature & Landscape",
+      "collisionGrid": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ]
+      ],
+      "depthOffset": -30,
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_134_unknown.png",
+      "name": "Flat_Office_134",
+      "tags": [
+        "Meeting & School",
+        "Office"
+      ],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "Furniture & Decoration",
+      "collisionGrid": [
+        [
+          1
+        ]
+      ],
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_21_unknown.png",
+      "name": "Flat_Office_21",
+      "tags": [
+        "Meeting & School",
+        "Office"
+      ],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "Furniture & Decoration",
+      "collisionGrid": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "depthOffset": -70,
+      "newFilename": ""
+    },
+    {
+      "imagePath": "asset-flats_63_unknown.png",
+      "name": "Asset-Flats_63",
+      "tags": [
+        "Meeting & School",
+        "Office"
+      ],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "Furniture & Decoration",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "asset-flats_89_blue.png",
+      "name": "Asset-Flats_89",
+      "tags": [],
+      "direction": "",
+      "color": "#0000FF",
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "christmas-tree-1_unknown.png",
+      "name": "Christmas Tree 1",
+      "tags": [
+        "Plants",
+        "Outdoor"
+      ],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "Nature & Landscape",
+      "collisionGrid": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0
+        ]
+      ],
+      "depthOffset": -36,
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_08_unknown.png",
+      "name": "Flat_Office_08",
+      "tags": [
+        "Plants",
+        "Outdoor"
+      ],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "Nature & Landscape",
+      "collisionGrid": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "depthOffset": -31,
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_34_unknown.png",
+      "name": "Flat_Office_34",
+      "tags": [
+        "Meeting & School",
+        "Office"
+      ],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "Furniture & Decoration",
+      "collisionGrid": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "depthOffset": -32,
+      "newFilename": ""
+    },
+    {
+      "imagePath": "tree-1_coral.png",
+      "name": "Tree 1",
+      "tags": [
+        "Plants",
+        "Outdoor"
+      ],
+      "direction": "",
+      "color": "#FF7F50",
+      "secondaryColor": "",
+      "category": "Nature & Landscape",
+      "collisionGrid": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ]
+      ],
+      "depthOffset": -30,
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_109_unknown.png",
+      "name": "Flat_Office_109",
+      "tags": [
+        "Meeting & School",
+        "Office"
+      ],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "Furniture & Decoration",
+      "collisionGrid": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "depthOffset": -90,
+      "newFilename": ""
+    },
+    {
+      "imagePath": "tree-2_coral.png",
+      "name": "Tree 2",
+      "tags": [
+        "Plants",
+        "Outdoor"
+      ],
+      "direction": "",
+      "color": "#FF7F50",
+      "secondaryColor": "",
+      "category": "Nature & Landscape",
+      "collisionGrid": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0
+        ]
+      ],
+      "depthOffset": -30,
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flower-4_unknown.png",
+      "name": "Flower 4",
+      "tags": [
+        "Plants",
+        "Outdoor"
+      ],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "Nature & Landscape",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "plant-1_unknown.png",
+      "name": "Plant 1",
+      "tags": [
+        "Plants",
+        "Outdoor"
+      ],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "Nature & Landscape",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "plant-2_unknown.png",
+      "name": "Plant 2",
+      "tags": [
+        "Plants",
+        "Outdoor"
+      ],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "Nature & Landscape",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "christmas-tree-2_unknown.png",
+      "name": "Christmas Tree 2",
+      "tags": [
+        "Plants",
+        "Outdoor"
+      ],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "Nature & Landscape",
+      "collisionGrid": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          0,
+          0
+        ]
+      ],
+      "depthOffset": -28,
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_255_unknown.png",
+      "name": "Flat_Office_255",
+      "tags": [],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "",
+      "collisionGrid": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "depthOffset": -30,
+      "newFilename": ""
+    },
+    {
+      "imagePath": "asset-flats_48_blue.png",
+      "name": "Asset-Flats_48",
+      "tags": [],
+      "direction": "",
+      "color": "#0000FF",
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "asset-flats_61_unknown.png",
+      "name": "Asset-Flats_61",
+      "tags": [],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_37_unknown.png",
+      "name": "Flat_Office_37",
+      "tags": [],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "",
+      "collisionGrid": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "depthOffset": -32,
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_136_black.png",
+      "name": "Flat_Office_136",
+      "tags": [],
+      "direction": "",
+      "color": "#000000",
+      "secondaryColor": "",
+      "category": "",
+      "collisionGrid": [
+        [
+          1
+        ]
+      ],
+      "newFilename": ""
+    },
+    {
+      "imagePath": "tree-5_red.png",
+      "name": "Tree 5",
+      "tags": [
+        "Plants",
+        "Outdoor"
+      ],
+      "direction": "",
+      "color": "#FF0000",
+      "secondaryColor": "",
+      "category": "Nature & Landscape",
+      "collisionGrid": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ]
+      ],
+      "newFilename": ""
+    },
+    {
+      "imagePath": "plant-3_unknown.png",
+      "name": "Plant 3",
+      "tags": [
+        "Plants",
+        "Outdoor"
+      ],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "Nature & Landscape",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flower-5_unknown.png",
+      "name": "Flower 5",
+      "tags": [
+        "Plants",
+        "Outdoor"
+      ],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "Nature & Landscape",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "tree-3_green.png",
+      "name": "Tree 3",
+      "tags": [
+        "Plants",
+        "Outdoor"
+      ],
+      "direction": "",
+      "color": "#00FF00",
+      "secondaryColor": "",
+      "category": "Nature & Landscape",
+      "collisionGrid": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0
+        ]
+      ],
+      "depthOffset": -27,
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_33_unknown.png",
+      "name": "Flat_Office_33",
+      "tags": [
+        "Meeting & School",
+        "Office"
+      ],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "Furniture & Decoration",
+      "depthOffset": -32,
+      "collisionGrid": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_250_blue.png",
+      "name": "Flat_Office_250",
+      "tags": [],
+      "direction": "",
+      "color": "#0000FF",
+      "secondaryColor": "",
+      "category": "",
+      "collisionGrid": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "depthOffset": -56,
+      "newFilename": ""
+    },
+    {
+      "imagePath": "asset-flats_70_back_unknown.png",
+      "name": "Asset-Flats_70",
+      "tags": [],
+      "direction": "back",
+      "color": "",
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "stand-chair_right_unknown.png",
+      "name": "Stand Chair",
+      "tags": [
+        "Meeting & School",
+        "Office"
+      ],
+      "direction": "right",
+      "color": "",
+      "secondaryColor": "",
+      "category": "Furniture & Decoration",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "tree-3_coral.png",
+      "name": "Tree 3",
+      "tags": [
+        "Plants",
+        "Outdoor"
+      ],
+      "direction": "",
+      "color": "#FF7F50",
+      "secondaryColor": "",
+      "category": "Nature & Landscape",
+      "collisionGrid": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0
+        ]
+      ],
+      "depthOffset": -28,
+      "newFilename": ""
+    },
+    {
+      "imagePath": "tree-4_green.png",
+      "name": "Tree 4",
+      "tags": [
+        "Plants",
+        "Outdoor"
+      ],
+      "direction": "",
+      "color": "#00FF00",
+      "secondaryColor": "",
+      "category": "Nature & Landscape",
+      "collisionGrid": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ]
+      ],
+      "depthOffset": -30,
+      "newFilename": ""
+    },
+    {
+      "imagePath": "asset-flats_107_back_blue.png",
+      "name": "Asset-Flats_107",
+      "tags": [
+        "Meeting & School",
+        "Office"
+      ],
+      "direction": "back",
+      "color": "#0000FF",
+      "secondaryColor": "",
+      "category": "Furniture & Decoration",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_127_red.png",
+      "name": "Flat_Office_127",
+      "tags": [
+        "Meeting & School",
+        "Office"
+      ],
+      "direction": "",
+      "color": "#FF0000",
+      "secondaryColor": "",
+      "category": "Furniture & Decoration",
+      "collisionGrid": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "depthOffset": -52,
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flower_blue.png",
+      "name": "Flower",
+      "tags": [
+        "Plants",
+        "Outdoor"
+      ],
+      "direction": "",
+      "color": "#0000FF",
+      "secondaryColor": "",
+      "category": "Nature & Landscape",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flower_white.png",
+      "name": "Flower",
+      "tags": [
+        "Plants",
+        "Outdoor"
+      ],
+      "direction": "",
+      "color": "#FFFFFF",
+      "secondaryColor": "",
+      "category": "Nature & Landscape",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flower_green.png",
+      "name": "Flower",
+      "tags": [
+        "Plants",
+        "Outdoor"
+      ],
+      "direction": "",
+      "color": "#00FF00",
+      "secondaryColor": "",
+      "category": "Nature & Landscape",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "tree-2_green.png",
+      "name": "Tree 2",
+      "tags": [
+        "Plants",
+        "Outdoor"
+      ],
+      "direction": "",
+      "color": "#00FF00",
+      "secondaryColor": "",
+      "category": "Nature & Landscape",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_119_red.png",
+      "name": "Flat_Office_119",
+      "tags": [
+        "Meeting & School",
+        "Office"
+      ],
+      "direction": "",
+      "color": "#FF0000",
+      "secondaryColor": "",
+      "category": "Furniture & Decoration",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "tree-4_coral.png",
+      "name": "Tree 4",
+      "tags": [
+        "Plants",
+        "Outdoor"
+      ],
+      "direction": "",
+      "color": "#FF7F50",
+      "secondaryColor": "",
+      "category": "Nature & Landscape",
+      "collisionGrid": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ]
+      ],
+      "depthOffset": -28,
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_18_light_grey.png",
+      "name": "Flat_Office_18",
+      "tags": [],
+      "direction": "",
+      "color": "#D3D3D3",
+      "secondaryColor": "",
+      "category": "",
+      "collisionGrid": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "depthOffset": -32,
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_24_light_grey.png",
+      "name": "Flat_Office_24",
+      "tags": [],
+      "direction": "",
+      "color": "#D3D3D3",
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_30_unknown.png",
+      "name": "Flat_Office_30",
+      "tags": [],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "",
+      "collisionGrid": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "depthOffset": -31,
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_253_green.png",
+      "name": "Flat_Office_253",
+      "tags": [
+        "Meeting & School",
+        "Office"
+      ],
+      "direction": "",
+      "color": "#00FF00",
+      "secondaryColor": "",
+      "category": "Furniture & Decoration",
+      "collisionGrid": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "depthOffset": -90,
+      "newFilename": ""
+    },
+    {
+      "imagePath": "asset-flats_66_left_unknown.png",
+      "name": "Asset-Flats_66",
+      "tags": [],
+      "direction": "left",
+      "color": "",
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_246_blue.png",
+      "name": "Flat_Office_246",
+      "tags": [],
+      "direction": "",
+      "color": "#0000FF",
+      "secondaryColor": "",
+      "category": "",
+      "collisionGrid": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "depthOffset": -88,
+      "newFilename": ""
+    },
+    {
+      "imagePath": "tree-5_green.png",
+      "name": "Tree 5",
+      "tags": [
+        "Plants",
+        "Outdoor"
+      ],
+      "direction": "",
+      "color": "#00FF00",
+      "secondaryColor": "",
+      "category": "Nature & Landscape",
+      "collisionGrid": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ]
+      ],
+      "depthOffset": -31,
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_118_unknown.png",
+      "name": "Flat_Office_118",
+      "tags": [],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_130_black.png",
+      "name": "Flat_Office_130",
+      "tags": [
+        "Meeting & School",
+        "Office"
+      ],
+      "direction": "",
+      "color": "#000000",
+      "secondaryColor": "",
+      "category": "Furniture & Decoration",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_124_left_unknown.png",
+      "name": "Flat_Office_124",
+      "tags": [
+        "Meeting & School",
+        "Office"
+      ],
+      "direction": "left",
+      "color": "",
+      "secondaryColor": "",
+      "category": "Furniture & Decoration",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "plant_green.png",
+      "name": "Plant",
+      "tags": [
+        "Plants",
+        "Outdoor"
+      ],
+      "direction": "",
+      "color": "#00FF00",
+      "secondaryColor": "",
+      "category": "Nature & Landscape",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_42_light_grey.png",
+      "name": "Flat_Office_42",
+      "tags": [
+        "Meeting & School",
+        "Office"
+      ],
+      "direction": "",
+      "color": "#D3D3D3",
+      "secondaryColor": "",
+      "category": "Furniture & Decoration",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "stand-chair_back_red.png",
+      "name": "Stand Chair",
+      "tags": [
+        "Meeting & School",
+        "Office"
+      ],
+      "direction": "back",
+      "color": "#FF0000",
+      "secondaryColor": "",
+      "category": "Furniture & Decoration",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_209_right_unknown.png",
+      "name": "Flat_Office_209",
+      "tags": [],
+      "direction": "right",
+      "color": "",
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_235_unknown.png",
+      "name": "Flat_Office_235",
+      "tags": [],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "asset-flats_28_left_unknown.png",
+      "name": "Asset-Flats_28",
+      "tags": [],
+      "direction": "left",
+      "color": "",
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_94_red.png",
+      "name": "Flat_Office_94",
+      "tags": [
+        "Meeting & School",
+        "Office"
+      ],
+      "direction": "",
+      "color": "#FF0000",
+      "secondaryColor": "",
+      "category": "Furniture & Decoration",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_57_unknown.png",
+      "name": "Flat_Office_57",
+      "tags": [],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "",
+      "collisionGrid": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "depthOffset": -32,
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_156_beige.png",
+      "name": "Flat_Office_156",
+      "tags": [
+        "Meeting & School",
+        "Office"
+      ],
+      "direction": "",
+      "color": "#F5F5DC",
+      "secondaryColor": "",
+      "category": "Furniture & Decoration",
+      "collisionGrid": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "depthOffset": -32,
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_142_light_grey.png",
+      "name": "Flat_Office_142",
+      "tags": [
+        "Meeting & School",
+        "Office"
+      ],
+      "direction": "",
+      "color": "#D3D3D3",
+      "secondaryColor": "",
+      "category": "Furniture & Decoration",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_168_beige.png",
+      "name": "Flat_Office_168",
+      "tags": [
+        "Meeting & School",
+        "Office"
+      ],
+      "direction": "",
+      "color": "#F5F5DC",
+      "secondaryColor": "",
+      "category": "Furniture & Decoration",
+      "collisionGrid": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "depthOffset": -32,
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_154_red.png",
+      "name": "Flat_Office_154",
+      "tags": [
+        "Meeting & School",
+        "Office"
+      ],
+      "direction": "",
+      "color": "#FF0000",
+      "secondaryColor": "",
+      "category": "Furniture & Decoration",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_140_light_grey.png",
+      "name": "Flat_Office_140",
+      "tags": [
+        "Meeting & School",
+        "Office"
+      ],
+      "direction": "",
+      "color": "#D3D3D3",
+      "secondaryColor": "",
+      "category": "Furniture & Decoration",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "table_maroon.png",
+      "name": "Table",
+      "tags": [
+        "Meeting & School",
+        "Office"
+      ],
+      "direction": "",
+      "color": "#800000",
+      "secondaryColor": "",
+      "category": "Furniture & Decoration",
+      "collisionGrid": [
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "newFilename": ""
+    },
+    {
+      "imagePath": "asset-flats_16_unknown.png",
+      "name": "Asset-Flats_16",
+      "tags": [],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "",
+      "collisionGrid": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "depthOffset": -33,
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_40_unknown.png",
+      "name": "Flat_Office_40",
+      "tags": [],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "",
+      "collisionGrid": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "depthOffset": -46,
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_155_coral.png",
+      "name": "Flat_Office_155",
+      "tags": [
+        "Meeting & School",
+        "Office"
+      ],
+      "direction": "",
+      "color": "#FF7F50",
+      "secondaryColor": "",
+      "category": "Furniture & Decoration",
+      "collisionGrid": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "depthOffset": -32,
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_169_light_grey.png",
+      "name": "Flat_Office_169",
+      "tags": [
+        "Meeting & School",
+        "Office"
+      ],
+      "direction": "",
+      "color": "#D3D3D3",
+      "secondaryColor": "",
+      "category": "Furniture & Decoration",
+      "collisionGrid": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "depthOffset": -32,
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_182_coral.png",
+      "name": "Flat_Office_182",
+      "tags": [],
+      "direction": "",
+      "color": "#FF7F50",
+      "secondaryColor": "",
+      "category": "",
+      "collisionGrid": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "depthOffset": -87,
+      "newFilename": ""
+    },
+    {
+      "imagePath": "banch_light_grey.png",
+      "name": "Banch",
+      "tags": [],
+      "direction": "",
+      "color": "#D3D3D3",
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "plant-4_unknown.png",
+      "name": "Plant 4",
+      "tags": [
+        "Plants",
+        "Outdoor"
+      ],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "Nature & Landscape",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flower_coral.png",
+      "name": "Flower",
+      "tags": [
+        "Plants",
+        "Outdoor"
+      ],
+      "direction": "",
+      "color": "#FF7F50",
+      "secondaryColor": "",
+      "category": "Nature & Landscape",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_151_right_black.png",
+      "name": "Flat_Office_151",
+      "tags": [
+        "Meeting & School",
+        "Office"
+      ],
+      "direction": "right",
+      "color": "#000000",
+      "secondaryColor": "",
+      "category": "Furniture & Decoration",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_145_unknown.png",
+      "name": "Flat_Office_145",
+      "tags": [],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "",
+      "collisionGrid": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "depthOffset": -32,
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_44_back_light_grey.png",
+      "name": "Flat_Office_44",
+      "tags": [
+        "Meeting & School",
+        "Office"
+      ],
+      "direction": "back",
+      "color": "#D3D3D3",
+      "secondaryColor": "",
+      "category": "Furniture & Decoration",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_233_unknown.png",
+      "name": "Flat_Office_233",
+      "tags": [],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_87_back_unknown.png",
+      "name": "Flat_Office_87",
+      "tags": [
+        "Meeting & School",
+        "Office"
+      ],
+      "direction": "back",
+      "color": "",
+      "secondaryColor": "",
+      "category": "Furniture & Decoration",
+      "collisionGrid": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "depthOffset": -32,
+      "newFilename": ""
+    },
+    {
+      "imagePath": "table_olive.png",
+      "name": "Table",
+      "tags": [
+        "Meeting & School",
+        "Office"
+      ],
+      "direction": "",
+      "color": "#808000",
+      "secondaryColor": "",
+      "category": "Furniture & Decoration",
+      "collisionGrid": [
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "newFilename": ""
+    },
+    {
+      "imagePath": "table_teal.png",
+      "name": "Table",
+      "tags": [
+        "Meeting & School",
+        "Office"
+      ],
+      "direction": "",
+      "color": "#008080",
+      "secondaryColor": "",
+      "category": "Furniture & Decoration",
+      "collisionGrid": [
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_92_light_grey.png",
+      "name": "Flat_Office_92",
+      "tags": [
+        "Meeting & School",
+        "Office"
+      ],
+      "direction": "",
+      "color": "#D3D3D3",
+      "secondaryColor": "",
+      "category": "Furniture & Decoration",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "stand-chair_back_black.png",
+      "name": "Stand Chair",
+      "tags": [
+        "Meeting & School",
+        "Office"
+      ],
+      "direction": "back",
+      "color": "#000000",
+      "secondaryColor": "",
+      "category": "Furniture & Decoration",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "small-rounded-table_tan.png",
+      "name": "Small rounded table",
+      "tags": [
+        "Meeting & School",
+        "Office"
+      ],
+      "direction": "",
+      "color": "#D2B48C",
+      "secondaryColor": "",
+      "category": "Furniture & Decoration",
+      "collisionGrid": [
+        [
+          1
+        ]
+      ],
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_144_unknown.png",
+      "name": "Flat_Office_144",
+      "tags": [],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "banch_left_unknown.png",
+      "name": "Banch",
+      "tags": [
+        "Meeting & School",
+        "Office"
+      ],
+      "direction": "left",
+      "color": "",
+      "secondaryColor": "",
+      "category": "Furniture & Decoration",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_193_unknown.png",
+      "name": "Flat_Office_193",
+      "tags": [],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flower-6_unknown.png",
+      "name": "Flower 6",
+      "tags": [
+        "Plants",
+        "Outdoor"
+      ],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "Nature & Landscape",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flower-7_unknown.png",
+      "name": "Flower 7",
+      "tags": [
+        "Plants",
+        "Outdoor"
+      ],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "Nature & Landscape",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_146_unknown.png",
+      "name": "Flat_Office_146",
+      "tags": [],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "banch_black.png",
+      "name": "Banch",
+      "tags": [
+        "Meeting & School",
+        "Office"
+      ],
+      "direction": "",
+      "color": "#000000",
+      "secondaryColor": "",
+      "category": "Furniture & Decoration",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_84_back_unknown.png",
+      "name": "Flat_Office_84",
+      "tags": [],
+      "direction": "back",
+      "color": "",
+      "secondaryColor": "",
+      "category": "",
+      "depthOffset": -32,
+      "collisionGrid": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "newFilename": ""
+    },
+    {
+      "imagePath": "stand-chair_right_black.png",
+      "name": "Stand Chair",
+      "tags": [
+        "Meeting & School",
+        "Office"
+      ],
+      "direction": "right",
+      "color": "#000000",
+      "secondaryColor": "",
+      "category": "Furniture & Decoration",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "table_brown.png",
+      "name": "Table",
+      "tags": [
+        "Meeting & School",
+        "Office"
+      ],
+      "direction": "",
+      "color": "#A52A2A",
+      "secondaryColor": "",
+      "category": "Furniture & Decoration",
+      "collisionGrid": [
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "newFilename": ""
+    },
+    {
+      "imagePath": "table_chocolate.png",
+      "name": "Table",
+      "tags": [
+        "Meeting & School",
+        "Office"
+      ],
+      "direction": "",
+      "color": "#D2691E",
+      "secondaryColor": "",
+      "category": "Furniture & Decoration",
+      "collisionGrid": [
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "newFilename": ""
+    },
+    {
+      "imagePath": "table_coral.png",
+      "name": "Table",
+      "tags": [
+        "Meeting & School",
+        "Office"
+      ],
+      "direction": "",
+      "color": "#FF7F50",
+      "secondaryColor": "",
+      "category": "Furniture & Decoration",
+      "collisionGrid": [
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "newFilename": ""
+    },
+    {
+      "imagePath": "coffee_red.png",
+      "name": "Coffee",
+      "tags": [],
+      "direction": "",
+      "color": "#FF0000",
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "stand-chair_right_red.png",
+      "name": "Stand Chair",
+      "tags": [
+        "Meeting & School",
+        "Office"
+      ],
+      "direction": "right",
+      "color": "#FF0000",
+      "secondaryColor": "",
+      "category": "Furniture & Decoration",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flat_office_147_unknown.png",
+      "name": "Flat_Office_147",
+      "tags": [],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "flower-8_unknown.png",
+      "name": "Flower 8",
+      "tags": [
+        "Plants",
+        "Outdoor"
+      ],
+      "direction": "",
+      "color": "",
+      "secondaryColor": "",
+      "category": "Nature & Landscape",
+      "newFilename": ""
+    },
+    {
+      "imagePath": "banch_left_light_grey.png",
+      "name": "Banch",
+      "tags": [
+        "Meeting & School",
+        "Office"
+      ],
+      "direction": "left",
+      "color": "#D3D3D3",
+      "secondaryColor": "",
+      "category": "Furniture & Decoration",
+      "newFilename": ""
+    }
+  ],
+  "imageBase": "validated/new-pack"
+}
