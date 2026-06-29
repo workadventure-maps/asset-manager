@@ -10,7 +10,8 @@
     :root{
       --bg:#eef1f6;--surface:#fff;--surface-2:#f7f8fb;--border:#e5e8f0;--border-strong:#d3d8e4;
       --text:#1f2430;--text-muted:#6b7280;--accent:#4f46e5;--accent-hover:#4338ca;
-      --success:#16a34a;--radius:14px;--radius-xs:8px;--shadow-sm:0 1px 2px rgba(16,24,40,.06);--shadow-md:0 6px 18px rgba(16,24,40,.08);
+      --success:#16a34a;--success-soft:#ecfdf3;--success-border:#bbf7d0;
+      --radius:14px;--radius-xs:8px;--shadow-sm:0 1px 2px rgba(16,24,40,.06);--shadow-md:0 6px 18px rgba(16,24,40,.08);
     }
     *{box-sizing:border-box}
     body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text)}
@@ -22,21 +23,46 @@
     .btn:hover{background:var(--surface-2);border-color:var(--accent)}
 
     .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
+
     .card{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow-sm);overflow:hidden}
-    .card .top{display:flex;gap:12px;padding:14px}
-    .thumb{width:64px;height:64px;flex:none;border-radius:var(--radius-xs);object-fit:contain;image-rendering:pixelated;background:#f3f4f8;border:1px solid var(--border)}
-    .meta{min-width:0;flex:1}
+
+    /* Full-width thumbnail */
+    .card-thumb{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center;image-rendering:pixelated;background:#f3f4f8;display:block}
+    .card-thumb-empty{width:100%;aspect-ratio:4/3;background:#f3f4f8;display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:.8rem}
+
+    .card-body{padding:12px 14px 8px}
     .name{font-weight:700;font-size:1.02rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-    .dir{font-size:.78rem;color:var(--text-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .dir{font-size:.78rem;color:var(--text-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:2px}
     .count{display:inline-block;margin-top:6px;font-size:.78rem;font-weight:700;color:var(--accent);background:#eef2ff;border-radius:999px;padding:2px 10px}
-    .tags{display:flex;flex-wrap:wrap;gap:6px;padding:0 14px 12px}
+    .tags{display:flex;flex-wrap:wrap;gap:6px;padding:8px 14px}
     .tag{font-size:.74rem;font-weight:600;color:var(--text-muted);background:var(--surface-2);border:1px solid var(--border);border-radius:999px;padding:2px 9px}
-    .no-tags{font-size:.78rem;color:var(--text-muted);padding:0 14px 12px}
+    .no-tags{font-size:.78rem;color:var(--text-muted);padding:4px 14px 8px}
     .actions{margin-top:auto;display:flex;gap:8px;padding:12px 14px;border-top:1px solid var(--border);background:var(--surface-2)}
     .btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
     .btn.primary:hover{background:var(--accent-hover)}
+    .btn.success{background:var(--success);color:#fff;border-color:var(--success);cursor:default}
     .state{padding:48px;text-align:center;color:var(--text-muted)}
     a.btn{text-decoration:none;display:inline-flex;align-items:center}
+
+    /* Active (default) card — green highlight */
+    .card.is-active{border-color:var(--success);box-shadow:0 0 0 1px var(--success), var(--shadow-sm)}
+    .card.is-active .card-thumb-empty{background:var(--success-soft)}
+    .active-badge{display:inline-block;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--success);background:var(--success-soft);border:1px solid var(--success-border);border-radius:999px;padding:1px 7px;vertical-align:middle;margin-left:6px}
+
+    /* Default (root assets_list.json) card — accent highlight */
+    .default-badge{display:inline-block;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--accent);background:#eef2ff;border:1px solid #c7d2fe;border-radius:999px;padding:1px 7px;vertical-align:middle;margin-left:6px}
+
+    /* Versions */
+    .versions-section{border-top:1px solid var(--border);padding:8px 14px 10px}
+    .versions-toggle{background:none;border:none;cursor:pointer;font-size:.8rem;font-weight:600;color:var(--text-muted);padding:0;display:flex;align-items:center;gap:5px}
+    .versions-toggle:hover{color:var(--text)}
+    .versions-toggle .arrow{transition:transform .2s;display:inline-block}
+    .versions-toggle.open .arrow{transform:rotate(90deg)}
+    .versions-list{margin-top:8px;display:none;flex-direction:column;gap:6px}
+    .versions-list.open{display:flex}
+    .version-row{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:.8rem}
+    .version-ts{color:var(--text-muted);font-family:monospace}
+    .version-empty{color:var(--text-muted);font-size:.8rem;margin-top:6px}
   </style>
 </head>
 <body>
@@ -45,11 +71,12 @@
     <div class="topbar-left">
       <h1 class="app-title">Asset Manager</h1>
       <nav class="app-nav">
-        <a href="index.html" class="nav-link">Index</a>
-        <a href="collection_list.html" class="nav-link" aria-current="page">Collections</a>
-        <a href="add_assets.html" class="nav-link">Add Assets</a>
-        <a href="align.html" class="nav-link">Align</a>
-        <a href="collisions.html" class="nav-link">Collisions</a>
+        <a href="/" class="nav-link">Index</a>
+        <a href="/collections" class="nav-link" aria-current="page">Collections</a>
+        <a href="/add-assets" class="nav-link">Add Assets</a>
+        <a href="/compose" class="nav-link">Compose</a>
+        <a href="/align" class="nav-link">Sprite</a>
+        <a href="/collisions" class="nav-link">Collisions</a>
       </nav>
     </div>
   </header>
@@ -64,76 +91,190 @@
     <div id="state" class="state">Loading…</div>
   </div>
 
+  <script src="dialog.js"></script>
   <script>
     const API_URL = 'http://localhost:8000';
+
+    const LS_SRC  = 'assetmgr:source';
     const $ = s => document.querySelector(s);
-    const gridEl = $('#grid');
+    const gridEl  = $('#grid');
     const stateEl = $('#state');
-    const subEl = $('#sub');
+    const subEl   = $('#sub');
 
     function esc(s){ return String(s==null?'':s).replace(/[&<>"']/g, m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
+
+    // Detect active collection from localStorage (set by app.js)
+    function activeDir(){
+      try{
+        const src = localStorage.getItem(LS_SRC);
+        if (src === 'file') return '__default__';
+        // source.type === 'collection' stores dir in state, not in LS directly —
+        // we read it from the cache key if available.
+        return null;
+      }catch{ return null; }
+    }
 
     async function load(){
       gridEl.innerHTML = '';
       stateEl.style.display = '';
       stateEl.textContent = 'Loading…';
-      try{
-        const r = await fetch(`${API_URL}/list_collections?t=${Date.now()}`);
-        const data = await r.json();
-        const cols = data.collections || [];
-        subEl.innerHTML = `${cols.length} collection(s) in <code>validated/</code>`;
-        if (!cols.length){
-          stateEl.textContent = 'No collection yet. Create one with "Validate Selection" on the Index page.';
-          return;
-        }
-        stateEl.style.display = 'none';
-        for (const c of cols) gridEl.appendChild(renderCard(c));
-      }catch(err){
-        console.error(err);
-        stateEl.textContent = 'Could not reach the server. Make sure it is running.';
+
+      const [defaultData, collectionsData] = await Promise.allSettled([
+        fetch(`assets_list.json?t=${Date.now()}`).then(r => r.ok ? r.json() : null).catch(() => null),
+        fetch(`${API_URL}/list_collections?t=${Date.now()}`).then(r => r.ok ? r.json() : null).catch(() => null)
+      ]);
+
+      const rootJson      = defaultData.value ?? null;
+      const collectionsOk = collectionsData.value !== null;
+      const cols          = collectionsOk ? (collectionsData.value?.collections || []) : [];
+
+      const total = (rootJson ? 1 : 0) + cols.length;
+      subEl.innerHTML = `${total} collection(s)`;
+
+      if (!total && !collectionsOk){
+        stateEl.innerHTML = `<strong>Server not running.</strong><br>Start <code>server.py</code> on port 8000 to list collections from <code>validated/</code>.`;
+        return;
       }
+      if (!total){ stateEl.textContent = 'No collection found.'; return; }
+      stateEl.style.display = 'none';
+
+      if (!collectionsOk && rootJson){
+        const warn = document.createElement('p');
+        warn.style.cssText = 'color:#d97706;font-size:.85rem;margin:0 0 14px';
+        warn.innerHTML = `⚠ <code>server.py</code> is not running — collections from <code>validated/</code> cannot be listed.`;
+        gridEl.before(warn);
+      }
+
+      // Determine which collection is currently active
+      const lsSrc = (() => { try{ return localStorage.getItem(LS_SRC); }catch{ return null; } })();
+      const isDefaultActive = lsSrc === 'file' || lsSrc === null;
+
+      if (rootJson){
+        const coll  = Array.isArray(rootJson.collection) ? rootJson.collection : [];
+        const thumb = coll.length && coll[0].imagePath ? coll[0].imagePath : null;
+        gridEl.appendChild(renderDefaultCard({
+          collectionName: rootJson.collectionName || 'Default',
+          tags: rootJson.tags || [],
+          count: coll.length,
+          thumb
+        }, isDefaultActive));
+      }
+
+      for (const c of cols) gridEl.appendChild(renderCard(c, false));
     }
 
-    function renderCard(c){
+    function thumbEl(src){
+      if (src) return `<img class="card-thumb" src="${esc(src)}" alt="" loading="lazy">`;
+      return `<div class="card-thumb-empty">No image</div>`;
+    }
+
+    function renderDefaultCard(c, isActive){
       const card = document.createElement('div');
-      card.className = 'card';
+      card.className = 'card' + (isActive ? ' is-active' : '');
       const tags = (c.tags||[]).map(t=>`<span class="tag">${esc(t)}</span>`).join('');
       card.innerHTML = `
-        <div class="top">
-          ${c.thumb ? `<img class="thumb" src="${esc(c.thumb)}" alt="">` : `<div class="thumb"></div>`}
-          <div class="meta">
-            <div class="name" title="${esc(c.collectionName)}">${esc(c.collectionName)}</div>
-            <div class="dir">validated/${esc(c.dir)}</div>
-            <span class="count">${c.count} image${c.count===1?'':'s'}</span>
-          </div>
+        ${thumbEl(c.thumb)}
+        <div class="card-body">
+          <div class="name">${esc(c.collectionName)} <span class="default-badge">default</span>${isActive ? ' <span class="active-badge">active</span>' : ''}</div>
+          <div class="dir">assets_list.json</div>
+          <span class="count">${c.count} image${c.count===1?'':'s'}</span>
         </div>
         ${tags ? `<div class="tags">${tags}</div>` : `<div class="no-tags">No tags</div>`}
         <div class="actions">
-          <a class="btn" href="index.html" title="Open Index (after setting as default)">Index</a>
-          <button class="btn primary" data-dir="${esc(c.dir)}" style="margin-left:auto">Use as default</button>
+          <a class="btn primary" href="/">Open Index</a>
         </div>`;
-      card.querySelector('.btn.primary').addEventListener('click', (e)=> useAsDefault(c.dir, e.target));
       return card;
     }
 
-    async function useAsDefault(dir, btn){
-      if (!confirm(`Set "${dir}" as the project default collection?\nThis overwrites the root assets_list.json.`)) return;
-      const old = btn.textContent; btn.disabled = true; btn.textContent = 'Applying…';
+    function renderCard(c, isActive){
+      const card = document.createElement('div');
+      card.className = 'card' + (isActive ? ' is-active' : '');
+      const tags = (c.tags||[]).map(t=>`<span class="tag">${esc(t)}</span>`).join('');
+      card.innerHTML = `
+        ${thumbEl(c.thumb)}
+        <div class="card-body">
+          <div class="name">${esc(c.collectionName)}${isActive ? ' <span class="active-badge">active</span>' : ''}</div>
+          <div class="dir">validated/${esc(c.dir)}/${esc(c.jsonFile||'assets_list.json')}</div>
+          <span class="count">${c.count} image${c.count===1?'':'s'}</span>
+        </div>
+        ${tags ? `<div class="tags">${tags}</div>` : `<div class="no-tags">No tags</div>`}
+        <div class="versions-section">
+          <button class="versions-toggle"><span class="arrow">▶</span> Versions</button>
+          <div class="versions-list"></div>
+        </div>
+        <div class="actions">
+          <button class="btn primary" style="margin-left:auto">Use as default</button>
+        </div>`;
+      card.querySelector('.btn.primary').addEventListener('click', (e)=> useAsDefault(c.dir, c.jsonFile, e.target));
+      card.querySelector('.versions-toggle').addEventListener('click', ()=> toggleVersions(card, c.dir));
+      return card;
+    }
+
+    async function toggleVersions(card, dir){
+      const toggle = card.querySelector('.versions-toggle');
+      const list   = card.querySelector('.versions-list');
+      const isOpen = toggle.classList.contains('open');
+      toggle.classList.toggle('open', !isOpen);
+      list.classList.toggle('open', !isOpen);
+      if (!isOpen && !list.dataset.loaded){
+        list.innerHTML = '<span class="version-empty">Loading…</span>';
+        try{
+          const r = await fetch(`${API_URL}/list_versions?dir=${encodeURIComponent(dir)}`);
+          const d = await r.json();
+          list.dataset.loaded = '1';
+          renderVersionList(list, dir, d.versions || []);
+        }catch{
+          list.innerHTML = '<span class="version-empty">Could not load versions.</span>';
+        }
+      }
+    }
+
+    function renderVersionList(list, dir, versions){
+      if (!versions.length){
+        list.innerHTML = '<span class="version-empty">No versions yet.</span>';
+        return;
+      }
+      list.innerHTML = '';
+      for (const v of versions){
+        const label = v.replace('T', ' ').replace(/-/g, ':').replace(' ', ' ').slice(0,16);
+        const row = document.createElement('div');
+        row.className = 'version-row';
+        row.innerHTML = `<span class="version-ts">${esc(label)}</span><button class="btn" style="padding:3px 9px;font-size:.78rem">Restore</button>`;
+        row.querySelector('.btn').addEventListener('click', ()=> restoreVersion(dir, v, list));
+        list.appendChild(row);
+      }
+    }
+
+    async function restoreVersion(dir, version, list){
+      if (!await Dialog.confirm(`Restore version "${version}"?\nThe current state will be backed up first.`, {confirmLabel:'Restore'})) return;
       try{
-        const r = await fetch(`${API_URL}/use_as_default`, {
+        const r = await fetch(`${API_URL}/restore_version`, {
           method:'POST', headers:{'Content-Type':'application/json'},
-          body: JSON.stringify({ dir })
+          body: JSON.stringify({dir, version})
         });
         const out = await r.json().catch(()=>({}));
         if (!r.ok) throw new Error(out.message || `Server error ${r.status}`);
-        btn.textContent = 'Done ✓';
-        alert(`"${out.collectionName||dir}" is now the default (${out.count||0} images).\nReload the Index to see it.`);
+        await Dialog.alert(`Version "${version}" restored. The page will refresh.`, {type:'success'});
+        load();
       }catch(err){
-        alert(`Failed: ${err.message}`);
-        btn.textContent = old;
-      }finally{
-        btn.disabled = false;
-        setTimeout(()=>{ btn.textContent = old; }, 1500);
+        await Dialog.alert(`Restore failed: ${err.message}`, {type:'error'});
+      }
+    }
+
+    async function useAsDefault(dir, jsonFile, btn){
+      if (!await Dialog.confirm(`Set "${dir}" as the project default collection?\nThis overwrites the root assets_list.json.`, { confirmLabel: 'Set as default', danger: false })) return;
+      btn.disabled = true; btn.textContent = 'Applying…';
+      try{
+        const r = await fetch(`${API_URL}/use_as_default`, {
+          method:'POST', headers:{'Content-Type':'application/json'},
+          body: JSON.stringify({ dir, jsonFile: jsonFile || 'assets_list.json' })
+        });
+        const out = await r.json().catch(()=>({}));
+        if (!r.ok) throw new Error(out.message || `Server error ${r.status}`);
+        window.location.href = '/';
+      }catch(err){
+        await Dialog.alert(`Failed: ${err.message}`, { type: 'error' });
+        btn.disabled = false; btn.textContent = 'Use as default';
       }
     }
 

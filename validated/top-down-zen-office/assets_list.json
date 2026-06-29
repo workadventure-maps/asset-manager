@@ -1,0 +1,2543 @@
+{
+    "creator": "WorkAdventure",
+    "creatorLink": "https://workadventu.re",
+    "collectionName": "Zen Office",
+    "tags": [
+        "(all) Zen Office"
+    ],
+    "metatags": [
+        "semi-realism",
+        "top-down",
+        "office"
+    ],
+    "collection": [
+        {
+            "name": "Maple tree in planter",
+            "tags": [
+                "Decoration",
+                "Outdoor"
+            ],
+            "imagePath": "Decoration_Outdoor__Maple_tree_in_planter__Down__3C953D-caf806a2.png",
+            "direction": "Down",
+            "color": "#3C953D",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    1,
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Maple tree",
+            "tags": [
+                "Decoration",
+                "Outdoor"
+            ],
+            "imagePath": "Decoration_Outdoor__Maple_tree__Down__37AE39-c7217349.png",
+            "direction": "Down",
+            "color": "#37AE39",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    1,
+                    0
+                ]
+            ]
+        },
+        {
+            "name": "Apple tree",
+            "tags": [
+                "Decoration",
+                "Outdoor"
+            ],
+            "imagePath": "Decoration_Outdoor__Apple_tree__Down__1CA234-91b400f5.png",
+            "direction": "Down",
+            "color": "#1CA234",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    1,
+                    0,
+                    0
+                ]
+            ]
+        },
+        {
+            "name": "Tree",
+            "tags": [
+                "Decoration",
+                "Outdoor"
+            ],
+            "imagePath": "Decoration_Outdoor__Tree__Down__00A95E-5ce4e3ee.png",
+            "direction": "Down",
+            "color": "#00A95E",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    1,
+                    0,
+                    0
+                ]
+            ]
+        },
+        {
+            "name": "Tree",
+            "tags": [
+                "Decoration",
+                "Outdoor"
+            ],
+            "imagePath": "Decoration_Outdoor__Tree__Down__B03938-f4fb24bc.png",
+            "direction": "Down",
+            "color": "#B03938",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    1,
+                    0,
+                    0
+                ]
+            ]
+        },
+        {
+            "name": "Potted orange tree",
+            "tags": [
+                "Decoration"
+            ],
+            "imagePath": "Decoration__Potted_orange_tree__Down__5AB330-e1936d76.png",
+            "direction": "Down",
+            "color": "#5AB330",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    1,
+                    0
+                ]
+            ]
+        },
+        {
+            "name": "Flower pot",
+            "tags": [
+                "Storage",
+                "Decoration"
+            ],
+            "imagePath": "Storage_Decoration__Flower_pot__Down__89B1EE-ed26fd0b.png",
+            "direction": "Down",
+            "color": "#89B1EE",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Flower pot (round)",
+            "tags": [
+                "Storage",
+                "Decoration"
+            ],
+            "imagePath": "Storage_Decoration__Flower_pot_(round)__Down__DFD4D4-8a1a2163.png",
+            "direction": "Down",
+            "color": "#DFD4D4",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Flower pot",
+            "tags": [
+                "Storage",
+                "Decoration"
+            ],
+            "imagePath": "Storage_Decoration__Flower_pot__Down__D98C8D-532b9d04.png",
+            "direction": "Down",
+            "color": "#D98C8D",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Orange tree",
+            "tags": [
+                "Decoration"
+            ],
+            "imagePath": "Decoration__Orange_tree__Down__57B030-cb37be17.png",
+            "direction": "Down",
+            "color": "#57B030",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    1,
+                    0
+                ]
+            ]
+        },
+        {
+            "name": "Ficus",
+            "tags": [
+                "Decoration"
+            ],
+            "imagePath": "Decoration__Ficus__Down__358D2C-9e321f7b.png",
+            "direction": "Down",
+            "color": "#358D2C",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0
+                ],
+                [
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Potted flowers",
+            "tags": [
+                "Decoration"
+            ],
+            "imagePath": "Decoration__Potted_flowers__Down__E2A40D-6e0a244d.png",
+            "direction": "Down",
+            "color": "#E2A40D",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0
+                ],
+                [
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Potted flowers",
+            "tags": [
+                "Decoration"
+            ],
+            "imagePath": "Decoration__Potted_flowers__Down__E4C5E9-74578bb3.png",
+            "direction": "Down",
+            "color": "#E4C5E9",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0
+                ],
+                [
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Potted flowers",
+            "tags": [
+                "Decoration"
+            ],
+            "imagePath": "Decoration__Potted_flowers__Down__8C150F-ad736486.png",
+            "direction": "Down",
+            "color": "#8C150F",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0
+                ],
+                [
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Flower pot",
+            "tags": [
+                "Storage",
+                "Decoration"
+            ],
+            "imagePath": "Storage_Decoration__Flower_pot__Down__6D5338-db15b3de.png",
+            "direction": "Down",
+            "color": "#6D5338",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Flower pot (square)",
+            "tags": [
+                "Storage",
+                "Decoration"
+            ],
+            "imagePath": "Storage_Decoration__Flower_pot_(square)__Down__6D5338-1011cbad.png",
+            "direction": "Down",
+            "color": "#6D5338",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Flower pot (square tall)",
+            "tags": [
+                "Storage",
+                "Decoration"
+            ],
+            "imagePath": "Storage_Decoration__Flower_pot_(square_tall)__Down__73573B-2e44850b.png",
+            "direction": "Down",
+            "color": "#73573B",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Planter",
+            "tags": [
+                "Decoration"
+            ],
+            "imagePath": "Decoration__Planter__Down__6D5338-6a7fe63d.png",
+            "direction": "Down",
+            "color": "#6D5338",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    1,
+                    0
+                ]
+            ]
+        },
+        {
+            "name": "Potted Bamboo tree",
+            "tags": [
+                "Decoration"
+            ],
+            "imagePath": "Decoration__Potted_Bamboo_tree__Down__4AA44F-0ac19840.png",
+            "direction": "Down",
+            "color": "#4AA44F",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    1,
+                    0
+                ]
+            ]
+        },
+        {
+            "name": "Bamboo tree",
+            "tags": [
+                "Decoration"
+            ],
+            "imagePath": "Decoration__Bamboo_tree__Down__44994A-e073f1ac.png",
+            "direction": "Down",
+            "color": "#44994A",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    1,
+                    0
+                ]
+            ]
+        },
+        {
+            "name": "Trees",
+            "tags": [
+                "Outdoor"
+            ],
+            "imagePath": "Outdoor__Trees__Down__00B164-69e91c94.png",
+            "direction": "Down",
+            "color": "#00B164",
+            "depthOffset": -96,
+            "collisionGrid": [
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                [
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    1,
+                    0,
+                    1,
+                    0,
+                    0,
+                    0
+                ]
+            ]
+        },
+        {
+            "name": "Rock Cluster",
+            "tags": [
+                "Outdoor"
+            ],
+            "imagePath": "Outdoor__Rock_Cluster__Down__C0B9AC-ded055ac.png",
+            "direction": "Down",
+            "color": "#C0B9AC",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Rock",
+            "tags": [
+                "Outdoor"
+            ],
+            "imagePath": "Outdoor__Rock__Down__C0B9AC-947c2637.png",
+            "direction": "Down",
+            "color": "#C0B9AC",
+            "depthOffset": -32
+        },
+        {
+            "name": "Bush",
+            "tags": [
+                "Decoration",
+                "Outdoor"
+            ],
+            "imagePath": "Decoration_Outdoor__Bush__Down__009347-98a8ca71.png",
+            "direction": "Down",
+            "color": "#009347",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Flower bed",
+            "tags": [
+                "Decoration",
+                "Outdoor"
+            ],
+            "imagePath": "Decoration_Outdoor__Flower_bed__Down__FFFFFE-144bbbcf.png",
+            "direction": "Down",
+            "color": "#FFFFFE",
+            "depthOffset": -64
+        },
+        {
+            "name": "Flower bed",
+            "tags": [
+                "Decoration",
+                "Outdoor"
+            ],
+            "imagePath": "Decoration_Outdoor__Flower_bed__Down__7A6195-f4740043.png",
+            "direction": "Down",
+            "color": "#7A6195",
+            "depthOffset": -64
+        },
+        {
+            "name": "Flower bed",
+            "tags": [
+                "Decoration",
+                "Outdoor"
+            ],
+            "imagePath": "Decoration_Outdoor__Flower_bed__Down__CF7E7C-bfb0dbfa.png",
+            "direction": "Down",
+            "color": "#CF7E7C",
+            "depthOffset": -64
+        },
+        {
+            "name": "Fallen Flowers (2)",
+            "tags": [
+                "Decoration",
+                "Outdoor"
+            ],
+            "imagePath": "Decoration_Outdoor__Fallen_Flowers_(2)__Down__FFFBFB-ee8a917b.png",
+            "direction": "Down",
+            "color": "#FFFBFB",
+            "depthOffset": -32
+        },
+        {
+            "name": "Fallen Flowers (4)",
+            "tags": [
+                "Decoration",
+                "Outdoor"
+            ],
+            "imagePath": "Decoration_Outdoor__Fallen_Flowers_(4)__Down__E7E8E8-6d34383d.png",
+            "direction": "Down",
+            "color": "#E7E8E8",
+            "depthOffset": -32
+        },
+        {
+            "name": "Flower patch",
+            "tags": [
+                "Decoration",
+                "Outdoor"
+            ],
+            "imagePath": "Decoration_Outdoor__Flower_patch__Down__FEFEF6-3570aee7.png",
+            "direction": "Down",
+            "color": "#FEFEF6",
+            "depthOffset": -32
+        },
+        {
+            "name": "Flower patch",
+            "tags": [
+                "Decoration",
+                "Outdoor"
+            ],
+            "imagePath": "Decoration_Outdoor__Flower_patch__Down__C397D2-258be7fd.png",
+            "direction": "Down",
+            "color": "#C397D2",
+            "depthOffset": -32
+        },
+        {
+            "name": "Flower patch",
+            "tags": [
+                "Decoration",
+                "Outdoor"
+            ],
+            "imagePath": "Decoration_Outdoor__Flower_patch__Down__CC7675-29b38d56.png",
+            "direction": "Down",
+            "color": "#CC7675",
+            "depthOffset": -32
+        },
+        {
+            "name": "Potted Cactus",
+            "tags": [
+                "Decoration"
+            ],
+            "imagePath": "Decoration__Potted_Cactus__Down__007545-f1bede36.png",
+            "direction": "Down",
+            "color": "#007545",
+            "depthOffset": -32
+        },
+        {
+            "name": "Zen sand",
+            "tags": [
+                "Decoration"
+            ],
+            "imagePath": "Decoration__Zen_sand__Down__F6ECD8-e4df549e.png",
+            "direction": "Down",
+            "color": "#F6ECD8",
+            "depthOffset": -96
+        },
+        {
+            "name": "Zen sand (small)",
+            "tags": [
+                "Decoration"
+            ],
+            "imagePath": "Decoration__Zen_sand_(small)__Down__F6ECD8-67d08d9a.png",
+            "direction": "Down",
+            "color": "#F6ECD8",
+            "depthOffset": -64
+        },
+        {
+            "name": "Zen Bush (large)",
+            "tags": [
+                "Decoration"
+            ],
+            "imagePath": "Decoration__Zen_Bush_(large)__Down__55AE3E-36cb135e.png",
+            "direction": "Down",
+            "color": "#55AE3E",
+            "depthOffset": -96,
+            "collisionGrid": [
+                [
+                    1,
+                    1
+                ],
+                [
+                    1,
+                    1
+                ],
+                [
+                    1,
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Zen Bush",
+            "tags": [
+                "Decoration"
+            ],
+            "imagePath": "Decoration__Zen_Bush__Down__55AE3E-5362ae5d.png",
+            "direction": "Down",
+            "color": "#55AE3E",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Zen Bush (small)",
+            "tags": [
+                "Decoration"
+            ],
+            "imagePath": "Decoration__Zen_Bush_(small)__Down__56AD40-696862af.png",
+            "direction": "Down",
+            "color": "#56AD40",
+            "depthOffset": -64
+        },
+        {
+            "name": "Obsidian Rock",
+            "tags": [
+                "Outdoor"
+            ],
+            "imagePath": "Outdoor__Obsidian_Rock__Down__4B5056-924792b3.png",
+            "direction": "Down",
+            "color": "#4B5056",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Obsidian Rock (sharp)",
+            "tags": [
+                "Outdoor"
+            ],
+            "imagePath": "Outdoor__Obsidian_Rock_(sharp)__Down__4B5056-889d854b.png",
+            "direction": "Down",
+            "color": "#4B5056",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Zen Lantern",
+            "tags": [
+                "Decoration",
+                "Outdoor"
+            ],
+            "imagePath": "Decoration_Outdoor__Zen_Lantern__Down__878787-f9ffc31d.png",
+            "direction": "Down",
+            "color": "#878787",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Desktop",
+            "tags": [
+                "Electronics",
+                "Office"
+            ],
+            "imagePath": "Electronics_Office__Desktop__Up__A3A3A3-2eb8e74a.png",
+            "direction": "Up",
+            "color": "#A3A3A3",
+            "depthOffset": -32
+        },
+        {
+            "name": "Desktop",
+            "tags": [
+                "Electronics",
+                "Office"
+            ],
+            "imagePath": "Electronics_Office__Desktop__Right__A3A3A3-9f1ae9a2.png",
+            "direction": "Right",
+            "color": "#A3A3A3",
+            "depthOffset": -32
+        },
+        {
+            "name": "Desktop",
+            "tags": [
+                "Electronics",
+                "Office"
+            ],
+            "imagePath": "Electronics_Office__Desktop__Left__A3A3A3-8da5c965.png",
+            "direction": "Left",
+            "color": "#A3A3A3",
+            "depthOffset": -32
+        },
+        {
+            "name": "Street lamp (on)",
+            "tags": [
+                "Decoration",
+                "Outdoor"
+            ],
+            "imagePath": "Decoration_Outdoor__Street_lamp_(on)__Down__292929-89ddb7f0.png",
+            "direction": "Down",
+            "color": "#292929",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0
+                ],
+                [
+                    0
+                ],
+                [
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Street lamp (off)",
+            "tags": [
+                "Decoration",
+                "Outdoor"
+            ],
+            "imagePath": "Decoration_Outdoor__Street_lamp_(off)__Down__292929-03d7644e.png",
+            "direction": "Down",
+            "color": "#292929",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0
+                ],
+                [
+                    0
+                ],
+                [
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Bench",
+            "tags": [
+                "Seat",
+                "Outdoor"
+            ],
+            "imagePath": "Seat_Outdoor__Bench__Right__B65B30-af598bb6.png",
+            "direction": "Right",
+            "color": "#B65B30",
+            "depthOffset": -74
+        },
+        {
+            "name": "Bench",
+            "tags": [
+                "Seat",
+                "Outdoor"
+            ],
+            "imagePath": "Seat_Outdoor__Bench__Left__B65B30-f6926d50.png",
+            "direction": "Left",
+            "color": "#B65B30",
+            "depthOffset": -74
+        },
+        {
+            "name": "Pouf",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Pouf__Down__CF5F45-abf5ff1d.png",
+            "direction": "Down",
+            "color": "#CF5F45",
+            "depthOffset": -24
+        },
+        {
+            "name": "Pouf",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Pouf__Down__A6DAE8-d9f82bb2.png",
+            "direction": "Down",
+            "color": "#A6DAE8",
+            "depthOffset": -24
+        },
+        {
+            "name": "Pouf",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Pouf__Down__F6FAFB-5ca9ec95.png",
+            "direction": "Down",
+            "color": "#F6FAFB",
+            "depthOffset": -24
+        },
+        {
+            "name": "Pouf",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Pouf__Down__3B9FDE-1535fc75.png",
+            "direction": "Down",
+            "color": "#3B9FDE",
+            "depthOffset": -24
+        },
+        {
+            "name": "Pouf",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Pouf__Down__5F5F5F-27fdde0f.png",
+            "direction": "Down",
+            "color": "#5F5F5F",
+            "depthOffset": -24
+        },
+        {
+            "name": "Ottoman",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Ottoman__Down__BEBEBE-686ce5c7.png",
+            "direction": "Down",
+            "color": "#BEBEBE",
+            "depthOffset": -42
+        },
+        {
+            "name": "Bookshelf",
+            "tags": [
+                "Storage"
+            ],
+            "imagePath": "Storage__Bookshelf__Down__846242-034f5826.png",
+            "direction": "Down",
+            "color": "#846242",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    1,
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Bookshelf (large)",
+            "tags": [
+                "Storage"
+            ],
+            "imagePath": "Storage__Bookshelf_(large)__Down__846242-e4c86845.png",
+            "direction": "Down",
+            "color": "#846242",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    1,
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Bookshelf with flowers",
+            "tags": [
+                "Storage"
+            ],
+            "imagePath": "Storage__Bookshelf_with_flowers__Down__EDEDED-7c736dff.png",
+            "direction": "Down",
+            "color": "#EDEDED",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    1,
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Bookshelf with flowers",
+            "tags": [
+                "Storage"
+            ],
+            "imagePath": "Storage__Bookshelf_with_flowers__Down__644B44-7a584aea.png",
+            "direction": "Down",
+            "color": "#644B44",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    1,
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Bookshelf with flowers",
+            "tags": [
+                "Storage"
+            ],
+            "imagePath": "Storage__Bookshelf_with_flowers__Down__333333-11c41416.png",
+            "direction": "Down",
+            "color": "#333333",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    1,
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Floor Lamp (double)",
+            "tags": [
+                "Electronics",
+                "Decoration"
+            ],
+            "imagePath": "Electronics_Decoration__Floor_Lamp_(double)__Down__EBEBEB-eb5da937.png",
+            "direction": "Down",
+            "color": "#EBEBEB",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0
+                ],
+                [
+                    0
+                ],
+                [
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Floor Lamp (curved)",
+            "tags": [
+                "Electronics",
+                "Decoration"
+            ],
+            "imagePath": "Electronics_Decoration__Floor_Lamp_(curved)__Right__323232-d420d7e9.png",
+            "direction": "Right",
+            "color": "#323232",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    1,
+                    0
+                ]
+            ]
+        },
+        {
+            "name": "Armchair",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Armchair__Right__AB81D2-60992550.png",
+            "direction": "Right",
+            "color": "#AB81D2",
+            "depthOffset": -48
+        },
+        {
+            "name": "Armchair",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Armchair__Left__AB81D2-e252c6b7.png",
+            "direction": "Left",
+            "color": "#AB81D2",
+            "depthOffset": -48
+        },
+        {
+            "name": "Armchair",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Armchair__Up__AB81D2-912b0857.png",
+            "direction": "Up",
+            "color": "#AB81D2",
+            "depthOffset": -48
+        },
+        {
+            "name": "Armchair",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Armchair__Down__AB81D2-c820a2ac.png",
+            "direction": "Down",
+            "color": "#AB81D2",
+            "depthOffset": -32
+        },
+        {
+            "name": "Armchair",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Armchair__Right__754E4A-8391eb35.png",
+            "direction": "Right",
+            "color": "#754E4A",
+            "depthOffset": -48
+        },
+        {
+            "name": "Armchair",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Armchair__Left__754E4A-63a094f0.png",
+            "direction": "Left",
+            "color": "#754E4A",
+            "depthOffset": -48
+        },
+        {
+            "name": "Armchair",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Armchair__Up__754E4A-87608e73.png",
+            "direction": "Up",
+            "color": "#754E4A",
+            "depthOffset": -48
+        },
+        {
+            "name": "Pen pots",
+            "tags": [
+                "Storage",
+                "Office"
+            ],
+            "imagePath": "Storage_Office__Pen_pots__Down__545970-500ee437.png",
+            "direction": "Down",
+            "color": "#545970",
+            "depthOffset": -32
+        },
+        {
+            "name": "Armchair",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Armchair__Down__754E4A-ce736890.png",
+            "direction": "Down",
+            "color": "#754E4A",
+            "depthOffset": -32
+        },
+        {
+            "name": "Armchair",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Armchair__Right__EEF2F5-cef60a9e.png",
+            "direction": "Right",
+            "color": "#EEF2F5",
+            "depthOffset": -48
+        },
+        {
+            "name": "Armchair",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Armchair__Left__EEF2F5-7e84245b.png",
+            "direction": "Left",
+            "color": "#EEF2F5",
+            "depthOffset": -48
+        },
+        {
+            "name": "Armchair",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Armchair__Up__EEF2F5-fd677c46.png",
+            "direction": "Up",
+            "color": "#EEF2F5",
+            "depthOffset": -48
+        },
+        {
+            "name": "Armchair",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Armchair__Down__EEF2F5-a5904d04.png",
+            "direction": "Down",
+            "color": "#EEF2F5",
+            "depthOffset": -32
+        },
+        {
+            "name": "Armchair",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Armchair__Right__B43F2D-d86de9d5.png",
+            "direction": "Right",
+            "color": "#B43F2D",
+            "depthOffset": -48
+        },
+        {
+            "name": "Armchair",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Armchair__Left__B43F2D-187faec6.png",
+            "direction": "Left",
+            "color": "#B43F2D",
+            "depthOffset": -48
+        },
+        {
+            "name": "Armchair",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Armchair__Up__B43F2D-8cb27d33.png",
+            "direction": "Up",
+            "color": "#B43F2D",
+            "depthOffset": -48
+        },
+        {
+            "name": "Armchair",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Armchair__Down__B43F2D-cd450548.png",
+            "direction": "Down",
+            "color": "#B43F2D",
+            "depthOffset": -32
+        },
+        {
+            "name": "Armchair",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Armchair__Right__3E719C-098f5aee.png",
+            "direction": "Right",
+            "color": "#3E719C",
+            "depthOffset": -48
+        },
+        {
+            "name": "Armchair",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Armchair__Left__3E719C-bdf85ec9.png",
+            "direction": "Left",
+            "color": "#3E719C",
+            "depthOffset": -48
+        },
+        {
+            "name": "Armchair",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Armchair__Up__3E719C-85e5e0c3.png",
+            "direction": "Up",
+            "color": "#3E719C",
+            "depthOffset": -48
+        },
+        {
+            "name": "Potted Succulent",
+            "tags": [
+                "Decoration"
+            ],
+            "imagePath": "Decoration__Potted_Succulent__Down__5D9541-c32e417c.png",
+            "direction": "Down",
+            "color": "#5D9541",
+            "depthOffset": -32
+        },
+        {
+            "name": "Armchair",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Armchair__Down__3E719C-0b8c1bf8.png",
+            "direction": "Down",
+            "color": "#3E719C",
+            "depthOffset": -32
+        },
+        {
+            "name": "Armchair",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Armchair__Left__4E555C-e2534708.png",
+            "direction": "Left",
+            "color": "#4E555C",
+            "depthOffset": -48
+        },
+        {
+            "name": "Armchair",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Armchair__Right__4E555C-fc5d4a9b.png",
+            "direction": "Right",
+            "color": "#4E555C",
+            "depthOffset": -48
+        },
+        {
+            "name": "Armchair",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Armchair__Up__4E555C-abde0e24.png",
+            "direction": "Up",
+            "color": "#4E555C",
+            "depthOffset": -48
+        },
+        {
+            "name": "Armchair",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Armchair__Down__4E555C-e3c30e32.png",
+            "direction": "Down",
+            "color": "#4E555C",
+            "depthOffset": -32
+        },
+        {
+            "name": "Armchair",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Armchair__Right__E3A131-265cf987.png",
+            "direction": "Right",
+            "color": "#E3A131",
+            "depthOffset": -48
+        },
+        {
+            "name": "Armchair",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Armchair__Left__E3A131-740920b7.png",
+            "direction": "Left",
+            "color": "#E3A131",
+            "depthOffset": -48
+        },
+        {
+            "name": "Armchair",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Armchair__Up__E3A131-739b819f.png",
+            "direction": "Up",
+            "color": "#E3A131",
+            "depthOffset": -48
+        },
+        {
+            "name": "Armchair",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Armchair__Down__E3A131-b5b2b398.png",
+            "direction": "Down",
+            "color": "#E3A131",
+            "depthOffset": -32
+        },
+        {
+            "name": "Dune Rug",
+            "tags": [
+                "Decoration"
+            ],
+            "imagePath": "Decoration__Dune_Rug__Down__EFE4D1-0a6fac4d.png",
+            "direction": "Down",
+            "color": "#EFE4D1",
+            "depthOffset": -96
+        },
+        {
+            "name": "Woodgrain Rug",
+            "tags": [
+                "Decoration"
+            ],
+            "imagePath": "Decoration__Woodgrain_Rug__Down__EFE4D1-5c01d5f0.png",
+            "direction": "Down",
+            "color": "#EFE4D1",
+            "depthOffset": -160
+        },
+        {
+            "name": "Greek Key rug",
+            "tags": [
+                "Decoration"
+            ],
+            "imagePath": "Decoration__Greek_Key_rug__Down__DA9D8F-ed35b830.png",
+            "direction": "Down",
+            "color": "#DA9D8F",
+            "depthOffset": -160
+        },
+        {
+            "name": "Couch",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Couch__Down__EEF2F5-37221f69.png",
+            "direction": "Down",
+            "color": "#EEF2F5",
+            "depthOffset": -32
+        },
+        {
+            "name": "Couch",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Couch__Down__4E555C-d351b45f.png",
+            "direction": "Down",
+            "color": "#4E555C",
+            "depthOffset": -32
+        },
+        {
+            "name": "Couch",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Couch__Down__AB81D2-0e45a4b0.png",
+            "direction": "Down",
+            "color": "#AB81D2",
+            "depthOffset": -32
+        },
+        {
+            "name": "Desktop",
+            "tags": [
+                "Electronics",
+                "Office"
+            ],
+            "imagePath": "Electronics_Office__Desktop__Down__A3A3A3-8dfa2c1c.png",
+            "direction": "Down",
+            "color": "#A3A3A3",
+            "depthOffset": -32
+        },
+        {
+            "name": "Couch",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Couch__Down__3E719C-abda834f.png",
+            "direction": "Down",
+            "color": "#3E719C",
+            "depthOffset": -32
+        },
+        {
+            "name": "Couch",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Couch__Down__B43F2D-0a1d87a9.png",
+            "direction": "Down",
+            "color": "#B43F2D",
+            "depthOffset": -32
+        },
+        {
+            "name": "Couch",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Couch__Right__EEF2F5-ba0def3c.png",
+            "direction": "Right",
+            "color": "#EEF2F5",
+            "depthOffset": -106
+        },
+        {
+            "name": "Couch",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Couch__Left__EEF2F5-23651ca8.png",
+            "direction": "Left",
+            "color": "#EEF2F5",
+            "depthOffset": -106
+        },
+        {
+            "name": "Couch",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Couch__Right__4E555C-4339e3f1.png",
+            "direction": "Right",
+            "color": "#4E555C",
+            "depthOffset": -106
+        },
+        {
+            "name": "Couch",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Couch__Left__4E555C-2b017a3c.png",
+            "direction": "Left",
+            "color": "#4E555C",
+            "depthOffset": -106
+        },
+        {
+            "name": "Couch",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Couch__Right__AB81D2-3604c163.png",
+            "direction": "Right",
+            "color": "#AB81D2",
+            "depthOffset": -106
+        },
+        {
+            "name": "Couch",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Couch__Left__AB81D2-d9f97d99.png",
+            "direction": "Left",
+            "color": "#AB81D2",
+            "depthOffset": -106
+        },
+        {
+            "name": "Couch",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Couch__Right__3E719C-bae51631.png",
+            "direction": "Right",
+            "color": "#3E719C",
+            "depthOffset": -106
+        },
+        {
+            "name": "Couch",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Couch__Left__3E719C-ca1045d5.png",
+            "direction": "Left",
+            "color": "#3E719C",
+            "depthOffset": -106
+        },
+        {
+            "name": "Couch",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Couch__Right__B43F2D-fe32b256.png",
+            "direction": "Right",
+            "color": "#B43F2D",
+            "depthOffset": -106
+        },
+        {
+            "name": "Couch",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Couch__Left__B43F2D-84ef5208.png",
+            "direction": "Left",
+            "color": "#B43F2D",
+            "depthOffset": -106
+        },
+        {
+            "name": "Corner couch",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Corner_couch__Right__EEF2F5-2f604cf6.png",
+            "direction": "Right",
+            "color": "#EEF2F5",
+            "depthOffset": -128
+        },
+        {
+            "name": "Corner couch",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Corner_couch__Left__EEF2F5-047afa9d.png",
+            "direction": "Left",
+            "color": "#EEF2F5",
+            "depthOffset": -128
+        },
+        {
+            "name": "Corner couch",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Corner_couch__Right__4E555C-5bdc6f67.png",
+            "direction": "Right",
+            "color": "#4E555C",
+            "depthOffset": -128
+        },
+        {
+            "name": "Corner couch",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Corner_couch__Left__4E555C-03d4ac56.png",
+            "direction": "Left",
+            "color": "#4E555C",
+            "depthOffset": -128
+        },
+        {
+            "name": "Corner couch",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Corner_couch__Right__AB81D2-1a3dd067.png",
+            "direction": "Right",
+            "color": "#AB81D2",
+            "depthOffset": -128
+        },
+        {
+            "name": "Corner couch",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Corner_couch__Left__AB81D2-b0f8b079.png",
+            "direction": "Left",
+            "color": "#AB81D2",
+            "depthOffset": -128
+        },
+        {
+            "name": "Corner couch",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Corner_couch__Right__3E719C-1ee18b96.png",
+            "direction": "Right",
+            "color": "#3E719C",
+            "depthOffset": -128
+        },
+        {
+            "name": "Corner couch",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Corner_couch__Left__3E719C-c39da28e.png",
+            "direction": "Left",
+            "color": "#3E719C",
+            "depthOffset": -128
+        },
+        {
+            "name": "Corner couch",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Corner_couch__Right__B43F2D-5905cc91.png",
+            "direction": "Right",
+            "color": "#B43F2D",
+            "depthOffset": -128
+        },
+        {
+            "name": "Corner couch",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Corner_couch__Left__B43F2D-a490b732.png",
+            "direction": "Left",
+            "color": "#B43F2D",
+            "depthOffset": -128
+        },
+        {
+            "name": "Potted snake plant",
+            "tags": [
+                "Decoration"
+            ],
+            "imagePath": "Decoration__Potted_snake_plant__Down__457132-0b6d081d.png",
+            "direction": "Down",
+            "color": "#457132",
+            "depthOffset": -32
+        },
+        {
+            "name": "Desk lamp",
+            "tags": [
+                "Office",
+                "Decoration"
+            ],
+            "imagePath": "Office_Decoration__Desk_lamp__Right__666666-b910004f.png",
+            "direction": "Right",
+            "color": "#666666",
+            "depthOffset": -32
+        },
+        {
+            "name": "Desk lamp",
+            "tags": [
+                "Office",
+                "Bathroom"
+            ],
+            "imagePath": "Office_Bathroom__Desk_lamp__Left__666666-79ccd4ad.png",
+            "direction": "Left",
+            "color": "#666666",
+            "depthOffset": -32
+        },
+        {
+            "name": "Floor Lamp (curved)",
+            "tags": [
+                "Electronics",
+                "Decoration"
+            ],
+            "imagePath": "Electronics_Decoration__Floor_Lamp_(curved)__Left__323232-1d47ff7b.png",
+            "direction": "Left",
+            "color": "#323232",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Floor Lamp (curved)",
+            "tags": [
+                "Electronics",
+                "Decoration"
+            ],
+            "imagePath": "Electronics_Decoration__Floor_Lamp_(curved)__Left__D2CDCD-62a8f628.png",
+            "direction": "Left",
+            "color": "#D2CDCD",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Floor Lamp (curved)",
+            "tags": [
+                "Electronics",
+                "Decoration"
+            ],
+            "imagePath": "Electronics_Decoration__Floor_Lamp_(curved)__Down__D2CDCD-7e079f8a.png",
+            "direction": "Down",
+            "color": "#D2CDCD",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    1,
+                    0
+                ]
+            ]
+        },
+        {
+            "name": "Floor Lamp (double)",
+            "tags": [
+                "Electronics",
+                "Decoration"
+            ],
+            "imagePath": "Electronics_Decoration__Floor_Lamp_(double)__Down__F8622B-2563ae25.png",
+            "direction": "Down",
+            "color": "#F8622B",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0
+                ],
+                [
+                    0
+                ],
+                [
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Writing papers",
+            "tags": [
+                "Office"
+            ],
+            "imagePath": "Office__Writing_papers__Down__E6E6E6-fd792ffa.png",
+            "direction": "Down",
+            "color": "#E6E6E6",
+            "depthOffset": -32
+        },
+        {
+            "name": "Books",
+            "tags": [
+                "Recreation"
+            ],
+            "imagePath": "Recreation__Books__Down__5E4A75-c5fe0357.png",
+            "direction": "Down",
+            "color": "#5E4A75",
+            "depthOffset": -32
+        },
+        {
+            "name": "Mug",
+            "tags": [
+                "Office",
+                "Kitchen"
+            ],
+            "imagePath": "Office_Kitchen__Mug__Right__929292-8ab28bf6.png",
+            "direction": "Right",
+            "color": "#929292",
+            "depthOffset": -32
+        },
+        {
+            "name": "Mug",
+            "tags": [
+                "Office",
+                "Kitchen"
+            ],
+            "imagePath": "Office_Kitchen__Mug__Left__929292-0a19cc82.png",
+            "direction": "Left",
+            "color": "#929292",
+            "depthOffset": -32
+        },
+        {
+            "name": "Mug",
+            "tags": [
+                "Office",
+                "Kitchen"
+            ],
+            "imagePath": "Office_Kitchen__Mug__Right__043864-de105acd.png",
+            "direction": "Right",
+            "color": "#043864",
+            "depthOffset": -32
+        },
+        {
+            "name": "Mug",
+            "tags": [
+                "Office",
+                "Kitchen"
+            ],
+            "imagePath": "Office_Kitchen__Mug__Left__043864-1dd6ddf0.png",
+            "direction": "Left",
+            "color": "#043864",
+            "depthOffset": -32
+        },
+        {
+            "name": "Coffee machine",
+            "tags": [
+                "Electronics",
+                "Kitchen"
+            ],
+            "imagePath": "Electronics_Kitchen__Coffee_machine__Down__464646-cd06029d.png",
+            "direction": "Down",
+            "color": "#464646",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Bench",
+            "tags": [
+                "Seat",
+                "Outdoor"
+            ],
+            "imagePath": "Seat_Outdoor__Bench__Down__B65B30-8e1d8eaf.png",
+            "direction": "Down",
+            "color": "#B65B30",
+            "depthOffset": -42
+        },
+        {
+            "name": "Bench",
+            "tags": [
+                "Seat",
+                "Outdoor"
+            ],
+            "imagePath": "Seat_Outdoor__Bench__Up__B65B30-ce970acf.png",
+            "direction": "Up",
+            "color": "#B65B30",
+            "depthOffset": -26
+        },
+        {
+            "name": "Desk",
+            "tags": [
+                "Table",
+                "Office"
+            ],
+            "imagePath": "Table_Office__Desk__Down__F1F1F1-bd059f35.png",
+            "direction": "Down",
+            "color": "#F1F1F1",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    1,
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Desk",
+            "tags": [
+                "Table",
+                "Office"
+            ],
+            "imagePath": "Table_Office__Desk__Right__F1F1F1-4729832b.png",
+            "direction": "Right",
+            "color": "#F1F1F1",
+            "depthOffset": -64,
+            "collisionGrid": [
+                [
+                    1
+                ],
+                [
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Desk with drawers",
+            "tags": [
+                "Table",
+                "Office"
+            ],
+            "imagePath": "Table_Office__Desk_with_drawers__Down__F1F1F1-a3c8218f.png",
+            "direction": "Down",
+            "color": "#F1F1F1",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    1,
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Desk with drawers",
+            "tags": [
+                "Table",
+                "Office"
+            ],
+            "imagePath": "Table_Office__Desk_with_drawers__Right__F1F1F1-cedc33cf.png",
+            "direction": "Right",
+            "color": "#F1F1F1",
+            "depthOffset": -64,
+            "collisionGrid": [
+                [
+                    1
+                ],
+                [
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Double Desk with drawers",
+            "tags": [
+                "Table",
+                "Office"
+            ],
+            "imagePath": "Table_Office__Double_Desk_with_drawers__Down__F1F1F1-e878f5ae.png",
+            "direction": "Down",
+            "color": "#F1F1F1",
+            "depthOffset": -64,
+            "collisionGrid": [
+                [
+                    1,
+                    1
+                ],
+                [
+                    1,
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Desk",
+            "tags": [
+                "Table",
+                "Office"
+            ],
+            "imagePath": "Table_Office__Desk__Down__754C3B-5affee3e.png",
+            "direction": "Down",
+            "color": "#754C3B",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    1,
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Double Desk",
+            "tags": [
+                "Table",
+                "Office"
+            ],
+            "imagePath": "Table_Office__Double_Desk__Down__784E3D-e4b02a87.png",
+            "direction": "Down",
+            "color": "#784E3D",
+            "depthOffset": -64,
+            "collisionGrid": [
+                [
+                    1,
+                    1
+                ],
+                [
+                    1,
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Reception desk",
+            "tags": [
+                "Table",
+                "Office"
+            ],
+            "imagePath": "Table_Office__Reception_desk__Down__414141-0e687735.png",
+            "direction": "Down",
+            "color": "#414141",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    1,
+                    1,
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Reception desk (large)",
+            "tags": [
+                "Table",
+                "Office"
+            ],
+            "imagePath": "Table_Office__Reception_desk_(large)__Down__414141-339a9b6e.png",
+            "direction": "Down",
+            "color": "#414141",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Access gate (open)",
+            "tags": [
+                "Office"
+            ],
+            "imagePath": "Office__Access_gate_(open)__Down__6A6A6A-d9f39999.png",
+            "direction": "Down",
+            "color": "#6A6A6A",
+            "depthOffset": -32
+        },
+        {
+            "name": "Access gate (closed)",
+            "tags": [
+                "Office"
+            ],
+            "imagePath": "Office__Access_gate_(closed)__Down__6A6A6A-94a8bc8e.png",
+            "direction": "Down",
+            "color": "#6A6A6A",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    1,
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Chair (round)",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Chair_(round)__Right__494851-e0cc38aa.png",
+            "direction": "Right",
+            "color": "#494851",
+            "depthOffset": -32
+        },
+        {
+            "name": "Chair (round)",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Chair_(round)__Left__494851-6f9026ad.png",
+            "direction": "Left",
+            "color": "#494851",
+            "depthOffset": -32
+        },
+        {
+            "name": "Chair (round)",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Chair_(round)__Up__494851-e95cf05f.png",
+            "direction": "Up",
+            "color": "#494851",
+            "depthOffset": -22
+        },
+        {
+            "name": "Chair (round)",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Chair_(round)__Down__494851-6f11149d.png",
+            "direction": "Down",
+            "color": "#494851",
+            "depthOffset": -22
+        },
+        {
+            "name": "Couch (small)",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Couch_(small)__Right__8F604C-4293f428.png",
+            "direction": "Right",
+            "color": "#8F604C",
+            "depthOffset": -74
+        },
+        {
+            "name": "Couch (small)",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Couch_(small)__Left__8F604C-39e95ac1.png",
+            "direction": "Left",
+            "color": "#8F604C",
+            "depthOffset": -74
+        },
+        {
+            "name": "Couch (small)",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Couch_(small)__Right__EEF2F5-43b6bbb8.png",
+            "direction": "Right",
+            "color": "#EEF2F5",
+            "depthOffset": -74
+        },
+        {
+            "name": "Couch (small)",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Couch_(small)__Left__EEF2F5-8bd8264d.png",
+            "direction": "Left",
+            "color": "#EEF2F5",
+            "depthOffset": -74
+        },
+        {
+            "name": "Couch (small)",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Couch_(small)__Down__8F604C-8b2e5af8.png",
+            "direction": "Down",
+            "color": "#8F604C",
+            "depthOffset": -32
+        },
+        {
+            "name": "Couch (small)",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Couch_(small)__Down__EEF2F5-26fc8d60.png",
+            "direction": "Down",
+            "color": "#EEF2F5",
+            "depthOffset": -32
+        },
+        {
+            "name": "Office chair",
+            "tags": [
+                "Seat",
+                "Office"
+            ],
+            "imagePath": "Seat_Office__Office_chair__Right__333333-6faad655.png",
+            "direction": "Right",
+            "color": "#333333",
+            "depthOffset": -44
+        },
+        {
+            "name": "Office chair",
+            "tags": [
+                "Seat",
+                "Office"
+            ],
+            "imagePath": "Seat_Office__Office_chair__Left__333333-9e21cbb3.png",
+            "direction": "Left",
+            "color": "#333333",
+            "depthOffset": -44
+        },
+        {
+            "name": "Office chair",
+            "tags": [
+                "Seat",
+                "Office"
+            ],
+            "imagePath": "Seat_Office__Office_chair__Up__333333-64f97cdf.png",
+            "direction": "Up",
+            "color": "#333333",
+            "depthOffset": -32
+        },
+        {
+            "name": "Office chair",
+            "tags": [
+                "Seat",
+                "Office"
+            ],
+            "imagePath": "Seat_Office__Office_chair__Down__333333-35456966.png",
+            "direction": "Down",
+            "color": "#333333",
+            "depthOffset": -32
+        },
+        {
+            "name": "Chair",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Chair__Right__666666-68d9878f.png",
+            "direction": "Right",
+            "color": "#666666",
+            "depthOffset": -32
+        },
+        {
+            "name": "Chair",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Chair__Left__666666-6fdbd6ec.png",
+            "direction": "Left",
+            "color": "#666666",
+            "depthOffset": -32
+        },
+        {
+            "name": "Chair",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Chair__Up__666666-4c460a96.png",
+            "direction": "Up",
+            "color": "#666666",
+            "depthOffset": -22
+        },
+        {
+            "name": "Chair",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Chair__Down__666666-75b07bad.png",
+            "direction": "Down",
+            "color": "#666666",
+            "depthOffset": -22
+        },
+        {
+            "name": "Chair",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Chair__Right__D6CDC4-fad9b78c.png",
+            "direction": "Right",
+            "color": "#D6CDC4",
+            "depthOffset": -32
+        },
+        {
+            "name": "Chair",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Chair__Left__D6CDC4-4b454640.png",
+            "direction": "Left",
+            "color": "#D6CDC4",
+            "depthOffset": -32
+        },
+        {
+            "name": "Chair",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Chair__Up__D6CDC4-4d7e5b77.png",
+            "direction": "Up",
+            "color": "#D6CDC4",
+            "depthOffset": -22
+        },
+        {
+            "name": "Chair",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Chair__Down__D6CDC4-0bdcfd92.png",
+            "direction": "Down",
+            "color": "#D6CDC4",
+            "depthOffset": -22
+        },
+        {
+            "name": "Chair",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Chair__Right__C75444-1005dc4c.png",
+            "direction": "Right",
+            "color": "#C75444",
+            "depthOffset": -32
+        },
+        {
+            "name": "Chair",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Chair__Left__C75444-7f3f20a0.png",
+            "direction": "Left",
+            "color": "#C75444",
+            "depthOffset": -32
+        },
+        {
+            "name": "Chair",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Chair__Up__C75444-5764ebd9.png",
+            "direction": "Up",
+            "color": "#C75444",
+            "depthOffset": -22
+        },
+        {
+            "name": "Chair",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Chair__Down__C75444-4d438d1f.png",
+            "direction": "Down",
+            "color": "#C75444",
+            "depthOffset": -22
+        },
+        {
+            "name": "Glass coffe table",
+            "tags": [
+                "Table"
+            ],
+            "imagePath": "Table__Glass_coffe_table__Right__F6F6F6-c88c1d01.png",
+            "direction": "Right",
+            "color": "#F6F6F6",
+            "depthOffset": -64,
+            "collisionGrid": [
+                [
+                    0
+                ],
+                [
+                    1
+                ],
+                [
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Glass coffe table",
+            "tags": [
+                "Table"
+            ],
+            "imagePath": "Table__Glass_coffe_table__Down__F6F6F6-6d26b4fb.png",
+            "direction": "Down",
+            "color": "#F6F6F6",
+            "depthOffset": -64,
+            "collisionGrid": [
+                [
+                    1,
+                    1
+                ],
+                [
+                    0,
+                    0
+                ]
+            ]
+        },
+        {
+            "name": "Glass coffe table (round)",
+            "tags": [
+                "Table"
+            ],
+            "imagePath": "Table__Glass_coffe_table_(round)__Down__F6F6F6-3284a6e9.png",
+            "direction": "Down",
+            "color": "#F6F6F6",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0
+                ],
+                [
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Floor lamp",
+            "tags": [
+                "Electronics",
+                "Decoration"
+            ],
+            "imagePath": "Electronics_Decoration__Floor_lamp__Down__C4C4C4-90f9f8d8.png",
+            "direction": "Down",
+            "color": "#C4C4C4",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0
+                ],
+                [
+                    0
+                ],
+                [
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Wooden Coffee table",
+            "tags": [
+                "Table"
+            ],
+            "imagePath": "Table__Wooden_Coffee_table__Down__B58A67-96e8ac04.png",
+            "direction": "Down",
+            "color": "#B58A67",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    1,
+                    1
+                ]
+            ]
+        }
+    ]
+}

@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Align Asset</title>
+  <title>Sprite Editor</title>
   <link rel="icon" href="data:,">
   <link rel="stylesheet" href="topbar.css">
   <style>
     :root{
       --bg:#eef1f6;--surface:#fff;--surface-2:#f7f8fb;--border:#e5e8f0;--border-strong:#d3d8e4;
       --text:#1f2430;--text-muted:#6b7280;--accent:#4f46e5;--accent-hover:#4338ca;
+      --success:#16a34a;--danger:#dc2626;
       --radius:14px;--radius-xs:8px;--shadow-sm:0 1px 2px rgba(16,24,40,.06);--shadow-md:0 6px 18px rgba(16,24,40,.08);
     }
     *{box-sizing:border-box}
     body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text)}
     .wrap{display:grid;grid-template-columns:300px 1fr 320px;gap:18px;max-width:1340px;margin:0 auto;padding:18px 24px 60px;align-items:start}
-    @media (max-width:1080px){ .wrap{grid-template-columns:1fr} }
+    @media(max-width:1080px){ .wrap{grid-template-columns:1fr} }
     .col{display:flex;flex-direction:column;gap:18px}
 
-    /* Unsaved-changes modal */
     .cm{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;background:rgba(17,24,39,.5)}
     .cm[hidden]{display:none}
     .cm-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:0 16px 40px rgba(16,24,40,.2);padding:20px;max-width:420px;width:90%}
@@ -31,12 +31,13 @@
 
     .drop{border:2px dashed var(--border-strong);border-radius:var(--radius-xs);padding:16px;text-align:center;background:var(--surface-2);cursor:pointer;transition:background .15s,border-color .15s}
     .drop.dragover{background:#eef2ff;border-color:#93c5fd}
-    .drop strong{color:var(--text)}
 
     .btn{appearance:none;border:1px solid var(--border-strong);background:var(--surface);border-radius:var(--radius-xs);padding:8px 12px;cursor:pointer;font-size:.88rem;font-weight:600;color:var(--text);transition:background .15s,border-color .15s}
     .btn:hover{background:var(--surface-2);border-color:var(--accent)}
     .btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
     .btn.primary:hover{background:var(--accent-hover)}
+    .btn.success{background:var(--success);color:#fff;border-color:var(--success)}
+    .btn.success:hover{background:#15803d}
     .btn:disabled{opacity:.5;cursor:not-allowed}
     .row{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
 
@@ -46,7 +47,6 @@
     label.check{display:flex;align-items:center;gap:8px;font-size:.88rem;font-weight:600;cursor:pointer;margin-top:12px}
     label.check input{accent-color:var(--accent);width:16px;height:16px}
 
-    /* Collection picker */
     #asset-search{width:100%;margin:10px 0 8px;padding:8px 10px;border:1px solid var(--border-strong);border-radius:var(--radius-xs);font-size:.9rem}
     .asset-list{max-height:300px;overflow:auto;border:1px solid var(--border);border-radius:var(--radius-xs)}
     .asset-item{display:flex;align-items:center;gap:10px;padding:7px 9px;cursor:pointer;border-bottom:1px solid var(--border)}
@@ -55,6 +55,11 @@
     .asset-item.active{background:#eef2ff}
     .asset-item.queued{background:#ecfdf3}
     .asset-item.queued .ai-name::after{content:" • queued";color:#16a34a;font-weight:700;font-size:.72rem}
+    .asset-item.selected{background:#f0f0ff}
+    .asset-cb{accent-color:var(--accent);width:14px;height:14px;flex:none;cursor:pointer}
+    .sel-bar{display:none;align-items:center;justify-content:space-between;gap:6px;padding:6px 8px;background:#eef2ff;border:1px solid #c7d2fe;border-radius:var(--radius-xs);margin-top:6px;font-size:.82rem;font-weight:600;color:var(--accent)}
+    .sel-bar.visible{display:flex}
+    .sel-bar .row{margin:0;gap:6px}
     .batch-rm{margin-left:auto;border:none;background:transparent;color:#dc2626;font-weight:700;cursor:pointer;font-size:1rem;padding:0 4px;flex:none}
     .asset-item img{width:32px;height:32px;object-fit:contain;image-rendering:pixelated;background:#f3f4f8;border-radius:4px;flex:none}
     .asset-item .ai-name{font-size:.85rem;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -63,21 +68,41 @@
     .list-empty{padding:14px;text-align:center;color:var(--text-muted);font-size:.85rem}
 
     .stage{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:440px;gap:12px}
-    .canvas-frame{display:inline-block;border:1px solid var(--border-strong);border-radius:6px;box-shadow:var(--shadow-md);overflow:hidden;background:#fff}
-    canvas#view{
-      display:block;cursor:grab;image-rendering:pixelated;
+    .canvas-frame{
+      display:inline-block;border:1px solid var(--border-strong);border-radius:6px;
+      box-shadow:var(--shadow-md);overflow:hidden;
       background-color:#fff;
-      background-image:
-        linear-gradient(45deg,#e9ecf3 25%,transparent 25%),
-        linear-gradient(-45deg,#e9ecf3 25%,transparent 25%),
-        linear-gradient(45deg,transparent 75%,#e9ecf3 75%),
-        linear-gradient(-45deg,transparent 75%,#e9ecf3 75%);
+      background-image:linear-gradient(45deg,#e9ecf3 25%,transparent 25%),linear-gradient(-45deg,#e9ecf3 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#e9ecf3 75%),linear-gradient(-45deg,transparent 75%,#e9ecf3 75%);
       background-size:16px 16px;background-position:0 0,0 8px,8px -8px,-8px 0;
     }
+    canvas#view{display:block;cursor:grab;image-rendering:pixelated}
     canvas#view.grabbing{cursor:grabbing}
-    .dims{font-size:.82rem;color:var(--text-muted);font-variant-numeric:tabular-nums}
+    .dims{font-size:.82rem;color:var(--text-muted);font-variant-numeric:tabular-nums;text-align:center}
     .current{font-size:.85rem;color:var(--text);font-weight:600}
     .empty{color:var(--text-muted);text-align:center}
+
+    /* Mode tabs */
+    .mode-tabs{display:flex;gap:4px;margin-bottom:14px}
+    .mode-tab{flex:1;padding:7px 0;border:1px solid var(--border-strong);border-radius:var(--radius-xs);background:var(--surface-2);font-size:.88rem;font-weight:700;cursor:pointer;color:var(--text-muted);transition:background .13s,color .13s,border-color .13s}
+    .mode-tab.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+    /* Recrop compass */
+    .rc-grid{display:grid;grid-template-columns:1fr auto 1fr;grid-template-rows:auto auto auto;gap:4px;align-items:center;justify-items:center;margin:4px 0 8px}
+    .rc-side{display:flex;flex-direction:column;align-items:center;gap:3px}
+    .rc-label{font-size:.72rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.04em}
+    .rc-val{font-size:.85rem;font-weight:700;color:var(--accent);min-width:36px;text-align:center}
+    .rc-val.neg{color:var(--danger)}
+    .step-btns{display:flex;gap:3px}
+    .step-btn{appearance:none;border:1px solid var(--border-strong);background:var(--surface);border-radius:6px;width:30px;height:28px;cursor:pointer;font-size:.88rem;font-weight:700;color:var(--text);transition:background .12s,border-color .12s;display:flex;align-items:center;justify-content:center}
+    .step-btn:hover{background:var(--surface-2);border-color:var(--accent)}
+    .step-btn:disabled{opacity:.35;cursor:not-allowed}
+    .step-btn.add{color:var(--success)}
+    .step-btn.sub{color:var(--danger)}
+    .rc-center{width:48px;height:48px;border:1px solid var(--border);border-radius:8px;background:var(--surface-2);display:flex;align-items:center;justify-content:center;font-size:1.3rem}
+    .dims-badge{display:inline-block;font-size:.72rem;font-weight:700;border-radius:999px;padding:1px 8px;margin-left:6px}
+    .badge-ok{background:#ecfdf3;color:var(--success);border:1px solid #bbf7d0}
+    .badge-warn{background:#fefce8;color:#b45309;border:1px solid #fde68a}
+    hr.div{border:none;border-top:1px solid var(--border);margin:10px 0}
   </style>
 </head>
 <body>
@@ -86,11 +111,12 @@
     <div class="topbar-left">
       <h1 class="app-title">Asset Manager</h1>
       <nav class="app-nav">
-        <a href="index.html" class="nav-link">Index</a>
-        <a href="collection_list.html" class="nav-link">Collections</a>
-        <a href="add_assets.html" class="nav-link">Add Assets</a>
-        <a href="align.html" class="nav-link" aria-current="page">Align</a>
-        <a href="collisions.html" class="nav-link">Collisions</a>
+        <a href="/" class="nav-link">Index</a>
+        <a href="/collections" class="nav-link">Collections</a>
+        <a href="/add-assets" class="nav-link">Add Assets</a>
+        <a href="/compose" class="nav-link">Compose</a>
+        <a href="/align" class="nav-link" aria-current="page">Sprite</a>
+        <a href="/collisions" class="nav-link">Collisions</a>
       </nav>
     </div>
   </header>
@@ -106,13 +132,18 @@
         </div>
         <input id="asset-search" type="text" placeholder="Search by name…" />
         <div id="asset-list" class="asset-list"><div class="list-empty">Loading…</div></div>
+        <div class="sel-bar" id="sel-bar">
+          <span id="sel-count">0 selected</span>
+          <div class="row">
+            <button class="btn" id="sel-batch">Add to batch</button>
+            <button class="btn" id="sel-mirror">Mirror</button>
+            <button class="btn" id="sel-clear">✕</button>
+          </div>
+        </div>
       </div>
-
       <div class="panel">
         <h3>Or load a file</h3>
-        <div id="drop" class="drop" tabindex="0">
-          <strong>Drag &amp; drop</strong> a PNG, or click to browse
-        </div>
+        <div id="drop" class="drop" tabindex="0"><strong>Drag &amp; drop</strong> a PNG, or click to browse</div>
         <input id="file" type="file" accept="image/*" hidden />
       </div>
     </div>
@@ -125,52 +156,124 @@
       <div class="dims" id="dims"></div>
     </div>
 
-    <!-- Right: batch (first) + align controls -->
+    <!-- Right: mode tabs + panels -->
     <div class="col">
       <div class="panel" id="batch-panel">
         <h3>Batch <span id="batch-count" class="muted">(0)</span></h3>
         <div id="batch-list" class="asset-list"><div class="list-empty">No pending changes.</div></div>
         <div class="row">
+          <button class="btn" id="batch-mirror-all" disabled>Mirror all</button>
           <button class="btn" id="batch-clear" disabled>Clear</button>
           <button class="btn primary" id="batch-save" disabled>Save all</button>
         </div>
       </div>
 
-      <div class="panel">
-        <h3>Align content</h3>
-        <p class="muted" style="margin:.2em 0 0">Drag the image, or snap it to an edge:</p>
-        <div class="align-grid" id="align-grid">
-          <button class="btn" data-h="left"   data-v="top"    title="Top-left">↖</button>
-          <button class="btn" data-h="center" data-v="top"    title="Top">↑</button>
-          <button class="btn" data-h="right"  data-v="top"    title="Top-right">↗</button>
-          <button class="btn" data-h="left"   data-v="middle" title="Left">←</button>
-          <button class="btn" data-h="center" data-v="middle" title="Center">＋</button>
-          <button class="btn" data-h="right"  data-v="middle" title="Right">→</button>
-          <button class="btn" data-h="left"   data-v="bottom" title="Bottom-left">↙</button>
-          <button class="btn" data-h="center" data-v="bottom" title="Bottom">↓</button>
-          <button class="btn" data-h="right"  data-v="bottom" title="Bottom-right">↘</button>
+      <div class="panel" id="right-panel">
+        <div class="mode-tabs">
+          <button class="mode-tab active" data-mode="align">Align</button>
+          <button class="mode-tab" data-mode="recrop">Recrop</button>
         </div>
-        <div class="row" style="margin-top:8px">
-          <button class="btn" id="flip-h" disabled title="Mirror horizontally">⇄ Flip H</button>
-          <button class="btn" id="flip-v" disabled title="Mirror vertically">⇅ Flip V</button>
+
+        <!-- Align controls -->
+        <div id="panel-align">
+          <p class="muted" style="margin:.2em 0 0">Drag the image, or snap it to an edge:</p>
+          <div class="align-grid" id="align-grid">
+            <button class="btn" data-h="left"   data-v="top"    title="Top-left">↖</button>
+            <button class="btn" data-h="center" data-v="top"    title="Top">↑</button>
+            <button class="btn" data-h="right"  data-v="top"    title="Top-right">↗</button>
+            <button class="btn" data-h="left"   data-v="middle" title="Left">←</button>
+            <button class="btn" data-h="center" data-v="middle" title="Center">＋</button>
+            <button class="btn" data-h="right"  data-v="middle" title="Right">→</button>
+            <button class="btn" data-h="left"   data-v="bottom" title="Bottom-left">↙</button>
+            <button class="btn" data-h="center" data-v="bottom" title="Bottom">↓</button>
+            <button class="btn" data-h="right"  data-v="bottom" title="Bottom-right">↘</button>
+          </div>
+          <div class="row" style="margin-top:8px">
+            <button class="btn" id="flip-h" disabled>⇄ Flip H</button>
+            <button class="btn" id="flip-v" disabled>⇅ Flip V</button>
+          </div>
+          <label class="check"><input type="checkbox" id="trim" checked> Trim transparent margins</label>
+          <label class="check"><input type="checkbox" id="clamp" checked> Keep content inside frame</label>
+          <label class="check"><input type="checkbox" id="grid" checked> Show 32px grid</label>
+          <div class="row">
+            <button class="btn" id="reset" disabled>Reset</button>
+            <button class="btn" id="download" disabled>Download</button>
+            <button class="btn" id="save" disabled title="Overwrite the original file now">Save now</button>
+            <button class="btn primary" id="queue" disabled title="Queue to save later">Add to batch</button>
+          </div>
+          <div class="row">
+            <button class="btn" id="duplicate" disabled title="Save as a new file + add a JSON entry">＋ Save as copy</button>
+            <button class="btn" id="queue-mirror" disabled title="Queue a mirrored copy to batch">＋ Mirror → batch</button>
+          </div>
         </div>
-        <label class="check"><input type="checkbox" id="trim" checked> Trim transparent margins</label>
-        <label class="check"><input type="checkbox" id="clamp" checked> Keep content inside frame</label>
-        <label class="check"><input type="checkbox" id="grid" checked> Show 32px grid</label>
-        <div class="row">
-          <button class="btn" id="reset" disabled>Reset</button>
-          <button class="btn" id="download" disabled>Download</button>
-          <button class="btn" id="save" disabled title="Overwrite the original file now">Save now</button>
-          <button class="btn primary" id="queue" disabled title="Queue this alignment to save later">Add to batch</button>
-        </div>
-        <div class="row">
-          <button class="btn" id="duplicate" disabled title="Save as a new file + add a JSON entry">＋ Save as copy</button>
+
+        <!-- Recrop controls -->
+        <div id="panel-recrop" hidden>
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+            <span class="muted" style="flex:none">Step:</span>
+            <div class="source-switch" id="rc-step-switch" role="group" style="flex:none">
+              <button type="button" class="seg active" data-step="32">32 px</button>
+              <button type="button" class="seg" data-step="1">1 px</button>
+            </div>
+            <span class="muted" style="font-size:.78rem">Works on the aligned result.</span>
+          </div>
+          <div class="rc-grid">
+            <div></div>
+            <div class="rc-side">
+              <span class="rc-label">Top</span>
+              <div class="step-btns">
+                <button class="step-btn sub" data-side="top" data-delta="-32">−</button>
+                <button class="step-btn add" data-side="top" data-delta="32">+</button>
+              </div>
+              <span class="rc-val" id="rc-val-top">0</span>
+            </div>
+            <div></div>
+            <div class="rc-side">
+              <span class="rc-label">Left</span>
+              <div class="step-btns">
+                <button class="step-btn sub" data-side="left" data-delta="-32">−</button>
+                <button class="step-btn add" data-side="left" data-delta="32">+</button>
+              </div>
+              <span class="rc-val" id="rc-val-left">0</span>
+            </div>
+            <div class="rc-center">🖼</div>
+            <div class="rc-side">
+              <span class="rc-label">Right</span>
+              <div class="step-btns">
+                <button class="step-btn sub" data-side="right" data-delta="-32">−</button>
+                <button class="step-btn add" data-side="right" data-delta="32">+</button>
+              </div>
+              <span class="rc-val" id="rc-val-right">0</span>
+            </div>
+            <div></div>
+            <div class="rc-side">
+              <span class="rc-label">Bottom</span>
+              <div class="step-btns">
+                <button class="step-btn sub" data-side="bottom" data-delta="-32">−</button>
+                <button class="step-btn add" data-side="bottom" data-delta="32">+</button>
+              </div>
+              <span class="rc-val" id="rc-val-bottom">0</span>
+            </div>
+            <div></div>
+          </div>
+          <label class="check"><input type="checkbox" id="rc-grid" checked> Show 32px grid</label>
+          <label class="check"><input type="checkbox" id="rc-zones" checked> Highlight changes</label>
+          <div class="row">
+            <button class="btn" id="rc-auto-trim" disabled>Auto-trim</button>
+            <button class="btn" id="rc-reset" disabled>Reset</button>
+          </div>
+          <hr class="div">
+          <p class="muted" style="margin:0 0 4px">Output includes align + recrop:</p>
+          <div class="row">
+            <button class="btn" id="rc-download" disabled>Download</button>
+            <button class="btn" id="rc-save" disabled>Save now</button>
+            <button class="btn primary" id="rc-queue" disabled title="Queue to save later">Add to batch</button>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Unsaved-changes prompt -->
   <div id="confirm-modal" class="cm" hidden>
     <div class="cm-box">
       <p id="cm-text">You have unsaved changes on this image.</p>
@@ -182,455 +285,720 @@
     </div>
   </div>
 
+  <script src="dialog.js"></script>
   <script>
-    const API_URL = 'http://localhost:8000';
-    const LS_SRC = 'assetmgr:source';
+    const API_URL  = 'http://localhost:8000';
+    const LS_SRC   = 'assetmgr:source';
     const LS_CACHE = 'assetmgr:uploadCache';
+    const STEP     = 32;
 
     const $ = s => document.querySelector(s);
     const fileInput = $('#file');
-    const drop = $('#drop');
-    const view = $('#view');
-    const ctx = view.getContext('2d');
-    const frameEl = $('#frame');
-    const emptyEl = $('#empty');
-    const dimsEl = $('#dims');
+    const drop      = $('#drop');
+    const view      = $('#view');
+    const ctx       = view.getContext('2d');
+    const frameEl   = $('#frame');
+    const emptyEl   = $('#empty');
+    const dimsEl    = $('#dims');
     const currentEl = $('#current');
-    const trimChk = $('#trim');
-    const clampChk = $('#clamp');
-    const gridChk = $('#grid');
-    const listEl = $('#asset-list');
-    const searchEl = $('#asset-search');
+    const trimChk   = $('#trim');
+    const clampChk  = $('#clamp');
+    const gridChk   = $('#grid');
+    const listEl    = $('#asset-list');
+    const searchEl  = $('#asset-search');
 
+    // ── State ─────────────────────────────────────────────────────────────────
     let src = null, frameW = 0, frameH = 0, bbox = null;
     let dx = 0, dy = 0, scale = 1;
-    let filename = 'asset.png';
-    let currentPath = null;          // server-relative path when picked from collection
-    let collection = [];             // current loaded collection
-    let activeSrc = 'file';
-    const pending = new Map();        // path -> { dataUrl, name } pending changes
-    let baseDx = 0, baseDy = 0, baseTrim = true; // baseline to detect unsaved changes
+    let filename = 'asset.png', currentPath = null;
+    let collection = [], activeSrc = 'file';
+    const pending = new Map();
+    let baseDx = 0, baseDy = 0, baseTrim = true;
     let flipH = false, flipV = false, baseFlipH = false, baseFlipV = false;
 
-    // ====== Collection loading ===============================================
-    function readCache(){ try{ const s = localStorage.getItem(LS_CACHE); return s ? JSON.parse(s) : null; }catch{ return null; } }
+    let mode = 'align';
+    let rcPad = { top: 0, right: 0, bottom: 0, left: 0 };
+    let rcStep = 32; // 32 or 1
+
+    // ── Computed dimensions ───────────────────────────────────────────────────
+    function outW(){ return frameW + rcPad.left + rcPad.right; }
+    function outH(){ return frameH + rcPad.top  + rcPad.bottom; }
+
+    // ── Mode tabs ─────────────────────────────────────────────────────────────
+    document.querySelectorAll('.mode-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        mode = tab.dataset.mode;
+        document.querySelectorAll('.mode-tab').forEach(t => t.classList.toggle('active', t.dataset.mode === mode));
+        $('#panel-align').hidden  = mode !== 'align';
+        $('#panel-recrop').hidden = mode !== 'recrop';
+        if (src) render();
+      });
+    });
+
+    // ── Recrop step switch ────────────────────────────────────────────────────
+    $('#rc-step-switch').addEventListener('click', e => {
+      const b = e.target.closest('.seg'); if (!b) return;
+      rcStep = Number(b.dataset.step);
+      document.querySelectorAll('#rc-step-switch .seg').forEach(s => s.classList.toggle('active', s.dataset.step === b.dataset.step));
+      updateRcUI();
+    });
+
+    // ── Collection ────────────────────────────────────────────────────────────
+    function readCache(){ try{ const s=localStorage.getItem(LS_CACHE); return s?JSON.parse(s):null; }catch{return null;} }
 
     async function loadCollection(which){
-      activeSrc = which;
-      collection = [];
+      activeSrc = which; collection = [];
       listEl.innerHTML = `<div class="list-empty">Loading…</div>`;
       try{
         if (which === 'upload'){
-          const cache = readCache();
-          collection = (cache && Array.isArray(cache.json.collection)) ? cache.json.collection : [];
+          const c = readCache();
+          collection = (c && Array.isArray(c.json.collection)) ? c.json.collection : [];
         } else {
           const r = await fetch(`assets_list.json?t=${Date.now()}`);
-          const data = await r.json();
-          collection = Array.isArray(data.collection) ? data.collection : [];
+          const d = await r.json();
+          collection = Array.isArray(d.collection) ? d.collection : [];
         }
       }catch(e){ console.error(e); }
       renderList();
     }
 
+    let selected = new Set();
+
+    function updateSelBar(){
+      const n = selected.size;
+      const bar = $('#sel-bar');
+      bar.classList.toggle('visible', n > 0);
+      $('#sel-count').textContent = `${n} selected`;
+    }
+
     function renderList(){
-      const q = (searchEl.value || '').toLowerCase();
+      const q = (searchEl.value||'').toLowerCase();
       const items = collection.filter(a => a && a.imagePath && (!q || (a.name||'').toLowerCase().includes(q)));
-      if (!items.length){ listEl.innerHTML = `<div class="list-empty">No asset found.</div>`; return; }
+      if (!items.length){ listEl.innerHTML=`<div class="list-empty">No asset found.</div>`; return; }
       listEl.innerHTML = '';
       for (const a of items){
         const el = document.createElement('div');
-        el.className = 'asset-item' + (pending.has(a.imagePath) ? ' queued' : '');
+        const isQueued = pending.has(a.imagePath);
+        const isSel = selected.has(a.imagePath);
+        el.className = 'asset-item' + (isQueued?' queued':'') + (isSel?' selected':'');
         el.dataset.path = a.imagePath;
+
+        const cb = document.createElement('input');
+        cb.type = 'checkbox'; cb.className = 'asset-cb'; cb.checked = isSel;
+        cb.addEventListener('click', e=>{
+          e.stopPropagation();
+          if (cb.checked) selected.add(a.imagePath); else selected.delete(a.imagePath);
+          el.classList.toggle('selected', cb.checked);
+          updateSelBar();
+        });
+
         el.innerHTML = `<img loading="lazy" src="${a.imagePath}" alt="">
                         <div class="ai-text">
-                          <div class="ai-name">${(a.name||'(no name)')}</div>
+                          <div class="ai-name">${a.name||'(no name)'}</div>
                           <div class="ai-path">${a.imagePath}</div>
                         </div>`;
-        el.addEventListener('click', ()=>{
-          guardedLoad(()=>{
-            document.querySelectorAll('.asset-item.active').forEach(x=>x.classList.remove('active'));
-            el.classList.add('active');
-            loadFromUrl(a.imagePath, (a.imagePath.split('/').pop()||'asset.png'), a.imagePath);
-          });
-        });
+        el.prepend(cb);
+        el.addEventListener('click', ()=>guardedLoad(()=>{
+          document.querySelectorAll('.asset-item.active').forEach(x=>x.classList.remove('active'));
+          el.classList.add('active');
+          loadFromUrl(a.imagePath, a.imagePath.split('/').pop()||'asset.png', a.imagePath);
+        }));
         listEl.appendChild(el);
       }
     }
 
-    searchEl.addEventListener('input', renderList);
+    // ── Selection bar actions ─────────────────────────────────────────────────
+    function loadImagePromise(path){
+      return new Promise((resolve, reject)=>{
+        const img = new Image();
+        img.onload = ()=>resolve(img);
+        img.onerror = ()=>reject(new Error(`Cannot load ${path}`));
+        img.src = path;
+      });
+    }
 
-    $('#src-switch').addEventListener('click', (e)=>{
+    $('#sel-clear').addEventListener('click', ()=>{ selected.clear(); renderList(); updateSelBar(); });
+
+    $('#sel-batch').addEventListener('click', async ()=>{
+      const paths = [...selected];
+      for (const path of paths){
+        try{
+          const img = await loadImagePromise(path);
+          const c = document.createElement('canvas');
+          c.width = img.naturalWidth; c.height = img.naturalHeight;
+          c.getContext('2d').drawImage(img, 0, 0);
+          const name = path.split('/').pop();
+          pending.set(path, {dataUrl: c.toDataURL('image/png'), name});
+        }catch(e){ console.warn(e); }
+      }
+      selected.clear(); renderList(); updateSelBar(); refreshBatch();
+    });
+
+    $('#sel-mirror').addEventListener('click', async ()=>{
+      const paths = [...selected];
+      const errors = [];
+      for (const path of paths){
+        const mPath = mirrorPath(path);
+        if (pending.has(mPath)) continue;
+        try{
+          const img = await loadImagePromise(path);
+          const c = document.createElement('canvas');
+          c.width = img.naturalWidth; c.height = img.naturalHeight;
+          const g = c.getContext('2d');
+          g.translate(img.naturalWidth, 0); g.scale(-1, 1);
+          g.drawImage(img, 0, 0);
+          const name = mirrorPath(path.split('/').pop());
+          const asset = makeMirrorAsset(path, mPath);
+          pending.set(mPath, {dataUrl: c.toDataURL('image/png'), name, asset, originalUpdate:{imagePath:path, updates:{direction:'left'}}});
+        }catch(e){ errors.push(path+': '+e.message); }
+      }
+      selected.clear(); renderList(); updateSelBar(); refreshBatch();
+      if (errors.length) await Dialog.alert(`Mirror failed for:\n${errors.join('\n')}`,{type:'error'});
+    });
+    searchEl.addEventListener('input', renderList);
+    $('#src-switch').addEventListener('click', e=>{
       const b = e.target.closest('.seg'); if (!b) return;
       document.querySelectorAll('#src-switch .seg').forEach(s=>s.classList.remove('active'));
       b.classList.add('active');
       loadCollection(b.dataset.src);
     });
 
-    // ====== Image loading =====================================================
+    // ── Image loading ─────────────────────────────────────────────────────────
     function loadFile(file){
       if (!file) return;
-      filename = file.name || 'asset.png';
-      currentPath = null; // a dropped file has no server path
+      filename = file.name||'asset.png'; currentPath = null;
       const url = URL.createObjectURL(file);
       const img = new Image();
-      img.onload = () => { URL.revokeObjectURL(url); setup(img); };
-      img.onerror = () => { URL.revokeObjectURL(url); alert('Could not load this image.'); };
+      img.onload  = ()=>{ URL.revokeObjectURL(url); setup(img); };
+      img.onerror = ()=>{ URL.revokeObjectURL(url); Dialog.alert('Could not load this image.',{type:'error'}); };
       img.src = url;
     }
     function loadFromUrl(url, name, path){
-      filename = name || 'asset.png';
-      currentPath = path || null;
+      filename = name||'asset.png'; currentPath = path||null;
       const img = new Image();
-      img.onload = () => setup(img);
-      img.onerror = () => alert('Could not load this image from the server.');
-      img.src = `${url}?t=${Date.now()}`; // bypass cache so re-saves reload fresh
+      img.onload  = ()=>setup(img);
+      img.onerror = ()=>Dialog.alert('Could not load this image from the server.',{type:'error'});
+      img.src = `${url}?t=${Date.now()}`;
     }
 
     function computeBBox(imgData, w, h){
       const d = imgData.data;
-      let minX = w, minY = h, maxX = -1, maxY = -1;
-      for (let y = 0; y < h; y++){
-        for (let x = 0; x < w; x++){
-          if (d[(y*w + x)*4 + 3] !== 0){
-            if (x < minX) minX = x; if (x > maxX) maxX = x;
-            if (y < minY) minY = y; if (y > maxY) maxY = y;
-          }
+      let minX=w, minY=h, maxX=-1, maxY=-1;
+      for (let y=0;y<h;y++) for (let x=0;x<w;x++)
+        if (d[(y*w+x)*4+3]!==0){
+          if (x<minX)minX=x; if (x>maxX)maxX=x;
+          if (y<minY)minY=y; if (y>maxY)maxY=y;
         }
-      }
-      if (maxX < 0) return { x:0, y:0, w, h };
-      return { x:minX, y:minY, w:maxX-minX+1, h:maxY-minY+1 };
+      if (maxX<0) return {x:0,y:0,w,h};
+      return {x:minX,y:minY,w:maxX-minX+1,h:maxY-minY+1};
     }
 
     function setup(img){
       frameW = img.naturalWidth; frameH = img.naturalHeight;
       src = document.createElement('canvas');
-      src.width = frameW; src.height = frameH;
-      const sctx = src.getContext('2d');
-      sctx.imageSmoothingEnabled = false;
-      sctx.drawImage(img, 0, 0);
-      bbox = computeBBox(sctx.getImageData(0, 0, frameW, frameH), frameW, frameH);
-      dx = bbox.x; dy = bbox.y;
-      flipH = false; flipV = false;
+      src.width=frameW; src.height=frameH;
+      const sc = src.getContext('2d');
+      sc.imageSmoothingEnabled=false;
+      sc.drawImage(img,0,0);
+      bbox = computeBBox(sc.getImageData(0,0,frameW,frameH), frameW, frameH);
+      dx=bbox.x; dy=bbox.y;
+      flipH=false; flipV=false;
       $('#flip-h').classList.remove('primary'); $('#flip-v').classList.remove('primary');
-      baseDx = Math.round(dx); baseDy = Math.round(dy); baseTrim = trimChk.checked;
-      baseFlipH = false; baseFlipV = false;
+      baseDx=Math.round(dx); baseDy=Math.round(dy); baseTrim=trimChk.checked;
+      baseFlipH=false; baseFlipV=false;
+      rcPad = {top:0,right:0,bottom:0,left:0};
+      updateRcUI();
 
-      scale = Math.min(520 / Math.max(frameW, frameH), 12);
-      view.width = Math.round(frameW * scale);
-      view.height = Math.round(frameH * scale);
-
-      frameEl.hidden = false; emptyEl.hidden = true;
+      frameEl.hidden=false; emptyEl.hidden=true;
       currentEl.textContent = currentPath ? `Editing: ${currentPath}` : `Editing: ${filename} (local file)`;
-      $('#reset').disabled = false;
-      $('#download').disabled = false;
-      $('#save').disabled = !currentPath;
-      $('#queue').disabled = !currentPath;
-      $('#flip-h').disabled = false;
-      $('#flip-v').disabled = false;
-      $('#duplicate').disabled = !currentPath;
+      ['reset','download','flip-h','flip-v'].forEach(id=>$(`#${id}`).disabled=false);
+      $('#save').disabled          = !currentPath;
+      $('#queue').disabled         = !currentPath;
+      $('#queue-mirror').disabled  = !currentPath;
+      $('#duplicate').disabled     = !currentPath;
+      $('#rc-auto-trim').disabled = false;
+      $('#rc-reset').disabled     = false;
+      $('#rc-download').disabled  = false;
+      $('#rc-save').disabled      = !currentPath;
+      $('#rc-queue').disabled     = !currentPath;
       render();
     }
 
-    // ====== Geometry / render =================================================
-    function contentSource(){ return trimChk.checked ? bbox : { x:0, y:0, w:frameW, h:frameH }; }
-    function contentSize(){ const s = contentSource(); return { w:s.w, h:s.h }; }
+    // ── Unified render ────────────────────────────────────────────────────────
+    // The canvas always shows: content positioned at (rcPad.left+dx, rcPad.top+dy)
+    // within a canvas of size outW() × outH().
+    // In align mode: shows align overlays + optional frame boundary if recrop active.
+    // In recrop mode: shows recrop zone highlights.
+    function render(){
+      if (!src) return;
+      const W = outW(), H = outH();
+      if (W<=0 || H<=0) return;
+
+      const maxVis = 520;
+      scale = Math.max(1, Math.min(Math.floor(Math.min(maxVis/W, maxVis/H)), 12));
+
+      // Always set both pixel size and CSS size together to prevent distortion
+      view.width  = W * scale;
+      view.height = H * scale;
+      view.style.width  = (W * scale) + 'px';
+      view.style.height = (H * scale) + 'px';
+
+      ctx.clearRect(0, 0, view.width, view.height);
+      ctx.imageSmoothingEnabled = false;
+
+      // Draw content at combined offset (align within frame + recrop pad)
+      drawContent(ctx, scale, rcPad.left, rcPad.top);
+
+      // Recrop zone highlights (recrop mode only)
+      if (mode === 'recrop' && $('#rc-zones').checked){
+        ctx.fillStyle = 'rgba(79,70,229,.13)';
+        if (rcPad.top    > 0) ctx.fillRect(0, 0, W*scale, rcPad.top*scale);
+        if (rcPad.bottom > 0) ctx.fillRect(0, (H-rcPad.bottom)*scale, W*scale, rcPad.bottom*scale);
+        if (rcPad.left   > 0) ctx.fillRect(0, 0, rcPad.left*scale, H*scale);
+        if (rcPad.right  > 0) ctx.fillRect((W-rcPad.right)*scale, 0, rcPad.right*scale, H*scale);
+        ctx.fillStyle = 'rgba(220,38,38,.18)';
+        if (rcPad.top    < 0) ctx.fillRect(rcPad.left*scale, rcPad.top*scale, frameW*scale, -rcPad.top*scale);
+        if (rcPad.bottom < 0) ctx.fillRect(rcPad.left*scale, (rcPad.top+frameH+rcPad.bottom)*scale, frameW*scale, -rcPad.bottom*scale);
+        if (rcPad.left   < 0) ctx.fillRect(rcPad.left*scale, rcPad.top*scale, -rcPad.left*scale, frameH*scale);
+        if (rcPad.right  < 0) ctx.fillRect((rcPad.left+frameW+rcPad.right)*scale, rcPad.top*scale, -rcPad.right*scale, frameH*scale);
+      }
+
+      // Grid
+      const showGrid = mode === 'align' ? gridChk.checked : $('#rc-grid').checked;
+      if (showGrid) drawGrid(W, H);
+
+      // Original frame boundary (dashed) when recrop pads are non-zero
+      const hasPad = rcPad.left||rcPad.right||rcPad.top||rcPad.bottom;
+      if (hasPad){
+        ctx.save();
+        ctx.strokeStyle = 'rgba(79,70,229,.5)';
+        ctx.lineWidth   = 1;
+        ctx.setLineDash([Math.max(2, 3*scale), Math.max(2, 2*scale)]);
+        ctx.strokeRect(
+          Math.round(rcPad.left*scale)+.5,
+          Math.round(rcPad.top*scale)+.5,
+          frameW*scale-1, frameH*scale-1
+        );
+        ctx.restore();
+      }
+
+      ctx.strokeStyle = 'rgba(79,70,229,.35)'; ctx.lineWidth=1;
+      ctx.strokeRect(.5, .5, view.width-1, view.height-1);
+
+      // Dims text
+      if (mode === 'align'){
+        const s = contentSource();
+        dimsEl.textContent = `Frame ${frameW}×${frameH}px · content ${s.w}×${s.h}px · offset ${Math.round(dx)},${Math.round(dy)}`;
+      } else {
+        const isGrid = W%STEP===0 && H%STEP===0;
+        dimsEl.innerHTML = `${frameW}×${frameH}px → <strong>${W}×${H}px</strong>
+          <span class="dims-badge ${isGrid?'badge-ok':'badge-warn'}">${isGrid?'32px grid ✓':'not ×32'}</span>`;
+      }
+    }
+
+    // ── Geometry helpers ──────────────────────────────────────────────────────
+    function contentSource(){ return trimChk.checked ? bbox : {x:0,y:0,w:frameW,h:frameH}; }
+    function contentSize()  { const s=contentSource(); return {w:s.w,h:s.h}; }
+
     function clampPos(){
       if (!clampChk.checked) return;
-      const { w, h } = contentSize();
-      dx = Math.max(Math.min(dx, frameW - w), Math.min(0, frameW - w));
-      dy = Math.max(Math.min(dy, frameH - h), Math.min(0, frameH - h));
+      const {w,h} = contentSize();
+      dx = Math.max(Math.min(dx, frameW-w), Math.min(0, frameW-w));
+      dy = Math.max(Math.min(dy, frameH-h), Math.min(0, frameH-h));
     }
-    // Draw the (optionally mirrored) content onto a context at a given scale.
-    function drawContent(g, sc){
+
+    // Draw content at pixel offset (offX+dx, offY+dy) at scale sc.
+    function drawContent(g, sc, offX=0, offY=0){
       const s = contentSource();
-      const dw = Math.round(s.w*sc), dh = Math.round(s.h*sc);
+      const dw=Math.round(s.w*sc), dh=Math.round(s.h*sc);
       g.save();
-      g.imageSmoothingEnabled = false;
-      g.translate(Math.round(dx*sc), Math.round(dy*sc));
-      if (flipH){ g.translate(dw, 0); g.scale(-1, 1); }
-      if (flipV){ g.translate(0, dh); g.scale(1, -1); }
+      g.imageSmoothingEnabled=false;
+      g.translate(Math.round((offX+dx)*sc), Math.round((offY+dy)*sc));
+      if (flipH){ g.translate(dw,0); g.scale(-1,1); }
+      if (flipV){ g.translate(0,dh); g.scale(1,-1); }
       g.drawImage(src, s.x, s.y, s.w, s.h, 0, 0, dw, dh);
       g.restore();
     }
 
-    function render(){
-      ctx.clearRect(0, 0, view.width, view.height);
-      drawContent(ctx, scale);
-      if (gridChk.checked) drawGrid();
-      ctx.strokeStyle = 'rgba(79,70,229,.35)'; ctx.lineWidth = 1;
-      ctx.strokeRect(0.5, 0.5, view.width-1, view.height-1);
-      dimsEl.textContent = `Frame ${frameW}×${frameH}px · content ${s.w}×${s.h}px · offset ${Math.round(dx)},${Math.round(dy)}`;
-    }
-
-    function drawGrid(){
-      const step = 32 * scale;
-      if (step < 3) return; // too dense to be useful
+    function drawGrid(W, H){
+      const step = STEP*scale;
+      if (step<3) return;
       ctx.save();
-      ctx.strokeStyle = 'rgba(17,24,39,.28)';
-      ctx.lineWidth = 1;
-      for (let x = step; x < view.width; x += step){
-        const px = Math.round(x) + 0.5;
-        ctx.beginPath(); ctx.moveTo(px, 0); ctx.lineTo(px, view.height); ctx.stroke();
-      }
-      for (let y = step; y < view.height; y += step){
-        const py = Math.round(y) + 0.5;
-        ctx.beginPath(); ctx.moveTo(0, py); ctx.lineTo(view.width, py); ctx.stroke();
-      }
+      ctx.strokeStyle='rgba(17,24,39,.28)'; ctx.lineWidth=1;
+      for (let x=step; x<W*scale; x+=step){ const px=Math.round(x)+.5; ctx.beginPath();ctx.moveTo(px,0);ctx.lineTo(px,H*scale);ctx.stroke(); }
+      for (let y=step; y<H*scale; y+=step){ const py=Math.round(y)+.5; ctx.beginPath();ctx.moveTo(0,py);ctx.lineTo(W*scale,py);ctx.stroke(); }
       ctx.restore();
     }
 
+    // Combined output: align applied first, then recrop pads
     function buildOutput(){
+      const W=outW(), H=outH();
       const out = document.createElement('canvas');
-      out.width = frameW; out.height = frameH;
-      drawContent(out.getContext('2d'), 1);
+      out.width=W; out.height=H;
+      drawContent(out.getContext('2d'), 1, rcPad.left, rcPad.top);
       return out;
     }
 
-    // ====== Actions ===========================================================
-    $('#align-grid').addEventListener('click', (e)=>{
-      const b = e.target.closest('button'); if (!b || !src) return;
-      const { w, h } = contentSize();
-      if (b.dataset.h === 'left')   dx = 0;
-      if (b.dataset.h === 'center') dx = (frameW - w)/2;
-      if (b.dataset.h === 'right')  dx = frameW - w;
-      if (b.dataset.v === 'top')    dy = 0;
-      if (b.dataset.v === 'middle') dy = (frameH - h)/2;
-      if (b.dataset.v === 'bottom') dy = frameH - h;
+    // ── Align actions ─────────────────────────────────────────────────────────
+    $('#align-grid').addEventListener('click', e=>{
+      const b=e.target.closest('button'); if (!b||!src) return;
+      const {w,h}=contentSize();
+      if (b.dataset.h==='left')   dx=0;
+      if (b.dataset.h==='center') dx=(frameW-w)/2;
+      if (b.dataset.h==='right')  dx=frameW-w;
+      if (b.dataset.v==='top')    dy=0;
+      if (b.dataset.v==='middle') dy=(frameH-h)/2;
+      if (b.dataset.v==='bottom') dy=frameH-h;
       render();
     });
     $('#reset').addEventListener('click', ()=>{ if (!src) return; const s=contentSource(); dx=s.x; dy=s.y; render(); });
-    trimChk.addEventListener('change', ()=>{ if (src){ const s=contentSource(); dx=s.x; dy=s.y; render(); } });
+    trimChk.addEventListener('change',  ()=>{ if (src){ const s=contentSource(); dx=s.x; dy=s.y; render(); } });
     clampChk.addEventListener('change', ()=>{ if (src){ clampPos(); render(); } });
-    gridChk.addEventListener('change', ()=>{ if (src) render(); });
+    gridChk.addEventListener('change',  ()=>{ if (src) render(); });
 
     $('#download').addEventListener('click', ()=>{
       if (!src) return;
-      buildOutput().toBlob((blob)=>{
-        const a = document.createElement('a');
-        a.href = URL.createObjectURL(blob);
-        a.download = filename.replace(/\.[^.]+$/, '') + '-aligned.png';
-        document.body.appendChild(a); a.click(); a.remove();
-        URL.revokeObjectURL(a.href);
-      }, 'image/png');
+      buildOutput().toBlob(blob=>{
+        const a=document.createElement('a');
+        a.href=URL.createObjectURL(blob);
+        a.download=filename.replace(/\.[^.]+$/,'')+'-out.png';
+        document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(a.href);
+      },'image/png');
     });
 
     $('#save').addEventListener('click', async ()=>{
-      if (!src || !currentPath) return;
-      if (!confirm(`Overwrite the original file?\n\n${currentPath}`)) return;
-      const dataUrl = buildOutput().toDataURL('image/png');
+      if (!src||!currentPath) return;
+      if (!await Dialog.confirm(`Overwrite the original file?\n\n${currentPath}`,{confirmLabel:'Overwrite',danger:true})) return;
+      const dataUrl=buildOutput().toDataURL('image/png');
       try{
-        const r = await fetch(`${API_URL}/save_image`, {
-          method:'POST', headers:{'Content-Type':'application/json'},
-          body: JSON.stringify({ path: currentPath, dataUrl })
-        });
-        const out = await r.json().catch(()=>({}));
-        if (!r.ok) throw new Error(out.message || `Server error ${r.status}`);
-        // Reload the (now updated) image + refresh its thumbnail in the list.
-        const item = document.querySelector(`.asset-item[data-path="${CSS.escape(currentPath)}"] img`);
-        if (item) item.src = `${currentPath}?t=${Date.now()}`;
-        loadFromUrl(currentPath, filename, currentPath);
-        alert(`Saved ✔  (${out.bytes||0} bytes)\n${currentPath}`);
-      }catch(err){ alert(`Save failed: ${err.message}`); }
+        const r=await fetch(`${API_URL}/save_image`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({path:currentPath,dataUrl})});
+        const out=await r.json().catch(()=>({}));
+        if (!r.ok) throw new Error(out.message||`Server error ${r.status}`);
+        const item=document.querySelector(`.asset-item[data-path="${CSS.escape(currentPath)}"] img`);
+        if (item) item.src=`${currentPath}?t=${Date.now()}`;
+        loadFromUrl(currentPath,filename,currentPath);
+        await Dialog.alert(`Saved (${out.bytes||0} bytes)\n${currentPath}`,{type:'success'});
+      }catch(err){ await Dialog.alert(`Save failed: ${err.message}`,{type:'error'}); }
     });
 
-    // ====== Batch =============================================================
-    function refreshBatch(){
-      const n = pending.size;
-      $('#batch-count').textContent = `(${n})`;
-      $('#batch-save').disabled = n === 0;
-      $('#batch-clear').disabled = n === 0;
-      const list = $('#batch-list');
-      if (!n){ list.innerHTML = `<div class="list-empty">No pending changes.</div>`; }
-      else {
-        list.innerHTML = '';
-        for (const [path, item] of pending){
-          const el = document.createElement('div');
-          el.className = 'asset-item';
-          el.innerHTML = `<img src="${item.dataUrl}" alt="">
-                          <div class="ai-text">
-                            <div class="ai-name">${item.name}</div>
-                            <div class="ai-path">${path}</div>
-                          </div>
-                          <button class="batch-rm" title="Remove from batch">×</button>`;
-          el.querySelector('.batch-rm').addEventListener('click', ()=>{ pending.delete(path); refreshBatch(); renderList(); });
-          list.appendChild(el);
-        }
-      }
-      // reflect queued state in the collection list
-      document.querySelectorAll('.asset-item[data-path]').forEach(it=>{
-        it.classList.toggle('queued', pending.has(it.dataset.path));
+    // ── Recrop controls ───────────────────────────────────────────────────────
+    function updateRcUI(){
+      ['top','right','bottom','left'].forEach(s=>{
+        const el=$(`#rc-val-${s}`); if (!el) return;
+        el.textContent=(rcPad[s]>=0?'+':'')+rcPad[s];
+        el.className='rc-val'+(rcPad[s]<0?' neg':'');
       });
+      const hasImg=!!src;
+      document.querySelectorAll('.step-btn').forEach(btn=>{
+        if (!hasImg){btn.disabled=true;return;}
+        const side=btn.dataset.side, isSub=(btn.dataset.delta<0||btn.classList.contains('sub'));
+        if (isSub){
+          const after=(side==='top'||side==='bottom')?outH()-rcStep:outW()-rcStep;
+          btn.disabled=after<1;
+        } else { btn.disabled=false; }
+      });
+      if ($('#rc-queue')) $('#rc-queue').disabled=!src||!currentPath;
+    }
+
+    document.querySelectorAll('.step-btn').forEach(btn=>btn.addEventListener('click',()=>{
+      if (!src) return;
+      const sign=btn.classList.contains('sub')?-1:1;
+      rcPad[btn.dataset.side]+=sign*rcStep;
+      updateRcUI();
+      render();
+    }));
+
+    $('#rc-grid').addEventListener('change',  ()=>{ if (src&&mode==='recrop') render(); });
+    $('#rc-zones').addEventListener('change', ()=>{ if (src&&mode==='recrop') render(); });
+
+    $('#rc-reset').addEventListener('click', ()=>{
+      rcPad={top:0,right:0,bottom:0,left:0}; updateRcUI(); render();
+    });
+
+    $('#rc-auto-trim').addEventListener('click', ()=>{
+      if (!src) return;
+      const tmp=document.createElement('canvas'); tmp.width=frameW; tmp.height=frameH;
+      const tc=tmp.getContext('2d'); tc.drawImage(src,0,0);
+      const d=tc.getImageData(0,0,frameW,frameH).data;
+      let minX=frameW,minY=frameH,maxX=-1,maxY=-1;
+      for (let y=0;y<frameH;y++) for (let x=0;x<frameW;x++)
+        if (d[(y*frameW+x)*4+3]>0){
+          if (x<minX)minX=x; if (x>maxX)maxX=x;
+          if (y<minY)minY=y; if (y>maxY)maxY=y;
+        }
+      if (maxX<0) return;
+      const cW=maxX-minX+1, cH=maxY-minY+1;
+      let snapW, snapH;
+      if (rcStep===32){
+        snapW=Math.ceil(cW/STEP)*STEP; snapH=Math.ceil(cH/STEP)*STEP;
+      } else {
+        snapW=cW; snapH=cH; // 1px mode: trim exactly to content bbox
+      }
+      const extraX=snapW-cW, extraY=snapH-cH;
+      rcPad.left  =-(minX-Math.floor(extraX/2));
+      rcPad.right  =snapW-frameW-rcPad.left;
+      rcPad.top   =-(minY-Math.floor(extraY/2));
+      rcPad.bottom =snapH-frameH-rcPad.top;
+      updateRcUI(); render();
+    });
+
+    $('#rc-download').addEventListener('click', ()=>{
+      if (!src) return;
+      buildOutput().toBlob(blob=>{
+        const a=document.createElement('a');
+        a.href=URL.createObjectURL(blob);
+        a.download=filename.replace(/\.png$/i,'')+'-out.png';
+        document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(a.href);
+      },'image/png');
+    });
+
+    $('#rc-save').addEventListener('click', async ()=>{
+      if (!src||!currentPath) return;
+      if (!await Dialog.confirm(`Overwrite the original file?\n\n${currentPath}`,{confirmLabel:'Overwrite',danger:true})) return;
+      const dataUrl=buildOutput().toDataURL('image/png');
+      try{
+        const r=await fetch(`${API_URL}/save_image`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({path:currentPath,dataUrl})});
+        const out=await r.json().catch(()=>({}));
+        if (!r.ok) throw new Error(out.message||`Server error ${r.status}`);
+        await Dialog.alert(`Saved (${out.bytes||0} bytes)\n${currentPath}`,{type:'success'});
+        loadFromUrl(currentPath,filename,currentPath);
+      }catch(err){ await Dialog.alert(`Save failed: ${err.message}`,{type:'error'}); }
+    });
+
+    $('#rc-queue').addEventListener('click', queueCurrent);
+
+    // ── Batch ─────────────────────────────────────────────────────────────────
+    function refreshBatch(){
+      const n=pending.size;
+      $('#batch-count').textContent=`(${n})`;
+      $('#batch-save').disabled=n===0; $('#batch-clear').disabled=n===0; $('#batch-mirror-all').disabled=n===0;
+      const list=$('#batch-list');
+      if (!n){ list.innerHTML=`<div class="list-empty">No pending changes.</div>`; return; }
+      list.innerHTML='';
+      for (const [path,item] of pending){
+        const el=document.createElement('div');
+        el.className='asset-item';
+        el.innerHTML=`<img src="${item.dataUrl}" alt="">
+                      <div class="ai-text">
+                        <div class="ai-name">${item.name}</div>
+                        <div class="ai-path">${path}</div>
+                      </div>
+                      <button class="batch-rm">×</button>`;
+        el.querySelector('.batch-rm').addEventListener('click',()=>{ pending.delete(path); refreshBatch(); renderList(); });
+        list.appendChild(el);
+      }
+      document.querySelectorAll('.asset-item[data-path]').forEach(it=>
+        it.classList.toggle('queued', pending.has(it.dataset.path)));
     }
 
     function queueCurrent(){
-      if (!src || !currentPath) return false;
-      pending.set(currentPath, { dataUrl: buildOutput().toDataURL('image/png'), name: filename });
-      baseDx = Math.round(dx); baseDy = Math.round(dy); baseTrim = trimChk.checked; // now in sync
-      baseFlipH = flipH; baseFlipV = flipV;
-      refreshBatch();
-      return true;
+      if (!src||!currentPath) return false;
+      pending.set(currentPath,{dataUrl:buildOutput().toDataURL('image/png'),name:filename});
+      baseDx=Math.round(dx); baseDy=Math.round(dy); baseTrim=trimChk.checked;
+      baseFlipH=flipH; baseFlipV=flipV;
+      refreshBatch(); return true;
     }
     $('#queue').addEventListener('click', queueCurrent);
 
-    // True if the current (collection) image was changed but not yet queued/saved.
     function isDirty(){
-      return !!(src && currentPath) &&
-        (Math.round(dx) !== baseDx || Math.round(dy) !== baseDy || trimChk.checked !== baseTrim
-         || flipH !== baseFlipH || flipV !== baseFlipV);
+      return !!(src&&currentPath)&&
+        (Math.round(dx)!==baseDx||Math.round(dy)!==baseDy||trimChk.checked!==baseTrim
+         ||flipH!==baseFlipH||flipV!==baseFlipV);
     }
-    // Ask the user what to do with unsaved changes before switching images.
     function askUnsaved(){
       return new Promise(resolve=>{
-        const m = $('#confirm-modal');
-        $('#cm-text').textContent = `You have unsaved changes on "${currentPath}". What do you want to do?`;
-        m.hidden = false;
-        const done = (v)=>{ m.hidden = true; cleanup(); resolve(v); };
+        const m=$('#confirm-modal');
+        $('#cm-text').textContent=`You have unsaved changes on "${currentPath}". What do you want to do?`;
+        m.hidden=false;
+        const done=v=>{ m.hidden=true; cleanup(); resolve(v); };
         const onAdd=()=>done('add'), onDiscard=()=>done('discard'), onCancel=()=>done('cancel');
         function cleanup(){
-          $('#cm-add').removeEventListener('click', onAdd);
-          $('#cm-discard').removeEventListener('click', onDiscard);
-          $('#cm-cancel').removeEventListener('click', onCancel);
+          ['#cm-add','#cm-discard','#cm-cancel'].forEach((sel,i)=>$(sel).removeEventListener('click',[onAdd,onDiscard,onCancel][i]));
         }
-        $('#cm-add').addEventListener('click', onAdd);
-        $('#cm-discard').addEventListener('click', onDiscard);
-        $('#cm-cancel').addEventListener('click', onCancel);
+        $('#cm-add').addEventListener('click',onAdd);
+        $('#cm-discard').addEventListener('click',onDiscard);
+        $('#cm-cancel').addEventListener('click',onCancel);
       });
     }
-    // Run `loader` but guard against losing unsaved changes first.
     async function guardedLoad(loader){
-      if (isDirty()){
-        const choice = await askUnsaved();
-        if (choice === 'cancel') return;
-        if (choice === 'add') queueCurrent();
-      }
+      if (isDirty()){ const c=await askUnsaved(); if (c==='cancel') return; if (c==='add') queueCurrent(); }
       loader();
     }
 
-    $('#batch-clear').addEventListener('click', ()=>{
+    $('#batch-clear').addEventListener('click', async ()=>{
       if (!pending.size) return;
-      if (!confirm(`Discard ${pending.size} pending change(s)?`)) return;
+      if (!await Dialog.confirm(`Discard ${pending.size} pending change(s)?`,{confirmLabel:'Discard',danger:true})) return;
       pending.clear(); refreshBatch(); renderList();
     });
 
     $('#batch-save').addEventListener('click', async ()=>{
       if (!pending.size) return;
-      if (!confirm(`Overwrite ${pending.size} original file(s)?`)) return;
-      $('#batch-save').disabled = true;
-      let ok = 0; const errors = [];
-      for (const [path, item] of pending){
+      if (!await Dialog.confirm(`Overwrite ${pending.size} original file(s)?`,{confirmLabel:'Overwrite all',danger:true})) return;
+      $('#batch-save').disabled=true;
+      let ok=0; const errors=[];
+      for (const [path,item] of pending){
         try{
-          const r = await fetch(`${API_URL}/save_image`, {
-            method:'POST', headers:{'Content-Type':'application/json'},
-            body: JSON.stringify({ path, dataUrl: item.dataUrl })
-          });
-          const out = await r.json().catch(()=>({}));
-          if (!r.ok) throw new Error(out.message || `HTTP ${r.status}`);
+          const r=await fetch(`${API_URL}/save_image`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({path,dataUrl:item.dataUrl})});
+          const out=await r.json().catch(()=>({}));
+          if (!r.ok) throw new Error(out.message||`HTTP ${r.status}`);
+          if (item.asset){
+            await fetch(`${API_URL}/append_asset`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({asset:item.asset})});
+          }
+          if (item.originalUpdate){
+            await fetch(`${API_URL}/update_asset`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(item.originalUpdate)});
+          }
           ok++;
-          const thumb = document.querySelector(`.asset-item[data-path="${CSS.escape(path)}"] img`);
-          if (thumb) thumb.src = `${path}?t=${Date.now()}`;
+          const thumb=document.querySelector(`.asset-item[data-path="${CSS.escape(path)}"] img`);
+          if (thumb) thumb.src=`${path}?t=${Date.now()}`;
         }catch(e){ errors.push(`${path}: ${e.message}`); }
       }
       pending.clear(); refreshBatch(); renderList();
-      if (currentPath) loadFromUrl(currentPath, filename, currentPath);
-      alert(`Saved ${ok} file(s).` + (errors.length ? `\n\nErrors:\n${errors.join('\n')}` : ''));
+      if (currentPath) loadFromUrl(currentPath,filename,currentPath);
+      await Dialog.alert(`Saved ${ok} file(s).`+(errors.length?`\n\nErrors:\n${errors.join('\n')}`:''),(errors.length?{type:'warning'}:{type:'success'}));
     });
 
-    // ====== Mirror ============================================================
-    $('#flip-h').addEventListener('click', ()=>{ if(!src) return; flipH=!flipH; $('#flip-h').classList.toggle('primary', flipH); render(); });
-    $('#flip-v').addEventListener('click', ()=>{ if(!src) return; flipV=!flipV; $('#flip-v').classList.toggle('primary', flipV); render(); });
+    // ── Flip ──────────────────────────────────────────────────────────────────
+    $('#flip-h').addEventListener('click',()=>{ if(!src)return; flipH=!flipH; $('#flip-h').classList.toggle('primary',flipH); render(); });
+    $('#flip-v').addEventListener('click',()=>{ if(!src)return; flipV=!flipV; $('#flip-v').classList.toggle('primary',flipV); render(); });
 
-    // ====== Duplicate (save as a new file + JSON entry) =======================
-    $('#duplicate').addEventListener('click', async ()=>{
-      if (!src || !currentPath) return;
-      const slash = currentPath.lastIndexOf('/');
-      const dir = slash >= 0 ? currentPath.slice(0, slash+1) : '';
-      const fname = currentPath.slice(slash+1);
-      const ext = (fname.match(/\.[^.]+$/) || ['.png'])[0];
-      const stem = fname.replace(/\.[^.]+$/, '');
-      const suggestion = stem + ((flipH||flipV) ? '-mirror' : '-copy') + ext;
-      const input = prompt('New file name (saved in the same folder):', suggestion);
-      if (input === null) return;
-      const newName = input.trim();
-      if (!newName){ alert('Please enter a name.'); return; }
-      const newPath = dir + newName;
-      if (newPath === currentPath){ alert('Choose a different name.'); return; }
+    // ── Mirror helpers ────────────────────────────────────────────────────────
+    function mirrorPath(path){
+      const dot = path.lastIndexOf('.');
+      return dot>=0 ? path.slice(0,dot)+'-mirror'+path.slice(dot) : path+'-mirror';
+    }
 
-      const dataUrl = buildOutput().toDataURL('image/png');
-      try{
-        let r = await fetch(`${API_URL}/save_image`, {
-          method:'POST', headers:{'Content-Type':'application/json'},
-          body: JSON.stringify({ path: newPath, dataUrl })
-        });
-        let out = await r.json().catch(()=>({}));
-        if (!r.ok) throw new Error(out.message || `Save failed (${r.status})`);
-
-        // Build the new asset from the source's metadata.
-        const sa = collection.find(a => a.imagePath === currentPath) || {};
-        const newAsset = Object.assign({}, sa, {
-          imagePath: newPath,
-          dateAdded: new Date().toISOString(),
-          dateModified: ''
-        });
-        // Mirroring left/right flips the facing direction.
-        if (flipH && (sa.direction === 'left' || sa.direction === 'right')){
-          newAsset.direction = sa.direction === 'left' ? 'right' : 'left';
-        }
-
-        if (activeSrc === 'file'){
-          await fetch(`${API_URL}/append_asset`, {
-            method:'POST', headers:{'Content-Type':'application/json'},
-            body: JSON.stringify({ asset: newAsset })
-          });
-        } else {
-          // Loaded JSON: update the cached copy used by the Index.
+    function mirrorDataUrl(dataUrl){
+      return new Promise((resolve, reject)=>{
+        const img=new Image();
+        img.onload=()=>{
           try{
-            const cache = JSON.parse(localStorage.getItem(LS_CACHE) || 'null');
-            if (cache && cache.json && Array.isArray(cache.json.collection)){
+            const c=document.createElement('canvas');
+            c.width=img.width; c.height=img.height;
+            const g=c.getContext('2d');
+            g.translate(img.width,0); g.scale(-1,1);
+            g.drawImage(img,0,0);
+            resolve(c.toDataURL('image/png'));
+          }catch(e){ reject(e); }
+        };
+        img.onerror=()=>reject(new Error('Failed to load image for mirroring'));
+        img.src=dataUrl;
+      });
+    }
+
+    function makeMirrorAsset(sourcePath, mirroredPath){
+      const sa = collection.find(a=>a.imagePath===sourcePath) || {};
+      const asset = Object.assign({}, sa, {
+        imagePath: mirroredPath,
+        direction: 'right',
+        dateAdded: new Date().toISOString(),
+        dateModified: '',
+      });
+      delete asset.id;
+      return asset;
+    }
+
+    // "Mirror → batch": queues a H-flipped copy of the current output
+    $('#queue-mirror').addEventListener('click', async ()=>{
+      if (!src||!currentPath) return;
+      const mPath = mirrorPath(currentPath);
+      try{
+        const mDataUrl = await mirrorDataUrl(buildOutput().toDataURL('image/png'));
+        const asset = makeMirrorAsset(currentPath, mPath);
+        pending.set(mPath, {dataUrl:mDataUrl, name:mirrorPath(filename), asset, originalUpdate:{imagePath:currentPath, updates:{direction:'left'}}});
+        refreshBatch();
+      }catch(e){ await Dialog.alert(`Mirror failed: ${e.message}`,{type:'error'}); }
+    });
+
+    // "Mirror all": adds a mirrored copy of every item currently in the batch
+    $('#batch-mirror-all').addEventListener('click', async ()=>{
+      if (!pending.size) return;
+      const entries = [...pending.entries()];
+      const errors = [];
+      for (const [path, item] of entries){
+        const mPath = mirrorPath(path);
+        if (pending.has(mPath)) continue;
+        try{
+          const mDataUrl = await mirrorDataUrl(item.dataUrl);
+          const asset = makeMirrorAsset(path, mPath);
+          pending.set(mPath, {dataUrl:mDataUrl, name:mirrorPath(item.name), asset, originalUpdate:{imagePath:path, updates:{direction:'left'}}});
+        }catch(e){ errors.push(`${path}: ${e.message}`); }
+      }
+      refreshBatch();
+      if (errors.length) await Dialog.alert(`Mirror failed for:\n${errors.join('\n')}`,{type:'error'});
+    });
+
+    // ── Duplicate ─────────────────────────────────────────────────────────────
+    $('#duplicate').addEventListener('click', async ()=>{
+      if (!src||!currentPath) return;
+      const slash=currentPath.lastIndexOf('/');
+      const dir=slash>=0?currentPath.slice(0,slash+1):'';
+      const fname=currentPath.slice(slash+1);
+      const ext=(fname.match(/\.[^.]+$/)||['.png'])[0];
+      const stem=fname.replace(/\.[^.]+$/,'');
+      const suggestion=stem+((flipH||flipV)?'-mirror':'-copy')+ext;
+      const input=await Dialog.prompt('New file name (saved in the same folder):',{defaultValue:suggestion});
+      if (input===null) return;
+      const newName=input.trim();
+      if (!newName){ await Dialog.alert('Please enter a name.',{type:'warning'}); return; }
+      const newPath=dir+newName;
+      if (newPath===currentPath){ await Dialog.alert('Choose a different name.',{type:'warning'}); return; }
+      const dataUrl=buildOutput().toDataURL('image/png');
+      try{
+        const r=await fetch(`${API_URL}/save_image`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({path:newPath,dataUrl})});
+        const out=await r.json().catch(()=>({}));
+        if (!r.ok) throw new Error(out.message||`Save failed (${r.status})`);
+        const sa=collection.find(a=>a.imagePath===currentPath)||{};
+        const newAsset=Object.assign({},sa,{imagePath:newPath,dateAdded:new Date().toISOString(),dateModified:''});
+        if (flipH&&(sa.direction==='left'||sa.direction==='right'))
+          newAsset.direction=sa.direction==='left'?'right':'left';
+        if (activeSrc==='file'){
+          await fetch(`${API_URL}/append_asset`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({asset:newAsset})});
+        } else {
+          try{
+            const cache=JSON.parse(localStorage.getItem(LS_CACHE)||'null');
+            if (cache&&cache.json&&Array.isArray(cache.json.collection)){
               cache.json.collection.push(newAsset);
-              localStorage.setItem(LS_CACHE, JSON.stringify(cache));
+              localStorage.setItem(LS_CACHE,JSON.stringify(cache));
             }
           }catch{}
         }
-
-        collection.push(newAsset);
-        renderList();
-        alert(`Duplicated to ${newPath}`);
-      }catch(err){ alert(`Duplicate failed: ${err.message}`); }
+        collection.push(newAsset); renderList();
+        await Dialog.alert(`Duplicated to ${newPath}`,{type:'success'});
+      }catch(err){ await Dialog.alert(`Duplicate failed: ${err.message}`,{type:'error'}); }
     });
 
-    // ====== Drag ==============================================================
-    let dragging=false, startX=0, startY=0, startDx=0, startDy=0;
-    view.addEventListener('pointerdown', (e)=>{
-      if (!src) return;
+    // ── Drag (align mode only) ────────────────────────────────────────────────
+    let dragging=false,startX=0,startY=0,startDx=0,startDy=0;
+    view.addEventListener('pointerdown', e=>{
+      if (!src||mode!=='align') return;
       dragging=true; view.classList.add('grabbing'); view.setPointerCapture(e.pointerId);
       startX=e.clientX; startY=e.clientY; startDx=dx; startDy=dy;
     });
-    view.addEventListener('pointermove', (e)=>{
+    view.addEventListener('pointermove', e=>{
       if (!dragging) return;
-      dx = startDx + (e.clientX - startX)/scale;
-      dy = startDy + (e.clientY - startY)/scale;
+      dx=startDx+(e.clientX-startX)/scale;
+      dy=startDy+(e.clientY-startY)/scale;
       clampPos(); render();
     });
-    const endDrag = (e)=>{ if(!dragging) return; dragging=false; view.classList.remove('grabbing'); try{ view.releasePointerCapture(e.pointerId); }catch{} };
-    view.addEventListener('pointerup', endDrag);
-    view.addEventListener('pointercancel', endDrag);
+    const endDrag=e=>{ if(!dragging)return; dragging=false; view.classList.remove('grabbing'); try{view.releasePointerCapture(e.pointerId);}catch{} };
+    view.addEventListener('pointerup',endDrag);
+    view.addEventListener('pointercancel',endDrag);
 
-    // ====== File pickers / DnD ================================================
-    drop.addEventListener('click', ()=> fileInput.click());
-    drop.addEventListener('keydown', (e)=>{ if (e.key==='Enter'||e.key===' '){ e.preventDefault(); fileInput.click(); } });
-    fileInput.addEventListener('change', ()=>{ const f = fileInput.files[0]; fileInput.value=''; if (f) guardedLoad(()=> loadFile(f)); });
-    ['dragenter','dragover'].forEach(ev=> drop.addEventListener(ev, e=>{ e.preventDefault(); drop.classList.add('dragover'); }));
-    ['dragleave','drop'].forEach(ev=> drop.addEventListener(ev, e=>{ e.preventDefault(); drop.classList.remove('dragover'); }));
-    drop.addEventListener('drop', e=>{ const f = e.dataTransfer.files && e.dataTransfer.files[0]; if (f) guardedLoad(()=> loadFile(f)); });
+    // ── File pickers / DnD ────────────────────────────────────────────────────
+    drop.addEventListener('click', ()=>fileInput.click());
+    drop.addEventListener('keydown', e=>{ if(e.key==='Enter'||e.key===' '){e.preventDefault();fileInput.click();} });
+    fileInput.addEventListener('change', ()=>{ const f=fileInput.files[0]; fileInput.value=''; if(f) guardedLoad(()=>loadFile(f)); });
+    ['dragenter','dragover'].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.add('dragover');}));
+    ['dragleave','drop'].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.remove('dragover');}));
+    drop.addEventListener('drop',e=>{ const f=e.dataTransfer.files&&e.dataTransfer.files[0]; if(f) guardedLoad(()=>loadFile(f)); });
 
-    // ====== Init ==============================================================
+    // ── Init ──────────────────────────────────────────────────────────────────
     (function init(){
-      // Show the "Loaded" segment if a JSON was loaded on the index page.
-      const cache = readCache();
-      const seg = document.querySelector('#src-switch .seg[data-src="upload"]');
-      if (cache){ seg.hidden = false; seg.textContent = cache.name || 'Loaded'; }
-      const startSrc = (localStorage.getItem(LS_SRC) === 'upload' && cache) ? 'upload' : 'file';
-      document.querySelectorAll('#src-switch .seg').forEach(s=>s.classList.toggle('active', s.dataset.src===startSrc));
+      const cache=readCache();
+      const seg=document.querySelector('#src-switch .seg[data-src="upload"]');
+      if (cache){ seg.hidden=false; seg.textContent=cache.name||'Loaded'; }
+      const startSrc=(localStorage.getItem(LS_SRC)==='upload'&&cache)?'upload':'file';
+      document.querySelectorAll('#src-switch .seg').forEach(s=>s.classList.toggle('active',s.dataset.src===startSrc));
       loadCollection(startSrc);
     })();
   </script>

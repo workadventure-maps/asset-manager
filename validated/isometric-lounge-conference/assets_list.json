@@ -1,0 +1,376 @@
+{
+    "creator": "WorkAdventure",
+    "creatorLink": "https://workadventu.re",
+    "collectionName": "Lounge conference",
+    "tags": [
+        "(all) Lounge conference"
+    ],
+    "metatags": [
+        "flat-design",
+        "isometric",
+        "conference"
+    ],
+    "collection": [
+        {
+            "name": "Rug",
+            "tags": [
+                "Decoration"
+            ],
+            "imagePath": "Decoration__Rug__Down__EFD79B-c170d241.png",
+            "direction": "Down",
+            "color": "#EFD79B",
+            "depthOffset": -96
+        },
+        {
+            "name": "Presentation board",
+            "tags": [
+                "Office"
+            ],
+            "imagePath": "Office__Presentation_board__Right__F3F2F3-bdd49436.png",
+            "direction": "Right",
+            "color": "#F3F2F3",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Presentation board",
+            "tags": [
+                "Office"
+            ],
+            "imagePath": "Office__Presentation_board__Left__F3F2F3-a5a37b00.png",
+            "direction": "Left",
+            "color": "#F3F2F3",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    1,
+                    0
+                ]
+            ]
+        },
+        {
+            "name": "Rope barricade",
+            "tags": [
+                "Other"
+            ],
+            "imagePath": "Other__Rope_barricade__Right__C64F42-522ab8c3.png",
+            "direction": "Right",
+            "color": "#C64F42",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0
+                ],
+                [
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Rope barricade",
+            "tags": [
+                "Other"
+            ],
+            "imagePath": "Other__Rope_barricade__Left__C64F42-a5f563c6.png",
+            "direction": "Left",
+            "color": "#C64F42",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0
+                ],
+                [
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Water cooler",
+            "tags": [
+                "Office"
+            ],
+            "imagePath": "Office__Water_cooler__Right__D0D2DA-64ec67c9.png",
+            "direction": "Right",
+            "color": "#D0D2DA",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0
+                ],
+                [
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Water cooler",
+            "tags": [
+                "Office"
+            ],
+            "imagePath": "Office__Water_cooler__Left__D0D2DA-6e2cbd4a.png",
+            "direction": "Left",
+            "color": "#D0D2DA",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0
+                ],
+                [
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "PA Speaker",
+            "tags": [
+                "Electronics"
+            ],
+            "imagePath": "Electronics__PA_Speaker__Right__746153-2df77ecd.png",
+            "direction": "Right",
+            "color": "#746153",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0
+                ],
+                [
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "PA Speaker",
+            "tags": [
+                "Electronics"
+            ],
+            "imagePath": "Electronics__PA_Speaker__Left__746153-083d5755.png",
+            "direction": "Left",
+            "color": "#746153",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0
+                ],
+                [
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Stage microphone",
+            "tags": [
+                "Electronics"
+            ],
+            "imagePath": "Electronics__Stage_microphone__Left__7C838A-dd6dce98.png",
+            "direction": "Left",
+            "color": "#7C838A",
+            "depthOffset": -16
+        },
+        {
+            "name": "Stage microphone",
+            "tags": [
+                "Electronics"
+            ],
+            "imagePath": "Electronics__Stage_microphone__Right__7C838A-1536354f.png",
+            "direction": "Right",
+            "color": "#7C838A",
+            "depthOffset": -16
+        },
+        {
+            "name": "Plant Ladder Shelf",
+            "tags": [
+                "Decoration"
+            ],
+            "imagePath": "Decoration__Plant_Ladder_Shelf__Left__936759-e8dd2df8.png",
+            "direction": "Left",
+            "color": "#936759",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Potted Plant on Stool",
+            "tags": [
+                "Decoration"
+            ],
+            "imagePath": "Decoration__Potted_Plant_on_Stool__Down__45A8B5-a4cec68f.png",
+            "direction": "Down",
+            "color": "#45A8B5",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0
+                ],
+                [
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Plant Ladder Shelf",
+            "tags": [
+                "Decoration"
+            ],
+            "imagePath": "Decoration__Plant_Ladder_Shelf__Right__936759-a9f5794a.png",
+            "direction": "Right",
+            "color": "#936759",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    1,
+                    0
+                ]
+            ]
+        },
+        {
+            "name": "Armchair with Pillow",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Armchair_with_Pillow__Left__A9AED6-62b79307.png",
+            "direction": "Left",
+            "color": "#A9AED6",
+            "depthOffset": -42
+        },
+        {
+            "name": "Armchair with Pillow",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Armchair_with_Pillow__Right__A9AED6-5af97270.png",
+            "direction": "Right",
+            "color": "#A9AED6",
+            "depthOffset": -42
+        },
+        {
+            "name": "Armchair",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Armchair__Right__A9AED6-ac06ff6f.png",
+            "direction": "Right",
+            "color": "#A9AED6",
+            "depthOffset": -42
+        },
+        {
+            "name": "Armchair",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Armchair__Down__A9AED6-e3cc240e.png",
+            "direction": "Down",
+            "color": "#A9AED6",
+            "depthOffset": -42
+        },
+        {
+            "name": "Armchair",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Armchair__Left__A9AED6-da63417d.png",
+            "direction": "Left",
+            "color": "#A9AED6",
+            "depthOffset": -42
+        },
+        {
+            "name": "Armchair",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Armchair__Up__A9AED6-9215923b.png",
+            "direction": "Up",
+            "color": "#A9AED6",
+            "depthOffset": -42
+        },
+        {
+            "name": "Coffee table",
+            "tags": [
+                "Table"
+            ],
+            "imagePath": "Table__Coffee_table__Down__D9A456-e4f703e1.png",
+            "direction": "Down",
+            "color": "#D9A456",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Stool",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Stool__Down__FFD698-50ef318b.png",
+            "direction": "Down",
+            "color": "#FFD698",
+            "depthOffset": -24
+        },
+        {
+            "name": "Tub chair",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Tub_chair__Left__DBB781-2207d889.png",
+            "direction": "Left",
+            "color": "#DBB781",
+            "depthOffset": -32
+        },
+        {
+            "name": "Tub chair",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Tub_chair__Right__DBB781-8f852803.png",
+            "direction": "Right",
+            "color": "#DBB781",
+            "depthOffset": -32
+        },
+        {
+            "name": "Lounge Tub chair",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Lounge_Tub_chair__Right__DFB99E-760f6682.png",
+            "direction": "Right",
+            "color": "#DFB99E",
+            "depthOffset": -42
+        },
+        {
+            "name": "Lounge Tub chair",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Lounge_Tub_chair__Left__DFB99E-1a0066c6.png",
+            "direction": "Left",
+            "color": "#DFB99E",
+            "depthOffset": -42
+        }
+    ]
+}

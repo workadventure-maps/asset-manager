@@ -1,0 +1,2098 @@
+{
+  "collectionName": "3D Render",
+  "tags": [    
+    "3D"
+  ],
+  "collection": [
+    {
+      "version": 0.1,
+      "name": "Cabinet",
+      "tags": [],
+      "imagePath": "Qofc_obj_cabinet_2_tiny.png",
+      "direction": "Up",
+      "color": "",
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": "",
+      "collisionGrid": [
+        [
+          1,
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "version": 0.1,
+      "name": "Armchair Black",
+      "tags": [],
+      "imagePath": "Qofc_obj_armchairBlack_1_tiny.png",
+      "direction": "Left",
+      "color": "#000000",
+      "collisionGrid": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Armchair Black",
+      "tags": [],
+      "imagePath": "Qofc_obj_armchairBlack_2_tiny.png",
+      "direction": "Down",
+      "color": "#000000",
+      "collisionGrid": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Armchair Black",
+      "tags": [],
+      "imagePath": "Qofc_obj_armchairBlack_3_tiny.png",
+      "direction": "Right",
+      "color": "#000000",
+      "collisionGrid": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Armchair Black",
+      "tags": [],
+      "imagePath": "Qofc_obj_armchairBlack_4_tiny.png",
+      "direction": "Up",
+      "color": "#000000",
+      "collisionGrid": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Armchair Gray",
+      "tags": [],
+      "imagePath": "Qofc_obj_armchairGray_1_tiny.png",
+      "direction": "Left",
+      "color": "#808080",
+      "collisionGrid": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Armchair Gray",
+      "tags": [],
+      "imagePath": "Qofc_obj_armchairGray_2_tiny.png",
+      "direction": "Down",
+      "color": "#808080",
+      "collisionGrid": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Armchair Gray",
+      "tags": [],
+      "imagePath": "Qofc_obj_armchairGray_3_tiny.png",
+      "direction": "Right",
+      "color": "#808080",
+      "collisionGrid": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Armchair Gray",
+      "tags": [],
+      "imagePath": "Qofc_obj_armchairGray_4_tiny.png",
+      "direction": "Up",
+      "color": "#808080",
+      "collisionGrid": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Bin",
+      "tags": [],
+      "imagePath": "Qofc_obj_bin_1_tiny.png",
+      "direction": "Down",
+      "color": "#808080",
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": "",
+      "collisionGrid": [
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "version": 0.1,
+      "name": "Bin",
+      "tags": [],
+      "imagePath": "Qofc_obj_bin_2_tiny.png",
+      "direction": "Right",
+      "color": "#808080",
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": "",
+      "collisionGrid": [
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "version": 0.1,
+      "name": "Bin",
+      "tags": [],
+      "imagePath": "Qofc_obj_bin_3_tiny.png",
+      "direction": "Left",
+      "color": "#808080",
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": "",
+      "collisionGrid": [
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "version": 0.1,
+      "name": "Bookshelf",
+      "tags": [],
+      "imagePath": "Qofc_obj_bookshelf_1_tiny.png",
+      "direction": "Right",
+      "color": "",
+      "collisionGrid": [
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          0
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Bookshelf",
+      "tags": [],
+      "imagePath": "Qofc_obj_bookshelf_2_tiny.png",
+      "direction": "Up",
+      "color": "",
+      "collisionGrid": [
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Bookshelf",
+      "tags": [],
+      "imagePath": "Qofc_obj_bookshelf_3_tiny.png",
+      "direction": "Left",
+      "color": "",
+      "collisionGrid": [
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          0
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Bookshelf",
+      "tags": [],
+      "imagePath": "Qofc_obj_bookshelf_4_tiny.png",
+      "direction": "Down",
+      "color": "",
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": "",
+      "collisionGrid": [
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "version": 0.1,
+      "name": "Cabinet",
+      "tags": [],
+      "imagePath": "Qofc_obj_cabinet_1_tiny.png",
+      "direction": "Right",
+      "color": "",
+      "collisionGrid": [
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Cabinet",
+      "tags": [],
+      "imagePath": "Qofc_obj_cabinet_3_tiny.png",
+      "direction": "Left",
+      "color": "",
+      "collisionGrid": [
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Cabinet",
+      "tags": [],
+      "imagePath": "Qofc_obj_cabinet_4_tiny.png",
+      "direction": "Down",
+      "color": "",
+      "collisionGrid": [
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Cabinet File",
+      "tags": [],
+      "imagePath": "Qofc_obj_cabinetFile_1_tiny.png",
+      "direction": "Right",
+      "color": "",
+      "collisionGrid": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "depthOffset": -32,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Cabinet File",
+      "tags": [],
+      "imagePath": "Qofc_obj_cabinetFile_2_tiny.png",
+      "direction": "Down",
+      "color": "",
+      "collisionGrid": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "depthOffset": -32,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Cabinet File",
+      "tags": [],
+      "imagePath": "Qofc_obj_cabinetFile_3_tiny.png",
+      "direction": "Left",
+      "color": "",
+      "collisionGrid": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "depthOffset": -32,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Cabinet File",
+      "tags": [],
+      "imagePath": "Qofc_obj_cabinetFile_4_tiny.png",
+      "direction": "Up",
+      "color": "",
+      "collisionGrid": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "depthOffset": -32,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Chair Office Black",
+      "tags": [],
+      "imagePath": "Qofc_obj_chairOfficeBlack_1_tiny.png",
+      "direction": "Right",
+      "color": "#000000",
+      "collisionGrid": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Chair Office Black",
+      "tags": [],
+      "imagePath": "Qofc_obj_chairOfficeBlack_2_tiny.png",
+      "direction": "Up",
+      "color": "#000000",
+      "collisionGrid": [
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Chair Office Black",
+      "tags": [],
+      "imagePath": "Qofc_obj_chairOfficeBlack_3_tiny.png",
+      "direction": "Left",
+      "color": "#000000",
+      "collisionGrid": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Chair Office Black",
+      "tags": [],
+      "imagePath": "Qofc_obj_chairOfficeBlack_4_tiny.png",
+      "direction": "Down",
+      "color": "#000000",
+      "collisionGrid": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Chair Office Gray",
+      "tags": [],
+      "imagePath": "Qofc_obj_chairOfficeGray_1_tiny.png",
+      "direction": "Right",
+      "color": "#F5F5DC",
+      "collisionGrid": [
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Chair Office Gray",
+      "tags": [],
+      "imagePath": "Qofc_obj_chairOfficeGray_2_tiny.png",
+      "direction": "Up",
+      "color": "#F5F5DC",
+      "collisionGrid": [
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Chair Office Gray",
+      "tags": [],
+      "imagePath": "Qofc_obj_chairOfficeGray_3_tiny.png",
+      "direction": "Left",
+      "color": "#F5F5DC",
+      "collisionGrid": [
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Chair Office Gray",
+      "tags": [],
+      "imagePath": "Qofc_obj_chairOfficeGray_4_tiny.png",
+      "direction": "Down",
+      "color": "#F5F5DC",
+      "collisionGrid": [
+        [
+          0
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Closet",
+      "tags": [],
+      "imagePath": "Qofc_obj_closet_1_tiny.png",
+      "direction": "Right",
+      "color": "",
+      "collisionGrid": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Closet",
+      "tags": [],
+      "imagePath": "Qofc_obj_closet_2_tiny.png",
+      "direction": "Down",
+      "color": "",
+      "collisionGrid": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          0
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Closet",
+      "tags": [],
+      "imagePath": "Qofc_obj_closet_3_tiny.png",
+      "direction": "Left",
+      "color": "",
+      "collisionGrid": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Closet",
+      "tags": [],
+      "imagePath": "Qofc_obj_closet_4_tiny.png",
+      "direction": "Up",
+      "color": "",
+      "collisionGrid": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          0
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Flower A",
+      "tags": [],
+      "imagePath": "Qofc_obj_flower_A_1_tiny.png",
+      "direction": "Right",
+      "color": "",
+      "collisionGrid": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          0
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Flower A",
+      "tags": [],
+      "imagePath": "Qofc_obj_flower_A_2_tiny.png",
+      "direction": "Up",
+      "color": "",
+      "collisionGrid": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          0
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Flower A",
+      "tags": [],
+      "imagePath": "Qofc_obj_flower_A_3_tiny.png",
+      "direction": "Left",
+      "color": "",
+      "collisionGrid": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          0
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Flower A",
+      "tags": [],
+      "imagePath": "Qofc_obj_flower_A_4_tiny.png",
+      "direction": "Down",
+      "color": "",
+      "collisionGrid": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          0
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Flower B",
+      "tags": [],
+      "imagePath": "Qofc_obj_flower_B_1_tiny.png",
+      "direction": "Right",
+      "color": "",
+      "collisionGrid": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Flower B",
+      "tags": [],
+      "imagePath": "Qofc_obj_flower_B_2_tiny.png",
+      "direction": "Up",
+      "color": "",
+      "collisionGrid": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "depthOffset": -64,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Flower C",
+      "tags": [],
+      "imagePath": "Qofc_obj_flower_C_1_tiny.png",
+      "direction": "Right",
+      "color": "",
+      "collisionGrid": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "depthOffset": -32,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Flower C",
+      "tags": [],
+      "imagePath": "Qofc_obj_flower_C_2_tiny.png",
+      "direction": "Up",
+      "color": "",
+      "collisionGrid": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "depthOffset": -32,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Flower C",
+      "tags": [],
+      "imagePath": "Qofc_obj_flower_C_3_tiny.png",
+      "direction": "Left",
+      "color": "",
+      "collisionGrid": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "depthOffset": -32,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Flower C",
+      "tags": [],
+      "imagePath": "Qofc_obj_flower_C_4_tiny.png",
+      "direction": "Down",
+      "color": "",
+      "collisionGrid": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "depthOffset": -32,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Flower D",
+      "tags": [],
+      "imagePath": "Qofc_obj_flower_D_1_tiny.png",
+      "direction": "Right",
+      "color": "",
+      "collisionGrid": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "depthOffset": -32,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Flower D",
+      "tags": [],
+      "imagePath": "Qofc_obj_flower_D_2_tiny.png",
+      "direction": "Up",
+      "color": "",
+      "collisionGrid": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "depthOffset": -32,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Flower D",
+      "tags": [],
+      "imagePath": "Qofc_obj_flower_D_3_tiny.png",
+      "direction": "Left",
+      "color": "",
+      "collisionGrid": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "depthOffset": -32,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Flower E",
+      "tags": [],
+      "imagePath": "Qofc_obj_flower_E_1_tiny.png",
+      "direction": "Right",
+      "color": "",
+      "collisionGrid": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Flower E",
+      "tags": [],
+      "imagePath": "Qofc_obj_flower_E_2_tiny.png",
+      "direction": "Up",
+      "color": "",
+      "collisionGrid": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Flower E",
+      "tags": [],
+      "imagePath": "Qofc_obj_flower_E_3_tiny.png",
+      "direction": "Left",
+      "color": "",
+      "collisionGrid": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Printer",
+      "tags": [],
+      "imagePath": "Qofc_obj_printer_1_tiny.png",
+      "direction": "Right",
+      "color": "",
+      "collisionGrid": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "depthOffset": -64,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Printer",
+      "tags": [],
+      "imagePath": "Qofc_obj_printer_2_tiny.png",
+      "direction": "Up",
+      "color": "",
+      "collisionGrid": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "depthOffset": -31,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Printer",
+      "tags": [],
+      "imagePath": "Qofc_obj_printer_3_tiny.png",
+      "direction": "Left",
+      "color": "",
+      "collisionGrid": [
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Printer",
+      "tags": [],
+      "imagePath": "Qofc_obj_printer_4_tiny.png",
+      "direction": "Down",
+      "color": "",
+      "collisionGrid": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "depthOffset": -64,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Sofa Gray",
+      "tags": [],
+      "imagePath": "Qofc_obj_sofaGray_1_tiny.png",
+      "direction": "Right",
+      "color": "",
+      "collisionGrid": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Sofa Gray",
+      "tags": [],
+      "imagePath": "Qofc_obj_sofaGray_2_tiny.png",
+      "direction": "Up",
+      "color": "",
+      "collisionGrid": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Sofa Gray",
+      "tags": [],
+      "imagePath": "Qofc_obj_sofaGray_3_tiny.png",
+      "direction": "Left",
+      "color": "",
+      "collisionGrid": [
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ],
+        [
+          0
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Sofa Gray",
+      "tags": [],
+      "imagePath": "Qofc_obj_sofaGray_4_tiny.png",
+      "direction": "Down",
+      "color": "",
+      "collisionGrid": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Table Conference A",
+      "tags": [],
+      "imagePath": "Qofc_obj_tableConference_A_1_tiny.png",
+      "direction": "Right",
+      "color": "",
+      "collisionGrid": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Table Conference A",
+      "tags": [],
+      "imagePath": "Qofc_obj_tableConference_A_2_tiny.png",
+      "direction": "Up",
+      "color": "",
+      "collisionGrid": [
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Table Conference B",
+      "tags": [],
+      "imagePath": "Qofc_obj_tableConference_B_1_tiny.png",
+      "direction": "Right",
+      "color": "",
+      "collisionGrid": [
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Table Conference B",
+      "tags": [],
+      "imagePath": "Qofc_obj_tableConference_B_2_tiny.png",
+      "direction": "Up",
+      "color": "",
+      "collisionGrid": [
+        [
+          1,
+          1
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Table Conference C",
+      "tags": [],
+      "imagePath": "Qofc_obj_tableConference_C_1_tiny.png",
+      "direction": "Right",
+      "color": "",
+      "collisionGrid": [
+        [
+          1
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Table Conference C",
+      "tags": [],
+      "imagePath": "Qofc_obj_tableConference_C_2_tiny.png",
+      "direction": "Up",
+      "color": "",
+      "collisionGrid": [
+        [
+          1
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Table Office A",
+      "tags": [],
+      "imagePath": "Qofc_obj_tableOffice_A_1_tiny.png",
+      "direction": "Right",
+      "color": "",
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": "",
+      "collisionGrid": [
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "version": 0.1,
+      "name": "Table Office A",
+      "tags": [],
+      "imagePath": "Qofc_obj_tableOffice_A_2_tiny.png",
+      "direction": "Up",
+      "color": "",
+      "collisionGrid": [
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          0
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Table Office B",
+      "tags": [],
+      "imagePath": "Qofc_obj_tableOffice_B_1_tiny.png",
+      "direction": "Right",
+      "color": "",
+      "collisionGrid": [
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Table Office B",
+      "tags": [],
+      "imagePath": "Qofc_obj_tableOffice_B_2_tiny.png",
+      "direction": "Up",
+      "color": "",
+      "collisionGrid": [
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Table Office C",
+      "tags": [],
+      "imagePath": "Qofc_obj_tableOffice_C_1_tiny.png",
+      "direction": "Right",
+      "color": "",
+      "collisionGrid": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Table Office C",
+      "tags": [],
+      "imagePath": "Qofc_obj_tableOffice_C_2_tiny.png",
+      "direction": "Up",
+      "color": "",
+      "collisionGrid": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Table Office D",
+      "tags": [],
+      "imagePath": "Qofc_obj_tableOffice_D_1_tiny.png",
+      "direction": "Right",
+      "color": "",
+      "collisionGrid": [
+        [
+          0,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Table Office D",
+      "tags": [],
+      "imagePath": "Qofc_obj_tableOffice_D_2_tiny.png",
+      "direction": "Up",
+      "color": "",
+      "collisionGrid": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Table Office D",
+      "tags": [],
+      "imagePath": "Qofc_obj_tableOffice_D_3_tiny.png",
+      "direction": "Left",
+      "color": "",
+      "collisionGrid": [
+        [
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Table Office D",
+      "tags": [],
+      "imagePath": "Qofc_obj_tableOffice_D_4_tiny.png",
+      "direction": "Down",
+      "color": "",
+      "collisionGrid": [
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Whiteboard A",
+      "tags": [],
+      "imagePath": "Qofc_obj_whiteboard_A_1_tiny.png",
+      "direction": "Right",
+      "color": "",
+      "collisionGrid": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          0
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Whiteboard A",
+      "tags": [],
+      "imagePath": "Qofc_obj_whiteboard_A_2_tiny.png",
+      "direction": "Up",
+      "color": "",
+      "collisionGrid": [
+        [
+          1
+        ],
+        [
+          0
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Whiteboard A",
+      "tags": [],
+      "imagePath": "Qofc_obj_whiteboard_A_3_tiny.png",
+      "direction": "Left",
+      "color": "",
+      "collisionGrid": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          0
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Whiteboard A",
+      "tags": [],
+      "imagePath": "Qofc_obj_whiteboard_A_4_tiny.png",
+      "direction": "Down",
+      "color": "",
+      "collisionGrid": [
+        [
+          1
+        ],
+        [
+          0
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Whiteboard B",
+      "tags": [],
+      "imagePath": "Qofc_obj_whiteboard_B_1_tiny.png",
+      "direction": "Right",
+      "color": "",
+      "collisionGrid": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Whiteboard B",
+      "tags": [],
+      "imagePath": "Qofc_obj_whiteboard_B_2_tiny.png",
+      "direction": "Up",
+      "color": "",
+      "collisionGrid": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "depthOffset": -97,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Whiteboard B",
+      "tags": [],
+      "imagePath": "Qofc_obj_whiteboard_B_3_tiny.png",
+      "direction": "Left",
+      "color": "",
+      "collisionGrid": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Whiteboard C",
+      "tags": [],
+      "imagePath": "Qofc_obj_whiteboard_C_1_tiny.png",
+      "direction": "Right",
+      "color": "",
+      "collisionGrid": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          0
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Whiteboard C",
+      "tags": [],
+      "imagePath": "Qofc_obj_whiteboard_C_2_tiny.png",
+      "direction": "Up",
+      "color": "",
+      "collisionGrid": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          0
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    },
+    {
+      "version": 0.1,
+      "name": "Whiteboard C",
+      "tags": [],
+      "imagePath": "Qofc_obj_whiteboard_C_3_tiny.png",
+      "direction": "Left",
+      "color": "",
+      "collisionGrid": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "depthOffset": 0,
+      "secondaryColor": "",
+      "category": "",
+      "newFilename": ""
+    }
+  ]
+}

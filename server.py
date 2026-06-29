@@ -8,7 +8,9 @@ import json
 import os
 import shutil
 import mimetypes
-from urllib.parse import urlparse
+import uuid
+import datetime
+from urllib.parse import urlparse, parse_qs
 from pathlib import Path
 
 # -----------------------------------------------------------------------------
@@ -100,48 +102,84 @@ class Handler(http.server.SimpleHTTPRequestHandler):
 
     def do_GET(self):
         # Routes "jolies" -> fichiers HTML statiques
-        route = self.path.split('?')[0]
+        parsed_url = urlparse(self.path)
+        route = parsed_url.path
+        qs = parse_qs(parsed_url.query)
         if route == '/list_collections':
             return self.list_collections()
-        if route == '/collisions':
+        if route == '/list_versions':
+            dir_name = (qs.get("dir") or [""])[0].strip().strip("/\\")
+            if not dir_name or ".." in dir_name.split("/"):
+                return send_json(self, 400, {"status": "error", "message": "Invalid dir"})
+            versions_path = Path(VALIDATED_DIR) / dir_name / "_versions"
+            if not versions_path.is_dir():
+                return send_json(self, 200, {"versions": []})
+            versions = sorted(
+                [d.name for d in versions_path.iterdir() if d.is_dir()],
+                reverse=True
+            )
+            return send_json(self, 200, {"versions": versions})
+        if route in ('/', '/index'):
+            self.path = '/index.html'
+        elif route == '/collisions':
             self.path = '/collisions.html'
         elif route in ('/add-assets', '/add_assets'):
             self.path = '/add_assets.html'
         elif route == '/align':
             self.path = '/align.html'
+        elif route == '/compose':
+            self.path = '/compose.html'
         elif route in ('/collection-list', '/collection_list', '/collections'):
             self.path = '/collection_list.html'
+
         # Comportement par défaut de SimpleHTTPRequestHandler (fichiers statiques)
         return super().do_GET()
 
     def list_collections(self):
-        """Liste les collections présentes dans validated/ (nom, tags, nb d'images)."""
+        """Scanne récursivement validated/ : tous les fichiers .json contenant une clé
+        'collection' sont retournés. collection_thumbnail.jpg/png dans le même dossier
+        est utilisé comme miniature en priorité sur le premier asset."""
         base = Path(VALIDATED_DIR)
         items = []
-        if base.is_dir():
-            for d in sorted(base.iterdir()):
-                if not d.is_dir():
-                    continue
-                jf = d / "assets_list.json"
-                if not jf.is_file():
-                    continue
-                try:
-                    data = json.loads(jf.read_text(encoding="utf-8"))
-                except Exception:
-                    continue
-                coll = data.get("collection") if isinstance(data.get("collection"), list) else []
-                thumb = None
-                if coll and isinstance(coll[0], dict) and coll[0].get("imagePath"):
-                    name = str(coll[0]["imagePath"]).split("/")[-1]
-                    if name:
-                        thumb = f"{VALIDATED_DIR}/{d.name}/{name}"
-                items.append({
-                    "dir": d.name,
-                    "collectionName": data.get("collectionName") or d.name,
-                    "tags": data.get("tags") or [],
-                    "count": len(coll),
-                    "thumb": thumb,
-                })
+        if not base.is_dir():
+            return send_json(self, 200, {"collections": items})
+
+        for jf in sorted(base.rglob("*.json")):
+            if "_versions" in jf.parts:
+                continue
+            d = jf.parent
+            try:
+                data = json.loads(jf.read_text(encoding="utf-8"))
+            except Exception:
+                continue
+            # On ignore les JSON qui ne ressemblent pas à une collection
+            if not isinstance(data.get("collection"), list):
+                continue
+
+            coll = data["collection"]
+            rel_dir = d.relative_to(base).as_posix()
+
+            # Thumbnail : collection_thumbnail.jpg/png en priorité, sinon premier asset
+            thumb = None
+            for ext in ("jpg", "jpeg", "png", "webp"):
+                candidate = d / f"collection_thumbnail.{ext}"
+                if candidate.is_file():
+                    thumb = f"{VALIDATED_DIR}/{rel_dir}/collection_thumbnail.{ext}"
+                    break
+            if thumb is None and coll and isinstance(coll[0], dict) and coll[0].get("imagePath"):
+                img_name = str(coll[0]["imagePath"]).split("/")[-1]
+                if img_name:
+                    thumb = f"{VALIDATED_DIR}/{rel_dir}/{img_name}"
+
+            items.append({
+                "dir": rel_dir,
+                "jsonFile": jf.name,
+                "collectionName": data.get("collectionName") or rel_dir,
+                "tags": data.get("tags") or [],
+                "count": len(coll),
+                "thumb": thumb,
+            })
+
         return send_json(self, 200, {"collections": items})
 
     def handle_upload(self):
@@ -193,6 +231,36 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             return self.handle_upload()
 
         # ---------------------------------------------------------------------
+        if route == "/restore_version":
+            body = read_json_body(self) or {}
+            dir_name = (body.get("dir") or "").strip().strip("/\\")
+            version   = (body.get("version") or "").strip()
+            if not dir_name or not version or ".." in dir_name or ".." in version:
+                return send_json(self, 400, {"status": "error", "message": "Invalid dir or version"})
+            dest_root   = Path(VALIDATED_DIR) / dir_name
+            version_dir = dest_root / "_versions" / version
+            if not version_dir.is_dir():
+                return send_json(self, 404, {"status": "error", "message": "Version not found"})
+            try:
+                # Backup current state before restoring
+                ts = datetime.datetime.now().strftime("%Y-%m-%dT%H-%M-%S")
+                backup_dir = dest_root / "_versions" / ts
+                backup_dir.mkdir(parents=True, exist_ok=True)
+                for item in dest_root.iterdir():
+                    if item.name == "_versions": continue
+                    if item.is_file(): shutil.copy2(item, backup_dir / item.name)
+                # Clear current
+                for item in dest_root.iterdir():
+                    if item.name == "_versions": continue
+                    if item.is_file(): item.unlink()
+                # Restore version
+                for item in version_dir.iterdir():
+                    if item.is_file(): shutil.copy2(item, dest_root / item.name)
+                return send_json(self, 200, {"status": "success"})
+            except Exception as e:
+                return send_json(self, 500, {"status": "error", "message": str(e)})
+
+        # ---------------------------------------------------------------------
         # NEW: Process all PNGs in dist32/ -> write normalized versions into dist32/
         #      Trim transparent edges, then pad to multiples of 32,
         #      centered on X and bottom-aligned on Y.
@@ -217,10 +285,13 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         # ---------------------------------------------------------------------
         if route == "/use_as_default":
             body = read_json_body(self) or {}
-            sub = (body.get("dir") or "").strip().strip("/\\")
-            if not sub or "/" in sub or "\\" in sub or sub in (".", ".."):
-                return send_json(self, 400, {"status": "error", "message": "Invalid directory"})
-            src_json = Path(VALIDATED_DIR) / sub / "assets_list.json"
+            json_file = (body.get("jsonFile") or "assets_list.json").strip().lstrip("/\\")
+            sub = (body.get("dir") or "").strip().strip("/\\").replace("\\", "/")
+            # Prevent path traversal: no ".." segment allowed anywhere
+            all_parts = (sub + "/" + json_file).split("/")
+            if not sub or ".." in all_parts or not json_file.endswith(".json"):
+                return send_json(self, 400, {"status": "error", "message": "Invalid directory or file"})
+            src_json = Path(VALIDATED_DIR) / sub / json_file
             if not src_json.is_file():
                 return send_json(self, 404, {"status": "error", "message": "Collection not found"})
             try:
@@ -250,12 +321,36 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         # is duplicated/mirrored on align.html.
         # Body attendu: { "asset": { imagePath, name, ... } }
         # ---------------------------------------------------------------------
+        if route == "/update_asset":
+            body = read_json_body(self) or {}
+            image_path = body.get("imagePath")
+            updates = body.get("updates", {})
+            if not image_path or not isinstance(updates, dict):
+                return send_json(self, 400, {"status": "error", "message": "imagePath and updates required"})
+            try:
+                p = Path(ASSETS_JSON)
+                data = json.loads(p.read_text(encoding="utf-8")) if p.is_file() else {}
+                found = False
+                for asset in data.get("collection", []):
+                    if isinstance(asset, dict) and asset.get("imagePath") == image_path:
+                        asset.update(updates)
+                        found = True
+                        break
+                if not found:
+                    return send_json(self, 404, {"status": "error", "message": "Asset not found"})
+                p.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
+                return send_json(self, 200, {"status": "success"})
+            except Exception as e:
+                return send_json(self, 500, {"status": "error", "message": str(e)})
+
+        # ---------------------------------------------------------------------
         if route == "/append_asset":
             body = read_json_body(self) or {}
             asset = body.get("asset")
             if not isinstance(asset, dict) or not asset.get("imagePath"):
                 return send_json(self, 400, {"status": "error", "message": "Invalid asset"})
             try:
+                asset.setdefault("id", new_id())
                 data = {"collectionName": "Assets", "tags": [], "collection": []}
                 p = Path(ASSETS_JSON)
                 if p.is_file():
@@ -267,6 +362,29 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                 with open(ASSETS_JSON, "w", encoding="utf-8") as f:
                     json.dump(data, f, indent=2, ensure_ascii=False)
                 return send_json(self, 200, {"status": "success", "count": len(data["collection"])})
+            except Exception as e:
+                return send_json(self, 500, {"status": "error", "message": str(e)})
+
+        # ---------------------------------------------------------------------
+        if route == "/append_composition":
+            body = read_json_body(self) or {}
+            comp = body.get("composition")
+            if not isinstance(comp, dict) or not comp.get("name") or not comp.get("layers"):
+                return send_json(self, 400, {"status": "error", "message": "Invalid composition"})
+            try:
+                comp.pop("type", None)
+                comp.setdefault("id", new_id())
+                data = {"collectionName": "Assets", "tags": [], "collection": [], "compositions": []}
+                p = Path(ASSETS_JSON)
+                if p.is_file():
+                    try:
+                        data = json.loads(p.read_text(encoding="utf-8"))
+                    except Exception:
+                        pass
+                data.setdefault("compositions", []).append(comp)
+                with open(ASSETS_JSON, "w", encoding="utf-8") as f:
+                    json.dump(data, f, indent=2, ensure_ascii=False)
+                return send_json(self, 200, {"status": "success", "count": len(data["compositions"])})
             except Exception as e:
                 return send_json(self, 500, {"status": "error", "message": str(e)})
 
@@ -327,20 +445,38 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             if "/" in sub_dir or "\\" in sub_dir or sub_dir in (".", ".."):
                 return send_json(self, 400, {"status": "error", "message": "Invalid directory name"})
 
+            overwrite = bool(body.get("overwrite"))
             dest_root = Path(VALIDATED_DIR) / sub_dir
-            if dest_root.exists():
-                return send_json(self, 409, {
-                    "status": "exists",
-                    "message": f'Folder "{VALIDATED_DIR}/{sub_dir}" already exists',
-                })
 
-            try:
-                dest_root.mkdir(parents=True, exist_ok=False)
-            except FileExistsError:
-                return send_json(self, 409, {
-                    "status": "exists",
-                    "message": f'Folder "{VALIDATED_DIR}/{sub_dir}" already exists',
-                })
+            if dest_root.exists():
+                if not overwrite:
+                    return send_json(self, 409, {
+                        "status": "exists",
+                        "message": f'Folder "{VALIDATED_DIR}/{sub_dir}" already exists',
+                    })
+                # Backup current contents to _versions/<timestamp>/
+                ts = datetime.datetime.now().strftime("%Y-%m-%dT%H-%M-%S")
+                backup_dir = dest_root / "_versions" / ts
+                backup_dir.mkdir(parents=True, exist_ok=True)
+                for item in dest_root.iterdir():
+                    if item.name == "_versions":
+                        continue
+                    if item.is_file():
+                        shutil.copy2(item, backup_dir / item.name)
+                # Clear current files (keep _versions/)
+                for item in dest_root.iterdir():
+                    if item.name == "_versions":
+                        continue
+                    if item.is_file():
+                        item.unlink()
+            else:
+                try:
+                    dest_root.mkdir(parents=True, exist_ok=False)
+                except FileExistsError:
+                    return send_json(self, 409, {
+                        "status": "exists",
+                        "message": f'Folder "{VALIDATED_DIR}/{sub_dir}" already exists',
+                    })
 
             copied = 0
             errors = []
@@ -416,7 +552,35 @@ class ReusableTCPServer(socketserver.TCPServer):
     allow_reuse_address = True
 
 
+def new_id() -> str:
+    return str(uuid.uuid4())
+
+
+def migrate_ids():
+    """Add uuid4 ids to any asset or composition that is missing one."""
+    p = Path(ASSETS_JSON)
+    if not p.is_file():
+        return
+    try:
+        data = json.loads(p.read_text(encoding="utf-8"))
+    except Exception:
+        return
+    changed = False
+    for item in data.get("collection", []):
+        if isinstance(item, dict) and not item.get("id"):
+            item["id"] = new_id()
+            changed = True
+    for item in data.get("compositions", []):
+        if isinstance(item, dict) and not item.get("id"):
+            item["id"] = new_id()
+            changed = True
+    if changed:
+        p.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
+        print(f"[migrate_ids] assigned ids to existing entries")
+
+
 def run_server(host: str = DEFAULT_HOST, port: int = DEFAULT_PORT):
+    migrate_ids()
     with ReusableTCPServer((host, port), Handler) as httpd:
         print(f"Serving at http://{host}:{port}")
         try:

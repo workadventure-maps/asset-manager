@@ -1,0 +1,1720 @@
+{
+    "creator": "Freepik",
+    "creatorLink": "https://www.freepik.com/",
+    "collectionName": "Job fair",
+    "tags": [
+        "(all) Job fair"
+    ],
+    "metatags": [
+        "flat-design",
+        "isometric",
+        "corporate",
+        "fair"
+    ],
+    "collection": [
+        {
+            "name": "Information stand",
+            "tags": [
+                "Branding"
+            ],
+            "imagePath": "Branding__Information_stand__Right__FF274E-606b3d42.png",
+            "direction": "Right",
+            "color": "#FF274E",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0
+                ],
+                [
+                    0
+                ],
+                [
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Information stand",
+            "tags": [
+                "Branding"
+            ],
+            "imagePath": "Branding__Information_stand__Left__FF274E-7990d0e6.png",
+            "direction": "Left",
+            "color": "#FF274E",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0
+                ],
+                [
+                    0
+                ],
+                [
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Bench",
+            "tags": [
+                "Seat",
+                "Outdoor"
+            ],
+            "imagePath": "Seat_Outdoor__Bench__Left__EAECF3-40fcc3d6.png",
+            "direction": "Left",
+            "color": "#EAECF3",
+            "depthOffset": -64
+        },
+        {
+            "name": "Bench",
+            "tags": [
+                "Seat",
+                "Outdoor"
+            ],
+            "imagePath": "Seat_Outdoor__Bench__Right__EAECF3-ca7538bb.png",
+            "direction": "Right",
+            "color": "#EAECF3",
+            "depthOffset": -64
+        },
+        {
+            "name": "Brochure stand (curved)",
+            "tags": [
+                "Branding"
+            ],
+            "imagePath": "Branding__Brochure_stand_(curved)__Right__B31B34-44ef41f6.png",
+            "direction": "Right",
+            "color": "#B31B34",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0
+                ],
+                [
+                    0
+                ],
+                [
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Brochure stand (curved)",
+            "tags": [
+                "Branding"
+            ],
+            "imagePath": "Branding__Brochure_stand_(curved)__Left__B31B34-95152f7c.png",
+            "direction": "Left",
+            "color": "#B31B34",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0
+                ],
+                [
+                    0
+                ],
+                [
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Promotional stand",
+            "tags": [
+                "Branding"
+            ],
+            "imagePath": "Branding__Promotional_stand__Left__B31B34-e2648d40.png",
+            "direction": "Left",
+            "color": "#B31B34",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    1
+                ],
+                [
+                    1,
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Promotional stand",
+            "tags": [
+                "Branding"
+            ],
+            "imagePath": "Branding__Promotional_stand__Right__B31B34-a35580b3.png",
+            "direction": "Right",
+            "color": "#B31B34",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0
+                ],
+                [
+                    1,
+                    0
+                ],
+                [
+                    1,
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Promotional counter",
+            "tags": [
+                "Branding"
+            ],
+            "imagePath": "Branding__Promotional_counter__Left__B31B34-58d89c65.png",
+            "direction": "Left",
+            "color": "#B31B34",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    1
+                ],
+                [
+                    1,
+                    0
+                ]
+            ]
+        },
+        {
+            "name": "Promotional counter",
+            "tags": [
+                "Branding"
+            ],
+            "imagePath": "Branding__Promotional_counter__Right__B31B34-dd39bf89.png",
+            "direction": "Right",
+            "color": "#B31B34",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    1,
+                    0
+                ],
+                [
+                    0,
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Brochure stand",
+            "tags": [
+                "Branding"
+            ],
+            "imagePath": "Branding__Brochure_stand__Down__B01B34-27670e5b.png",
+            "direction": "Down",
+            "color": "#B01B34",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    1,
+                    0
+                ]
+            ]
+        },
+        {
+            "name": "Billboard (small)",
+            "tags": [
+                "Branding"
+            ],
+            "imagePath": "Branding__Billboard_(small)__Left__ADADAD-b5604bd3.png",
+            "direction": "Left",
+            "color": "#ADADAD",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    1
+                ],
+                [
+                    1,
+                    0
+                ]
+            ]
+        },
+        {
+            "name": "Billboard (small)",
+            "tags": [
+                "Branding"
+            ],
+            "imagePath": "Branding__Billboard_(small)__Right__ADADAD-1eafcec9.png",
+            "direction": "Right",
+            "color": "#ADADAD",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    1,
+                    0
+                ],
+                [
+                    0,
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Roll-up banner",
+            "tags": [
+                "Branding"
+            ],
+            "imagePath": "Branding__Roll-up_banner__Left__FF4555-3dc32dad.png",
+            "direction": "Left",
+            "color": "#FF4555",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0
+                ],
+                [
+                    0
+                ],
+                [
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Roll-up banner",
+            "tags": [
+                "Branding"
+            ],
+            "imagePath": "Branding__Roll-up_banner__Right__FF4555-b4bf59a7.png",
+            "direction": "Right",
+            "color": "#FF4555",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0
+                ],
+                [
+                    0
+                ],
+                [
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Chair",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Chair__Right__B31B34-3a5b56fc.png",
+            "direction": "Right",
+            "color": "#B31B34",
+            "depthOffset": -64
+        },
+        {
+            "name": "Chair",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Chair__Left__B31B34-c916c837.png",
+            "direction": "Left",
+            "color": "#B31B34",
+            "depthOffset": -64
+        },
+        {
+            "name": "Lectern",
+            "tags": [
+                "Office"
+            ],
+            "imagePath": "Office__Lectern__Right__C1C1C1-ec8a7fb6.png",
+            "direction": "Right",
+            "color": "#C1C1C1",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    1,
+                    0
+                ]
+            ]
+        },
+        {
+            "name": "Lectern",
+            "tags": [
+                "Office"
+            ],
+            "imagePath": "Office__Lectern__Left__C1C1C1-e4e9c566.png",
+            "direction": "Left",
+            "color": "#C1C1C1",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    1,
+                    0
+                ]
+            ]
+        },
+        {
+            "name": "Bush",
+            "tags": [
+                "Decoration"
+            ],
+            "imagePath": "Decoration__Bush__Down__ABBF3A-ba3f92d7.png",
+            "direction": "Down",
+            "color": "#ABBF3A",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    1,
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Potted succulent",
+            "tags": [
+                "Decoration"
+            ],
+            "imagePath": "Decoration__Potted_succulent__Down__9AB700-65eca5fd.png",
+            "direction": "Down",
+            "color": "#9AB700",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Potted plant",
+            "tags": [
+                "Decoration"
+            ],
+            "imagePath": "Decoration__Potted_plant__Down__7EB727-2667439e.png",
+            "direction": "Down",
+            "color": "#7EB727",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0
+                ],
+                [
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Potted bush",
+            "tags": [
+                "Decoration"
+            ],
+            "imagePath": "Decoration__Potted_bush__Down__97C15F-ab4cc39a.png",
+            "direction": "Down",
+            "color": "#97C15F",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    1,
+                    0
+                ]
+            ]
+        },
+        {
+            "name": "Potted yucca palm",
+            "tags": [
+                "Decoration"
+            ],
+            "imagePath": "Decoration__Potted_yucca_palm__Down__7EB727-9923c491.png",
+            "direction": "Down",
+            "color": "#7EB727",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    1,
+                    0
+                ]
+            ]
+        },
+        {
+            "name": "Potted snake plant",
+            "tags": [
+                "Decoration"
+            ],
+            "imagePath": "Decoration__Potted_snake_plant__Down__82BC1D-758fdb47.png",
+            "direction": "Down",
+            "color": "#82BC1D",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0
+                ],
+                [
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Fountain",
+            "tags": [
+                "Decoration",
+                "Outdoor"
+            ],
+            "imagePath": "Decoration_Outdoor__Fountain__Down__74BDFA-cbf4e70e.png",
+            "direction": "Down",
+            "color": "#74BDFA",
+            "depthOffset": -64,
+            "collisionGrid": [
+                [
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    1,
+                    1,
+                    0
+                ],
+                [
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                [
+                    1,
+                    1,
+                    1,
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Information board",
+            "tags": [
+                "Branding"
+            ],
+            "imagePath": "Branding__Information_board__Right__F2F2F2-dbe5ddc8.png",
+            "direction": "Right",
+            "color": "#F2F2F2",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0
+                ],
+                [
+                    0
+                ],
+                [
+                    0
+                ],
+                [
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Information board",
+            "tags": [
+                "Branding"
+            ],
+            "imagePath": "Branding__Information_board__Left__F2F2F2-12c38838.png",
+            "direction": "Left",
+            "color": "#F2F2F2",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0
+                ],
+                [
+                    0
+                ],
+                [
+                    0
+                ],
+                [
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Mailbox",
+            "tags": [
+                "Outdoor"
+            ],
+            "imagePath": "Outdoor__Mailbox__Left__FC4655-6c546a28.png",
+            "direction": "Left",
+            "color": "#FC4655",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0
+                ],
+                [
+                    0
+                ],
+                [
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Mailbox",
+            "tags": [
+                "Outdoor"
+            ],
+            "imagePath": "Outdoor__Mailbox__Right__FC4655-acf06730.png",
+            "direction": "Right",
+            "color": "#FC4655",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0
+                ],
+                [
+                    0
+                ],
+                [
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Billboard",
+            "tags": [
+                "Branding"
+            ],
+            "imagePath": "Branding__Billboard__Right__E2E2E2-6e34afd4.png",
+            "direction": "Right",
+            "color": "#E2E2E2",
+            "depthOffset": -64,
+            "collisionGrid": [
+                [
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    1,
+                    1,
+                    1
+                ],
+                [
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                [
+                    1,
+                    1,
+                    0,
+                    0
+                ]
+            ]
+        },
+        {
+            "name": "Billboard",
+            "tags": [
+                "Branding"
+            ],
+            "imagePath": "Branding__Billboard__Left__E2E2E2-5aff17ee.png",
+            "direction": "Left",
+            "color": "#E2E2E2",
+            "depthOffset": -64,
+            "collisionGrid": [
+                [
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    1,
+                    1,
+                    1,
+                    0
+                ],
+                [
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                [
+                    0,
+                    0,
+                    1,
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Billboard (large)",
+            "tags": [
+                "Branding"
+            ],
+            "imagePath": "Branding__Billboard_(large)__Right__444444-ce2a8917.png",
+            "direction": "Right",
+            "color": "#444444",
+            "depthOffset": -96,
+            "collisionGrid": [
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    1,
+                    1
+                ],
+                [
+                    0,
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                [
+                    1,
+                    1,
+                    0,
+                    0,
+                    1
+                ],
+                [
+                    1,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    1,
+                    0,
+                    0,
+                    0,
+                    0
+                ]
+            ]
+        },
+        {
+            "name": "Billboard (large)",
+            "tags": [
+                "Branding"
+            ],
+            "imagePath": "Branding__Billboard_(large)__Left__444444-f1a1c092.png",
+            "direction": "Left",
+            "color": "#444444",
+            "depthOffset": -96,
+            "collisionGrid": [
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    1,
+                    1,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    1,
+                    1,
+                    1,
+                    1,
+                    0
+                ],
+                [
+                    1,
+                    0,
+                    0,
+                    1,
+                    1
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Stage (large)",
+            "tags": [
+                "Office"
+            ],
+            "imagePath": "Office__Stage_(large)__Right__FF2C3D-181cd1ce.png",
+            "direction": "Right",
+            "color": "#FF2C3D",
+            "depthOffset": -256,
+            "collisionGrid": [
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    1,
+                    1,
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    0
+                ],
+                [
+                    1,
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    1,
+                    0,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ]
+            ]
+        },
+        {
+            "name": "Stage (large)",
+            "tags": [
+                "Office"
+            ],
+            "imagePath": "Office__Stage_(large)__Left__FF2C3D-b65d736c.png",
+            "direction": "Left",
+            "color": "#FF2C3D",
+            "depthOffset": -256,
+            "collisionGrid": [
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                [
+                    0,
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    1
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ]
+            ]
+        },
+        {
+            "name": "Stage",
+            "tags": [
+                "Office"
+            ],
+            "imagePath": "Office__Stage__Right__E6E1E1-2f0e449f.png",
+            "direction": "Right",
+            "color": "#E6E1E1",
+            "depthOffset": -256,
+            "collisionGrid": [
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    1,
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ]
+            ]
+        },
+        {
+            "name": "Stage",
+            "tags": [
+                "Office"
+            ],
+            "imagePath": "Office__Stage__Left__E6E1E1-b35a2573.png",
+            "direction": "Left",
+            "color": "#E6E1E1",
+            "depthOffset": -256,
+            "collisionGrid": [
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ]
+            ]
+        }
+    ]
+}

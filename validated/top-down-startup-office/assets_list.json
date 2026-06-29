@@ -1,0 +1,451 @@
+{
+    "creator": "WorkAdventure",
+    "creatorLink": "https://workadventu.re",
+    "collectionName": "Startup office",
+    "tags": [
+        "(all) Startup office"
+    ],
+    "metatags": [
+        "flat-design",
+        "top-down",
+        "office"
+    ],
+    "collection": [
+        {
+            "name": "Chair",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Chair__Down__C9D4EC-5e4fe0d0.png",
+            "direction": "Down",
+            "color": "#C9D4EC",
+            "depthOffset": -22
+        },
+        {
+            "name": "Chair",
+            "tags": [
+                "Seat"
+            ],
+            "imagePath": "Seat__Chair__Up__C9D4EC-683e851d.png",
+            "direction": "Up",
+            "color": "#C9D4EC",
+            "depthOffset": -22
+        },
+        {
+            "name": "Trash can",
+            "tags": [
+                "Office"
+            ],
+            "imagePath": "Office__Trash_can__Down__B5B9BE-526f376f.png",
+            "direction": "Down",
+            "color": "#B5B9BE",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Desk",
+            "tags": [
+                "Table",
+                "Office"
+            ],
+            "imagePath": "Table_Office__Desk__Down__F8D4AA-0e16ee9b.png",
+            "direction": "Down",
+            "color": "#F8D4AA",
+            "depthOffset": -64,
+            "collisionGrid": [
+                [
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    1,
+                    1,
+                    1
+                ],
+                [
+                    0,
+                    0,
+                    0
+                ]
+            ]
+        },
+        {
+            "name": "Conference table",
+            "tags": [
+                "Table",
+                "Office"
+            ],
+            "imagePath": "Table_Office__Conference_table__Down__F8D4AA-20df7571.png",
+            "direction": "Down",
+            "color": "#F8D4AA",
+            "depthOffset": -96,
+            "collisionGrid": [
+                [
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                [
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ]
+            ]
+        },
+        {
+            "name": "Laptop",
+            "tags": [
+                "Electronics",
+                "Office"
+            ],
+            "imagePath": "Electronics_Office__Laptop__Down__CECFD5-60d19d98.png",
+            "direction": "Down",
+            "color": "#CECFD5",
+            "depthOffset": -32
+        },
+        {
+            "name": "Conference table (full)",
+            "tags": [
+                "Table",
+                "Office"
+            ],
+            "imagePath": "Table_Office__Conference_table_(full)__Down__F8D4AA-5e4e8dc1.png",
+            "direction": "Down",
+            "color": "#F8D4AA",
+            "depthOffset": -96,
+            "collisionGrid": [
+                [
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                [
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ]
+            ]
+        },
+        {
+            "name": "Floor lamp",
+            "tags": [
+                "Electronics",
+                "Decoration"
+            ],
+            "imagePath": "Electronics_Decoration__Floor_lamp__Down__FEF0AC-41a6de81.png",
+            "direction": "Down",
+            "color": "#FEF0AC",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0
+                ],
+                [
+                    0
+                ],
+                [
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Arcade machine",
+            "tags": [
+                "Electronics",
+                "Recreation"
+            ],
+            "imagePath": "Electronics_Recreation__Arcade_machine__Down__006FFF-db530434.png",
+            "direction": "Down",
+            "color": "#006FFF",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0
+                ],
+                [
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Vending machine",
+            "tags": [
+                "Electronics"
+            ],
+            "imagePath": "Electronics__Vending_machine__Down__C90000-0ca155ab.png",
+            "direction": "Down",
+            "color": "#C90000",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0
+                ],
+                [
+                    0
+                ],
+                [
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Coffee machine",
+            "tags": [
+                "Electronics"
+            ],
+            "imagePath": "Electronics__Coffee_machine__Down__3B1B1D-3b42a549.png",
+            "direction": "Down",
+            "color": "#3B1B1D",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0
+                ],
+                [
+                    0
+                ],
+                [
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Potted Fern",
+            "tags": [
+                "Decoration"
+            ],
+            "imagePath": "Decoration__Potted_Fern__Down__8EB021-ec2e4ca8.png",
+            "direction": "Down",
+            "color": "#8EB021",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0,
+                    0
+                ],
+                [
+                    1,
+                    0
+                ]
+            ]
+        },
+        {
+            "name": "Potted Sapling",
+            "tags": [
+                "Decoration"
+            ],
+            "imagePath": "Decoration__Potted_Sapling__Down__83B145-ffc720e7.png",
+            "direction": "Down",
+            "color": "#83B145",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    1,
+                    0
+                ]
+            ]
+        },
+        {
+            "name": "Potted Palm Sapling",
+            "tags": [
+                "Decoration"
+            ],
+            "imagePath": "Decoration__Potted_Palm_Sapling__Down__8EBC35-b0c979b6.png",
+            "direction": "Down",
+            "color": "#8EBC35",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    1,
+                    0
+                ]
+            ]
+        },
+        {
+            "name": "Potted Monstera",
+            "tags": [
+                "Decoration"
+            ],
+            "imagePath": "Decoration__Potted_Monstera__Down__3E6572-87ba41d0.png",
+            "direction": "Down",
+            "color": "#3E6572",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    1,
+                    0
+                ]
+            ]
+        },
+        {
+            "name": "Potted Tall Grass",
+            "tags": [
+                "Decoration"
+            ],
+            "imagePath": "Decoration__Potted_Tall_Grass__Down__83A954-212fceec.png",
+            "direction": "Down",
+            "color": "#83A954",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0
+                ],
+                [
+                    0
+                ],
+                [
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Street lamp",
+            "tags": [
+                "Electronics",
+                "Outdoor"
+            ],
+            "imagePath": "Electronics_Outdoor__Street_lamp__Down__E9F1FF-fe7d84ea.png",
+            "direction": "Down",
+            "color": "#E9F1FF",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0
+                ],
+                [
+                    0
+                ],
+                [
+                    0
+                ],
+                [
+                    0
+                ],
+                [
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "Bench",
+            "tags": [
+                "Seat",
+                "Outdoor"
+            ],
+            "imagePath": "Seat_Outdoor__Bench__Down__F6AF68-7cfe55c4.png",
+            "direction": "Down",
+            "color": "#F6AF68",
+            "depthOffset": -32
+        },
+        {
+            "name": "Tree in planter",
+            "tags": [
+                "Decoration",
+                "Outdoor"
+            ],
+            "imagePath": "Decoration_Outdoor__Tree_in_planter__Down__80B728-644d1eb8.png",
+            "direction": "Down",
+            "color": "#80B728",
+            "depthOffset": -32,
+            "collisionGrid": [
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    1,
+                    0,
+                    0
+                ]
+            ]
+        }
+    ]
+}

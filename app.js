@@ -1080,7 +1080,7 @@
     cancelBtn?.addEventListener('click', close);
     window.addEventListener('click', (e)=>{ if(e.target===modal) close(); });
 
-    saveBtn?.addEventListener('click', ()=>{
+    saveBtn?.addEventListener('click', async ()=>{
       const selected = $$('.asset-card.selected');
       const newName = $('#modal-name')?.value?.trim() || '';
       const newTags = Array.from($('#modal-tags-container')?.querySelectorAll('.tag-pill')||[]).map(p=>p.firstChild.textContent.trim());
@@ -1089,7 +1089,7 @@
       const newSColor = $('#modal-scolor-select')?.dataset?.hex || '';
       const newCategory = $('#modal-category-select')?.dataset?.value || '';
       if (!selected.length) return close();
-      if (!confirm(`Are you sure you want to edit ${selected.length} assets?`)) return;
+      if (!await Dialog.confirm(`Are you sure you want to edit ${selected.length} assets?`, { confirmLabel: 'Edit', danger: true })) return;
 
       for (const card of selected){
         const path = card.dataset.imagePath;
@@ -1178,10 +1178,10 @@
     $('#bulk-edit-btn')?.addEventListener('click', ()=> modalCtl.open());
 
     // Delete selected assets from the JSON (images are kept on disk).
-    $('#delete-btn')?.addEventListener('click', ()=>{
+    $('#delete-btn')?.addEventListener('click', async ()=>{
       const selectedPaths = $$('.asset-card.selected').map(c=>c.dataset.imagePath);
       if (!selectedPaths.length) return;
-      if (!confirm(`Remove ${selectedPaths.length} asset(s) from the JSON?\n(The image files are kept on disk.)`)) return;
+      if (!await Dialog.confirm(`Remove ${selectedPaths.length} asset(s) from the JSON?\nThe image files are kept on disk.`, { confirmLabel: 'Delete', danger: true })) return;
       const set = new Set(selectedPaths);
       state.data.collection = (state.data.collection||[]).filter(a => !set.has(a.imagePath));
       recalcCountsAndTags();
@@ -1196,7 +1196,7 @@
     $('#validate-btn')?.addEventListener('click', async ()=>{
       const selectedPaths = $$('.asset-card.selected').map(c=>c.dataset.imagePath);
       if (!selectedPaths.length){
-        alert('Select at least 1 asset.');
+        await Dialog.alert('Select at least 1 asset.', { type: 'warning' });
         return;
       }
 
@@ -1213,11 +1213,11 @@
 
       // Ask for the folder name; re-ask if it already exists.
       let suggestion = 'new-pack';
-      let folderName = prompt('Folder name to create inside "validated":', suggestion);
+      let folderName = await Dialog.prompt('Folder name to create inside "validated":', { defaultValue: suggestion });
       while (folderName !== null){
         const clean = folderName.trim();
         if (!clean){
-          folderName = prompt('Please enter a valid folder name:', suggestion);
+          folderName = await Dialog.prompt('Please enter a valid folder name:', { defaultValue: suggestion });
           continue;
         }
         try{
@@ -1229,9 +1229,29 @@
           const out = await res.json().catch(()=> ({}));
 
           if (res.status === 409){
-            // Folder already exists -> tell the user and re-ask.
-            folderName = prompt(`The folder "validated/${clean}" already exists. Please choose another name:`, `${clean}-2`);
-            continue;
+            const doOverwrite = await Dialog.confirm(
+              `"validated/${clean}" already exists.\n\nOverwrite it and save the current version as a backup?`,
+              { confirmLabel: 'Overwrite & backup', cancelLabel: 'Choose new name' }
+            );
+            if (doOverwrite){
+              // Resend with overwrite flag
+              try{
+                const r2 = await fetch(`${API_URL}/validate_selection`, {
+                  method: 'POST',
+                  headers: { 'Content-Type':'application/json' },
+                  body: JSON.stringify({ dir: clean, items, json: subset, overwrite: true })
+                });
+                const out2 = await r2.json().catch(()=>({}));
+                if (!r2.ok) throw new Error(out2.message || `Server error ${r2.status}`);
+                showNotification('success', `Saved to validated/${clean} (previous version backed up)`);
+              }catch(err){
+                showNotification('error', `Validate failed: ${err.message}`);
+              }
+              return;
+            } else {
+              folderName = await Dialog.prompt('Choose a different name:', { defaultValue: `${clean}-2` });
+              continue;
+            }
           }
           if (!res.ok){
             throw new Error(out.message || `Server error ${res.status}`);
@@ -1241,13 +1261,13 @@
           console.error(err);
           showNotification('error', `Validate failed: ${err.message}`);
         }
-        return; // done (success or hard error)
+        return;
       }
     });
 
   }
 
-  /* ========= JSON Switcher (Upload / Reset) ========= */
+  /* ========= JSON Switcher (Collection dropdown + Upload) ========= */
   function injectJsonControls(){
     let host = $('#json-controls');
     if (!host){
@@ -1256,10 +1276,9 @@
       host.id = 'json-controls';
       host.innerHTML = `
         <input type="file" id="json-upload" accept="application/json" hidden />
-        <div class="source-switch" role="group" aria-label="Data source">
-          <button type="button" id="src-default" class="seg" title="Project root assets_list.json">Default</button>
-          <button type="button" id="src-loaded" class="seg" hidden></button>
-        </div>
+        <select id="collection-select" aria-label="Active collection">
+          <option value="__default__">Default</option>
+        </select>
         <button id="btn-load-json" class="menu-btn primary" title="Load a JSON collection">
           <span aria-hidden="true">⬆</span> Load JSON
         </button>
@@ -1267,41 +1286,80 @@
       target.appendChild(host);
     }
 
-    const fileInput  = $('#json-upload');
-    const btnLoad    = $('#btn-load-json');
-    const segDefault = $('#src-default');
-    const segLoaded  = $('#src-loaded');
+    const fileInput    = $('#json-upload');
+    const btnLoad      = $('#btn-load-json');
+    const collSelect   = $('#collection-select');
 
-    // Reflect the active source on the segmented switch; show the loaded
-    // segment only once a file has been loaded (kept in memory for switching).
-    function refreshSwitch(){
-      const isUpload = state.source.type === 'upload';
-      if (state._uploadCache){
-        segLoaded.hidden = false;
-        segLoaded.textContent = state._uploadCache.name;
-        segLoaded.title = `Loaded file: ${state._uploadCache.name}`;
-      } else {
-        segLoaded.hidden = true;
+    // Populate the select from /list_collections (lazy: called on first focus/click)
+    let _collectionsLoaded = false;
+    async function loadCollectionsList(){
+      if (_collectionsLoaded) return;
+      try{
+        const signal = AbortSignal.timeout ? AbortSignal.timeout(4000) : undefined;
+        const r = await fetch(`${API_URL}/list_collections?t=${Date.now()}`, { signal });
+        if (!r.ok) return;
+        const data = await r.json();
+        const cols = data.collections || [];
+        while (collSelect.options.length > 1) collSelect.remove(1);
+        for (const c of cols){
+          const opt = document.createElement('option');
+          opt.value = c.dir;
+          opt.textContent = c.collectionName || c.dir;
+          collSelect.appendChild(opt);
+        }
+        _collectionsLoaded = true;
+        refreshSelect();
+      }catch(e){
+        // Server not running or unreachable — silently keep "Default" only.
       }
-      segDefault.classList.toggle('active', !isUpload);
-      segLoaded.classList.toggle('active', isUpload);
     }
-    state._refreshSourceSwitch = refreshSwitch;
 
-    // Switch back to the project-root JSON.
-    segDefault?.addEventListener('click', ()=>{
-      if (state.source.type === 'file') return; // already active
-      state.source = { type:'file', name:'assets_list.json' };
-      ASSETS_FILE = 'assets_list.json';
-      loadAssets().then(refreshSwitch);
-    });
+    function refreshSelect(){
+      if (state.source.type === 'file'){
+        collSelect.value = '__default__';
+      } else if (state.source.type === 'collection' && state.source.dir){
+        collSelect.value = state.source.dir;
+      }
+      // 'upload' (local file): leave select as-is
+    }
+    state._refreshSourceSwitch = refreshSelect;
 
-    // Switch back to the last loaded JSON (no re-upload needed).
-    segLoaded?.addEventListener('click', ()=>{
-      if (!state._uploadCache || state.source.type === 'upload') return;
-      const c = state._uploadCache;
-      applyExternalJSON(JSON.parse(JSON.stringify(c.json)), c.name);
-      refreshSwitch();
+    // Load lazily on first interaction with the select.
+    collSelect.addEventListener('focus', loadCollectionsList);
+    collSelect.addEventListener('mousedown', loadCollectionsList);
+
+    collSelect.addEventListener('change', async ()=>{
+      const val = collSelect.value;
+      if (val === '__default__'){
+        state.source = { type:'file', name:'assets_list.json' };
+        ASSETS_FILE = 'assets_list.json';
+        await loadAssets();
+      } else {
+        // Load collection JSON directly from validated/<dir>/
+        try{
+          const r = await fetch(`validated/${val}/assets_list.json?t=${Date.now()}`);
+          if (!r.ok) throw new Error(`HTTP ${r.status}`);
+          const json = await r.json();
+
+          // Rewrite bare imagePaths using imageBase (set by server on validate)
+          const base = (json.imageBase || `validated/${val}`).replace(/^\/+|\/+$/g, '');
+          const coll = Array.isArray(json.collection) ? json.collection : [];
+          coll.forEach(a => {
+            if (a && a.imagePath){
+              const name = String(a.imagePath).split('/').pop();
+              a.imagePath = `${base}/${name}`;
+            }
+          });
+
+          state.source = { type:'collection', dir: val, name: json.collectionName || val };
+          applyExternalJSON(json, json.collectionName || val);
+          showToast(`Collection "${json.collectionName || val}" loaded`, 'success');
+        }catch(err){
+          console.error(err);
+          showToast(`Failed to load collection: ${err.message}`, 'error');
+          collSelect.value = state.source.type === 'file' ? '__default__' : (state.source.dir || '__default__');
+        }
+      }
     });
 
     btnLoad?.addEventListener('click', () => fileInput?.click());
@@ -1312,19 +1370,15 @@
         const text = await file.text();
         const json = JSON.parse(text);
 
-        // Validated packs store bare filenames (images sit next to the JSON).
-        // Served from the project root, those won't resolve, so offer to
-        // prepend a base folder to every image path.
         const coll = Array.isArray(json.collection) ? json.collection : [];
         const looksBare = coll.length && coll.every(a => a && a.imagePath && !String(a.imagePath).includes('/'));
-        // Prefer the base path saved by the server when the pack was validated.
         const suggested = json.imageBase ? String(json.imageBase) : (looksBare ? 'validated/' : '');
-        const base = prompt(
-          'Base path to prepend to image files (e.g. "validated/test-2").\nLeave empty to keep the paths unchanged.',
-          suggested
+        const base = await Dialog.prompt(
+          'Base path to prepend to image files (e.g. "validated/test-2").\nLeave empty to keep paths unchanged.',
+          { defaultValue: suggested, placeholder: 'validated/my-pack' }
         );
         if (base !== null && base.trim()){
-          const b = base.trim().replace(/^\/+|\/+$/g, ''); // trim leading/trailing slashes
+          const b = base.trim().replace(/^\/+|\/+$/g, '');
           coll.forEach(a => {
             if (a && a.imagePath){
               const name = String(a.imagePath).split('/').pop();
@@ -1333,12 +1387,9 @@
           });
         }
 
-        // Keep a copy in memory + storage so the user can switch back to it
-        // instantly, and so it survives a page refresh.
         state._uploadCache = { json: JSON.parse(JSON.stringify(json)), name: file.name };
         persistCache(state._uploadCache);
         applyExternalJSON(json, file.name);
-        refreshSwitch();
         showToast(`JSON loaded (${file.name})`, 'success');
       }catch(err){
         console.error(err);
@@ -1348,7 +1399,6 @@
       }
     });
 
-    refreshSwitch();
   }
 
   function normalizeDataStructure(data){
@@ -1377,8 +1427,11 @@
   function applyExternalJSON(jsonObj, filename='uploaded.json'){
     const data = normalizeDataStructure(jsonObj);
     state.data = data;
-    state.source = { type:'upload', name: filename };
-    persistSource('upload');
+    // Preserve source.type if already set to 'collection' by the caller.
+    if (state.source.type !== 'collection'){
+      state.source = { type:'upload', name: filename };
+      persistSource('upload');
+    }
     recalcCountsAndTags();
     populateFilters();
     populateGlobalTags();
