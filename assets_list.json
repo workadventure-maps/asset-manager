@@ -1,11 +1,11 @@
 {
-  "collectionName": "Assets Eiffage",
+  "collectionName": "Exemple Assets",
   "tags": [
     "flat"
   ],
   "collection": [
     {
-      "imagePath": "validated/new-pack/christmas-tree-and-sign_unknown.png",
+      "imagePath": "validated/exemple/christmas-tree-and-sign_left_unknown.png",
       "name": "Christmas Tree and sign",
       "tags": [
         "Plants",
@@ -56,7 +56,7 @@
       "dateModified": "2026-06-29T12:15:54.357Z"
     },
     {
-      "imagePath": "validated/new-pack/banch_left_black.png",
+      "imagePath": "validated/exemple/banch_left_black.png",
       "name": "Banch",
       "tags": [
         "Meeting & School",
@@ -72,7 +72,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/water-plan_unknown.png",
+      "imagePath": "validated/exemple/water-plan_unknown.png",
       "name": "Water Plan",
       "tags": [
         "Plants",
@@ -89,7 +89,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/stand-chair_back_light_grey.png",
+      "imagePath": "validated/exemple/stand-chair_back_light_grey.png",
       "name": "Stand Chair",
       "tags": [
         "Meeting & School",
@@ -105,7 +105,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/small-rounded-table_light_grey.png",
+      "imagePath": "validated/exemple/small-rounded-table_light_grey.png",
       "name": "Small rounded table",
       "tags": [
         "Meeting & School",
@@ -126,7 +126,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/asset-flats_08_light_grey.png",
+      "imagePath": "validated/exemple/asset-flats_08_left_light_grey.png",
       "name": "Asset-Flats_08",
       "tags": [],
       "direction": "left",
@@ -139,7 +139,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_62_unknown.png",
+      "imagePath": "validated/exemple/flat_office_62_unknown.png",
       "name": "Flat_Office_62",
       "tags": [],
       "direction": "",
@@ -161,7 +161,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/water-plan-big_unknown.png",
+      "imagePath": "validated/exemple/water-plan-big_unknown.png",
       "name": "Water Plan Big",
       "tags": [
         "Plants",
@@ -177,7 +177,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/outside-table_unknown.png",
+      "imagePath": "validated/exemple/outside-table_unknown.png",
       "name": "Outside Table",
       "tags": [],
       "direction": "",
@@ -208,7 +208,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/armchair_black.png",
+      "imagePath": "validated/exemple/armchair_left_black.png",
       "name": "Armchair",
       "tags": [
         "Meeting & School",
@@ -224,7 +224,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/banch_red.png",
+      "imagePath": "validated/exemple/banch_red.png",
       "name": "Banch",
       "tags": [
         "Meeting & School",
@@ -240,7 +240,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/water-cooler_unknown.png",
+      "imagePath": "validated/exemple/water-cooler_unknown.png",
       "name": "Water cooler",
       "tags": [],
       "direction": "",
@@ -262,7 +262,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/laptop_back_unknown.png",
+      "imagePath": "validated/exemple/laptop_back_unknown.png",
       "name": "Laptop",
       "tags": [],
       "direction": "back",
@@ -275,7 +275,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_202_unknown.png",
+      "imagePath": "validated/exemple/flat_office_202_unknown.png",
       "name": "Flat_Office_202",
       "tags": [],
       "direction": "",
@@ -288,7 +288,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/armchair_red.png",
+      "imagePath": "validated/exemple/armchair_left_red.png",
       "name": "Armchair",
       "tags": [
         "Office",
@@ -304,7 +304,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/rock-1_unknown.png",
+      "imagePath": "validated/exemple/rock-1_left_unknown.png",
       "name": "Rock 1",
       "tags": [
         "Plants",
@@ -333,7 +333,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flower-1_unknown.png",
+      "imagePath": "validated/exemple/flower-1_unknown.png",
       "name": "Flower 1",
       "tags": [
         "Plants",
@@ -349,7 +349,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_170_black.png",
+      "imagePath": "validated/exemple/flat_office_170_black.png",
       "name": "Flat_Office_170",
       "tags": [
         "Meeting & School",
@@ -365,7 +365,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_164_unknown.png",
+      "imagePath": "validated/exemple/flat_office_164_left_unknown.png",
       "name": "Flat_Office_164",
       "tags": [],
       "direction": "left",
@@ -388,7 +388,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/banch_back_light_grey.png",
+      "imagePath": "validated/exemple/banch_back_light_grey.png",
       "name": "Banch",
       "tags": [
         "Plants",
@@ -404,7 +404,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/coffee_unknown.png",
+      "imagePath": "validated/exemple/coffee_left_unknown.png",
       "name": "Coffee",
       "tags": [],
       "direction": "left",
@@ -417,7 +417,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/laptop_right_unknown.png",
+      "imagePath": "validated/exemple/laptop_left_unknown.png",
       "name": "Laptop",
       "tags": [],
       "direction": "left",
@@ -430,7 +430,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/table-with-chair_unknown.png",
+      "imagePath": "validated/exemple/table-with-chair_unknown.png",
       "name": "Table with chair",
       "tags": [
         "Meeting & School",
@@ -446,7 +446,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/stand-chair_red.png",
+      "imagePath": "validated/exemple/stand-chair_red.png",
       "name": "Stand Chair",
       "tags": [
         "Meeting & School",
@@ -462,7 +462,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/armchair_light_grey.png",
+      "imagePath": "validated/exemple/armchair_light_grey.png",
       "name": "Armchair",
       "tags": [
         "Meeting & School",
@@ -478,7 +478,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flower-2_unknown.png",
+      "imagePath": "validated/exemple/flower-2_unknown.png",
       "name": "Flower 2",
       "tags": [
         "Plants",
@@ -494,7 +494,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/sign-with-snow_unknown.png",
+      "imagePath": "validated/exemple/sign-with-snow_unknown.png",
       "name": "Sign with snow",
       "tags": [],
       "direction": "",
@@ -521,7 +521,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/rock-2_unknown.png",
+      "imagePath": "validated/exemple/rock-2_left_unknown.png",
       "name": "Rock 2",
       "tags": [
         "Plants",
@@ -552,7 +552,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/stand-table_unknown.png",
+      "imagePath": "validated/exemple/stand-table_unknown.png",
       "name": "Stand table",
       "tags": [
         "Meeting & School",
@@ -577,7 +577,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/table-desk_coral.png",
+      "imagePath": "validated/exemple/table-desk_coral.png",
       "name": "Table Desk",
       "tags": [
         "Meeting & School",
@@ -603,7 +603,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/laptop_unknown.png",
+      "imagePath": "validated/exemple/laptop_unknown.png",
       "name": "Laptop",
       "tags": [],
       "direction": "",
@@ -616,7 +616,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/stand-chair_black.png",
+      "imagePath": "validated/exemple/stand-chair_black.png",
       "name": "Stand Chair",
       "tags": [
         "Meeting & School",
@@ -632,7 +632,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/stand-chair_light_grey.png",
+      "imagePath": "validated/exemple/stand-chair_light_grey.png",
       "name": "Stand Chair",
       "tags": [
         "Meeting & School",
@@ -648,7 +648,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_199_unknown.png",
+      "imagePath": "validated/exemple/flat_office_199_unknown.png",
       "name": "Flat_Office_199",
       "tags": [],
       "direction": "",
@@ -661,7 +661,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/bush_green.png",
+      "imagePath": "validated/exemple/bush_left_green.png",
       "name": "Bush",
       "tags": [
         "Plants",
@@ -698,7 +698,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_28_pink.png",
+      "imagePath": "validated/exemple/flat_office_28_pink.png",
       "name": "Flat_Office_28",
       "tags": [],
       "direction": "",
@@ -711,7 +711,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/christmas-tree-small_unknown.png",
+      "imagePath": "validated/exemple/christmas-tree-small_unknown.png",
       "name": "Christmas Tree Small",
       "tags": [
         "Plants",
@@ -754,7 +754,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/screen_back_unknown.png",
+      "imagePath": "validated/exemple/screen_back_unknown.png",
       "name": "Screen",
       "tags": [
         "Meeting & School",
@@ -770,7 +770,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_01_pink.png",
+      "imagePath": "validated/exemple/flat_office_01_pink.png",
       "name": "Flat_Office_01",
       "tags": [],
       "direction": "",
@@ -783,7 +783,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_100_black.png",
+      "imagePath": "validated/exemple/flat_office_100_black.png",
       "name": "Flat_Office_100",
       "tags": [],
       "direction": "",
@@ -796,7 +796,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/tree-6_red.png",
+      "imagePath": "validated/exemple/tree-6_left_red.png",
       "name": "Tree 6",
       "tags": [
         "Plants",
@@ -812,7 +812,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_03_black.png",
+      "imagePath": "validated/exemple/flat_office_03_black.png",
       "name": "Flat_Office_03",
       "tags": [],
       "direction": "",
@@ -825,7 +825,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/asset-flats_69_left_unknown.png",
+      "imagePath": "validated/exemple/asset-flats_69_left_unknown.png",
       "name": "Asset-Flats_69",
       "tags": [],
       "direction": "left",
@@ -838,7 +838,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/asset-flats_55_unknown.png",
+      "imagePath": "validated/exemple/asset-flats_55_unknown.png",
       "name": "Asset-Flats_55",
       "tags": [
         "Meeting & School",
@@ -854,7 +854,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/asset-flats_41_unknown.png",
+      "imagePath": "validated/exemple/asset-flats_41_unknown.png",
       "name": "Asset-Flats_41",
       "tags": [],
       "direction": "",
@@ -867,7 +867,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/asset-flats_83_unknown.png",
+      "imagePath": "validated/exemple/asset-flats_83_unknown.png",
       "name": "Asset-Flats_83",
       "tags": [],
       "direction": "",
@@ -889,7 +889,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/asset-flats_97_blue.png",
+      "imagePath": "validated/exemple/asset-flats_97_blue.png",
       "name": "Asset-Flats_97",
       "tags": [
         "Meeting & School",
@@ -905,7 +905,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_249_blue.png",
+      "imagePath": "validated/exemple/flat_office_249_blue.png",
       "name": "Flat_Office_249",
       "tags": [],
       "direction": "",
@@ -927,7 +927,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_16_unknown.png",
+      "imagePath": "validated/exemple/flat_office_16_unknown.png",
       "name": "Flat_Office_16",
       "tags": [],
       "direction": "",
@@ -949,7 +949,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_117_unknown.png",
+      "imagePath": "validated/exemple/flat_office_117_left_unknown.png",
       "name": "Flat_Office_117",
       "tags": [
         "Meeting & School",
@@ -965,7 +965,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/bush_coral.png",
+      "imagePath": "validated/exemple/bush_left_coral.png",
       "name": "Bush",
       "tags": [
         "Plants",
@@ -1002,7 +1002,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/tree-7_unknown.png",
+      "imagePath": "validated/exemple/tree-7_left_unknown.png",
       "name": "Tree 7",
       "tags": [
         "Plants",
@@ -1070,7 +1070,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/bush-1_red.png",
+      "imagePath": "validated/exemple/bush-1_left_red.png",
       "name": "Bush 1",
       "tags": [
         "Plants",
@@ -1104,7 +1104,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_12_unknown.png",
+      "imagePath": "validated/exemple/flat_office_12_left_unknown.png",
       "name": "Flat_Office_12",
       "tags": [
         "Plants",
@@ -1131,7 +1131,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_259_unknown.png",
+      "imagePath": "validated/exemple/flat_office_259_unknown.png",
       "name": "Flat_Office_259",
       "tags": [],
       "direction": "",
@@ -1167,7 +1167,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/asset-flats_51_yellow.png",
+      "imagePath": "validated/exemple/asset-flats_51_yellow.png",
       "name": "Asset-Flats_51",
       "tags": [
         "Meeting & School",
@@ -1183,7 +1183,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/asset-flats_86_red.png",
+      "imagePath": "validated/exemple/asset-flats_86_red.png",
       "name": "Asset-Flats_86",
       "tags": [],
       "direction": "",
@@ -1196,7 +1196,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/tree-1_green.png",
+      "imagePath": "validated/exemple/tree-1_left_green.png",
       "name": "Tree 1",
       "tags": [
         "Plants",
@@ -1251,7 +1251,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_112_unknown.png",
+      "imagePath": "validated/exemple/flat_office_112_unknown.png",
       "name": "Flat_Office_112",
       "tags": [],
       "direction": "",
@@ -1264,7 +1264,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/bush_green-1.png",
+      "imagePath": "validated/exemple/bush-6_left_green.png",
       "name": "Bush 6",
       "tags": [
         "Plants",
@@ -1298,7 +1298,7 @@
       "dateModified": "2026-06-29T12:15:41.919Z"
     },
     {
-      "imagePath": "validated/new-pack/palm_unknown.png",
+      "imagePath": "validated/exemple/palm_left_unknown.png",
       "name": "Palm",
       "tags": [
         "Plants",
@@ -1347,7 +1347,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_104_unknown.png",
+      "imagePath": "validated/exemple/flat_office_104_unknown.png",
       "name": "Flat_Office_104",
       "tags": [],
       "direction": "",
@@ -1360,7 +1360,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_05_unknown.png",
+      "imagePath": "validated/exemple/flat_office_05_left_unknown.png",
       "name": "Flat_Office_05",
       "tags": [
         "Plants",
@@ -1391,7 +1391,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/asset-flats_53_green.png",
+      "imagePath": "validated/exemple/asset-flats_53_green.png",
       "name": "Asset-Flats_53",
       "tags": [],
       "direction": "",
@@ -1404,7 +1404,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/asset-flats_91_green.png",
+      "imagePath": "validated/exemple/asset-flats_91_green.png",
       "name": "Asset-Flats_91",
       "tags": [],
       "direction": "",
@@ -1417,7 +1417,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_10_unknown.png",
+      "imagePath": "validated/exemple/flat_office_10_left_unknown.png",
       "name": "Flat_Office_10",
       "tags": [
         "Plants",
@@ -1444,7 +1444,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/bush-2_green.png",
+      "imagePath": "validated/exemple/bush-2_left_green.png",
       "name": "Bush 2",
       "tags": [
         "Plants",
@@ -1481,7 +1481,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flower-3_unknown.png",
+      "imagePath": "validated/exemple/flower-3_unknown.png",
       "name": "Flower 3",
       "tags": [
         "Plants",
@@ -1497,7 +1497,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/palm-curved_unknown.png",
+      "imagePath": "validated/exemple/palm-curved_left_unknown.png",
       "name": "Palm Curved",
       "tags": [
         "Plants",
@@ -1546,7 +1546,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_134_unknown.png",
+      "imagePath": "validated/exemple/flat_office_134_unknown.png",
       "name": "Flat_Office_134",
       "tags": [
         "Meeting & School",
@@ -1567,7 +1567,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_21_unknown.png",
+      "imagePath": "validated/exemple/flat_office_21_unknown.png",
       "name": "Flat_Office_21",
       "tags": [
         "Meeting & School",
@@ -1595,7 +1595,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/asset-flats_63_unknown.png",
+      "imagePath": "validated/exemple/asset-flats_63_unknown.png",
       "name": "Asset-Flats_63",
       "tags": [
         "Meeting & School",
@@ -1611,7 +1611,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/asset-flats_89_blue.png",
+      "imagePath": "validated/exemple/asset-flats_89_blue.png",
       "name": "Asset-Flats_89",
       "tags": [],
       "direction": "",
@@ -1624,7 +1624,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/christmas-tree-1_unknown.png",
+      "imagePath": "validated/exemple/christmas-tree-1_unknown.png",
       "name": "Christmas Tree 1",
       "tags": [
         "Plants",
@@ -1713,7 +1713,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_08_unknown.png",
+      "imagePath": "validated/exemple/flat_office_08_left_unknown.png",
       "name": "Flat_Office_08",
       "tags": [
         "Plants",
@@ -1747,7 +1747,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_34_unknown.png",
+      "imagePath": "validated/exemple/flat_office_34_unknown.png",
       "name": "Flat_Office_34",
       "tags": [
         "Meeting & School",
@@ -1772,7 +1772,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/tree-1_coral.png",
+      "imagePath": "validated/exemple/tree-1_left_coral.png",
       "name": "Tree 1",
       "tags": [
         "Plants",
@@ -1827,7 +1827,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_109_unknown.png",
+      "imagePath": "validated/exemple/flat_office_109_left_unknown.png",
       "name": "Flat_Office_109",
       "tags": [
         "Meeting & School",
@@ -1870,7 +1870,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/tree-2_coral.png",
+      "imagePath": "validated/exemple/tree-2_left_coral.png",
       "name": "Tree 2",
       "tags": [
         "Plants",
@@ -1931,7 +1931,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flower-4_unknown.png",
+      "imagePath": "validated/exemple/flower-4_unknown.png",
       "name": "Flower 4",
       "tags": [
         "Plants",
@@ -1947,7 +1947,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/plant-1_unknown.png",
+      "imagePath": "validated/exemple/plant-1_unknown.png",
       "name": "Plant 1",
       "tags": [
         "Plants",
@@ -1963,7 +1963,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/plant-2_unknown.png",
+      "imagePath": "validated/exemple/plant-2_unknown.png",
       "name": "Plant 2",
       "tags": [
         "Plants",
@@ -1979,7 +1979,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/christmas-tree-2_unknown.png",
+      "imagePath": "validated/exemple/christmas-tree-2_unknown.png",
       "name": "Christmas Tree 2",
       "tags": [
         "Plants",
@@ -2094,7 +2094,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_255_unknown.png",
+      "imagePath": "validated/exemple/flat_office_255_unknown.png",
       "name": "Flat_Office_255",
       "tags": [],
       "direction": "",
@@ -2130,7 +2130,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/asset-flats_48_blue.png",
+      "imagePath": "validated/exemple/asset-flats_48_blue.png",
       "name": "Asset-Flats_48",
       "tags": [],
       "direction": "",
@@ -2143,7 +2143,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/asset-flats_61_unknown.png",
+      "imagePath": "validated/exemple/asset-flats_61_unknown.png",
       "name": "Asset-Flats_61",
       "tags": [],
       "direction": "",
@@ -2156,7 +2156,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_37_unknown.png",
+      "imagePath": "validated/exemple/flat_office_37_unknown.png",
       "name": "Flat_Office_37",
       "tags": [],
       "direction": "",
@@ -2178,7 +2178,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_136_black.png",
+      "imagePath": "validated/exemple/flat_office_136_black.png",
       "name": "Flat_Office_136",
       "tags": [],
       "direction": "",
@@ -2196,7 +2196,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/tree-5_red.png",
+      "imagePath": "validated/exemple/tree-5_left_red.png",
       "name": "Tree 5",
       "tags": [
         "Plants",
@@ -2244,7 +2244,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/plant-3_unknown.png",
+      "imagePath": "validated/exemple/plant-3_unknown.png",
       "name": "Plant 3",
       "tags": [
         "Plants",
@@ -2260,7 +2260,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flower-5_unknown.png",
+      "imagePath": "validated/exemple/flower-5_unknown.png",
       "name": "Flower 5",
       "tags": [
         "Plants",
@@ -2276,7 +2276,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/tree-3_green.png",
+      "imagePath": "validated/exemple/tree-3_left_green.png",
       "name": "Tree 3",
       "tags": [
         "Plants",
@@ -2337,7 +2337,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_33_unknown.png",
+      "imagePath": "validated/exemple/flat_office_33_left_unknown.png",
       "name": "Flat_Office_33",
       "tags": [
         "Meeting & School",
@@ -2362,7 +2362,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_250_blue.png",
+      "imagePath": "validated/exemple/flat_office_250_left_blue.png",
       "name": "Flat_Office_250",
       "tags": [],
       "direction": "left",
@@ -2393,7 +2393,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/asset-flats_70_back_unknown.png",
+      "imagePath": "validated/exemple/asset-flats_70_left_unknown.png",
       "name": "Asset-Flats_70",
       "tags": [],
       "direction": "left",
@@ -2406,7 +2406,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/stand-chair_right_unknown.png",
+      "imagePath": "validated/exemple/stand-chair_left_unknown.png",
       "name": "Stand Chair",
       "tags": [
         "Meeting & School",
@@ -2422,7 +2422,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/tree-3_coral.png",
+      "imagePath": "validated/exemple/tree-3_left_coral.png",
       "name": "Tree 3",
       "tags": [
         "Plants",
@@ -2483,7 +2483,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/tree-4_green.png",
+      "imagePath": "validated/exemple/tree-4_left_green.png",
       "name": "Tree 4",
       "tags": [
         "Plants",
@@ -2532,7 +2532,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/asset-flats_107_back_blue.png",
+      "imagePath": "validated/exemple/asset-flats_107_back_blue.png",
       "name": "Asset-Flats_107",
       "tags": [
         "Meeting & School",
@@ -2548,7 +2548,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_127_red.png",
+      "imagePath": "validated/exemple/flat_office_127_red.png",
       "name": "Flat_Office_127",
       "tags": [
         "Meeting & School",
@@ -2579,7 +2579,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flower_blue.png",
+      "imagePath": "validated/exemple/flower_blue.png",
       "name": "Flower",
       "tags": [
         "Plants",
@@ -2595,7 +2595,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flower_white.png",
+      "imagePath": "validated/exemple/flower_white.png",
       "name": "Flower",
       "tags": [
         "Plants",
@@ -2611,7 +2611,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flower_green.png",
+      "imagePath": "validated/exemple/flower_green.png",
       "name": "Flower",
       "tags": [
         "Plants",
@@ -2627,7 +2627,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/tree-2_green.png",
+      "imagePath": "validated/exemple/tree-2_left_green.png",
       "name": "Tree 2",
       "tags": [
         "Plants",
@@ -2643,7 +2643,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_119_red.png",
+      "imagePath": "validated/exemple/flat_office_119_left_red.png",
       "name": "Flat_Office_119",
       "tags": [
         "Meeting & School",
@@ -2659,7 +2659,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/tree-4_coral.png",
+      "imagePath": "validated/exemple/tree-4_left_coral.png",
       "name": "Tree 4",
       "tags": [
         "Plants",
@@ -2708,7 +2708,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_18_light_grey.png",
+      "imagePath": "validated/exemple/flat_office_18_light_grey.png",
       "name": "Flat_Office_18",
       "tags": [],
       "direction": "",
@@ -2730,7 +2730,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_24_light_grey.png",
+      "imagePath": "validated/exemple/flat_office_24_light_grey.png",
       "name": "Flat_Office_24",
       "tags": [],
       "direction": "",
@@ -2743,7 +2743,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_30_unknown.png",
+      "imagePath": "validated/exemple/flat_office_30_unknown.png",
       "name": "Flat_Office_30",
       "tags": [],
       "direction": "",
@@ -2769,7 +2769,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_253_green.png",
+      "imagePath": "validated/exemple/flat_office_253_left_green.png",
       "name": "Flat_Office_253",
       "tags": [
         "Meeting & School",
@@ -2812,7 +2812,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/asset-flats_66_left_unknown.png",
+      "imagePath": "validated/exemple/asset-flats_66_left_unknown.png",
       "name": "Asset-Flats_66",
       "tags": [],
       "direction": "left",
@@ -2825,7 +2825,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_246_blue.png",
+      "imagePath": "validated/exemple/flat_office_246_left_blue.png",
       "name": "Flat_Office_246",
       "tags": [],
       "direction": "left",
@@ -2865,7 +2865,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/tree-5_green.png",
+      "imagePath": "validated/exemple/tree-5_left_green.png",
       "name": "Tree 5",
       "tags": [
         "Plants",
@@ -2914,7 +2914,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_118_unknown.png",
+      "imagePath": "validated/exemple/flat_office_118_unknown.png",
       "name": "Flat_Office_118",
       "tags": [],
       "direction": "",
@@ -2927,7 +2927,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_130_black.png",
+      "imagePath": "validated/exemple/flat_office_130_black.png",
       "name": "Flat_Office_130",
       "tags": [
         "Meeting & School",
@@ -2943,7 +2943,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_124_left_unknown.png",
+      "imagePath": "validated/exemple/flat_office_124_left_unknown.png",
       "name": "Flat_Office_124",
       "tags": [
         "Meeting & School",
@@ -2959,7 +2959,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/plant_green.png",
+      "imagePath": "validated/exemple/plant_green.png",
       "name": "Plant",
       "tags": [
         "Plants",
@@ -2975,7 +2975,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_42_light_grey.png",
+      "imagePath": "validated/exemple/flat_office_42_light_grey.png",
       "name": "Flat_Office_42",
       "tags": [
         "Meeting & School",
@@ -2991,7 +2991,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/stand-chair_back_red.png",
+      "imagePath": "validated/exemple/stand-chair_back_red.png",
       "name": "Stand Chair",
       "tags": [
         "Meeting & School",
@@ -3007,7 +3007,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_209_right_unknown.png",
+      "imagePath": "validated/exemple/flat_office_209_right_unknown.png",
       "name": "Flat_Office_209",
       "tags": [],
       "direction": "right",
@@ -3020,7 +3020,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_235_unknown.png",
+      "imagePath": "validated/exemple/flat_office_235_left_unknown.png",
       "name": "Flat_Office_235",
       "tags": [],
       "direction": "left",
@@ -3033,7 +3033,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/asset-flats_28_left_unknown.png",
+      "imagePath": "validated/exemple/asset-flats_28_left_unknown.png",
       "name": "Asset-Flats_28",
       "tags": [],
       "direction": "left",
@@ -3046,7 +3046,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_94_red.png",
+      "imagePath": "validated/exemple/flat_office_94_red.png",
       "name": "Flat_Office_94",
       "tags": [
         "Meeting & School",
@@ -3062,7 +3062,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_57_unknown.png",
+      "imagePath": "validated/exemple/flat_office_57_unknown.png",
       "name": "Flat_Office_57",
       "tags": [],
       "direction": "",
@@ -3087,7 +3087,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_156_beige.png",
+      "imagePath": "validated/exemple/flat_office_156_beige.png",
       "name": "Flat_Office_156",
       "tags": [
         "Meeting & School",
@@ -3112,7 +3112,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_142_light_grey.png",
+      "imagePath": "validated/exemple/flat_office_142_light_grey.png",
       "name": "Flat_Office_142",
       "tags": [
         "Meeting & School",
@@ -3128,7 +3128,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_168_beige.png",
+      "imagePath": "validated/exemple/flat_office_168_beige.png",
       "name": "Flat_Office_168",
       "tags": [
         "Meeting & School",
@@ -3153,7 +3153,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_154_red.png",
+      "imagePath": "validated/exemple/flat_office_154_red.png",
       "name": "Flat_Office_154",
       "tags": [
         "Meeting & School",
@@ -3169,7 +3169,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_140_light_grey.png",
+      "imagePath": "validated/exemple/flat_office_140_light_grey.png",
       "name": "Flat_Office_140",
       "tags": [
         "Meeting & School",
@@ -3185,7 +3185,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/table_maroon.png",
+      "imagePath": "validated/exemple/table_maroon.png",
       "name": "Table",
       "tags": [
         "Meeting & School",
@@ -3218,7 +3218,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/asset-flats_16_unknown.png",
+      "imagePath": "validated/exemple/asset-flats_16_unknown.png",
       "name": "Asset-Flats_16",
       "tags": [],
       "direction": "",
@@ -3242,7 +3242,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_40_unknown.png",
+      "imagePath": "validated/exemple/flat_office_40_unknown.png",
       "name": "Flat_Office_40",
       "tags": [],
       "direction": "",
@@ -3266,7 +3266,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_155_coral.png",
+      "imagePath": "validated/exemple/flat_office_155_coral.png",
       "name": "Flat_Office_155",
       "tags": [
         "Meeting & School",
@@ -3291,7 +3291,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_169_light_grey.png",
+      "imagePath": "validated/exemple/flat_office_169_light_grey.png",
       "name": "Flat_Office_169",
       "tags": [
         "Meeting & School",
@@ -3316,7 +3316,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_182_coral.png",
+      "imagePath": "validated/exemple/flat_office_182_left_coral.png",
       "name": "Flat_Office_182",
       "tags": [],
       "direction": "left",
@@ -3356,7 +3356,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/banch_light_grey.png",
+      "imagePath": "validated/exemple/banch_light_grey.png",
       "name": "Banch",
       "tags": [],
       "direction": "",
@@ -3369,7 +3369,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/plant-4_unknown.png",
+      "imagePath": "validated/exemple/plant-4_unknown.png",
       "name": "Plant 4",
       "tags": [
         "Plants",
@@ -3385,7 +3385,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flower_coral.png",
+      "imagePath": "validated/exemple/flower_coral.png",
       "name": "Flower",
       "tags": [
         "Plants",
@@ -3401,7 +3401,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_151_right_black.png",
+      "imagePath": "validated/exemple/flat_office_151_left_black.png",
       "name": "Flat_Office_151",
       "tags": [
         "Meeting & School",
@@ -3417,7 +3417,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_145_unknown.png",
+      "imagePath": "validated/exemple/flat_office_145_unknown.png",
       "name": "Flat_Office_145",
       "tags": [],
       "direction": "",
@@ -3439,7 +3439,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_44_back_light_grey.png",
+      "imagePath": "validated/exemple/flat_office_44_back_light_grey.png",
       "name": "Flat_Office_44",
       "tags": [
         "Meeting & School",
@@ -3455,7 +3455,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_233_unknown.png",
+      "imagePath": "validated/exemple/flat_office_233_left_unknown.png",
       "name": "Flat_Office_233",
       "tags": [],
       "direction": "left",
@@ -3468,7 +3468,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_87_back_unknown.png",
+      "imagePath": "validated/exemple/flat_office_87_back_unknown.png",
       "name": "Flat_Office_87",
       "tags": [
         "Meeting & School",
@@ -3493,7 +3493,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/table_olive.png",
+      "imagePath": "validated/exemple/table_olive.png",
       "name": "Table",
       "tags": [
         "Meeting & School",
@@ -3526,7 +3526,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/table_teal.png",
+      "imagePath": "validated/exemple/table_teal.png",
       "name": "Table",
       "tags": [
         "Meeting & School",
@@ -3559,7 +3559,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_92_light_grey.png",
+      "imagePath": "validated/exemple/flat_office_92_light_grey.png",
       "name": "Flat_Office_92",
       "tags": [
         "Meeting & School",
@@ -3575,7 +3575,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/stand-chair_back_black.png",
+      "imagePath": "validated/exemple/stand-chair_back_black.png",
       "name": "Stand Chair",
       "tags": [
         "Meeting & School",
@@ -3591,7 +3591,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/small-rounded-table_tan.png",
+      "imagePath": "validated/exemple/small-rounded-table_tan.png",
       "name": "Small rounded table",
       "tags": [
         "Meeting & School",
@@ -3612,7 +3612,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_144_unknown.png",
+      "imagePath": "validated/exemple/flat_office_144_unknown.png",
       "name": "Flat_Office_144",
       "tags": [],
       "direction": "",
@@ -3625,7 +3625,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/banch_left_unknown.png",
+      "imagePath": "validated/exemple/banch_left_unknown.png",
       "name": "Banch",
       "tags": [
         "Meeting & School",
@@ -3641,7 +3641,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_193_unknown.png",
+      "imagePath": "validated/exemple/flat_office_193_unknown.png",
       "name": "Flat_Office_193",
       "tags": [],
       "direction": "",
@@ -3654,7 +3654,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flower-6_unknown.png",
+      "imagePath": "validated/exemple/flower-6_unknown.png",
       "name": "Flower 6",
       "tags": [
         "Plants",
@@ -3670,7 +3670,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flower-7_unknown.png",
+      "imagePath": "validated/exemple/flower-7_unknown.png",
       "name": "Flower 7",
       "tags": [
         "Plants",
@@ -3686,7 +3686,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_146_unknown.png",
+      "imagePath": "validated/exemple/flat_office_146_unknown.png",
       "name": "Flat_Office_146",
       "tags": [],
       "direction": "",
@@ -3699,7 +3699,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/banch_black.png",
+      "imagePath": "validated/exemple/banch_black.png",
       "name": "Banch",
       "tags": [
         "Meeting & School",
@@ -3715,7 +3715,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_84_back_unknown.png",
+      "imagePath": "validated/exemple/flat_office_84_back_unknown.png",
       "name": "Flat_Office_84",
       "tags": [],
       "direction": "back",
@@ -3737,7 +3737,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/stand-chair_right_black.png",
+      "imagePath": "validated/exemple/stand-chair_left_black.png",
       "name": "Stand Chair",
       "tags": [
         "Meeting & School",
@@ -3753,7 +3753,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/table_brown.png",
+      "imagePath": "validated/exemple/table_brown.png",
       "name": "Table",
       "tags": [
         "Meeting & School",
@@ -3786,7 +3786,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/table_chocolate.png",
+      "imagePath": "validated/exemple/table_chocolate.png",
       "name": "Table",
       "tags": [
         "Meeting & School",
@@ -3819,7 +3819,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/table_coral.png",
+      "imagePath": "validated/exemple/table_coral.png",
       "name": "Table",
       "tags": [
         "Meeting & School",
@@ -3852,7 +3852,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/coffee_red.png",
+      "imagePath": "validated/exemple/coffee_left_red.png",
       "name": "Coffee",
       "tags": [],
       "direction": "left",
@@ -3865,7 +3865,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/stand-chair_right_red.png",
+      "imagePath": "validated/exemple/stand-chair_left_red.png",
       "name": "Stand Chair",
       "tags": [
         "Meeting & School",
@@ -3881,7 +3881,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flat_office_147_unknown.png",
+      "imagePath": "validated/exemple/flat_office_147_unknown.png",
       "name": "Flat_Office_147",
       "tags": [],
       "direction": "",
@@ -3894,7 +3894,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/flower-8_unknown.png",
+      "imagePath": "validated/exemple/flower-8_unknown.png",
       "name": "Flower 8",
       "tags": [
         "Plants",
@@ -3910,7 +3910,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/banch_left_light_grey.png",
+      "imagePath": "validated/exemple/banch_left_light_grey.png",
       "name": "Banch",
       "tags": [
         "Meeting & School",
@@ -3926,7 +3926,7 @@
       "dateModified": ""
     },
     {
-      "imagePath": "validated/new-pack/christmas-tree-and-sign_unknown-mirror.png",
+      "imagePath": "validated/exemple/christmas-tree-and-sign_right_unknown.png",
       "name": "Christmas Tree and sign",
       "tags": [
         "Plants",
@@ -3977,7 +3977,7 @@
       "id": "4eab51cf-ce8d-4ca0-bdb0-7dabb0cb3676"
     },
     {
-      "imagePath": "validated/new-pack/asset-flats_08_light_grey-mirror.png",
+      "imagePath": "validated/exemple/asset-flats_08_right_light_grey.png",
       "name": "Asset-Flats_08",
       "tags": [],
       "direction": "right",
@@ -3990,7 +3990,7 @@
       "id": "f168e213-c194-480e-bb1e-313ee4787bc7"
     },
     {
-      "imagePath": "validated/new-pack/armchair_black-mirror.png",
+      "imagePath": "validated/exemple/armchair_right_black.png",
       "name": "Armchair",
       "tags": [
         "Meeting & School",
@@ -4006,7 +4006,7 @@
       "id": "c0ff1d72-bebd-425e-aa20-69ea9f00cdaf"
     },
     {
-      "imagePath": "validated/new-pack/armchair_red-mirror.png",
+      "imagePath": "validated/exemple/armchair_right_red.png",
       "name": "Armchair",
       "tags": [
         "Office",
@@ -4022,7 +4022,7 @@
       "id": "d2ca04bc-e2e0-419f-ba89-da844a930b43"
     },
     {
-      "imagePath": "validated/new-pack/rock-1_unknown-mirror.png",
+      "imagePath": "validated/exemple/rock-1_right_unknown.png",
       "name": "Rock 1",
       "tags": [
         "Plants",
@@ -4051,7 +4051,7 @@
       "id": "15b36866-0273-4bf3-8dbc-1299a6095f34"
     },
     {
-      "imagePath": "validated/new-pack/flat_office_164_unknown-mirror.png",
+      "imagePath": "validated/exemple/flat_office_164_right_unknown.png",
       "name": "Flat_Office_164",
       "tags": [],
       "direction": "right",
@@ -4074,7 +4074,7 @@
       "id": "59d2e295-ad3a-4af2-8550-f77a338a8208"
     },
     {
-      "imagePath": "validated/new-pack/coffee_unknown-mirror.png",
+      "imagePath": "validated/exemple/coffee_right_unknown.png",
       "name": "Coffee",
       "tags": [],
       "direction": "right",
@@ -4087,7 +4087,7 @@
       "id": "991a1ebf-f242-4335-b20d-65134edb57b8"
     },
     {
-      "imagePath": "validated/new-pack/laptop_right_unknown-mirror.png",
+      "imagePath": "validated/exemple/laptop_right_unknown.png",
       "name": "Laptop",
       "tags": [],
       "direction": "right",
@@ -4100,7 +4100,7 @@
       "id": "ff1cc9b8-2c1a-46be-a7c9-997fb57a3306"
     },
     {
-      "imagePath": "validated/new-pack/rock-2_unknown-mirror.png",
+      "imagePath": "validated/exemple/rock-2_right_unknown.png",
       "name": "Rock 2",
       "tags": [
         "Plants",
@@ -4131,7 +4131,7 @@
       "id": "e8373487-071b-49ff-a01e-c4550eb88e73"
     },
     {
-      "imagePath": "validated/new-pack/bush_green-mirror.png",
+      "imagePath": "validated/exemple/bush_right_green.png",
       "name": "Bush",
       "tags": [
         "Plants",
@@ -4168,7 +4168,7 @@
       "id": "fbceae91-478b-4241-bb6f-e9d58b9439b0"
     },
     {
-      "imagePath": "validated/new-pack/tree-6_red-mirror.png",
+      "imagePath": "validated/exemple/tree-6_right_red.png",
       "name": "Tree 6",
       "tags": [
         "Plants",
@@ -4184,7 +4184,7 @@
       "id": "8e46827c-853b-492c-b543-f5f89b51c96d"
     },
     {
-      "imagePath": "validated/new-pack/flat_office_117_unknown-mirror.png",
+      "imagePath": "validated/exemple/flat_office_117_right_unknown.png",
       "name": "Flat_Office_117",
       "tags": [
         "Meeting & School",
@@ -4200,7 +4200,7 @@
       "id": "0f1f0fb0-a5a9-4046-9b1c-bb4fd132f4d4"
     },
     {
-      "imagePath": "validated/new-pack/bush_coral-mirror.png",
+      "imagePath": "validated/exemple/bush_right_coral.png",
       "name": "Bush",
       "tags": [
         "Plants",
@@ -4237,7 +4237,7 @@
       "id": "1cb76280-ec71-4bbe-a6be-58bd720722b3"
     },
     {
-      "imagePath": "validated/new-pack/tree-7_unknown-mirror.png",
+      "imagePath": "validated/exemple/tree-7_right_unknown.png",
       "name": "Tree 7",
       "tags": [
         "Plants",
@@ -4305,7 +4305,7 @@
       "id": "fd8726ac-c467-47c8-94ad-1a09c483d1b2"
     },
     {
-      "imagePath": "validated/new-pack/bush-1_red-mirror.png",
+      "imagePath": "validated/exemple/bush-1_right_red.png",
       "name": "Bush 1",
       "tags": [
         "Plants",
@@ -4339,7 +4339,7 @@
       "id": "2111c44e-91c6-4eae-b929-f79812e67bfb"
     },
     {
-      "imagePath": "validated/new-pack/flat_office_12_unknown-mirror.png",
+      "imagePath": "validated/exemple/flat_office_12_right_unknown.png",
       "name": "Flat_Office_12",
       "tags": [
         "Plants",
@@ -4366,7 +4366,7 @@
       "id": "ccb34c79-f78f-4bdf-9e00-69e62cfa93e8"
     },
     {
-      "imagePath": "validated/new-pack/tree-1_green-mirror.png",
+      "imagePath": "validated/exemple/tree-1_right_green.png",
       "name": "Tree 1",
       "tags": [
         "Plants",
@@ -4421,7 +4421,7 @@
       "id": "43588fbe-ae35-46d9-9402-914a50fab2e6"
     },
     {
-      "imagePath": "validated/new-pack/bush_green-1-mirror.png",
+      "imagePath": "validated/exemple/bush-6_right_green.png",
       "name": "Bush 6",
       "tags": [
         "Plants",
@@ -4455,7 +4455,7 @@
       "id": "f268b6e8-62db-45e4-b990-125c4f8132b4"
     },
     {
-      "imagePath": "validated/new-pack/palm_unknown-mirror.png",
+      "imagePath": "validated/exemple/palm_right_unknown.png",
       "name": "Palm",
       "tags": [
         "Plants",
@@ -4504,7 +4504,7 @@
       "id": "4b5e1777-39bc-4958-8428-29029a22a7c9"
     },
     {
-      "imagePath": "validated/new-pack/flat_office_05_unknown-mirror.png",
+      "imagePath": "validated/exemple/flat_office_05_right_unknown.png",
       "name": "Flat_Office_05",
       "tags": [
         "Plants",
@@ -4535,7 +4535,7 @@
       "id": "050f70c0-8314-4dfb-98ee-56607337318e"
     },
     {
-      "imagePath": "validated/new-pack/flat_office_10_unknown-mirror.png",
+      "imagePath": "validated/exemple/flat_office_10_right_unknown.png",
       "name": "Flat_Office_10",
       "tags": [
         "Plants",
@@ -4562,7 +4562,7 @@
       "id": "1b00f78a-329a-4c6b-96be-2922d238e056"
     },
     {
-      "imagePath": "validated/new-pack/bush-2_green-mirror.png",
+      "imagePath": "validated/exemple/bush-2_right_green.png",
       "name": "Bush 2",
       "tags": [
         "Plants",
@@ -4599,7 +4599,7 @@
       "id": "4d0bb824-ee3f-404a-87fd-fb2e200d7ac1"
     },
     {
-      "imagePath": "validated/new-pack/palm-curved_unknown-mirror.png",
+      "imagePath": "validated/exemple/palm-curved_right_unknown.png",
       "name": "Palm Curved",
       "tags": [
         "Plants",
@@ -4648,7 +4648,7 @@
       "id": "c54844c2-c4d5-402c-8482-3f1c4f1d3a95"
     },
     {
-      "imagePath": "validated/new-pack/flat_office_08_unknown-mirror.png",
+      "imagePath": "validated/exemple/flat_office_08_right_unknown.png",
       "name": "Flat_Office_08",
       "tags": [
         "Plants",
@@ -4682,7 +4682,7 @@
       "id": "a5ade9f9-a88b-4edf-89cb-7b9678d6b2d3"
     },
     {
-      "imagePath": "validated/new-pack/tree-1_coral-mirror.png",
+      "imagePath": "validated/exemple/tree-1_right_coral.png",
       "name": "Tree 1",
       "tags": [
         "Plants",
@@ -4737,7 +4737,7 @@
       "id": "868726dc-883a-42d5-aefb-75f4ebd4836c"
     },
     {
-      "imagePath": "validated/new-pack/flat_office_109_unknown-mirror.png",
+      "imagePath": "validated/exemple/flat_office_109_right_unknown.png",
       "name": "Flat_Office_109",
       "tags": [
         "Meeting & School",
@@ -4780,7 +4780,7 @@
       "id": "cb691bb6-03a0-45c8-ae6f-585e1bd0bb0e"
     },
     {
-      "imagePath": "validated/new-pack/tree-2_coral-mirror.png",
+      "imagePath": "validated/exemple/tree-2_right_coral.png",
       "name": "Tree 2",
       "tags": [
         "Plants",
@@ -4841,7 +4841,7 @@
       "id": "0700f82d-2ae0-40c1-90e6-62eca2710da1"
     },
     {
-      "imagePath": "validated/new-pack/tree-5_red-mirror.png",
+      "imagePath": "validated/exemple/tree-5_right_red.png",
       "name": "Tree 5",
       "tags": [
         "Plants",
@@ -4889,7 +4889,7 @@
       "id": "6acad0d1-c7b3-4e0f-aeea-c5a2f4cc8c9a"
     },
     {
-      "imagePath": "validated/new-pack/tree-3_green-mirror.png",
+      "imagePath": "validated/exemple/tree-3_right_green.png",
       "name": "Tree 3",
       "tags": [
         "Plants",
@@ -4950,7 +4950,7 @@
       "id": "b78462f9-6bf5-466c-9f56-f40cc94cca33"
     },
     {
-      "imagePath": "validated/new-pack/flat_office_33_unknown-mirror.png",
+      "imagePath": "validated/exemple/flat_office_33_right_unknown.png",
       "name": "Flat_Office_33",
       "tags": [
         "Meeting & School",
@@ -4975,7 +4975,7 @@
       "id": "69e4304c-1d40-4b37-a57d-ebb4b0107bda"
     },
     {
-      "imagePath": "validated/new-pack/flat_office_250_blue-mirror.png",
+      "imagePath": "validated/exemple/flat_office_250_right_blue.png",
       "name": "Flat_Office_250",
       "tags": [],
       "direction": "right",
@@ -5006,7 +5006,7 @@
       "id": "315a9349-635c-40e1-b308-3b8a3d30f6dd"
     },
     {
-      "imagePath": "validated/new-pack/asset-flats_70_back_unknown-mirror.png",
+      "imagePath": "validated/exemple/asset-flats_70_right_unknown.png",
       "name": "Asset-Flats_70",
       "tags": [],
       "direction": "right",
@@ -5019,7 +5019,7 @@
       "id": "665e13af-60ee-4acc-9704-1b9cafead2c2"
     },
     {
-      "imagePath": "validated/new-pack/stand-chair_right_unknown-mirror.png",
+      "imagePath": "validated/exemple/stand-chair_right_unknown.png",
       "name": "Stand Chair",
       "tags": [
         "Meeting & School",
@@ -5035,7 +5035,7 @@
       "id": "4a982364-63d9-446e-956f-c8efa119f81b"
     },
     {
-      "imagePath": "validated/new-pack/tree-3_coral-mirror.png",
+      "imagePath": "validated/exemple/tree-3_right_coral.png",
       "name": "Tree 3",
       "tags": [
         "Plants",
@@ -5096,7 +5096,7 @@
       "id": "a48413a4-53d6-40a0-8833-39f5ff08972e"
     },
     {
-      "imagePath": "validated/new-pack/tree-4_green-mirror.png",
+      "imagePath": "validated/exemple/tree-4_right_green.png",
       "name": "Tree 4",
       "tags": [
         "Plants",
@@ -5145,7 +5145,7 @@
       "id": "8980d1c7-064d-4f22-a7be-8e12c2f40868"
     },
     {
-      "imagePath": "validated/new-pack/tree-2_green-mirror.png",
+      "imagePath": "validated/exemple/tree-2_right_green.png",
       "name": "Tree 2",
       "tags": [
         "Plants",
@@ -5161,7 +5161,7 @@
       "id": "513ac90c-8b26-455c-8e74-cb387bb8f3cc"
     },
     {
-      "imagePath": "validated/new-pack/flat_office_119_red-mirror.png",
+      "imagePath": "validated/exemple/flat_office_119_right_red.png",
       "name": "Flat_Office_119",
       "tags": [
         "Meeting & School",
@@ -5177,7 +5177,7 @@
       "id": "f267bf26-db3b-47da-b905-1934046ad4f8"
     },
     {
-      "imagePath": "validated/new-pack/tree-4_coral-mirror.png",
+      "imagePath": "validated/exemple/tree-4_right_coral.png",
       "name": "Tree 4",
       "tags": [
         "Plants",
@@ -5226,7 +5226,7 @@
       "id": "5ac3212a-44e3-4167-a6a4-e26ab77e39f4"
     },
     {
-      "imagePath": "validated/new-pack/flat_office_253_green-mirror.png",
+      "imagePath": "validated/exemple/flat_office_253_right_green.png",
       "name": "Flat_Office_253",
       "tags": [
         "Meeting & School",
@@ -5269,7 +5269,7 @@
       "id": "f0ddf12c-6ff8-4015-89fa-2178b039fb92"
     },
     {
-      "imagePath": "validated/new-pack/asset-flats_66_left_unknown-mirror.png",
+      "imagePath": "validated/exemple/asset-flats_66_right_unknown.png",
       "name": "Asset-Flats_66",
       "tags": [],
       "direction": "right",
@@ -5282,7 +5282,7 @@
       "id": "d09dd9f2-d617-40ee-8745-0fd43893d49b"
     },
     {
-      "imagePath": "validated/new-pack/flat_office_246_blue-mirror.png",
+      "imagePath": "validated/exemple/flat_office_246_right_blue.png",
       "name": "Flat_Office_246",
       "tags": [],
       "direction": "right",
@@ -5322,7 +5322,7 @@
       "id": "39f8fb96-1edd-4a9c-ae2f-6dbdda5e6049"
     },
     {
-      "imagePath": "validated/new-pack/tree-5_green-mirror.png",
+      "imagePath": "validated/exemple/tree-5_right_green.png",
       "name": "Tree 5",
       "tags": [
         "Plants",
@@ -5371,7 +5371,7 @@
       "id": "b756b5c0-311c-4bc8-9bea-7f946954e074"
     },
     {
-      "imagePath": "validated/new-pack/flat_office_124_left_unknown-mirror.png",
+      "imagePath": "validated/exemple/flat_office_124_right_unknown.png",
       "name": "Flat_Office_124",
       "tags": [
         "Meeting & School",
@@ -5387,7 +5387,7 @@
       "id": "751ce666-a3dd-40b7-b4fe-ef3f270d5a24"
     },
     {
-      "imagePath": "validated/new-pack/flat_office_235_unknown-mirror.png",
+      "imagePath": "validated/exemple/flat_office_235_right_unknown.png",
       "name": "Flat_Office_235",
       "tags": [],
       "direction": "right",
@@ -5400,7 +5400,7 @@
       "id": "b7a91bb0-c778-4949-8936-967a9346aab1"
     },
     {
-      "imagePath": "validated/new-pack/asset-flats_28_left_unknown-mirror.png",
+      "imagePath": "validated/exemple/asset-flats_28_right_unknown.png",
       "name": "Asset-Flats_28",
       "tags": [],
       "direction": "right",
@@ -5413,7 +5413,7 @@
       "id": "e02b5acf-c7e0-4397-99bc-08410c0a3f27"
     },
     {
-      "imagePath": "validated/new-pack/flat_office_182_coral-mirror.png",
+      "imagePath": "validated/exemple/flat_office_182_right_coral.png",
       "name": "Flat_Office_182",
       "tags": [],
       "direction": "right",
@@ -5453,7 +5453,7 @@
       "id": "e9c64b4d-d135-498d-88cb-105c09516872"
     },
     {
-      "imagePath": "validated/new-pack/flat_office_151_right_black-mirror.png",
+      "imagePath": "validated/exemple/flat_office_151_right_black.png",
       "name": "Flat_Office_151",
       "tags": [
         "Meeting & School",
@@ -5469,7 +5469,7 @@
       "id": "07e5583b-98a6-44db-8750-5c52db8cbad7"
     },
     {
-      "imagePath": "validated/new-pack/flat_office_233_unknown-mirror.png",
+      "imagePath": "validated/exemple/flat_office_233_right_unknown.png",
       "name": "Flat_Office_233",
       "tags": [],
       "direction": "right",
@@ -5482,7 +5482,7 @@
       "id": "a625123c-a80b-4482-836e-c732a69b1f5c"
     },
     {
-      "imagePath": "validated/new-pack/stand-chair_right_black-mirror.png",
+      "imagePath": "validated/exemple/stand-chair_right_black.png",
       "name": "Stand Chair",
       "tags": [
         "Meeting & School",
@@ -5498,7 +5498,7 @@
       "id": "07be9f87-ac62-45ee-8b40-9830a7a93b27"
     },
     {
-      "imagePath": "validated/new-pack/stand-chair_right_red-mirror.png",
+      "imagePath": "validated/exemple/stand-chair_right_red.png",
       "name": "Stand Chair",
       "tags": [
         "Meeting & School",
@@ -5514,7 +5514,7 @@
       "id": "adc123ef-ea8a-405f-ba6f-025a4cfd6a1c"
     },
     {
-      "imagePath": "validated/new-pack/coffee_red-mirror.png",
+      "imagePath": "validated/exemple/coffee_right_red.png",
       "name": "Coffee",
       "tags": [],
       "direction": "right",
@@ -5525,6 +5525,54 @@
       "dateAdded": "2026-06-29T12:15:16.163Z",
       "dateModified": "",
       "id": "b4514314-6d84-4dd1-815e-bd4f1da0d865"
+    }
+  ],
+  "compositions": [
+    {
+      "name": "Desk Exemple",
+      "category": "Furniture & Decoration",
+      "tags": [],
+      "canvasWidth": 320,
+      "canvasHeight": 320,
+      "layers": [
+        {
+          "assetId": "6aa08863-ddae-4c51-b64f-226ba9d1109f",
+          "x": 96,
+          "y": 128
+        },
+        {
+          "assetId": "031bce01-28b6-4b84-8b55-63e4272246dd",
+          "x": 128,
+          "y": 128
+        },
+        {
+          "assetId": "cb91bc91-7395-499a-883b-f99ee1753f8a",
+          "x": 137.96484375,
+          "y": 142.0390625
+        },
+        {
+          "assetId": "28f71e67-9b66-4ce3-8f99-07d2f732f6f6",
+          "x": 160,
+          "y": 128
+        },
+        {
+          "assetId": "870acbc1-3cfa-4c77-8a6e-4e188a106264",
+          "x": 104.6640625,
+          "y": 109.1796875
+        },
+        {
+          "assetId": "f70fa56b-a115-4809-901c-b7f7f03d41c2",
+          "x": 172.29296875,
+          "y": 105.80078125
+        },
+        {
+          "assetId": "c0ff1d72-bebd-425e-aa20-69ea9f00cdaf",
+          "x": 154.6953125,
+          "y": 153.77734375
+        }
+      ],
+      "dateAdded": "2026-06-29T13:28:07.572Z",
+      "id": "c7d5b865-df5f-48d2-bc85-9e3c82674e1a"
     }
   ]
 }

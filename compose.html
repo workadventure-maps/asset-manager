@@ -229,7 +229,9 @@
         </div>
       </div>
 
+      <div id="edit-banner" style="display:none;background:#eef2ff;border:1px solid #c7d2fe;border-radius:8px;padding:7px 10px;font-size:.82rem;color:#4f46e5;font-weight:600;margin-bottom:4px"></div>
       <div class="btn-row" style="margin-top:4px">
+        <button class="btn danger" id="btn-delete" style="display:none">Delete</button>
         <button class="btn primary" id="btn-save" disabled>Save composition</button>
       </div>
     </div>
@@ -250,6 +252,7 @@
   let selectedId = null;
   let collection = [];
   let allCategories = [], allTags = [];
+  let editingId = null;     // set when editing an existing composition
 
   // Drag-on-canvas state
   let dragging = false, dragLayerId = null;
@@ -335,10 +338,12 @@
   // ── Collection loading ─────────────────────────────────────────────────────
   async function loadCollection(){
     listEl.innerHTML='<div class="list-empty">Loading…</div>';
+    let compositions = [];
     try{
       const r = await fetch(`assets_list.json?t=${Date.now()}`);
       const d = await r.json();
       collection = Array.isArray(d.collection) ? d.collection : [];
+      compositions = Array.isArray(d.compositions) ? d.compositions : [];
     }catch{ collection=[]; }
     // Build autocomplete sets
     allCategories = [...new Set(collection.map(a=>a.category).filter(Boolean))].sort();
@@ -346,6 +351,59 @@
     collection.forEach(a=>Array.isArray(a.tags)&&a.tags.forEach(t=>t&&tagSet.add(t)));
     allTags = [...tagSet].sort();
     renderPicker();
+
+    // Edit mode: load composition from ?id= param
+    const editId = new URLSearchParams(location.search).get('id');
+    if (editId){
+      const comp = compositions.find(c=>c.id === editId);
+      if (comp) await loadCompositionForEdit(comp);
+      else await Dialog.alert('Composition not found.', {type:'error'});
+    }
+  }
+
+  async function loadCompositionForEdit(comp){
+    editingId = comp.id;
+
+    // Banner + button label
+    $('#edit-banner').style.display = '';
+    $('#edit-banner').textContent = `Editing: ${comp.name}`;
+    $('#btn-save').textContent = 'Update composition';
+    $('#btn-delete').style.display = '';
+
+    // Canvas size
+    canvasW = comp.canvasWidth || 320;
+    canvasH = comp.canvasHeight || 320;
+    $('#inp-w').value = canvasW;
+    $('#inp-h').value = canvasH;
+    resizeCanvas();
+
+    // Metadata
+    $('#meta-name').value = comp.name || '';
+    $('#meta-category').value = comp.category || '';
+    $('#meta-direction').value = comp.direction || '';
+    $('#meta-tags').value = (comp.tags || []).join(', ');
+    if (comp.color) colorSel1.setValue(comp.color);
+    if (comp.secondaryColor) colorSel2.setValue(comp.secondaryColor);
+
+    // Load layers
+    const byId = new Map(collection.filter(a=>a.id).map(a=>[a.id,a]));
+    for (const layer of (comp.layers||[])){
+      const asset = byId.get(layer.assetId);
+      if (!asset?.imagePath) continue;
+      await new Promise(resolve=>{
+        const img = new Image();
+        img.onload = ()=>{
+          layers.push({id: Date.now()+Math.random(), assetId: layer.assetId, img, imagePath: asset.imagePath, name: asset.name||asset.imagePath.split('/').pop(), x: layer.x, y: layer.y});
+          resolve();
+        };
+        img.onerror = resolve;
+        img.src = asset.imagePath;
+      });
+    }
+    selectedId = layers.length ? layers[layers.length-1].id : null;
+    refreshLayerPanel();
+    render();
+    updateButtons();
   }
 
   function renderPicker(){
@@ -572,7 +630,7 @@
     display.addEventListener('click',e=>{e.stopPropagation();togglePanel();});
     display.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();togglePanel();}});
 
-    return { getValue(){ return currentHex; }, reset(){ setVal('','No color'); } };
+    return { getValue(){ return currentHex; }, reset(){ setVal('','No color'); }, setValue(hex){ const fam=hex?closestFam(hex):''; setVal(hex||'', fam||'No color'); } };
   }
 
   document.addEventListener('click',()=>{
@@ -651,6 +709,19 @@
     $('#btn-save').disabled = layers.length === 0;
   }
 
+  $('#btn-delete').addEventListener('click', async ()=>{
+    const name = $('#meta-name').value.trim() || 'this composition';
+    if (!await Dialog.confirm(`Delete "${name}"?`, {confirmLabel:'Delete', danger:true})) return;
+    try{
+      const r = await fetch(`${API_URL}/delete_composition`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id:editingId})});
+      const out = await r.json().catch(()=>({}));
+      if (!r.ok) throw new Error(out.message||`Server error ${r.status}`);
+    }catch(err){
+      await Dialog.alert(`Could not delete: ${err.message}`,{type:'error'}); return;
+    }
+    location.href = '/?tab=compositions';
+  });
+
   $('#btn-save').addEventListener('click', async ()=>{
     if (!layers.length) return;
     const name = $('#meta-name').value.trim();
@@ -660,7 +731,6 @@
     const tags = tagsRaw ? tagsRaw.split(',').map(t=>t.trim()).filter(Boolean) : [];
 
     const composition = {
-      type: 'composition',
       name,
       category: $('#meta-category').value.trim() || undefined,
       direction: $('#meta-direction').value || undefined,
@@ -669,21 +739,19 @@
       secondaryColor: colorSel2.getValue() || undefined,
       canvasWidth:  canvasW,
       canvasHeight: canvasH,
-      layers: layers.map(l=>({
-        assetId: l.assetId,
-        x: l.x,
-        y: l.y,
-      })),
-      dateAdded: new Date().toISOString(),
+      layers: layers.map(l=>({ assetId: l.assetId, x: l.x, y: l.y })),
     };
     Object.keys(composition).forEach(k => composition[k] === undefined && delete composition[k]);
 
     try{
-      const r = await fetch(`${API_URL}/append_composition`,{
-        method:'POST',
-        headers:{'Content-Type':'application/json'},
-        body: JSON.stringify({composition}),
-      });
+      let r;
+      if (editingId){
+        composition.id = editingId;
+        r = await fetch(`${API_URL}/update_composition`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({composition})});
+      } else {
+        composition.dateAdded = new Date().toISOString();
+        r = await fetch(`${API_URL}/append_composition`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({composition})});
+      }
       const out = await r.json().catch(()=>({}));
       if (!r.ok) throw new Error(out.message || `Server error ${r.status}`);
     }catch(err){
@@ -691,11 +759,16 @@
       return;
     }
 
-    await Dialog.alert(`Composition "${name}" saved.`,{type:'success'});
-    ['#meta-name','#meta-category','#meta-tags'].forEach(s=>$(s).value='');
-    $('#meta-direction').value='';
-    colorSel1.reset(); colorSel2.reset();
-    layers=[]; selectedId=null; refreshLayerPanel(); render(); updateButtons();
+    if (editingId){
+      await Dialog.alert(`"${name}" updated.`,{type:'success'});
+      location.href = '/?tab=compositions';
+    } else {
+      await Dialog.alert(`Composition "${name}" saved.`,{type:'success'});
+      ['#meta-name','#meta-category','#meta-tags'].forEach(s=>$(s).value='');
+      $('#meta-direction').value='';
+      colorSel1.reset(); colorSel2.reset();
+      layers=[]; selectedId=null; refreshLayerPanel(); render(); updateButtons();
+    }
   });
 
   // ── Init ───────────────────────────────────────────────────────────────────

@@ -111,9 +111,12 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             dir_name = (qs.get("dir") or [""])[0].strip().strip("/\\")
             if not dir_name or ".." in dir_name.split("/"):
                 return send_json(self, 400, {"status": "error", "message": "Invalid dir"})
-            versions_path = Path(VALIDATED_DIR) / dir_name / "_versions"
+            base_dir = Path(VALIDATED_DIR) / dir_name
+            if not base_dir.is_dir():
+                return send_json(self, 404, {"versions": [], "exists": False})
+            versions_path = base_dir / "_versions"
             if not versions_path.is_dir():
-                return send_json(self, 200, {"versions": []})
+                return send_json(self, 200, {"versions": [], "exists": True})
             versions = sorted(
                 [d.name for d in versions_path.iterdir() if d.is_dir()],
                 reverse=True
@@ -144,15 +147,24 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         if not base.is_dir():
             return send_json(self, 200, {"collections": items})
 
+        # Un seul JSON par dossier : préférer assets_list.json, sinon le premier trouvé.
+        seen_dirs: dict = {}
         for jf in sorted(base.rglob("*.json")):
             if "_versions" in jf.parts:
                 continue
+            d = jf.parent
+            if d in seen_dirs:
+                if jf.name == "assets_list.json":
+                    seen_dirs[d] = jf   # assets_list.json prend la priorité
+                continue
+            seen_dirs[d] = jf
+
+        for jf in seen_dirs.values():
             d = jf.parent
             try:
                 data = json.loads(jf.read_text(encoding="utf-8"))
             except Exception:
                 continue
-            # On ignore les JSON qui ne ressemblent pas à une collection
             if not isinstance(data.get("collection"), list):
                 continue
 
@@ -388,6 +400,45 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             except Exception as e:
                 return send_json(self, 500, {"status": "error", "message": str(e)})
 
+        if route == "/update_composition":
+            body = read_json_body(self) or {}
+            comp = body.get("composition")
+            if not isinstance(comp, dict) or not comp.get("id"):
+                return send_json(self, 400, {"status": "error", "message": "Missing composition id"})
+            try:
+                comp.pop("type", None)
+                p = Path(ASSETS_JSON)
+                data = json.loads(p.read_text(encoding="utf-8")) if p.is_file() else {}
+                comps = data.get("compositions", [])
+                idx = next((i for i, c in enumerate(comps) if c.get("id") == comp["id"]), None)
+                if idx is None:
+                    return send_json(self, 404, {"status": "error", "message": "Composition not found"})
+                comps[idx] = comp
+                data["compositions"] = comps
+                with open(ASSETS_JSON, "w", encoding="utf-8") as f:
+                    json.dump(data, f, indent=2, ensure_ascii=False)
+                return send_json(self, 200, {"status": "success"})
+            except Exception as e:
+                return send_json(self, 500, {"status": "error", "message": str(e)})
+
+        if route == "/delete_composition":
+            body = read_json_body(self) or {}
+            comp_id = body.get("id")
+            if not comp_id:
+                return send_json(self, 400, {"status": "error", "message": "Missing composition id"})
+            try:
+                p = Path(ASSETS_JSON)
+                data = json.loads(p.read_text(encoding="utf-8")) if p.is_file() else {}
+                before = data.get("compositions", [])
+                data["compositions"] = [c for c in before if c.get("id") != comp_id]
+                if len(data["compositions"]) == len(before):
+                    return send_json(self, 404, {"status": "error", "message": "Composition not found"})
+                with open(ASSETS_JSON, "w", encoding="utf-8") as f:
+                    json.dump(data, f, indent=2, ensure_ascii=False)
+                return send_json(self, 200, {"status": "success"})
+            except Exception as e:
+                return send_json(self, 500, {"status": "error", "message": str(e)})
+
         # ---------------------------------------------------------------------
         # Save an (aligned) PNG back to a relative project path. Used by align.html.
         # Body attendu: { "path": "dist/foo.png", "dataUrl": "data:image/png;base64,..." }
@@ -425,6 +476,90 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                 with open(ASSETS_JSON, "w", encoding="utf-8") as f:
                     json.dump(data, f, indent=2, ensure_ascii=False)
                 return send_json(self, 200, {"status": "success", "message": "assets_list.json updated"})
+            except Exception as e:
+                return send_json(self, 500, {"status": "error", "message": str(e)})
+
+        # ---------------------------------------------------------------------
+        # Streamed validate — step 1: prepare directory (create or backup+clear)
+        # Body: { "dir": "<name>", "overwrite": bool }
+        # ---------------------------------------------------------------------
+        if route == "/validate_prepare":
+            body = read_json_body(self) or {}
+            sub_dir = (body.get("dir") or "").strip().strip("/\\")
+            if not sub_dir or "/" in sub_dir or "\\" in sub_dir or sub_dir in (".", ".."):
+                return send_json(self, 400, {"status": "error", "message": "Invalid directory name"})
+            overwrite = bool(body.get("overwrite"))
+            dest_root = Path(VALIDATED_DIR) / sub_dir
+            if dest_root.exists():
+                if not overwrite:
+                    return send_json(self, 409, {"status": "exists", "message": f'Folder "{VALIDATED_DIR}/{sub_dir}" already exists'})
+                ts = datetime.datetime.now().strftime("%Y-%m-%dT%H-%M-%S")
+                backup_dir = dest_root / "_versions" / ts
+                backup_dir.mkdir(parents=True, exist_ok=True)
+                for item in dest_root.iterdir():
+                    if item.name == "_versions": continue
+                    if item.is_file(): shutil.copy2(item, backup_dir / item.name)
+                for item in dest_root.iterdir():
+                    if item.name == "_versions": continue
+                    if item.is_file(): item.unlink()
+            else:
+                dest_root.mkdir(parents=True, exist_ok=True)
+            return send_json(self, 200, {"status": "ok"})
+
+        # ---------------------------------------------------------------------
+        # Streamed validate — step 2: copy one file
+        # Body: { "dir": "<name>", "imagePath": "dist/foo.png", "newFilename": "foo.png" }
+        # ---------------------------------------------------------------------
+        if route == "/validate_copy_file":
+            body = read_json_body(self) or {}
+            sub_dir    = (body.get("dir") or "").strip().strip("/\\")
+            src_rel    = (body.get("imagePath") or "").strip()
+            dst_name   = (body.get("newFilename") or "").strip()
+            if not sub_dir or not src_rel:
+                return send_json(self, 400, {"status": "error", "message": "dir and imagePath required"})
+            try:
+                dest_root = Path(VALIDATED_DIR) / sub_dir
+                src = Path(src_rel)
+                if not src.exists():
+                    alt = Path(DIST_DIR) / src_rel
+                    if alt.exists(): src = alt
+                    else: raise FileNotFoundError(f"Source not found: {src_rel}")
+                if not dst_name: dst_name = src.name
+                dst = dest_root / dst_name
+                if dst.exists():
+                    stem, suffix, k = dst.stem, dst.suffix, 1
+                    while (dest_root / f"{stem}-{k}{suffix}").exists(): k += 1
+                    dst = dest_root / f"{stem}-{k}{suffix}"
+                    dst_name = dst.name
+                shutil.copy2(src, dst)
+                return send_json(self, 200, {"status": "ok", "destName": dst_name})
+            except Exception as e:
+                return send_json(self, 500, {"status": "error", "message": str(e)})
+
+        # ---------------------------------------------------------------------
+        # Streamed validate — step 3: write collection JSON
+        # Body: { "dir": "<name>", "json": {...}, "nameMap": {"dist/foo.png": "foo.png"} }
+        # ---------------------------------------------------------------------
+        if route == "/validate_write_json":
+            body = read_json_body(self) or {}
+            sub_dir  = (body.get("dir") or "").strip().strip("/\\")
+            subset   = body.get("json")
+            name_map = body.get("nameMap") or {}
+            if not sub_dir or not isinstance(subset, dict):
+                return send_json(self, 400, {"status": "error", "message": "dir and json required"})
+            try:
+                dest_root = Path(VALIDATED_DIR) / sub_dir
+                out = dict(subset)
+                out["imageBase"] = f"{VALIDATED_DIR}/{sub_dir}"
+                out["collection"] = []
+                for a in (subset.get("collection") or []):
+                    a2 = dict(a)
+                    if a2.get("imagePath") in name_map:
+                        a2["imagePath"] = name_map[a2["imagePath"]]
+                    out["collection"].append(a2)
+                with open(dest_root / "assets_list.json", "w", encoding="utf-8") as f:
+                    json.dump(out, f, indent=2, ensure_ascii=False)
+                return send_json(self, 200, {"status": "ok"})
             except Exception as e:
                 return send_json(self, 500, {"status": "error", "message": str(e)})
 
@@ -547,9 +682,10 @@ class Handler(http.server.SimpleHTTPRequestHandler):
 # -----------------------------------------------------------------------------
 # Entry point
 # -----------------------------------------------------------------------------
-class ReusableTCPServer(socketserver.TCPServer):
+class ReusableTCPServer(socketserver.ThreadingMixIn, socketserver.TCPServer):
     # Permet de relancer immédiatement le serveur sans attendre la fin du TIME_WAIT.
     allow_reuse_address = True
+    daemon_threads = True
 
 
 def new_id() -> str:

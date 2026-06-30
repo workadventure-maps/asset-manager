@@ -16,9 +16,10 @@
   // ==== STATE (unique, defensive) ===========================================
   if (!window.state) {
     window.state = {
-      data: { collectionName: '', tags: [], collection: [] },
+      data: { collectionName: '', tags: [], collection: [], compositions: [] },
       filtered: [],
       renderList: [],
+      activeTab: 'assets',
       selection: new Set(),
       cardsByPath: new Map(),
       debounceTimers: {},
@@ -849,6 +850,65 @@
     return card;
   }
 
+  /* ========= Composition cards ========= */
+  function renderCompositionPreview(canvas, comp){
+    const W = comp.canvasWidth  || 320;
+    const H = comp.canvasHeight || 320;
+    canvas.width  = W;
+    canvas.height = H;
+    const g = canvas.getContext('2d');
+    g.imageSmoothingEnabled = false;
+    const byId = new Map((state.data.collection||[]).filter(a=>a.id).map(a=>[a.id, a]));
+    for (const layer of (comp.layers||[])){
+      const asset = byId.get(layer.assetId);
+      if (!asset?.imagePath) continue;
+      const img = new Image();
+      img.onload = ()=> g.drawImage(img, 0, 0, img.naturalWidth, img.naturalHeight, layer.x, layer.y, img.naturalWidth, img.naturalHeight);
+      img.src = pathForDisplay(asset.imagePath);
+    }
+  }
+
+  function buildCompositionCard(comp){
+    const card = document.createElement('div');
+    card.className = 'asset-card composition-card';
+    card.dataset.compositionId = comp.id || '';
+    card.tabIndex = 0;
+
+    const imageContainer = document.createElement('div');
+    imageContainer.className = 'image-container';
+    imageContainer.style.cssText = 'position:relative;background:#f3f4f8';
+
+    const preview = document.createElement('canvas');
+    preview.style.cssText = 'width:100%;height:100%;image-rendering:pixelated;display:block';
+    imageContainer.appendChild(preview);
+
+    const badge = document.createElement('div');
+    badge.style.cssText = 'position:absolute;top:4px;right:4px;font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;background:#4f46e5;color:#fff;border-radius:999px;padding:2px 7px';
+    badge.textContent = 'composition';
+    imageContainer.appendChild(badge);
+
+    card.appendChild(imageContainer);
+
+    const details = document.createElement('div');
+    details.className = 'image-details';
+    const layerCount = (comp.layers||[]).length;
+    const tagsStr = (comp.tags||[]).map(t=>`<span class="tag-chip">${t}</span>`).join('');
+    details.innerHTML = `<small><strong>${comp.name||'(no name)'}</strong> — ${layerCount} layer${layerCount===1?'':'s'}</small>${tagsStr?`<div style="margin-top:4px;display:flex;flex-wrap:wrap;gap:3px">${tagsStr}</div>`:''}`;
+    card.appendChild(details);
+
+    // Lazy render
+    const obs = new IntersectionObserver(entries=>{
+      if (entries[0].isIntersecting){ renderCompositionPreview(preview, comp); obs.disconnect(); }
+    }, { rootMargin:'200px' });
+    obs.observe(card);
+    (state._observers||(state._observers=[])).push(obs);
+
+    card.addEventListener('click', ()=> { location.href = `/compose?id=${encodeURIComponent(comp.id || '')}`; });
+
+    return card;
+  }
+
+
   function renderPage({ reset=false } = {}){
     const container = $('#container');
     if (!container) return;
@@ -889,10 +949,11 @@
             frag.appendChild(buildDupGroupHeader(asset, groupCounts.get(k)||0));
           }
         }
-        frag.appendChild(buildAssetCard(asset));
+        frag.appendChild(asset._isComposition ? buildCompositionCard(asset) : buildAssetCard(asset));
       }
       container.appendChild(frag);
-      patchText($('#assets-count-title'), `${list.length} items`);
+      patchText($('#assets-count-title'), `(${(state.data.collection||[]).length})`);
+      patchText($('#compositions-count-title'), `(${(state.data.compositions||[]).length})`);
       if (i < list.length){
         requestAnimationFrame(step);
       } else {
@@ -964,13 +1025,32 @@
     return out;
   }
   function filterAssets(){
-    state.renderList = computeFilteredList();
-    if (state.filter.duplicatesOnly){
-      // Keep duplicate groups contiguous so headers split them cleanly.
-      state.renderList.sort((a,b)=> dupKey(a).localeCompare(dupKey(b)));
+    const q = (state.filter.name||'').toLowerCase();
+    if (state.activeTab === 'compositions'){
+      state.renderList = (state.data.compositions||[])
+        .filter(c => !q || (c.name||'').toLowerCase().includes(q))
+        .map(c => ({...c, _isComposition:true}));
+    } else {
+      state.renderList = computeFilteredList();
+      if (state.filter.duplicatesOnly)
+        state.renderList.sort((a,b)=> dupKey(a).localeCompare(dupKey(b)));
     }
+    patchText($('#assets-count-title'), `(${(state.data.collection||[]).length})`);
+    patchText($('#compositions-count-title'), `(${(state.data.compositions||[]).length})`);
+    setHidden($('#fixed-buttons-container'), state.activeTab !== 'assets');
     renderPage({ reset:true });
   }
+
+  // Tab switching
+  document.addEventListener('click', e=>{
+    const tab = e.target.closest('.index-tab');
+    if (!tab) return;
+    const name = tab.dataset.tab;
+    if (!name || name === state.activeTab) return;
+    state.activeTab = name;
+    document.querySelectorAll('.index-tab').forEach(t => t.classList.toggle('active', t.dataset.tab === name));
+    filterAssets();
+  });
 
   /* ========= Data updates ========= */
   // Debounced server push (avoids one POST per keystroke).
@@ -1192,6 +1272,32 @@
       showToast(`${selectedPaths.length} asset(s) removed from JSON`, 'success');
     });
 
+    // ── Validate progress overlay ─────────────────────────────────────────────
+    const validateOverlay = (() => {
+      const el = document.createElement('div');
+      el.style.cssText = 'display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:9999;align-items:center;justify-content:center';
+      el.innerHTML = `
+        <div style="background:#fff;border-radius:14px;padding:28px 32px;width:380px;box-shadow:0 20px 60px rgba(0,0,0,.25);text-align:center">
+          <div id="vo-title" style="font-weight:700;font-size:1.05rem;margin-bottom:6px">Saving collection…</div>
+          <div id="vo-sub" style="color:#6b7280;font-size:.88rem;margin-bottom:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:100%">Preparing…</div>
+          <div style="background:#e5e8f0;border-radius:999px;height:8px;overflow:hidden">
+            <div id="vo-bar" style="height:100%;width:0%;background:#4f46e5;border-radius:999px;transition:width .15s ease"></div>
+          </div>
+          <div id="vo-counter" style="color:#6b7280;font-size:.8rem;margin-top:8px">0 / 0</div>
+        </div>`;
+      document.body.appendChild(el);
+      return {
+        show(title='Saving collection…'){ el.style.display='flex'; el.querySelector('#vo-title').textContent=title; },
+        hide(){ el.style.display='none'; },
+        update(done, total, label=''){
+          const pct = total ? Math.round(done/total*100) : 0;
+          el.querySelector('#vo-bar').style.width = pct+'%';
+          el.querySelector('#vo-counter').textContent = `${done} / ${total}`;
+          if (label) el.querySelector('#vo-sub').textContent = label;
+        },
+      };
+    })();
+
     // Validate Selection -> creates validated/<name>/ with the images + JSON.
     $('#validate-btn')?.addEventListener('click', async ()=>{
       const selectedPaths = $$('.asset-card.selected').map(c=>c.dataset.imagePath);
@@ -1211,8 +1317,8 @@
         collection: selectedAssets
       };
 
-      // Ask for the folder name; re-ask if it already exists.
-      let suggestion = 'new-pack';
+      // Ask for the folder name
+      const suggestion = (state.data.collectionName || '').trim().toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9\-_]/g, '') || '';
       let folderName = await Dialog.prompt('Folder name to create inside "validated":', { defaultValue: suggestion });
       while (folderName !== null){
         const clean = folderName.trim();
@@ -1220,46 +1326,75 @@
           folderName = await Dialog.prompt('Please enter a valid folder name:', { defaultValue: suggestion });
           continue;
         }
-        try{
-          const res = await fetch(`${API_URL}/validate_selection`, {
-            method: 'POST',
-            headers: { 'Content-Type':'application/json' },
-            body: JSON.stringify({ dir: clean, items, json: subset })
-          });
-          const out = await res.json().catch(()=> ({}));
 
-          if (res.status === 409){
-            const doOverwrite = await Dialog.confirm(
-              `"validated/${clean}" already exists.\n\nOverwrite it and save the current version as a backup?`,
-              { confirmLabel: 'Overwrite & backup', cancelLabel: 'Choose new name' }
-            );
-            if (doOverwrite){
-              // Resend with overwrite flag
-              try{
-                const r2 = await fetch(`${API_URL}/validate_selection`, {
-                  method: 'POST',
-                  headers: { 'Content-Type':'application/json' },
-                  body: JSON.stringify({ dir: clean, items, json: subset, overwrite: true })
-                });
-                const out2 = await r2.json().catch(()=>({}));
-                if (!r2.ok) throw new Error(out2.message || `Server error ${r2.status}`);
-                showNotification('success', `Saved to validated/${clean} (previous version backed up)`);
-              }catch(err){
-                showNotification('error', `Validate failed: ${err.message}`);
-              }
-              return;
-            } else {
-              folderName = await Dialog.prompt('Choose a different name:', { defaultValue: `${clean}-2` });
-              continue;
-            }
+        // Step 1: check if dir exists, then prepare
+        let overwrite = false;
+        const checkRes = await fetch(`${API_URL}/list_versions?dir=${encodeURIComponent(clean)}`).catch(()=>null);
+        const dirExists = checkRes && checkRes.status !== 404;
+        if (dirExists){
+          // list_versions returns 200 even for empty dirs, use it as existence check
+          const doOver = await Dialog.confirm(
+            `"validated/${clean}" already exists.\n\nOverwrite it and save the current version as a backup?`,
+            { confirmLabel:'Overwrite & backup', cancelLabel:'Choose new name' }
+          );
+          if (!doOver){
+            folderName = await Dialog.prompt('Choose a different name:', { defaultValue:`${clean}-2` });
+            continue;
           }
-          if (!res.ok){
-            throw new Error(out.message || `Server error ${res.status}`);
+          overwrite = true;
+        }
+        const prep = await fetch(`${API_URL}/validate_prepare`, {
+          method:'POST', headers:{'Content-Type':'application/json'},
+          body: JSON.stringify({ dir: clean, overwrite })
+        });
+        if (!prep.ok){
+          const e = await prep.json().catch(()=>({}));
+          showNotification('error', `Validate failed: ${e.message||prep.status}`);
+          return;
+        }
+
+        // Step 2: copy files one by one
+        validateOverlay.show();
+        validateOverlay.update(0, items.length, 'Preparing…');
+        const nameMap = {};
+        let copied = 0;
+        const errors = [];
+        try{
+          for (const item of items){
+            validateOverlay.update(copied, items.length, item.imagePath.split('/').pop());
+            // yield to the event loop so the browser can breathe between requests
+            await new Promise(r => setTimeout(r, 0));
+            try{
+              const r = await fetch(`${API_URL}/validate_copy_file`, {
+                method:'POST', headers:{'Content-Type':'application/json'},
+                body: JSON.stringify({ dir: clean, imagePath: item.imagePath, newFilename: item.newFilename })
+              });
+              const out = await r.json().catch(()=>({}));
+              if (!r.ok) throw new Error(out.message||`HTTP ${r.status}`);
+              nameMap[item.imagePath] = out.destName;
+              copied++;
+            }catch(e){ errors.push(`${item.imagePath}: ${e.message}`); }
+            validateOverlay.update(copied, items.length);
           }
-          showNotification('success', `Saved ${out.copied || items.length} image(s) + JSON to validated/${clean}`);
-        }catch(err){
-          console.error(err);
-          showNotification('error', `Validate failed: ${err.message}`);
+
+          // Step 3: write JSON
+          validateOverlay.update(copied, items.length, 'Writing JSON…');
+          await new Promise(r => setTimeout(r, 0));
+          try{
+            const r = await fetch(`${API_URL}/validate_write_json`, {
+              method:'POST', headers:{'Content-Type':'application/json'},
+              body: JSON.stringify({ dir: clean, json: subset, nameMap })
+            });
+            if (!r.ok){ const e=await r.json().catch(()=>({})); throw new Error(e.message||`HTTP ${r.status}`); }
+          }catch(e){ errors.push(`JSON: ${e.message}`); }
+        } finally {
+          validateOverlay.hide();
+        }
+
+        if (errors.length){
+          showNotification('warning', `Saved ${copied}/${items.length} — ${errors.length} error(s)`);
+        } else {
+          showNotification('success', `Saved ${copied} image(s) + JSON to validated/${clean}`);
         }
         return;
       }
@@ -1405,7 +1540,8 @@
     const out = {
       collectionName: String(data.collectionName || ''),
       tags: Array.isArray(data.tags) ? data.tags.slice() : [],
-      collection: Array.isArray(data.collection) ? data.collection.slice() : []
+      collection: Array.isArray(data.collection) ? data.collection.slice() : [],
+      compositions: Array.isArray(data.compositions) ? data.compositions.slice() : [],
     };
     out.collection.forEach(a => {
       a.imagePath = String(a.imagePath || '');
@@ -1611,6 +1747,13 @@
     const modalCtl = setupModal();
     setupToolbar(modalCtl);
     setupGlobalMetadata();
+    // Honour ?tab= query param (e.g. redirect back from compose after edit)
+    const urlTab = new URLSearchParams(location.search).get('tab');
+    if (urlTab === 'compositions'){
+      state.activeTab = 'compositions';
+      document.querySelectorAll('.index-tab').forEach(t => t.classList.toggle('active', t.dataset.tab === 'compositions'));
+      history.replaceState(null, '', location.pathname);
+    }
     bootstrapData();
   }
 

@@ -32,6 +32,11 @@
     .toast.warn .title{ color:#dc2626; }
     @keyframes toast-in { to { opacity:1; transform:translateY(0) } }
     @keyframes toast-out { to { opacity:0; transform:translateY(-8px) } }
+  .index-tabs{display:flex;gap:4px;padding:0 24px;margin:8px 0 0;border-bottom:2px solid var(--border,#e5e8f0)}
+  .index-tab{appearance:none;border:none;background:none;cursor:pointer;font-size:.95rem;font-weight:600;color:var(--text-muted,#6b7280);padding:10px 18px;border-bottom:2px solid transparent;margin-bottom:-2px;transition:color .15s,border-color .15s}
+  .index-tab:hover{color:var(--text,#1f2430)}
+  .index-tab.active{color:var(--accent,#4f46e5);border-bottom-color:var(--accent,#4f46e5)}
+  .tab-count{font-size:.78rem;font-weight:700;color:inherit;opacity:.7;margin-left:5px}
   </style>
 </head>
 <body>
@@ -114,7 +119,10 @@
   </div>
 
 
-    <div class="section-header"><h2>Assets <span id="assets-count-title"></span></h2></div>
+  <div class="index-tabs" role="tablist">
+    <button class="index-tab active" role="tab" data-tab="assets">Assets <span id="assets-count-title" class="tab-count"></span></button>
+    <button class="index-tab" role="tab" data-tab="compositions">Compositions <span id="compositions-count-title" class="tab-count"></span></button>
+  </div>
   <div id="container" aria-live="polite"></div>
 
   <div id="fixed-buttons-container" role="toolbar" aria-label="Selection actions">
