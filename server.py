@@ -551,11 +551,17 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                 dest_root = Path(VALIDATED_DIR) / sub_dir
                 out = dict(subset)
                 out["imageBase"] = f"{VALIDATED_DIR}/{sub_dir}"
+                valid_directions = {"up", "down", "left", "right"}
                 out["collection"] = []
                 for a in (subset.get("collection") or []):
                     a2 = dict(a)
                     if a2.get("imagePath") in name_map:
                         a2["imagePath"] = name_map[a2["imagePath"]]
+                    d = (a2.get("direction") or "").strip()
+                    if d.lower() in valid_directions:
+                        a2["direction"] = d.lower().capitalize()
+                    else:
+                        a2["direction"] = "Up"
                     out["collection"].append(a2)
                 with open(dest_root / "assets_list.json", "w", encoding="utf-8") as f:
                     json.dump(out, f, indent=2, ensure_ascii=False)
