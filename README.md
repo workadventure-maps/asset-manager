@@ -1,78 +1,78 @@
 # Assets Collection Manager
 
-Outil web local pour **organiser, éditer et préparer des assets graphiques** (sprites PNG).
-Il permet de scanner des images, de leur attribuer des métadonnées (nom, direction, couleur,
-tags, catégorie, dates), de filtrer/éditer la collection via une interface web, de **réaligner**
-les images, de constituer des **packs validés**, et de basculer la collection par défaut.
+A local web tool to **organize, edit and prepare graphic assets** (PNG sprites).
+It scans images, assigns them metadata (name, direction, color, tags, category, dates),
+lets you filter/edit the collection through a web UI, **realign** images, build
+**validated packs**, and switch the default collection.
 
-> 📖 Documentation détaillée : voir **[DOCUMENTATION.md](DOCUMENTATION.md)**.
+> 📖 Detailed documentation: see **[DOCUMENTATION.md](DOCUMENTATION.md)**.
 
 ---
 
-## 🚀 Démarrage rapide
+## 🚀 Quick start
 
 ```bash
-# 1. (optionnel) scanner les images de src/ vers dist/ et générer assets_list.json
+# 1. (optional) scan images from src/ into dist/ and generate assets_list.json
 python3 main.py --mode scan
 
-# 2. lancer le serveur web (sert les pages + l'API)
+# 2. start the web server (serves the pages + the API)
 python3 main.py --mode serve
 ```
 
-Puis ouvre **http://localhost:8000** dans le navigateur.
+Then open **http://localhost:8000** in your browser.
 
-> ⚠️ Toute modification d'un fichier `.py` nécessite de **redémarrer le serveur**
-> (`Ctrl+C` puis relance). Les modifications de pages/JS/CSS ne demandent qu'un
-> rechargement forcé du navigateur (`Cmd/Ctrl + Shift + R`, le serveur ne pose pas d'anti-cache).
+> ⚠️ Any change to a `.py` file requires **restarting the server**
+> (`Ctrl+C`, then relaunch). Changes to pages/JS/CSS only need a hard browser
+> refresh (`Cmd/Ctrl + Shift + R`; the server sends no cache-busting headers).
 
-Dépendance optionnelle : **Pillow** (`pip install pillow`) pour l'estimation de couleur au scan
-et le traitement d'images. Le reste fonctionne sans dépendance externe.
+Optional dependency: **Pillow** (`pip install pillow`) for color estimation during scans
+and image processing. Everything else works without external dependencies.
 
 ---
 
-## 📂 Arborescence
+## 📂 Project layout
 
 ```
 .
-├── main.py               # Orchestrateur CLI (clean / scan / serve / …)
-├── server.py             # Serveur HTTP + API JSON (pages "jolies" + routes POST)
-├── image_processor.py    # Scan src/ → dist/, couleur, dates, normalisation 32px
-├── clean-images.py       # Nettoyage des dossiers d'images
+├── main.py               # CLI orchestrator (clean / scan / serve / …)
+├── server.py             # HTTP server + JSON API ("pretty" pages + POST routes)
+├── image_processor.py    # Scan src/ → dist/, color, dates, 32px normalization
+├── clean-images.py       # Image folder cleanup
 │
-├── index.html            # Page principale : collection (filtres, édition, validate, delete…)
-├── add_assets.html       # Import d'images + génération d'un JSON
-├── align.html            # Réalignement / rognage / miroir / duplication d'images
-├── collection_list.html  # Liste des packs de validated/ + "Use as default"
-├── collisions.html       # Outil collisions (existant)
+├── index.html            # Main page: collection (filters, editing, validate, delete…)
+├── add_assets.html       # Image import + JSON generation
+├── align.html            # Image realignment / cropping / mirroring / duplication
+├── collection_list.html  # List of validated/ packs + "Use as default"
+├── collisions.html       # Collisions tool (existing)
 │
-├── app.js                # Logique de l'index
-├── app.css               # Styles de l'index
-├── topbar.css            # Barre de navigation partagée (toutes les pages)
-├── collisions.css / .js  # Page collisions
+├── app.js                # Index logic
+├── app.css               # Index styles
+├── topbar.css            # Shared navigation bar (all pages)
+├── collisions.css / .js  # Collisions page
 │
-├── assets_list.json      # Base de données de la collection (racine = collection par défaut)
-├── src/                  # Images sources à traiter (entrée du scan)
-├── dist/                 # Images organisées (sortie du scan, servies par le serveur)
-├── dist32/               # Versions normalisées sur grille 32px (optionnel)
-├── unknow/               # Images sans direction détectée
-└── validated/            # Packs validés : validated/<nom>/ (images + assets_list.json)
+├── assets_list.json      # Collection database (root = default collection)
+├── src/                  # Source images to process (scan input)
+├── dist/                 # Organized images (scan output, served by the server)
+├── dist32/               # Versions normalized to a 32px grid (optional)
+├── unknow/               # Images with no detected direction
+└── validated/            # Validated packs: validated/<name>/ (images + assets_list.json)
 ```
 
 ---
 
-## 🧭 Les pages
+## 🧭 Pages
 
-| Page | URL | Rôle |
-|------|-----|------|
-| **Index** | `/` | Parcourir, filtrer et éditer la collection ; valider une sélection ; supprimer ; doublons |
-| **Collections** | `/collection-list` | Lister les packs de `validated/`, en définir un par défaut |
-| **Add Assets** | `/add-assets` | Importer des images dans `dist/` et générer un JSON |
-| **Align** | `/align` | Recadrer, aligner, mettre en miroir et dupliquer des images |
-| **Collisions** | `/collisions` | Outil de collisions |
+| Page | URL | Purpose |
+|------|-----|---------|
+| **Index** | `/` | Browse, filter and edit the collection; validate a selection; delete; duplicates |
+| **Collections** | `/collection-list` | List the packs in `validated/`, set one as default |
+| **Add Assets** | `/add-assets` | Import images into `dist/` and generate a JSON |
+| **Align** | `/align` | Crop, align, mirror and duplicate images |
+| **Collisions** | `/collisions` | Collisions tool |
 
 ---
 
-## 🗃️ Schéma d'un asset (`assets_list.json`)
+## 🗃️ Asset schema (`assets_list.json`)
 
 ```json
 {
@@ -96,32 +96,32 @@ et le traitement d'images. Le reste fonctionne sans dépendance externe.
 
 ---
 
-## 🔁 Workflows typiques
+## 🔁 Typical workflows
 
-- **Constituer un pack** : Index → filtrer/éditer → sélectionner → **Validate Selection** →
-  crée `validated/<nom>/` (images + JSON). Voir la liste dans **Collections**.
-- **Changer la collection par défaut** : **Collections** → **Use as default** (réécrit
-  `assets_list.json` racine).
-- **Corriger des marges transparentes** : **Align** → choisir l'asset → aligner / rogner /
-  miroir → **Save now** ou **Add to batch** puis **Save all**.
-- **Dupliquer un sprite en miroir** : **Align** → Flip H → **Save as copy** (nouveau fichier +
-  entrée JSON, direction `left`/`right` inversée automatiquement).
+- **Build a pack**: Index → filter/edit → select → **Validate Selection** →
+  creates `validated/<name>/` (images + JSON). See the list in **Collections**.
+- **Change the default collection**: **Collections** → **Use as default** (rewrites the
+  root `assets_list.json`).
+- **Fix transparent margins**: **Align** → pick the asset → align / crop /
+  mirror → **Save now**, or **Add to batch** then **Save all**.
+- **Duplicate a sprite as a mirror image**: **Align** → Flip H → **Save as copy** (new file +
+  JSON entry, `left`/`right` direction swapped automatically).
 
 ---
 
-## 🛠️ CLI `main.py`
+## 🛠️ `main.py` CLI
 
-| Mode | Effet |
-|------|-------|
-| `--mode serve` | Lance uniquement le serveur web (défaut) |
-| `--mode scan` | Scanne `src/` → `dist/` et met à jour `assets_list.json` |
-| `--mode clean` | Exécute `clean-images.py` |
-| `--mode clean-scan` | Clean puis scan |
+| Mode | Effect |
+|------|--------|
+| `--mode serve` | Start the web server only (default) |
+| `--mode scan` | Scan `src/` → `dist/` and update `assets_list.json` |
+| `--mode clean` | Run `clean-images.py` |
+| `--mode clean-scan` | Clean, then scan |
 | `--mode all` | Clean + scan + serve |
 
-Options : `--src-dir`, `--dist-dir`, `--unknow-dir`, `--model-dir`, `--host`, `--port`.
+Options: `--src-dir`, `--dist-dir`, `--unknow-dir`, `--model-dir`, `--host`, `--port`.
 
 ---
 
-Pour le détail des routes API, des filtres, des formats et des comportements,
-voir **[DOCUMENTATION.md](DOCUMENTATION.md)**.
+For details on API routes, filters, formats and behaviors,
+see **[DOCUMENTATION.md](DOCUMENTATION.md)**.

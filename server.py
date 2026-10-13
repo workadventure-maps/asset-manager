@@ -20,7 +20,7 @@ DEFAULT_HOST = "0.0.0.0"
 DEFAULT_PORT = 8000
 ASSETS_JSON = "assets_list.json"
 
-# Dossiers par défaut
+# Default directories
 DIST_DIR = "dist"
 DIST32_DIR = "dist32"
 VALIDATED_DIR = "validated"
@@ -50,11 +50,11 @@ def send_json(handler: http.server.BaseHTTPRequestHandler, code: int, payload: d
     handler.wfile.write(data)
 
 # -----------------------------------------------------------------------------
-# Image processing helpers (importés dynamiquement si dispo)
+# Image processing helpers (imported dynamically if available)
 # -----------------------------------------------------------------------------
 def process_directory_to_grid_wrapper(src_dir: str, dst_dir: str) -> dict:
     """
-    Wrapper pour importer et appeler les helpers depuis image_processor.py.
+    Wrapper that imports and calls the helpers from image_processor.py.
     """
     from importlib import import_module
     try:
@@ -72,7 +72,7 @@ def process_directory_to_grid_wrapper(src_dir: str, dst_dir: str) -> dict:
 # -----------------------------------------------------------------------------
 class Handler(http.server.SimpleHTTPRequestHandler):
 
-    # Ajout CORS + désactivation du cache agressif côté dev
+    # Add CORS headers + disable aggressive caching during development
     def end_headers(self):
         self.send_header("Access-Control-Allow-Origin", "*")
         self.send_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, HEAD")
@@ -83,7 +83,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         self.send_response(204)
         self.end_headers()
 
-    # L’UI fait des HEAD sur les images pour récupérer Content-Length
+    # The UI sends HEAD requests on images to get their Content-Length
     def do_HEAD(self):
         path = self.translate_path(self.path)
         p = Path(path)
@@ -101,7 +101,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self.send_error(404, "File not found")
 
     def do_GET(self):
-        # Routes "jolies" -> fichiers HTML statiques
+        # "Pretty" routes -> static HTML files
         parsed_url = urlparse(self.path)
         route = parsed_url.path
         qs = parse_qs(parsed_url.query)
@@ -135,19 +135,19 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         elif route in ('/collection-list', '/collection_list', '/collections'):
             self.path = '/collection_list.html'
 
-        # Comportement par défaut de SimpleHTTPRequestHandler (fichiers statiques)
+        # Default SimpleHTTPRequestHandler behavior (static files)
         return super().do_GET()
 
     def list_collections(self):
-        """Scanne récursivement validated/ : tous les fichiers .json contenant une clé
-        'collection' sont retournés. collection_thumbnail.jpg/png dans le même dossier
-        est utilisé comme miniature en priorité sur le premier asset."""
+        """Recursively scan validated/: every .json file containing a 'collection'
+        key is returned. A collection_thumbnail.jpg/png in the same folder is used
+        as the thumbnail, taking priority over the first asset."""
         base = Path(VALIDATED_DIR)
         items = []
         if not base.is_dir():
             return send_json(self, 200, {"collections": items})
 
-        # Un seul JSON par dossier : préférer assets_list.json, sinon le premier trouvé.
+        # Only one JSON per folder: prefer assets_list.json, otherwise the first one found.
         seen_dirs: dict = {}
         for jf in sorted(base.rglob("*.json")):
             if "_versions" in jf.parts:
@@ -155,7 +155,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             d = jf.parent
             if d in seen_dirs:
                 if jf.name == "assets_list.json":
-                    seen_dirs[d] = jf   # assets_list.json prend la priorité
+                    seen_dirs[d] = jf   # assets_list.json takes priority
                 continue
             seen_dirs[d] = jf
 
@@ -171,7 +171,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             coll = data["collection"]
             rel_dir = d.relative_to(base).as_posix()
 
-            # Thumbnail : collection_thumbnail.jpg/png en priorité, sinon premier asset
+            # Thumbnail: collection_thumbnail.jpg/png first, otherwise the first asset
             thumb = None
             for ext in ("jpg", "jpeg", "png", "webp"):
                 candidate = d / f"collection_thumbnail.{ext}"
@@ -195,8 +195,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         return send_json(self, 200, {"collections": items})
 
     def handle_upload(self):
-        """Reçoit un multipart/form-data (champ 'files' ou 'file') et écrit les
-        fichiers sous dist/ en préservant leur chemin relatif."""
+        """Receive a multipart/form-data body ('files' or 'file' field) and write
+        the files under dist/, preserving their relative path."""
         try:
             import cgi
             fs = cgi.FieldStorage(
@@ -238,7 +238,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
     def do_POST(self):
         route = urlparse(self.path).path
 
-        # Upload d'images depuis add_assets.html -> dist/
+        # Image upload from add_assets.html -> dist/
         if route == "/upload_files":
             return self.handle_upload()
 
@@ -293,7 +293,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         # ---------------------------------------------------------------------
         # Use a validated collection as the project-root default assets_list.json.
         # Image paths are rewritten to validated/<dir>/<file> so they resolve.
-        # Body attendu: { "dir": "<name>" }
+        # Expected body: { "dir": "<name>" }
         # ---------------------------------------------------------------------
         if route == "/use_as_default":
             body = read_json_body(self) or {}
@@ -331,7 +331,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         # ---------------------------------------------------------------------
         # Append one asset entry to the root assets_list.json. Used when an asset
         # is duplicated/mirrored on align.html.
-        # Body attendu: { "asset": { imagePath, name, ... } }
+        # Expected body: { "asset": { imagePath, name, ... } }
         # ---------------------------------------------------------------------
         if route == "/update_asset":
             body = read_json_body(self) or {}
@@ -441,7 +441,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
 
         # ---------------------------------------------------------------------
         # Save an (aligned) PNG back to a relative project path. Used by align.html.
-        # Body attendu: { "path": "dist/foo.png", "dataUrl": "data:image/png;base64,..." }
+        # Expected body: { "path": "dist/foo.png", "dataUrl": "data:image/png;base64,..." }
         # ---------------------------------------------------------------------
         if route == "/save_image":
             body = read_json_body(self) or {}
@@ -466,7 +466,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
 
         # ---------------------------------------------------------------------
         # Update assets_list.json (overwrite with posted content)
-        # Body attendu: (l’objet JSON complet de la collection)
+        # Expected body: (the complete collection JSON object)
         # ---------------------------------------------------------------------
         if route == "/":
             data = read_json_body(self)
@@ -570,9 +570,9 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                 return send_json(self, 500, {"status": "error", "message": str(e)})
 
         # ---------------------------------------------------------------------
-        # Validate selection: crée validated/<dir> avec les images (à plat)
-        # et le JSON au même niveau. Refuse si le dossier existe déjà.
-        # Body attendu: { "dir": "<name>", "items":[{ imagePath, newFilename }], "json": {...} }
+        # Validate selection: create validated/<dir> with the images (flat)
+        # and the JSON at the same level. Refuse if the folder already exists.
+        # Expected body: { "dir": "<name>", "items":[{ imagePath, newFilename }], "json": {...} }
         # ---------------------------------------------------------------------
         if route == "/validate_selection":
             body = read_json_body(self) or {}
@@ -621,7 +621,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
 
             copied = 0
             errors = []
-            name_map = {}  # imagePath d'origine -> nom de fichier copié
+            name_map = {}  # original imagePath -> copied file name
 
             for it in items:
                 src_rel = (it.get("imagePath") or "").strip()
@@ -637,7 +637,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                         else:
                             raise FileNotFoundError(f"Source not found: {src_rel}")
 
-                    # Copie à plat dans le dossier, nom = newFilename sinon nom d'origine
+                    # Flat copy into the folder, name = newFilename, otherwise the original name
                     dst_name = (it.get("newFilename") or src.name).strip() or src.name
                     dst = dest_root / dst_name
                     if dst.exists():
@@ -653,7 +653,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                 except Exception as e:
                     errors.append({"item": it, "error": str(e)})
 
-            # JSON au même niveau, avec imagePath réécrit vers le fichier copié
+            # JSON at the same level, with imagePath rewritten to the copied file
             subset = body.get("json")
             json_written = False
             if isinstance(subset, dict):
@@ -681,7 +681,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                 "errors": errors
             })
 
-        # Route inconnue
+        # Unknown route
         return send_json(self, 404, {"status": "error", "message": f"Unknown route: {route}"})
 
 
@@ -689,7 +689,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
 # Entry point
 # -----------------------------------------------------------------------------
 class ReusableTCPServer(socketserver.ThreadingMixIn, socketserver.TCPServer):
-    # Permet de relancer immédiatement le serveur sans attendre la fin du TIME_WAIT.
+    # Allows restarting the server immediately without waiting for TIME_WAIT to expire.
     allow_reuse_address = True
     daemon_threads = True
 

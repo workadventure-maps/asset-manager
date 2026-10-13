@@ -7,7 +7,6 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 
 ### Added
-### Added
 - **Sprite Editor — pixel-precise recrop step** (`align.html`)
   - Recrop tab now has a **32 px / 1 px** toggle switch. In 1 px mode, each +/− button moves one pixel; in 32 px mode the existing 32 px grid behaviour is preserved.
   - Auto-trim in 1 px mode trims exactly to the content bounding box (no 32 px snap).
@@ -55,7 +54,6 @@ All notable changes to this project will be documented in this file.
   - The default card links directly to `/` (Index) instead of offering a "Use as default" action.
   - If the server is unreachable, the default card still loads since it reads the static `assets_list.json` file directly.
 
-### Fixed
 - **Collection List — UI overhaul** (`collection_list.html`)
   - Thumbnail now fills the full card width (aspect ratio 4/3) instead of a small 64px square.
   - Active collection (currently loaded in the Index) is highlighted in green with an `active` badge.
@@ -67,7 +65,6 @@ All notable changes to this project will be documented in this file.
   - A `jsonFile` field is now accepted in the request body so any JSON file (not just `assets_list.json`) can be promoted as default.
   - Path traversal protection updated to check for `..` in any segment rather than blanket-rejecting slashes.
 
-### Fixed
 - **Collection dropdown — lazy loading to avoid startup timeout** (`app.js`)
   - `loadCollectionsList` is no longer called eagerly on page init. It now fires only on the first `focus` or `mousedown` on the select, preventing a `ERR_CONNECTION_TIMED_OUT` console error when the server is slow to respond or not yet running.
   - Added a 4-second `AbortSignal.timeout` so a slow server fails quickly and silently instead of hanging.

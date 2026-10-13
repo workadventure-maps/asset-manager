@@ -13,25 +13,25 @@ def now_iso() -> str:
     return datetime.now(timezone.utc).isoformat(timespec="seconds")
 
 # --- Lazy model (placeholder / extensible) -----------------------------------
-# Si tu veux activer CLIP plus tard, charge-le uniquement quand on scanne.
+# If you want to enable CLIP later, only load it when scanning.
 _model = None
 _processor = None
 
 def get_clip():
     """
-    Charge CLIP à la demande (lazy). Actuellement non utilisé dans le pipeline de base.
-    Tu peux l'activer pour de la reconnaissance + tagging avancé si nécessaire.
+    Load CLIP on demand (lazy). Currently unused in the base pipeline.
+    You can enable it for recognition + advanced tagging if needed.
     """
     global _model, _processor
     if _model is None or _processor is None:
-        print("Chargement CLIP (lazy)…")
-        from transformers import CLIPProcessor, CLIPModel  # import tardif
+        print("Loading CLIP (lazy)…")
+        from transformers import CLIPProcessor, CLIPModel  # late import
         _model = CLIPModel.from_pretrained("openai/clip-vit-base-patch32")
         _processor = CLIPProcessor.from_pretrained("openai/clip-vit-base-patch32")
     return _model, _processor
 
 
-# --- Couleurs (alignées avec le server.py) -----------------------------------
+# --- Colors (aligned with server.py) -----------------------------------------
 COLOR_FAMILIES: Dict[str, str] = {
     "red": "#FF0000", "maroon": "#800000", "crimson": "#DC143C", "coral": "#FF7F50",
     "blue": "#0000FF", "navy": "#000080", "teal": "#008080", "cyan": "#00FFFF",
@@ -45,7 +45,7 @@ COLOR_FAMILIES: Dict[str, str] = {
 ALL_DIRECTIONS = {"front", "back", "left", "right", "up", "down", "unknow"}
 
 
-# --- Utilitaires divers -------------------------------------------------------
+# --- Misc utilities -----------------------------------------------------------
 IMG_EXTS = {".png", ".jpg", ".jpeg", ".webp", ".bmp"}
 
 def is_image(path: Path) -> bool:
@@ -69,7 +69,7 @@ def hex_to_rgb(hex_code: str) -> Optional[Tuple[int, int, int]]:
         return None
 
 def closest_color_family_from_rgb(rgb: Tuple[int, int, int]) -> Tuple[str, str]:
-    """Retourne (famille, hex) la plus proche (distance euclidienne)."""
+    """Return the closest (family, hex) pair (Euclidean distance)."""
     r, g, b = rgb
     best_name, best_hex, best_d = "unknown", "#000000", float("inf")
     for name, hexv in COLOR_FAMILIES.items():
@@ -87,12 +87,12 @@ def closest_color_family_from_rgb(rgb: Tuple[int, int, int]) -> Tuple[str, str]:
 
 def average_rgb(path: Path, sample_step: int = 8) -> Optional[Tuple[int, int, int]]:
     """
-    Moyenne rapide des pixels (sous-échantillonnage) pour estimer la teinte dominante.
+    Fast pixel average (subsampled) to estimate the dominant hue.
     """
     try:
         from PIL import Image
     except Exception:
-        # PIL pas installée : on renvoie None -> couleur inconnue
+        # PIL not installed: return None -> unknown color
         return None
 
     try:
@@ -119,8 +119,8 @@ def average_rgb(path: Path, sample_step: int = 8) -> Optional[Tuple[int, int, in
         return None
 
 
-# --- Parsing de nom de fichier ------------------------------------------------
-# On essaie d’extraire direction et couleur à partir des tokens, sinon on déduit.
+# --- File name parsing --------------------------------------------------------
+# Try to extract direction and color from the tokens, otherwise infer them.
 DIRECTION_RE = re.compile(r"(front|back|left|right|up|down|unknow)", re.IGNORECASE)
 
 def guess_direction_from_name(name: str) -> str:
@@ -130,14 +130,14 @@ def guess_direction_from_name(name: str) -> str:
     return "unknow"
 
 def guess_color_family_from_name(name: str) -> Optional[Tuple[str, str]]:
-    # Cherche un nom de famille couleur exact dans le nom
+    # Look for an exact color family name in the name
     for fam in COLOR_FAMILIES.keys():
         if re.search(rf"\b{re.escape(fam)}\b", name, re.IGNORECASE):
             return fam, COLOR_FAMILIES[fam]
     return None
 
 def humanize_name_from_filename(stem: str) -> str:
-    # Supprime tokens 'front/right/...' et familles couleur du nom humain
+    # Remove 'front/right/...' tokens and color families from the human-readable name
     base = re.sub(DIRECTION_RE, "", stem, flags=0)
     for fam in COLOR_FAMILIES.keys():
         base = re.sub(rf"\b{re.escape(fam)}\b", "", base, flags=re.IGNORECASE)
@@ -145,7 +145,7 @@ def humanize_name_from_filename(stem: str) -> str:
     return base or stem
 
 
-# --- Schéma de données --------------------------------------------------------
+# --- Data schema --------------------------------------------------------------
 @dataclass
 class Asset:
     imagePath: str
@@ -168,10 +168,10 @@ def to_dict(a: Asset) -> Dict:
     }
 
 
-# --- Génération de nom et copie ----------------------------------------------
+# --- Name generation and copy -----------------------------------------------
 def next_index_for(dist_dir: Path, prefix: str) -> int:
     """
-    Cherche le prochain index libre pour des fichiers nommés 'prefix-<n>.png'
+    Find the next free index for files named 'prefix-<n>.png'
     """
     pattern = re.compile(re.escape(prefix) + r"-(\d+)\.png$", re.IGNORECASE)
     max_n = 0
@@ -194,43 +194,43 @@ def safe_copy(src: Path, dst: Path) -> None:
     shutil.copyfile(src, dst)
 
 
-# --- Extraction depuis dist (idempotent) -------------------------------------
+# --- Extraction from dist (idempotent) ---------------------------------------
 def parse_asset_from_dist_file(p: Path, dist_dir: Path) -> Asset:
     """
-    Déduit les métadonnées à partir du nom "name-color_direction-index.png".
-    Si l'une manque, on retombe sur des valeurs 'unknow' / hex noir.
+    Infer metadata from the name "name-color_direction-index.png".
+    If any part is missing, fall back to 'unknow' / black hex.
     """
     stem = p.stem
-    # On accepte les 2 syntaxes vues dans tes logs:
+    # Accept the 2 syntaxes seen in the logs:
     #  - "name-color-direction-idx"
     #  - "name-color_direction-idx" (rare)
-    # On tente d'abord séparateur "-".
+    # Try the "-" separator first.
     parts = stem.split("-")
     direction = "unknow"
     color_family = None
 
-    # direction: on checke chaque part
+    # direction: check each part
     for t in parts:
         if t.lower() in ALL_DIRECTIONS:
             direction = t.lower()
             break
 
-    # couleur: on checke famille exacte
+    # color: check for an exact family
     for t in parts:
         if t in COLOR_FAMILIES:
             color_family = t
             break
 
-    # name humain: stem – (famille) – (direction) – (index)
-    # on retire les tokens connus et l'index final
+    # human name: stem – (family) – (direction) – (index)
+    # remove known tokens and the trailing index
     parts_no_idx = parts[:-1] if parts and parts[-1].isdigit() else parts
     name_tokens = [t for t in parts_no_idx if t not in ALL_DIRECTIONS and t not in COLOR_FAMILIES]
     name_slug = "-".join(name_tokens) or stem
     human = humanize_name_from_filename(name_slug)
 
-    # hex couleur
+    # color hex
     if color_family is None:
-        # fallback: noir
+        # fallback: black
         color_hex = "#000000"
     else:
         color_hex = COLOR_FAMILIES[color_family]
@@ -245,13 +245,13 @@ def parse_asset_from_dist_file(p: Path, dist_dir: Path) -> Asset:
     )
 
 
-# --- Pipeline principal -------------------------------------------------------
+# --- Main pipeline ------------------------------------------------------------
 def process_images(model_dir: str, src_dir: str, dist_dir: str, unknow_dir: str) -> Dict:
     """
-    - Traite les nouvelles images de `src_dir` et les copie vers `dist_dir` sous un nom normalisé
-      (name-color_direction-index.png). Les images sans direction détectée vont dans `unknow_dir`.
-    - Re-scanne `dist_dir` pour construire la collection.
-    - Retourne un dict prêt pour `assets_list.json`.
+    - Process new images from `src_dir` and copy them to `dist_dir` under a normalized name
+      (name-color_direction-index.png). Images with no detected direction go to `unknow_dir`.
+    - Re-scan `dist_dir` to build the collection.
+    - Return a dict ready for `assets_list.json`.
     """
     src = Path(src_dir)
     dist = Path(dist_dir)
@@ -261,40 +261,40 @@ def process_images(model_dir: str, src_dir: str, dist_dir: str, unknow_dir: str)
     unknow.mkdir(parents=True, exist_ok=True)
     src.mkdir(parents=True, exist_ok=True)
 
-    # --- 1) Intégrer nouvelles images depuis src_dir
+    # --- 1) Integrate new images from src_dir
     for fp in sorted(src.rglob("*")):
         if not is_image(fp):
             continue
 
-        stem = fp.stem  # nom sans extension
-        # direction par le nom
+        stem = fp.stem  # name without extension
+        # direction from the name
         direction = guess_direction_from_name(stem)
 
-        # nom "lisible"
-        # (on ne s'embête pas ici à reconnaitre l'objet via CLIP — tu pourras plugger plus tard)
+        # "readable" name
+        # (we don't bother recognizing the object via CLIP here — it can be plugged in later)
         name_human = humanize_name_from_filename(stem)
         name_slug = slugify(name_human) or "asset"
 
-        # couleur – d'abord via le nom, sinon via moyenne RGB
+        # color – first from the name, otherwise from the RGB average
         fam_hex = guess_color_family_from_name(stem)
         if fam_hex:
             color_family, color_hex = fam_hex
         else:
-            rgb = average_rgb(fp)  # None si PIL manquant
+            rgb = average_rgb(fp)  # None if PIL is missing
             if rgb is None:
-                # pas de PIL: mets "grey"
+                # no PIL: use "grey"
                 color_family, color_hex = "grey", COLOR_FAMILIES["grey"]
             else:
                 color_family, color_hex = closest_color_family_from_rgb(rgb)
 
         if direction not in ALL_DIRECTIONS or direction == "unknow":
-            # direction inconnue -> on met de côté
+            # unknown direction -> set aside
             dst = unknow / fp.name
             dst.parent.mkdir(parents=True, exist_ok=True)
             safe_copy(fp, dst)
             continue
 
-        # index suivant pour ce triplet (name/color/direction)
+        # next index for this (name/color/direction) triplet
         prefix = f"{name_slug}-{color_family}-{direction}"
         index = next_index_for(dist, prefix)
         new_name = build_filename(name_slug, color_family, direction, index)
@@ -302,13 +302,13 @@ def process_images(model_dir: str, src_dir: str, dist_dir: str, unknow_dir: str)
 
         safe_copy(fp, dst)
 
-    # --- 2) Re-scan dist/ pour construire la collection complète
+    # --- 2) Re-scan dist/ to build the complete collection
     assets: List[Asset] = []
     for p in sorted(dist.glob("*.png")):
         try:
             assets.append(parse_asset_from_dist_file(p, dist))
         except Exception:
-            # fallback brut si parsing échoue
+            # raw fallback if parsing fails
             rel = p.relative_to(dist).as_posix()
             assets.append(
                 Asset(
@@ -320,7 +320,7 @@ def process_images(model_dir: str, src_dir: str, dist_dir: str, unknow_dir: str)
                 )
             )
 
-    # Préserve les dates existantes; tamponne les nouveaux assets.
+    # Preserve existing dates; stamp new assets.
     existing = {}
     prev_path = Path("assets_list.json")
     if prev_path.is_file():
@@ -343,7 +343,7 @@ def process_images(model_dir: str, src_dir: str, dist_dir: str, unknow_dir: str)
 
     collection = {
         "collectionName": "Assets",
-        "tags": [],  # Global tags optionnels
+        "tags": [],  # Optional global tags
         "collection": [to_dict(a) for a in assets],
     }
     return collection
@@ -351,7 +351,7 @@ def process_images(model_dir: str, src_dir: str, dist_dir: str, unknow_dir: str)
 
 def generate_json_file(data: Dict, out_file: str = "assets_list.json", collection_name: str = "Assets") -> None:
     """
-    Écrit le JSON final utilisé par le front.
+    Write the final JSON used by the frontend.
     """
     data = dict(data or {})
     if "collectionName" not in data:
@@ -359,7 +359,7 @@ def generate_json_file(data: Dict, out_file: str = "assets_list.json", collectio
     out = Path(out_file)
     with out.open("w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
-    print(f"[OK] JSON écrit → {out.resolve()}")
+    print(f"[OK] JSON written → {out.resolve()}")
 
 # === Grid processing helpers (added) ==========================================
 from PIL import Image
