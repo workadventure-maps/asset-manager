@@ -15,11 +15,11 @@ main { padding:16px; }
 .img-wrap { position: relative; width: 100%; }
 .img-wrap img { display:block; width:100%; height:auto; image-rendering: pixelated; }
 
-/* Overlay: canevas (traits) et grille cliquable */
+/* Overlay: canvas (lines) and clickable grid */
 .grid32-overlay, .grid32-hitlayer { position:absolute; left:0; top:0; }
 .grid32-overlay canvas { position:absolute; inset:0; width:100%; height:100%; }
 
-/* Grille cliquable : carrés 32x32 rendus proportionnellement (via CSS grid) */
+/* Clickable grid: 32x32 squares rendered proportionally (via CSS grid) */
 .grid32-hitlayer { pointer-events:auto; display:grid; }
 .grid32-hitlayer .cell { outline:1px dashed rgba(0,0,0,.12); }
 .grid32-hitlayer .cell.selected { background: rgba(255, 0, 0, .25); }
@@ -30,7 +30,7 @@ main { padding:16px; }
     top:0; right:0;
     width: 44px;                 /* rail + thumb */
     display:flex; align-items:center; justify-content:center;
-    pointer-events: none;        /* seul l'input gère les events */
+    pointer-events: none;        /* only the input handles events */
 }
 .depth-slider .depth-range{
     pointer-events: auto;
@@ -46,7 +46,7 @@ main { padding:16px; }
 /* Firefox */
 .depth-slider .depth-range[orient="vertical"]{
     writing-mode: bt-lr;
-    transform: rotate(0deg); /* 0 en haut, max en bas */
+    transform: rotate(0deg); /* 0 at the top, max at the bottom */
 }
 
 /* Track */
@@ -68,7 +68,7 @@ main { padding:16px; }
     background:#0d6efd; border:2px solid #fff; box-shadow:0 1px 3px rgba(0,0,0,.2);
 }
 
-/* Badge valeur (négative) */
+/* Value badge (negative) */
 .depth-slider .depth-badge{
     position:absolute;
     top:6px; right:44px;

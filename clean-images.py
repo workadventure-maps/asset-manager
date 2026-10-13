@@ -15,22 +15,22 @@ import socketserver
 import webbrowser
 import urllib.parse
 
-# ---- Configuration du modèle et des étiquettes ----
-print("Chargement du modèle de vision CLIP et du processeur...")
+# ---- Model and label configuration ----
+print("Loading the CLIP vision model and processor...")
 model = CLIPModel.from_pretrained("openai/clip-vit-base-patch32")
 processor = CLIPProcessor.from_pretrained("openai/clip-vit-base-patch32")
 
-# Étiquettes pour la couleur et l'orientation
+# Labels for color and orientation
 color_labels = ["red", "blue", "green", "yellow", "brown", "black", "white", "beige", "grey", "dark blue", "purple", "orange", "pink", "dark green", "light blue", "cyan", "magenta", "lime", "teal"]
 orientation_labels = ["front", "back", "left", "right", "up", "down"]
 
-# Seuil de similarité par défaut
+# Default similarity threshold
 SIMILARITY_THRESHOLD = 0.9
 
-# ---- Fonctions utilitaires ----
+# ---- Utility functions ----
 
 def get_image_embedding(image_path):
-    """Calcule l'embedding d'une image."""
+    """Compute the embedding of an image."""
     try:
         image = Image.open(image_path).convert("RGB")
         inputs = processor(images=image, return_tensors="pt")
@@ -38,11 +38,11 @@ def get_image_embedding(image_path):
             embedding = model.get_image_features(**inputs)
         return embedding.squeeze().numpy()
     except Exception as e:
-        print(f"Erreur lors de la création de l'embedding pour {image_path}: {e}")
+        print(f"Error while creating the embedding for {image_path}: {e}")
         return None
 
 def find_closest_color_name(rgb, color_names):
-    """Trouve le nom de couleur le plus proche pour une valeur RGB donnée."""
+    """Find the closest color name for a given RGB value."""
     color_map = {
         "red": [255, 0, 0], "blue": [0, 0, 255], "green": [0, 128, 0], "yellow": [255, 255, 0],
         "brown": [139, 69, 19], "black": [0, 0, 0], "white": [255, 255, 255], "beige": [245, 245, 220],
@@ -64,13 +64,13 @@ def find_closest_color_name(rgb, color_names):
 
 def get_dominant_color_label(image_path, color_labels):
     """
-    Trouve la couleur la plus dominante dans une image en privilégiant les couleurs vives.
+    Find the most dominant color in an image, favoring vivid colors.
     """
     try:
         image = Image.open(image_path).convert("RGB")
         pixel_data = list(image.getdata())
         
-        # Filtrage plus robuste pour les fonds
+        # More robust background filtering
         pixels_to_count = [p for p in pixel_data if p[0] + p[1] + p[2] < 750 and p[0] + p[1] + p[2] > 10]
         
         if not pixels_to_count:
@@ -78,17 +78,17 @@ def get_dominant_color_label(image_path, color_labels):
             
         color_counts = Counter(pixels_to_count).most_common()
         
-        # Séparer les couleurs en deux listes: neutres et non-neutres
+        # Split colors into two lists: neutral and non-neutral
         neutral_colors = ["white", "black", "grey", "beige"]
         non_neutral_colors = [c for c in color_labels if c not in neutral_colors]
 
-        # Chercher la première couleur dominante non-neutre
+        # Look for the first dominant non-neutral color
         for color_rgb, count in color_counts:
             label = find_closest_color_name(color_rgb, color_labels)
             if label in non_neutral_colors:
                 return label
 
-        # Si aucune couleur non-neutre n'est trouvée, retourner la couleur neutre la plus dominante
+        # If no non-neutral color is found, return the most dominant neutral color
         for color_rgb, count in color_counts:
             label = find_closest_color_name(color_rgb, color_labels)
             if label in neutral_colors:
@@ -97,34 +97,34 @@ def get_dominant_color_label(image_path, color_labels):
         return "unknow"
         
     except Exception as e:
-        print(f"Erreur lors de la classification de la couleur pour {image_path}: {e}")
+        print(f"Error while classifying the color for {image_path}: {e}")
         return "unknow"
 
 def get_average_color_hex(image_path):
     """
-    Calcule la couleur moyenne des pixels non-transparents et la retourne en format hex.
+    Compute the average color of non-transparent pixels and return it in hex format.
     """
     try:
         image = Image.open(image_path).convert("RGB")
         pixel_data = list(image.getdata())
         
-        # Filtrage des pixels de fond transparents, blancs ou noirs
+        # Filter out transparent, white or black background pixels
         pixels_to_count = [p for p in pixel_data if p[0] + p[1] + p[2] < 750 and p[0] + p[1] + p[2] > 10]
 
         if not pixels_to_count:
-            return "#ffffff"  # Par défaut, blanc si rien de significatif n'est trouvé
+            return "#ffffff"  # Default to white if nothing significant is found
 
         avg_rgb = np.mean(pixels_to_count, axis=0).astype(int)
         
-        # Conversion en format hexadécimal
+        # Convert to hexadecimal format
         hex_color = f"#{avg_rgb[0]:02x}{avg_rgb[1]:02x}{avg_rgb[2]:02x}"
         return hex_color
     except Exception as e:
-        print(f"Erreur lors du calcul de la couleur moyenne pour {image_path}: {e}")
+        print(f"Error while computing the average color for {image_path}: {e}")
         return "#ffffff"
 
 def classify_orientation(image_path, labels):
-    """Classifie l'orientation d'une image."""
+    """Classify the orientation of an image."""
     try:
         image = Image.open(image_path).convert("RGB")
         prompts = [f"a pixel art object viewed from the {label}." for label in labels]
@@ -138,21 +138,21 @@ def classify_orientation(image_path, labels):
         best_label = labels[best_label_index]
         return best_label
     except Exception as e:
-        print(f"Erreur lors de la classification de l'orientation pour {image_path}: {e}")
+        print(f"Error while classifying the orientation for {image_path}: {e}")
         return "unknow"
 
 def trim_transparent_borders(input_dir, output_dir, fuzz='2%'):
     """
-    Supprime les bords transparents des images PNG d'un répertoire.
-    Nécessite ImageMagick.
+    Remove transparent borders from the PNG images in a directory.
+    Requires ImageMagick.
     """
-    print("Début du rognage des images transparentes...")
+    print("Starting to trim transparent images...")
     try:
         im_command = "magick"
         if not shutil.which(im_command):
             im_command = "convert"
             if not shutil.which(im_command):
-                raise FileNotFoundError("ImageMagick n'est pas installé. Veuillez l'installer (ex. : 'brew install imagemagick').")
+                raise FileNotFoundError("ImageMagick is not installed. Please install it (e.g. 'brew install imagemagick').")
 
         if not os.path.exists(output_dir):
             os.makedirs(output_dir)
@@ -167,21 +167,21 @@ def trim_transparent_borders(input_dir, output_dir, fuzz='2%'):
                         [im_command, src_path, "-bordercolor", "none", "-border", "1", "-alpha", "set", "-fuzz", fuzz, "-trim", "+repage", dest_path],
                         check=True
                     )
-                    print(f"  - Rogneage réussi pour '{filename}'.")
+                    print(f"  - Trimmed '{filename}' successfully.")
                 except subprocess.CalledProcessError as e:
-                    print(f"  - Erreur lors du rognage de '{filename}': {e}")
+                    print(f"  - Error while trimming '{filename}': {e}")
                 except Exception as e:
-                    print(f"  - Erreur inattendue lors du rognage de '{filename}': {e}")
+                    print(f"  - Unexpected error while trimming '{filename}': {e}")
     except FileNotFoundError as e:
-        print(f"Erreur: {e}")
+        print(f"Error: {e}")
         return False
     
-    print("Rogneage terminé.")
+    print("Trimming finished.")
     return True
 
 def generate_json_file(collection_data):
     """
-    Génère un fichier JSON avec les données de la collection d'assets.
+    Generate a JSON file with the asset collection data.
     """
     json_header = {
         "collectionName": "LimeZu Modern Office",
@@ -199,20 +199,20 @@ def generate_json_file(collection_data):
     output_path = "assets_list.json"
     with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(json_header, f, indent=4)
-    print(f"\nLe fichier JSON a été généré avec succès dans '{output_path}'.")
+    print(f"\nThe JSON file was successfully generated in '{output_path}'.")
 
-# ---- Point d'entrée principal du script ----
+# ---- Main script entry point ----
 def main():
-    # ---- 1. Préparation des données du dossier 'model' ----
+    # ---- 1. Prepare data from the 'model' folder ----
     model_dir = "model"
     model_embeddings = {}
     tags_mapping = {}
 
     if not os.path.exists(model_dir):
-        print(f"Erreur : Le dossier '{model_dir}' n'existe pas. Créez-le et placez vos images de référence dedans.")
+        print(f"Error: The folder '{model_dir}' does not exist. Create it and put your reference images in it.")
         exit()
     
-    print(f"Préparation des données du dossier '{model_dir}'...")
+    print(f"Preparing data from the '{model_dir}' folder...")
     embeddings_by_object = {}
     for filename in os.listdir(model_dir):
         if filename.endswith(('.png', '.jpg', '.jpeg')):
@@ -222,7 +222,7 @@ def main():
                     object_name = os.path.splitext(filename)[0].split('-')[0]
                 else:
                     object_name = os.path.splitext(filename)[0]
-                    print(f"  - Avertissement : Le fichier '{filename}' ne suit pas la convention de nommage 'nom_objet-tags'. Le nom de l'objet sera considéré comme '{object_name}'.")
+                    print(f"  - Warning: The file '{filename}' does not follow the 'object_name-tags' naming convention. The object name will be taken as '{object_name}'.")
 
                 if object_name not in tags_mapping:
                     tags_mapping[object_name] = [object_name.replace('_', ' ').title()]
@@ -233,17 +233,17 @@ def main():
                         embeddings_by_object[object_name] = []
                     embeddings_by_object[object_name].append(embedding)
             except Exception as e:
-                print(f"  - Erreur inattendue lors du traitement de l'image modèle '{filename}': {e}")
+                print(f"  - Unexpected error while processing the model image '{filename}': {e}")
     
     for object_name, embeddings in embeddings_by_object.items():
         model_embeddings[object_name] = np.mean(embeddings, axis=0)
-        print(f"  - Vecteur moyen calculé pour l'objet '{object_name}'.")
+        print(f"  - Computed mean vector for object '{object_name}'.")
 
     if not model_embeddings:
-        print("Aucune image modèle valide trouvée. Le script ne peut pas continuer.")
+        print("No valid model image found. The script cannot continue.")
         exit()
 
-    # ---- 2. Traitement des images du dossier 'src' ----
+    # ---- 2. Process images from the 'src' folder ----
     src_dir = "src"
     dist_dir = "dist"
     unknow_dir = "unknow"
@@ -251,18 +251,18 @@ def main():
     json_collection_data = []
 
     if not os.path.exists(src_dir):
-        print(f"Erreur : Le dossier '{src_dir}' n'existe pas. Créez-le et placez vos images à traiter dedans.")
+        print(f"Error: The folder '{src_dir}' does not exist. Create it and put the images to process in it.")
         exit()
 
     if os.path.exists(dist_dir):
         shutil.rmtree(dist_dir)
     os.makedirs(dist_dir)
-    print(f"Le dossier de destination '{dist_dir}' a été vidé.")
+    print(f"The destination folder '{dist_dir}' has been emptied.")
 
     if os.path.exists(unknow_dir):
         shutil.rmtree(unknow_dir)
     os.makedirs(unknow_dir)
-    print(f"Le dossier '{unknow_dir}' a été vidé.")
+    print(f"The folder '{unknow_dir}' has been emptied.")
 
     if os.path.exists(trimmed_src_dir):
         shutil.rmtree(trimmed_src_dir)
@@ -270,9 +270,9 @@ def main():
         src_dir_to_process = trimmed_src_dir
     else:
         src_dir_to_process = src_dir
-        print("Le rognage a échoué. Le script continuera avec les images originales.")
+        print("Trimming failed. The script will continue with the original images.")
 
-    print(f"\nTraitement des images du dossier '{src_dir_to_process}'...")
+    print(f"\nProcessing images from the '{src_dir_to_process}' folder...")
     for filename in os.listdir(src_dir_to_process):
         if filename.endswith(('.png', '.jpg', '.jpeg')):
             source_path = os.path.join(src_dir_to_process, filename)
@@ -298,7 +298,7 @@ def main():
                 new_extension = '.png'
                 
                 if max_similarity < SIMILARITY_THRESHOLD:
-                    print(f"Avertissement : '{filename}' n'a pas de match suffisant. Déplacé vers '{unknow_dir}'. Similarité: {max_similarity:.2f}")
+                    print(f"Warning: '{filename}' has no sufficient match. Moved to '{unknow_dir}'. Similarity: {max_similarity:.2f}")
                     final_name = f"unknow-{dominant_color}-{orientation}{new_extension}"
                     final_path = os.path.join(unknow_dir, final_name)
                     i = 1
@@ -309,7 +309,7 @@ def main():
                         i += 1
                     shutil.move(source_path, final_path)
                 else:
-                    print(f"'{filename}' correspond à '{best_match_object}' avec une similarité de {max_similarity:.2f}. Renommage...")
+                    print(f"'{filename}' matches '{best_match_object}' with a similarity of {max_similarity:.2f}. Renaming...")
                     final_name = f"{best_match_object.replace(' ', '_')}-{dominant_color.replace(' ', '_')}-{orientation}{new_extension}"
                     final_path = os.path.join(dist_dir, final_name)
                     i = 1
@@ -318,7 +318,7 @@ def main():
                         final_name = f"{name_without_ext}-{i}{new_extension}"
                         final_path = os.path.join(dist_dir, final_name)
                         i += 1
-                    print(f"    - Renommage en '{final_name}'.")
+                    print(f"    - Renaming to '{final_name}'.")
                     shutil.move(source_path, final_path)
                     
                     hex_color = get_average_color_hex(final_path)
@@ -335,12 +335,12 @@ def main():
                     json_collection_data.append(json_item)
 
             except Exception as e:
-                print(f"Erreur lors du traitement de '{filename}': {e}")
+                print(f"Error while processing '{filename}': {e}")
 
     generate_json_file(json_collection_data)
-    print("\nOpération terminée.")
+    print("\nOperation finished.")
 
-# ---- 3. Lancer le serveur web avancé ----
+# ---- 3. Start the advanced web server ----
 PORT = 8000
 ASSET_JSON_FILE = "assets_list.json"
 
@@ -359,14 +359,14 @@ class MyHandler(http.server.BaseHTTPRequestHandler):
             self.send_header('Content-type', 'application/json')
             self.end_headers()
             self.wfile.write(json.dumps({"status": "success"}).encode('utf-8'))
-            print(f"Le fichier '{ASSET_JSON_FILE}' a été mis à jour avec succès.")
+            print(f"The file '{ASSET_JSON_FILE}' was updated successfully.")
             
         except Exception as e:
             self.send_response(500)
             self.send_header('Content-type', 'application/json')
             self.end_headers()
             self.wfile.write(json.dumps({"status": "error", "message": str(e)}).encode('utf-8'))
-            print(f"Erreur lors de la mise à jour du fichier JSON : {e}")
+            print(f"Error while updating the JSON file: {e}")
 
     def do_GET(self):
         # Decode the URL path to handle characters like '%20'
@@ -404,13 +404,13 @@ if __name__ == "__main__":
     main()
     try:
         with socketserver.TCPServer(("", PORT), MyHandler) as httpd:
-            print(f"\nServeur démarré sur le port {PORT}.")
+            print(f"\nServer started on port {PORT}.")
             webbrowser.open(f"http://localhost:{PORT}")
-            print("Ouvrez votre navigateur et allez à l'adresse : http://localhost:{PORT}")
-            print("Pour arrêter le serveur, appuyez sur Ctrl+C.")
+            print(f"Open your browser and go to: http://localhost:{PORT}")
+            print("To stop the server, press Ctrl+C.")
             httpd.serve_forever()
     except OSError as e:
         if "Address already in use" in str(e):
-            print(f"\nErreur : Le port {PORT} est déjà utilisé. Veuillez libérer ce port ou choisir un autre port (par exemple, 8001).")
+            print(f"\nError: Port {PORT} is already in use. Please free this port or choose another one (for example, 8001).")
         else:
-            print(f"Une erreur s'est produite lors du démarrage du serveur : {e}")
+            print(f"An error occurred while starting the server: {e}")

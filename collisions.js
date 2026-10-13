@@ -9,14 +9,14 @@
     data: { collectionName:'', tags:[], collection:[] },
   };
 
-  // Collisions travaille sur les images actuelles (pas de dist32 ici)
+  // Collisions works on the current images (no dist32 here)
   function pathForDisplay(p){ return p; }
 
   function ensureCollisionGrid(asset, cols, rows){
     if (!asset.collisionGrid) {
       asset.collisionGrid = Array.from({length: rows}, ()=> Array.from({length: cols}, ()=>0));
     } else {
-      // Harmonise si la taille a changé
+      // Reconcile if the size has changed
       if (asset.collisionGrid.length !== rows || (asset.collisionGrid[0]||[]).length !== cols){
         const ng = Array.from({length: rows}, ()=> Array.from({length: cols}, ()=>0));
         for (let y=0; y<rows; y++){
@@ -44,11 +44,11 @@
     }catch(e){ console.error('Persist JSON failed:', e); }
   }
 
-  // Construit une card avec image + overlay + grille cliquable + depthOffset slider
+  // Build a card with image + overlay + clickable grid + depthOffset slider
   function buildCard(asset){
     const card = document.createElement('div'); card.className='card';
 
-    // Zone d’aperçu (image + overlays)
+    // Preview area (image + overlays)
     const preview = document.createElement('div'); preview.className='preview';
     const wrap = document.createElement('div'); wrap.className='img-wrap';
 
@@ -60,7 +60,7 @@
     const canvas  = document.createElement('canvas'); overlay.appendChild(canvas);
     const hit     = document.createElement('div'); hit.className='grid32-hitlayer';
 
-    // Slider vertical depthOffset (à droite)
+    // Vertical depthOffset slider (on the right)
     const depthWrap = document.createElement('div'); depthWrap.className = 'depth-slider';
     depthWrap.innerHTML = `
       <input class="depth-range" type="range" min="0" max="0" value="0" step="1" aria-label="Depth offset">
@@ -77,7 +77,7 @@
     preview.appendChild(wrap);
     card.appendChild(preview);
 
-    // Corps de card minimal (titre + switch + alert)
+    // Minimal card body (title + switch + alert)
     const body = document.createElement('div'); body.className='body';
     const title = document.createElement('div'); title.innerHTML = `<span class="badge">${asset.name || (asset.imagePath.split('/').pop()||'')}</span>`;
     body.appendChild(title);
@@ -88,14 +88,14 @@
     const floatInput = floatWrap.querySelector('input');
     body.appendChild(floatWrap);
 
-    // Alerte multiples de 32
+    // Multiple-of-32 warning
     const warn = document.createElement('div'); warn.className='warn'; warn.style.display='none';
     warn.textContent = 'Image size is not a multiple of 32px (width/height).';
     body.appendChild(warn);
 
     card.appendChild(body);
 
-    // Toute la logique est confinée dans ce handler => pas de variable qui s’échappe
+    // All logic is confined to this handler => no variable escapes
     img.addEventListener('load', ()=> {
       const w = img.naturalWidth;
       const h = img.naturalHeight;
@@ -105,7 +105,7 @@
       warn.style.display = ok ? 'none' : 'block';
 
       // ------ Depth slider init ------
-      // Slider = 0..hauteur image. Valeur stockée = -sliderValue.
+      // Slider = 0..image height. Stored value = -sliderValue.
       depthInput.max = String(h);
       if (typeof asset.depthOffset === 'number') {
         const v = Math.max(0, Math.min(h, -asset.depthOffset));
@@ -127,22 +127,22 @@
       };
       depthInput.addEventListener('input', applyDepth);
 
-      // État initial du switch : coché si pas de collisionGrid
+      // Initial switch state: checked if there is no collisionGrid
       floatInput.checked = !asset.collisionGrid;
 
-      // Prépare la grille cliquable
+      // Prepare the clickable grid
       hit.innerHTML = '';
       hit.style.gridTemplateColumns = `repeat(${cols||1}, 1fr)`;
       hit.style.gridTemplateRows    = `repeat(${rows||1}, 1fr)`;
       hit.style.pointerEvents = ok ? 'auto' : 'none';
       floatInput.disabled = !ok;
 
-      // Si non floating et image OK => assure la matrice
+      // If not floating and image OK => ensure the matrix
       if (!floatInput.checked && ok){
         ensureCollisionGrid(asset, cols, rows);
       }
 
-      // Remplit les cellules selon collisionGrid
+      // Fill the cells according to collisionGrid
       const getVal = (x,y) =>
           (asset.collisionGrid && asset.collisionGrid[y] && typeof asset.collisionGrid[y][x] === 'number')
               ? asset.collisionGrid[y][x] : 0;
@@ -156,13 +156,13 @@
             e.stopPropagation();
             if (!ok) return;
 
-            // 1) si on est "floating", on crée la grille AVANT de lire/écrire
+            // 1) if "floating", create the grid BEFORE reading/writing
             if (floatInput.checked){
               floatInput.checked = false;
               ensureCollisionGrid(asset, cols, rows);
             }
 
-            // 2) par sécurité, si pour une raison X la grille a été supprimée, on la recrée
+            // 2) for safety, if the grid was removed for whatever reason, recreate it
             if (!asset.collisionGrid) ensureCollisionGrid(asset, cols, rows);
             if (!asset.collisionGrid[y]) asset.collisionGrid[y] = Array.from({length: cols}, ()=>0);
 
@@ -171,11 +171,11 @@
             asset.collisionGrid[y][x] = next;
             if (next) cell.classList.add('selected'); else cell.classList.remove('selected');
 
-            // 3) si plus aucune case sélectionnée → on supprime la clé ET on recoche le switch
+            // 3) if no cell is selected anymore → remove the key AND re-check the switch
             const any = asset.collisionGrid && asset.collisionGrid.some(row => row && row.some(v => v === 1));
             if (!any) {
               removeCollisionGrid(asset);
-              floatInput.checked = true;                 // ✅ remet en mode "floating"
+              floatInput.checked = true;                 // ✅ back to "floating" mode
             }
 
             pushJSONDebounced();
@@ -184,7 +184,7 @@
         }
       }
 
-      // Dessine le quadrillage exactement à la taille RENDUE
+      // Draw the grid lines at exactly the RENDERED size
       function layoutOverlay(){
         const rw = img.clientWidth;
         const rh = img.clientHeight;
@@ -194,7 +194,7 @@
         hit.style.width = rw + 'px';
         hit.style.height = rh + 'px';
 
-        // Canvas HiDPI pour traits nets
+        // HiDPI canvas for crisp lines
         const dpr = window.devicePixelRatio || 1;
         canvas.width  = Math.max(1, Math.floor(rw * dpr));
         canvas.height = Math.max(1, Math.floor(rh * dpr));
@@ -210,31 +210,31 @@
         const cellW = rw / (cols||1);
         const cellH = rh / (rows||1);
 
-        // Lignes verticales
+        // Vertical lines
         for (let i=0; i<=cols; i++){
-          const x = Math.round(i * cellW) + 0.5; // alignement pixel
+          const x = Math.round(i * cellW) + 0.5; // pixel alignment
           ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, rh); ctx.stroke();
         }
-        // Lignes horizontales
+        // Horizontal lines
         for (let j=0; j<=rows; j++){
           const y = Math.round(j * cellH) + 0.5;
           ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(rw, y); ctx.stroke();
         }
 
-        // Le slider prend EXACTEMENT la hauteur rendue de l'image
+        // The slider takes EXACTLY the rendered height of the image
         depthWrap.style.height = rh + 'px';
         depthInput.style.height = '100%';
       }
 
       layoutOverlay();
-      // Reste calée si la card se redimensionne
+      // Stay aligned if the card is resized
       const ro = new ResizeObserver(()=> layoutOverlay());
       ro.observe(img);
 
-      // Switch "Floating object" => crée/supprime collisionGrid
+      // "Floating object" switch => create/remove collisionGrid
       floatInput.addEventListener('change', ()=>{
         if (floatInput.checked){
-          // flottant : on supprime la grille et la sélection
+          // floating: remove the grid and the selection
           removeCollisionGrid(asset);
           $$('.cell', hit).forEach(c=> c.classList.remove('selected'));
         } else if (ok) {

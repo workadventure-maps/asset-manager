@@ -120,8 +120,8 @@
     }
     return [h*360, s, l];
   };
-  // Couleurs triées pour l'affichage : chromatiques par teinte (puis clair→foncé),
-  // puis les achromatiques (gris/noir/blanc) du plus clair au plus foncé.
+  // Colors sorted for display: chromatic ones by hue (then light→dark),
+  // then achromatic ones (grey/black/white) from lightest to darkest.
   const COLOR_FAMILIES_SORTED = Object.entries(COLOR_FAMILIES).sort((a,b)=>{
     const [ha,sa,la] = hexToHsl(a[1]);
     const [hb,sb,lb] = hexToHsl(b[1]);
