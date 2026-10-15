@@ -198,29 +198,23 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         """Receive a multipart/form-data body ('files' or 'file' field) and write
         the files under dist/, preserving their relative path."""
         try:
-            import cgi
-            fs = cgi.FieldStorage(
-                fp=self.rfile,
-                headers=self.headers,
-                environ={
-                    "REQUEST_METHOD": "POST",
-                    "CONTENT_TYPE": self.headers.get("Content-Type", ""),
-                },
-                keep_blank_values=True
-            )
+            # cgi was removed in Python 3.13: parse multipart with the email package
+            from email.parser import BytesParser
+            from email import policy
+            length = int(self.headers.get("Content-Length") or 0)
+            head = f"Content-Type: {self.headers.get('Content-Type', '')}\r\n\r\n".encode()
+            msg = BytesParser(policy=policy.default).parsebytes(head + self.rfile.read(length))
 
-            fields = fs["files"] if "files" in fs else (fs["file"] if "file" in fs else None)
-            if fields is None:
+            fields = [p for p in msg.iter_parts()
+                      if p.get_param("name", header="content-disposition") in ("files", "file")]
+            if not fields:
                 return send_json(self, 400, {"status": "error", "message": "No files field in form"})
-
-            if not isinstance(fields, list):
-                fields = [fields]
 
             dist_root = Path(DIST_DIR)
             saved = 0
             errors = []
             for part in fields:
-                filename = getattr(part, "filename", "") or ""
+                filename = part.get_filename() or ""
                 rel = filename.replace("\\", "/").lstrip("./").strip("/")
                 if not rel or ".." in rel.split("/"):
                     errors.append({"file": filename, "error": "invalid relative path"})
@@ -228,7 +222,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                 dest = dist_root / rel
                 dest.parent.mkdir(parents=True, exist_ok=True)
                 with open(dest, "wb") as outf:
-                    outf.write(part.file.read())
+                    outf.write(part.get_payload(decode=True) or b"")
                 saved += 1
 
             return send_json(self, 200, {"status": "success", "saved": saved, "errors": errors})
